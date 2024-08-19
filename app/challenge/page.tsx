@@ -1,26 +1,20 @@
 'use client';
 
-import { Button, Flex, Text } from '@mantine/core';
-import Link from 'next/link';
+import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import { Flex, Text } from '@mantine/core';
 
 function ChallengePage() {
   return (
-    <Flex
-      direction={'column'}
-      justify={'flex-start'}
-      align={'flex-start'}
-      gap={'sm'}
-    >
-      <Button
-        component={Link}
-        href='/'
-        radius={'md'}
-        size={'md'}
+    <CustomAppShell>
+      <Flex
+        direction={'column'}
+        justify={'flex-start'}
+        align={'flex-start'}
+        gap={'sm'}
       >
-        Home Page
-      </Button>
-      <Text>This is Spark Challenge Page</Text>
-    </Flex>
+        <Text>This is Spark Challenge Page</Text>
+      </Flex>
+    </CustomAppShell>
   );
 }
 
