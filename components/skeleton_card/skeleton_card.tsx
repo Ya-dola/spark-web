@@ -14,10 +14,10 @@ interface SkeletonCardProps {
 
 /**
  * SkeletonCard Component
- * 
+ *
  * This component renders a card with customizable background color, text color, size, and other styles.
  * It uses Mantine's Paper component for the card and Center for centering the text.
- * 
+ *
  * @param {string} text - The text to display inside the card.
  * @param {string} [bgColor='purple'] - Background color of the card.
  * @param {string} [textColor='white'] - Color of the text inside the card.
@@ -26,7 +26,7 @@ interface SkeletonCardProps {
  * @param {number} [height] - Height of the card in pixels.
  * @param {string} [textSize='md'] - Font size of the text.
  * @param {number} [textWeight=500] - Font weight of the text.
- * 
+ *
  * @example
  * <SkeletonCard text="Loading..."/>
  */
@@ -45,7 +45,7 @@ function SkeletonCard({
       className={`${theme.SkeletonCard}`}
       px={'md'}
       py={'sm'}
-      h={height}  
+      h={height}
       w={width}
       radius={radius}
       bg={bgColor}
