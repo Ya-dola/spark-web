@@ -1,10 +1,11 @@
 'use client';
+
 import NextImage from 'next/image';
-import SkeletonCard from '@/components/skeleton_card/skeleton_card';
-import { Image, Center, Flex, Text, Space } from '@mantine/core';
+import { Image, Center, Flex, Text, Space, Button } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import Link from 'next/link';
 import myImage from '@/public/images/spark_logo_transparent.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
-import { useMediaQuery } from '@mantine/hooks';
 
 function SparkHomePage() {
   const isMobile = useMediaQuery('(max-width: 48em)', true, {
@@ -53,25 +54,40 @@ function SparkHomePage() {
           justify={'center'}
           gap={isMobile ? 'md' : 'xl'}
         >
-          <SkeletonCard
-            height={250}
-            width={300}
+          <Button
+            h={250}
+            w={300}
             // TODO - Add Brand Colors to Theme
-            bgColor={'#A61FD6'}
-            text={'Spark Challenge'}
-          />
-          <SkeletonCard
-            height={250}
-            width={300}
-            bgColor={'#A61FD6'}
-            text={'Pi-Community'}
-          />
-          <SkeletonCard
-            height={250}
-            width={300}
-            bgColor={'#A61FD6'}
-            text={'Undergraduate Development'}
-          />
+            color={'#A61FD6'}
+            component={Link}
+            size={'md'}
+            radius={'md'}
+            href={'/challenge'}
+          >
+            Spark Challenge
+          </Button>
+          <Button
+            h={250}
+            w={300}
+            color={'#A61FD6'}
+            component={Link}
+            size={'md'}
+            radius={'md'}
+            href={'/pi_community'}
+          >
+            Pi Community
+          </Button>
+          <Button
+            h={250}
+            w={300}
+            color={'#A61FD6'}
+            component={Link}
+            size={'md'}
+            radius={'md'}
+            href={'/undergraduate'}
+          >
+            Undergraduate Development
+          </Button>
         </Flex>
       </Flex>
     </CustomAppShell>
