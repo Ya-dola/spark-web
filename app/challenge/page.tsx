@@ -26,8 +26,8 @@ function ChallengePage() {
         </Text>
         <Flex
           w={'100%'}
-          direction={'row'}
-          align={'flex-start'}
+          direction={isMobile ? 'column' : 'row'}
+          align={isMobile ? 'center' : 'flex-start'}
           gap={'xl'}
         >
           <Text>
@@ -42,7 +42,7 @@ function ChallengePage() {
           </Text>
           <SkeletonCard
             height={300}
-            width={1600}
+            width={isMobile ? 300 : 1600}
             text={'Video Goes Here'}
             bgColor={'grape'}
           />
