@@ -1,22 +1,26 @@
 'use client';
 import NextImage from 'next/image';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
-import { Image, Center, Group, Flex, Text } from '@mantine/core';
+import { Image, Center, Flex, Text, Space } from '@mantine/core';
 import myImage from '@/public/images/spark_logo_transparent.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import { useMediaQuery } from '@mantine/hooks';
 
 function SparkHomePage() {
+  const isMobile = useMediaQuery('(max-width: 48em)', true, {
+    getInitialValueInEffect: false,
+  });
+
   return (
     <CustomAppShell>
       <Flex
         direction={'column'}
         justify={'center'}
         align={'center'}
-        gap={'sm'}
+        gap={'xl'}
       >
         <Image
-          h={200}
-          w={500}
+          w={isMobile ? '100%' : '36%'}
           fit={'contain'}
           component={NextImage}
           src={myImage}
@@ -26,16 +30,13 @@ function SparkHomePage() {
         <Text
           fz={'h3'}
           fs={'italic'}
-          c={'grape'}
+          c={'#A61FD6'}
         >
           Making the Impossible Possible
         </Text>
-        <Center
-          maw={600}
-          h={300}
-        >
+        <Center maw={isMobile ? '100%' : '40%'}>
           {/* TODO - Make Text Center Aligned */}
-          <Text>
+          <Text fz={'h4'}>
             SPARK will expose ENTC undergraduates to a set of challenges not
             made available in any other university in Asia, Europe, or the
             Americas. This unique project will not only provide a platform to
@@ -45,30 +46,33 @@ function SparkHomePage() {
             in the modern-day industry.”
           </Text>
         </Center>
-        <Group gap={'xl'}>
+        <Space h={isMobile ? 'sm' : 'xl'} />
+        <Flex
+          direction={isMobile ? 'column' : 'row'}
+          align={'center'}
+          justify={'center'}
+          gap={isMobile ? 'md' : 'xl'}
+        >
           <SkeletonCard
-            height={200}
+            height={250}
             width={300}
             // TODO - Add Brand Colors to Theme
             bgColor={'#A61FD6'}
-            textColor={'white'}
             text={'Spark Challenge'}
           />
           <SkeletonCard
-            height={200}
+            height={250}
             width={300}
             bgColor={'#A61FD6'}
-            textColor={'white'}
             text={'Pi-Community'}
           />
           <SkeletonCard
-            height={200}
+            height={250}
             width={300}
             bgColor={'#A61FD6'}
-            textColor={'white'}
             text={'Undergraduate Development'}
           />
-        </Group>
+        </Flex>
       </Flex>
     </CustomAppShell>
   );
