@@ -3,9 +3,8 @@
 import NextImage from 'next/image';
 import { Image, Center, Flex, Text, Space } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import myImage from '@/public/images/spark_logo_transparent.png';
-
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 
 function SparkHomePage() {
@@ -25,8 +24,9 @@ function SparkHomePage() {
           w={isMobile ? '100%' : '36%'}
           fit={'contain'}
           component={NextImage}
-          src={myImage}
-          alt={'My image'}
+          src={SparkLogoSrc}
+          alt={'Spark Logo'}
+          priority
         />
         {/* TODO - Match with exact Theme */}
         <Text
