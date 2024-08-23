@@ -1,11 +1,12 @@
 'use client';
 
 import NextImage from 'next/image';
-import { Image, Center, Flex, Text, Space, Button } from '@mantine/core';
+import { Image, Center, Flex, Text, Space } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import Link from 'next/link';
 import myImage from '@/public/images/spark_logo_transparent.png';
+
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import ButtonCard from '@/components/button_card/button_card';
 
 function SparkHomePage() {
   const isMobile = useMediaQuery('(max-width: 48em)', true, {
@@ -54,40 +55,44 @@ function SparkHomePage() {
           justify={'center'}
           gap={isMobile ? 'md' : 'xl'}
         >
-          <Button
-            h={250}
-            w={300}
-            // TODO - Add Brand Colors to Theme
-            color={'#A61FD6'}
-            component={Link}
-            size={'md'}
-            radius={'md'}
+          <ButtonCard
+            heading={'Spark Challenge'}
+            description={
+              'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
+            }
+            imageSrc={'/images/everest.png'}
+            width={300}
+            height={400}
+            bgColor={'purple'}
+            textColor={'white'}
             href={'/challenge'}
-          >
-            Spark Challenge
-          </Button>
-          <Button
-            h={250}
-            w={300}
-            color={'#A61FD6'}
-            component={Link}
-            size={'md'}
-            radius={'md'}
+          />
+
+          <ButtonCard
+            heading={'Pi-Community'}
+            description={
+              'To build a Community; by exploiting the extensive Raspberry Pi resources available at ENTC.'
+            }
+            imageSrc={'/images/image_pi1.png'}
+            width={300}
+            height={400}
+            bgColor={'purple'}
+            textColor={'white'}
             href={'/pi_community'}
-          >
-            Pi Community
-          </Button>
-          <Button
-            h={250}
-            w={300}
-            color={'#A61FD6'}
-            component={Link}
-            size={'md'}
-            radius={'md'}
+          />
+          <ButtonCard
+            heading={'UnderGraduate Development'}
+            description={
+              'In participating in the program undergraduates will develop ' +
+              'important "life skills" required in the modern-day workplace.'
+            }
+            imageSrc={'/images/image_1.png'}
+            width={300}
+            height={400}
+            bgColor={'purple'}
+            textColor={'white'}
             href={'/undergraduate'}
-          >
-            Undergraduate Development
-          </Button>
+          />
         </Flex>
       </Flex>
     </CustomAppShell>
