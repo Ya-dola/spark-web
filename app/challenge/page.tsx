@@ -1,8 +1,9 @@
 'use client';
 
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
-import { Flex, Paper, SegmentedControl, Space, Text } from '@mantine/core';
+import { Flex, Paper, Space, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 function ChallengePage() {
@@ -52,8 +53,8 @@ function ChallengePage() {
           h={'auto'}
           bg={'#343434'}
           radius={'lg'}
-          px={'md'}
-          py={'xl'}
+          px={isMobile ? 'sm' : 'md'}
+          py={isMobile ? 'md' : 'xl'}
         >
           <SkeletonCard
             text={'Main Challenge Features Go Here'}
@@ -67,17 +68,19 @@ function ChallengePage() {
             height={400}
           />
           <Space h={'lg'} />
-          <SegmentedControl
-            w={isMobile ? '100%' : 'auto'}
-            orientation={isMobile ? 'vertical' : 'horizontal'}
-            size={'md'}
-            radius={'md'}
-            color={'grape'}
-            bg={'#262626'}
-            data={[
-              'Celebration 2023/2024',
-              'Celebration 2024/2025',
+          <ScrollableSegmentedControl
+            segmentData={[
               'Celebration 2025/2026',
+              'Celebration 2024/2025',
+              'Celebration 2023/2024',
+              'Celebration 2022/2023',
+              'Celebration 2021/2022',
+              'Celebration 2020/2021',
+              'Celebration 2019/2020',
+              'Celebration 2018/2019',
+              'Celebration 2017/2018',
+              'Celebration 2016/2017',
+              'Celebration 2015/2016',
             ]}
           />
           <Space h={'lg'} />
@@ -87,14 +90,8 @@ function ChallengePage() {
             height={700}
           />
           <Space h={'lg'} />
-          <SegmentedControl
-            w={isMobile ? '100%' : 'auto'}
-            orientation={isMobile ? 'vertical' : 'horizontal'}
-            size={'md'}
-            radius={'md'}
-            color={'grape'}
-            bg={'#262626'}
-            data={[
+          <ScrollableSegmentedControl
+            segmentData={[
               '1st Runner Up',
               '2nd Runner Up',
               '3rd Runner Up',
