@@ -1,5 +1,5 @@
 import { Center, Paper } from '@mantine/core';
-import theme from './skeleton_card.module.css';
+// import theme from './skeleton_card.module.css';
 
 interface SkeletonCardProps {
   text: string; // The text to display inside the card
@@ -42,7 +42,7 @@ function SkeletonCard({
 }: SkeletonCardProps) {
   return (
     <Paper
-      className={`${theme.SkeletonCard}`}
+      // className={`${theme.skeletonCard}`}
       px={'md'}
       py={'sm'}
       h={height}
