@@ -5,6 +5,8 @@ import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { Button, Flex, Text } from '@mantine/core';
 import Link from 'next/link';
 
+import CustomImage from '@/components/custom_image/custom_image';
+
 function TestPage() {
   return (
     <CustomAppShell>
@@ -67,6 +69,12 @@ function TestPage() {
           bgColor={'orange'}
           textColor={'white'}
           text={'This is a test card'}
+        />
+        <CustomImage
+          width={300}
+          height={400}
+          radius='xl'
+          imageSrc={'/images/image_1.png'}
         />
       </Flex>
     </CustomAppShell>
