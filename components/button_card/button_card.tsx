@@ -1,4 +1,4 @@
-import { Image, Text, Card } from '@mantine/core';
+import { Image, Text, Card, MantineSize } from '@mantine/core';
 import Link from 'next/link';
 import NextImage from 'next/image';
 
@@ -12,8 +12,9 @@ interface ButtonCardProps {
   radius?: string;
   bgColor?: string;
   textColor?: string;
-  textSize?: string;
-  textWeight?: number;
+  headingSize?: MantineSize;
+  headingWeight?: number;
+  textSize?: MantineSize;
 }
 
 function ButtonCard({
@@ -26,8 +27,9 @@ function ButtonCard({
   radius = 'md',
   bgColor = 'purple',
   textColor = 'white',
-  textSize = 'md',
-  textWeight = 500,
+  headingSize = 'lg',
+  headingWeight = 700,
+  textSize = 'sm',
 }: ButtonCardProps) {
   const cardHeight = height ?? 200 * 2;
 
@@ -54,19 +56,26 @@ function ButtonCard({
 
       <Text
         c={textColor}
-        fw={textWeight}
-        size={textSize}
+        fw={headingWeight}
+        size={headingSize}
         mt={'md'}
       >
         {heading}
       </Text>
       <Text
         c={textColor}
-        fw={textWeight}
         size={textSize}
         mt={'md'}
       >
         {description}
+      </Text>
+
+      <Text
+        td={'underline'}
+        mt={'auto'}
+        ml={'auto'}
+      >
+        Learn More
       </Text>
     </Card>
   );
