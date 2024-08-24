@@ -2,13 +2,11 @@
 
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Flex, Paper, Text } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 
 function PiCommunityPage() {
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
+  const isMobile = useIsMobile();
 
   return (
     <CustomAppShell>

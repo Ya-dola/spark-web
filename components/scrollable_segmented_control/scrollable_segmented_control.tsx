@@ -1,10 +1,10 @@
+import { useIsMobile } from '@/utils/breakpoint_utils';
 import {
   MantineSize,
   ScrollArea,
   SegmentedControl,
   SegmentedControlItem,
 } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 
 interface ScrollableSegmentedControlProps {
   segmentData: (string | SegmentedControlItem)[];
@@ -31,9 +31,7 @@ function ScrollableSegmentedControl({
   segmentWidth,
   segmentSize,
 }: ScrollableSegmentedControlProps) {
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
+  const isMobile = useIsMobile();
 
   return (
     // TODO - Make Scrolling to Selection Smooth and Animated
