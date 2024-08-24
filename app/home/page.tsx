@@ -2,15 +2,13 @@
 
 import NextImage from 'next/image';
 import { Image, Center, Flex, Text, Space } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function SparkHomePage() {
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
+  const isMobile = useIsMobile();
 
   return (
     <CustomAppShell>

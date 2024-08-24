@@ -3,13 +3,11 @@
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Flex, Paper, Space, Text } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 
 function ChallengePage() {
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
+  const isMobile = useIsMobile();
 
   return (
     <CustomAppShell>

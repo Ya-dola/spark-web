@@ -12,14 +12,11 @@ import {
 } from '@mantine/core';
 import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
-import { useMediaQuery } from '@mantine/hooks';
-import CustomImage from '@/components/custom_image/custom_image';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function UndergraduatePage() {
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
-  const demoProps = {};
+  const isMobile = useIsMobile();
+
   return (
     <CustomAppShell>
       <Flex
@@ -88,10 +85,7 @@ function UndergraduatePage() {
           <Space h={'lg'} />
           {/*TODO check if we should leave it as list of Text*/}
 
-          <Container
-            size='md'
-            {...demoProps}
-          >
+          <Container size={'md'}>
             <Text>@ ENTC </Text>
             <Space h={'lg'} />
             <List

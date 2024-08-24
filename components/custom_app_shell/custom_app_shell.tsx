@@ -1,10 +1,11 @@
 import { ReactNode } from 'react';
 import { AppShell, Flex, Image, rem, UnstyledButton } from '@mantine/core';
-import { useHeadroom, useMediaQuery } from '@mantine/hooks';
+import { useHeadroom } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import CustomDrawer from '@/components/custom_drawer/custom_drawer';
 import logoTransparent from '@/public/images/spark_logo_transparent.png';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 interface CustomAppShellProps {
   children: ReactNode;
@@ -12,10 +13,7 @@ interface CustomAppShellProps {
 
 function CustomAppShell({ children }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
-  // TODO - Make it use breakpoint from theme
-  const isMobile = useMediaQuery('(max-width: 48em)', true, {
-    getInitialValueInEffect: false,
-  });
+  const isMobile = useIsMobile();
 
   return (
     <AppShell
