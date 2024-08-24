@@ -36,9 +36,12 @@ function SparkHomePage() {
         >
           Making the Impossible Possible
         </Text>
-        <Center maw={isMobile ? '100%' : '40%'}>
+        <Center maw={isMobile ? '100%' : '60%'}>
           {/* TODO - Make Text Center Aligned */}
-          <Text fz={'h4'}>
+          <Text
+            ta={'center'}
+            fz={'h4'}
+          >
             SPARK will expose ENTC undergraduates to a set of challenges not
             made available in any other university in Asia, Europe, or the
             Americas. This unique project will not only provide a platform to
@@ -83,8 +86,7 @@ function SparkHomePage() {
           <ButtonCard
             heading={'UnderGraduate Development'}
             description={
-              'In participating in the program undergraduates will develop ' +
-              'important "life skills" required in the modern-day workplace.'
+              'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
             }
             imageSrc={'/images/image_1.png'}
             width={300}
