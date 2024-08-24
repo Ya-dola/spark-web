@@ -40,7 +40,11 @@ function UndergraduatePage() {
           become valued members in an organisation. Being able to discuss these
           during recruitment is crucial in demonstrating how they can add real
           value to an organisation.
-          <Space h={'md'} />
+        </Text>
+        <Text
+          w={isMobile ? '100%' : '60%'}
+          mr={'auto'}
+        >
           &quot;Between now and 2027, 60% of workers will need retraining due to
           global transformation and macrotrends.&quot; That&apos;s one of many
           findings in the World Economic Forum&apos;s (WEF) 2023 Future of Jobs
@@ -65,14 +69,14 @@ function UndergraduatePage() {
             justify={'center'}
             gap={isMobile ? '0' : '6rem'}
           >
-            <List type='ordered'>
+            <List type={'ordered'}>
               <List.Item>1. Analytical thinking</List.Item>
               <List.Item>2. Creative thinking</List.Item>
               <List.Item>3. Resilience, flexibility and agility</List.Item>
               <List.Item>4. Motivation and self-awareness</List.Item>
               <List.Item>5. Curiosity and lifelong learning</List.Item>
             </List>
-            <List type='ordered'>
+            <List type={'ordered'}>
               <List.Item>6. Technological literacy</List.Item>
               <List.Item>7. Dependability and attention to detail</List.Item>
               <List.Item>8. Empathy and active listening</List.Item>
@@ -80,17 +84,13 @@ function UndergraduatePage() {
               <List.Item>10. Quality control</List.Item>
             </List>
           </Flex>
-          <Space h={'lg'} />
-          <Space h={'lg'} />
-          <Space h={'lg'} />
-          {/*TODO check if we should leave it as list of Text*/}
-
+          <Space h={60} />
           <Container size={'md'}>
             <Text>@ ENTC </Text>
             <Space h={'lg'} />
             <List
               withPadding
-              listStyleType='square'
+              listStyleType={'square'}
             >
               <List.Item>
                 The skills identified in the above WEF report will not be
@@ -107,7 +107,7 @@ function UndergraduatePage() {
                 <Space h={'lg'} />
                 <List
                   withPadding
-                  listStyleType='disc'
+                  listStyleType={'disc'}
                 >
                   <List.Item>
                     In developing solutions for the SPARK Challenge: Teams,
