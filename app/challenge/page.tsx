@@ -8,6 +8,7 @@ import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import {
   Box,
+  Center,
   Divider,
   Flex,
   List,
@@ -16,6 +17,7 @@ import {
   Space,
   Text,
 } from '@mantine/core';
+import ReactPlayer from 'react-player/lazy';
 
 function ChallengePage() {
   const isMobile = useIsMobile();
@@ -135,7 +137,16 @@ function ChallengePage() {
                 A series of lectures on United Nations – Sustainable Development
                 Goals (SDG&apos;s) will be available to all students
               </ListItem>
-              {/* TODO - UN Video here */}
+              <Space h={'lg'} />
+              <Center>
+                <ReactPlayer
+                  url={'https://youtu.be/vc8-7VncIbA'}
+                  loop={true}
+                  controls={true}
+                  light={true}
+                  width={isMobile ? 320 : 640}
+                />
+              </Center>
             </List>
           </Box>
           <Space h={'lg'} />
