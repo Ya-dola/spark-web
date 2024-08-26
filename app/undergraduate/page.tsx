@@ -9,6 +9,7 @@ import {
   Flex,
   Text,
   Space,
+  Box,
 } from '@mantine/core';
 import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
@@ -24,6 +25,7 @@ function UndergraduatePage() {
         justify={'flex-start'}
         align={'center'}
         gap={'md'}
+        px={'md'}
       >
         <Text
           w={'100%'}
@@ -56,7 +58,7 @@ function UndergraduatePage() {
           h={'auto'}
           bg={'#343434'}
           radius={'lg'}
-          px={'md'}
+          px={isMobile ? 'md' : 'xl'}
           py={'xl'}
         >
           <Text>
@@ -85,13 +87,11 @@ function UndergraduatePage() {
             </List>
           </Flex>
           <Space h={60} />
-          <Container size={'md'}>
-            <Text>@ ENTC </Text>
-            <Space h={'lg'} />
-            <List
-              withPadding
-              listStyleType={'square'}
-            >
+
+          <Text>@ ENTC </Text>
+          <Space h={'lg'} />
+          <Box w={isMobile ? '85%' : '90%'}>
+            <List listStyleType={'square'}>
               <List.Item>
                 The skills identified in the above WEF report will not be
                 actively developed by the SPARK programme, but it is expected
@@ -105,10 +105,7 @@ function UndergraduatePage() {
                 <Space h={'lg'} />
                 <Text>The students will manage: </Text>
                 <Space h={'lg'} />
-                <List
-                  withPadding
-                  listStyleType={'disc'}
-                >
+                <List listStyleType={'disc'}>
                   <List.Item>
                     In developing solutions for the SPARK Challenge: Teams,
                     resources, ideas and timescales.
@@ -126,7 +123,7 @@ function UndergraduatePage() {
                 </List>
               </List.Item>
             </List>
-          </Container>
+          </Box>
 
           <Space h={'xl'} />
           <Image
