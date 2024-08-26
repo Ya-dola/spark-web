@@ -19,6 +19,32 @@ function RootLayout({
   return (
     <html lang='en'>
       <head>
+        <link
+          rel='icon'
+          href='/favicon.ico'
+          sizes='any'
+        />
+        <link
+          rel='icon'
+          href='/favicons/favicon-16x16.png'
+          sizes='16x16'
+          type='image/png'
+        />
+        <link
+          rel='icon'
+          href='/favicons/favicon-32x32.png'
+          sizes='32x32'
+          type='image/png'
+        />
+        <link
+          rel='apple-touch-icon'
+          href='/favicons/apple-touch-icon.png'
+          sizes='180x180'
+        />
+        <link
+          rel='manifest'
+          href='/site.webmanifest'
+        />
         <ColorSchemeScript defaultColorScheme='dark' />
       </head>
       <body className={inter.className}>
