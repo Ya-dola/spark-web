@@ -21,8 +21,8 @@ function SparkHomePage() {
   return (
     <CustomAppShell>
       <BackgroundImage
-        h={400}
-        src={'/images/everest.png'}
+        h={900}
+        src={'/images/bg_1.png'}
       >
         <Flex
           direction={'column'}
@@ -75,8 +75,10 @@ function SparkHomePage() {
               }
               imageSrc={'/images/everest.png'}
               width={300}
-              height={400}
-              bgColor={'purple'}
+              height={450}
+              bgColor={
+                'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
+              }
               textColor={'white'}
               href={'/challenge'}
             />
@@ -86,10 +88,12 @@ function SparkHomePage() {
               description={
                 'To build a Community; by exploiting the extensive Raspberry Pi resources available at ENTC.'
               }
-              imageSrc={'/images/image_pi1.png'}
+              imageSrc={'/images/image_pi.png'}
               width={300}
-              height={400}
-              bgColor={'purple'}
+              height={450}
+              bgColor={
+                'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
+              }
               textColor={'white'}
               href={'/pi_community'}
             />
@@ -100,18 +104,16 @@ function SparkHomePage() {
               }
               imageSrc={'/images/image_1.png'}
               width={300}
-              height={400}
-              bgColor={'purple'}
+              height={450}
+              bgColor={
+                'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
+              }
               textColor={'white'}
               href={'/undergraduate'}
             />
           </Flex>
         </Flex>
       </BackgroundImage>
-      <BackgroundImage
-        h={800}
-        src={'/images/image_1.png'}
-      ></BackgroundImage>
     </CustomAppShell>
   );
 }
