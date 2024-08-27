@@ -1,5 +1,12 @@
 import { ReactNode } from 'react';
-import { AppShell, Flex, Image, rem, UnstyledButton } from '@mantine/core';
+import {
+  AppShell,
+  BackgroundImage,
+  Flex,
+  Image,
+  rem,
+  UnstyledButton,
+} from '@mantine/core';
 import { useHeadroom } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
@@ -9,9 +16,15 @@ import { useIsMobile } from '@/utils/breakpoint_utils';
 
 interface CustomAppShellProps {
   children: ReactNode;
+  imageSrc?: string[];
+  height?: number;
 }
 
-function CustomAppShell({ children }: CustomAppShellProps) {
+function CustomAppShell({
+  imageSrc = [],
+  height = 900,
+  children,
+}: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
   const isMobile = useIsMobile();
 
@@ -49,9 +62,29 @@ function CustomAppShell({ children }: CustomAppShellProps) {
           <CustomDrawer />
         </Flex>
       </AppShell.Header>
-
-      <AppShell.Main pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}>
-        {children}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: height * imageSrc.length,
+        }}
+      >
+        {imageSrc.map((src, index) => (
+          <BackgroundImage
+            key={index} // Use index as key, better to use unique ids if available
+            src={src}
+            h={height} // Set the height for each BackgroundImage
+            style={{ marginBottom: '0px' }} // Space between images (adjust as needed)
+          />
+        ))}
+      </div>
+      <AppShell.Main
+        style={{ position: 'relative', zIndex: 1 }}
+        pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
+      >
+        Index == 0? {children} : {}
       </AppShell.Main>
     </AppShell>
   );
