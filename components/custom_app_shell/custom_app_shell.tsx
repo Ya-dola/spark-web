@@ -76,7 +76,6 @@ function CustomAppShell({
             key={index} // Use index as key, better to use unique ids if available
             src={src}
             h={height} // Set the height for each BackgroundImage
-            style={{ marginBottom: '0px' }} // Space between images (adjust as needed)
           />
         ))}
       </div>
@@ -84,7 +83,7 @@ function CustomAppShell({
         style={{ position: 'relative', zIndex: 1 }}
         pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
       >
-        Index == 0? {children} : {}
+        {children}
       </AppShell.Main>
     </AppShell>
   );
