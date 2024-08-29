@@ -2,6 +2,7 @@
 
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import TabSection from '@/components/tab_section/tab_section';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Flex, Paper, Text } from '@mantine/core';
 
@@ -29,13 +30,13 @@ function PiCommunityPage() {
           gap={'xl'}
         >
           <Text>
-            SPARK will encourage, facilitate and nurture innovation in the use
-            of Raspberry Pi in the distribution of hardware within the
-            department year on year. ENTC intend to build expertise over several
+            In making Raspberry Pis available within the department year on
+            year; SPARK will encourage, facilitate and nurture innovation in the
+            use of this technology. ENTC intend to build expertise over several
             years to fully support a vibrant and active Pi community and
-            therefore become a contributor to the development of product and
-            services associated with the Raspberry Pi. Over time ENTC will seek
-            to become a recognised centre of excellence of this subject.
+            therefore become a contributor to the develop-ment of product and
+            services associated with the Raspberry Pi; in time a being
+            recognised centre of excellence of in the use of this device.
           </Text>
           <SkeletonCard
             height={300}
@@ -44,58 +45,63 @@ function PiCommunityPage() {
             bgColor={'grape'}
           />
         </Flex>
-        <Paper
+        <Flex
           w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          p={'sm'}
+          direction={'column'}
+          justify={'center'}
+          align={'center'}
+          gap={'xl'}
         >
-          <SkeletonCard
-            text={'PI - MORA Goes Here'}
-            bgColor={'grape'}
-            height={600}
+          <TabSection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={'lg'}
+            heading={'PI-MORA'}
+            text="Raspberry JAM's are independently organised community events for
+            people to come together to learn about digital making with Raspberry
+            Pi. ENTC will undertake 3 Raspberry JAMs (Pi-MORA's) every
+            academic year. Undertaking to teach Pi enthusiasts about the
+            capabilities of the Raspberry Pi platform."
+            description='TABS AND IMAGES HERE'
           />
-        </Paper>
-        <Paper
-          w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          p={'sm'}
-        >
-          <SkeletonCard
-            text={'Technology Demonstators Goes Here'}
-            bgColor={'grape'}
-            height={600}
+          <TabSection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={'lg'}
+            heading={'Technology Demonstrators'}
+            text='To demonstrate and showcase the student and Pi capabilities; a
+          number of complex and challenging projects will be implemented
+          throughout the year.'
+            description='TABS AND IMAGES HERE'
           />
-        </Paper>
-        <Paper
-          w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          p={'sm'}
-        >
-          <SkeletonCard
-            text={'Final Year Projects Go Here'}
-            bgColor={'grape'}
-            height={600}
+
+          <TabSection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={'lg'}
+            heading={'Final Year Projects'}
+            text='As part of the curriculum, final year Pi based project will
+            demonstrate the fantastic engineering capabilities of the students.'
+            description='TABS AND IMAGES HERE'
           />
-        </Paper>
-        <Paper
-          w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          p={'sm'}
-        >
-          <SkeletonCard
-            text={'PI Community Facebook Page Goes Here'}
-            bgColor={'grape'}
-            height={200}
+
+          <TabSection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={'lg'}
+            heading={'PI Community Facebook Page'}
+            text='Pi Community Facebook page inform all followers about all Raspberry
+            Pi related activities at ENTC as well as news about the Raspberry Pi
+            organisation.'
+            description='Pi Community Facebook Page
+The Facebook group can be found at :'
+            subtext={'https://www.facebook.com/groups/raspberrypicommunitylk'}
           />
-        </Paper>
+        </Flex>
       </Flex>
     </CustomAppShell>
   );

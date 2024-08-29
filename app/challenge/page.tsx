@@ -4,7 +4,7 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import { Flex, Paper, Space, Text } from '@mantine/core';
+import { Box, Flex, List, ListItem, Paper, Space, Text } from '@mantine/core';
 
 function ChallengePage() {
   const isMobile = useIsMobile();
@@ -51,20 +51,79 @@ function ChallengePage() {
           h={'auto'}
           bg={'#343434'}
           radius={'lg'}
-          px={isMobile ? 'sm' : 'md'}
+          px={isMobile ? 'sm' : 'xl'}
           py={isMobile ? 'md' : 'xl'}
         >
-          <SkeletonCard
-            text={'Main Challenge Features Go Here'}
-            bgColor={'grape'}
-            height={300}
-          />
-          <Space h={'lg'} />
-          <SkeletonCard
-            text={'Supportive Activities Go Here'}
-            bgColor={'grape'}
-            height={400}
-          />
+          <Box
+            py={'lg'}
+            ml={'md'}
+            w={isMobile ? '85%' : '90%'}
+          >
+            <Text
+              size={'lg'}
+              fw={700}
+            >
+              Main features of the SPARK challenge:
+            </Text>
+            <Space h={'lg'} />
+            <List
+              listStyleType={'disc'}
+              withPadding
+            >
+              <ListItem>
+                The challenge is expected to run in each academic year with
+                teams&apos; under-graduates working together to deliver
+                solutions.
+              </ListItem>
+              <ListItem>
+                External industrial and commercial specialists will evaluate the
+                proposals in a “Shark Tank/Dragons Den” environment.
+              </ListItem>
+              <ListItem>
+                The most innovative and progressive solutions will be
+                recognised, cele-brated and applauded as the culmination of the
+                SPARK Challenge.
+              </ListItem>
+            </List>
+          </Box>
+
+          <Space h={'xl'} />
+          <Box
+            py={'lg'}
+            ml={'md'}
+            w={isMobile ? '85%' : '90%'}
+          >
+            <Text
+              size={'lg'}
+              fw={700}
+            >
+              Several supporting activities will be undertaken for a successful
+              outcome for the Challenge:
+            </Text>
+            <Space h={'lg'} />
+            <List
+              listStyleType={'disc'}
+              withPadding
+            >
+              <ListItem>
+                A team of undergraduates from ENTC will manage the delivery of
+                the SPARK programme.
+              </ListItem>
+              <ListItem>
+                A marketing campaign will be undertaken to raise awareness and
+                seeking long-term form within ENTC.
+              </ListItem>
+              <ListItem>
+                Workshops on the subject of “Design Led Innovation” will be
+                delivered in support of students developing Challenge solution.
+              </ListItem>
+              <ListItem>
+                A series of lectures on United Nations – Sustainable Development
+                Goals (SDG&apos;s) will be available to all students
+              </ListItem>
+              {/* TODO - UN Video here */}
+            </List>
+          </Box>
           <Space h={'lg'} />
           <ScrollableSegmentedControl
             segmentData={[
