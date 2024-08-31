@@ -6,6 +6,7 @@ import CustomImage from '@/components/custom_image/custom_image';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import TabSection from '@/components/tab_section/tab_section';
+import { PiMoraModel } from '@/models/pi_mora/pi_mora_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Box, Center, Flex, Paper, Text } from '@mantine/core';
 import classes from '@/styles/carousel.module.css';
@@ -264,11 +265,15 @@ function PiCommunityPage() {
             textColor={'black'}
             radius={'lg'}
             heading={'PI Community Facebook Page'}
-            text='Pi Community Facebook page inform all followers about all Raspberry
-            Pi related activities at ENTC as well as news about the Raspberry Pi
-            organisation.'
-            description='Pi Community Facebook Page
-The Facebook group can be found at :'
+            text={
+              'Pi Community Facebook page inform all followers about all ' +
+              'Raspberry Pi related activities at ENTC as well as news ' +
+              'about the Raspberry Pi organisation.'
+            }
+            description={
+              'Pi Community Facebook Page ' +
+              'The Facebook group can be found at :'
+            }
             subtext={'https://www.facebook.com/groups/raspberrypicommunitylk'}
           />
         </Flex>

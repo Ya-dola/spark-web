@@ -110,6 +110,8 @@ function TabSection({
           </Box>
         </Paper>
       </Center>
+      <Space h={children == null ? 0 : 'lg'} />
+      {children}
     </Paper>
   );
 }
