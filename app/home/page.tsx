@@ -1,7 +1,15 @@
 'use client';
 
 import NextImage from 'next/image';
-import { Image, Center, Flex, Text, Space } from '@mantine/core';
+import {
+  Image,
+  Center,
+  Flex,
+  Text,
+  Space,
+  Box,
+  BackgroundImage,
+} from '@mantine/core';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
@@ -11,7 +19,10 @@ function SparkHomePage() {
   const isMobile = useIsMobile();
 
   return (
-    <CustomAppShell>
+    <CustomAppShell
+      height={900}
+      imageSrc={['/images/bg_1.png']}
+    >
       <Flex
         direction={'column'}
         justify={'center'}

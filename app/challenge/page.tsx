@@ -10,7 +10,10 @@ function ChallengePage() {
   const isMobile = useIsMobile();
 
   return (
-    <CustomAppShell>
+    <CustomAppShell
+      height={900}
+      imageSrc={['/images/bg_1.png', '/images/everest.png', '/images/bg_1.png']}
+    >
       <Flex
         direction={'column'}
         justify={'flex-start'}
