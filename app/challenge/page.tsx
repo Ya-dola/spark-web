@@ -1,5 +1,6 @@
 'use client';
 
+import ChallengeTabs from '@/components/challenge_tabs/challenge_tabs';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
@@ -144,11 +145,21 @@ function ChallengePage() {
             ]}
           />
           <Space h={'lg'} />
-          <SkeletonCard
-            text={'Winner Goes Here'}
-            bgColor={'grape'}
-            height={700}
+          <ChallengeTabs
+            text='The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step "outside the box" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human 
+              excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.
+'
+            heading={'TEAM NAME'}
+            description={
+              'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
+            }
+            icon={'/images/icon_cup.png'}
+            images={['/images/image_1.png', '/images/image_1.png']}
+            names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
           />
+
+          <Space h={'lg'} />
+
           <Space h={'lg'} />
           <ScrollableSegmentedControl
             segmentData={[
@@ -160,10 +171,14 @@ function ChallengePage() {
             ]}
           />
           <Space h={'lg'} />
-          <SkeletonCard
-            text={'Runner Ups Go Here'}
-            bgColor={'grape'}
-            height={700}
+          <ChallengeTabs
+            heading={'TEAM NAME'}
+            description={
+              'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
+            }
+            icon={'/images/icon_cup.png'}
+            images={['/images/image_1.png']}
+            names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
           />
         </Paper>
       </Flex>
