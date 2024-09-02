@@ -1,38 +1,35 @@
 import {
   Box,
   Center,
-  Container,
   Paper,
   Text,
   MantineSize,
-  Space,
   Divider,
   Avatar,
   Flex,
   Group,
+  Space,
 } from '@mantine/core';
+import React, { useState } from 'react';
 import CustomImage from '../custom_image/custom_image';
-import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 // import theme from './skeleton_card.module.css';
 
 interface ChallengeTabsProps {
-  text?: string; // The text to display inside the card
+  text?: string;
   textColor?: string; // Text color, defaults to 'white'
-  radius?: string; // Border radius, defaults to 'md'
-  width?: string | number; // Width of the card in pixels
-  height?: string | number; // Height of the card in pixels
   textSize?: string; // Font size of the text, defaults to 'md'
   textWeight?: number; // Font weight of the text, defaults to 500
-  bgColor?: string; // Background color of the card, defaults to 'purple'
-  cardColor?: string;
+
   icon?: string;
   heading?: string;
   headingSize?: MantineSize;
   headingWeight?: number;
   description?: string;
   images?: string[];
-  image2?: string;
   names?: string[];
+  showIcon?: boolean;
+  children?: React.ReactNode;
 }
 
 /**
@@ -54,13 +51,9 @@ interface ChallengeTabsProps {
  * <ChallengeTabs text="Loading..."/>
  */
 function ChallengeTabs({
-  text,
-  width,
-  height,
-  bgColor = '#545454',
-  cardColor = '#343434',
+  text = '',
+
   textColor = 'white',
-  radius = 'md',
   textSize = 'md',
   textWeight = 300,
   heading = 'TEAM NAME',
@@ -69,127 +62,105 @@ function ChallengeTabs({
   description = '',
   icon = '',
   images = [],
-  image2 = '',
   names = [],
+  showIcon = false,
+  children,
 }: ChallengeTabsProps) {
+  const isMobile = useIsMobile();
   return (
-    <Paper
-      // className={`${theme.ChallengeTabs}`}
-      px={'xl'}
-      py={'xl'}
-      h={height}
-      w={width}
-      radius={radius}
-      bg={bgColor}
-    >
-      <Center>
-        <Box w={'80%'}>
+    <>
+      {children}
+      <Flex
+        direction={'row'}
+        justify={'flex-start'}
+        align={'center'}
+        gap={'md'}
+        p={'md'}
+      >
+        {showIcon && (
+          <Avatar
+            variant='filled'
+            radius='xs'
+            color='grape'
+            src={icon}
+          />
+        )}
+        <Flex
+          direction={'column'}
+          justify={'flex-start'}
+          align={'flex-start'}
+        >
+          <Text
+            c={'yellow'}
+            fw={headingWeight}
+            fz={headingSize}
+          >
+            {text}
+          </Text>
+          <Text
+            c={textColor}
+            fw={headingWeight}
+            fz={headingSize}
+          >
+            {heading}
+          </Text>
+        </Flex>
+      </Flex>
+      <Flex>
+        <Divider my='lg' />
+
+        <Box
+          p={'lg'}
+          maw={'100%'}
+        >
           <Text
             c={textColor}
             fz={textSize}
             fw={textWeight}
           >
-            {text}
+            {description}
           </Text>
-        </Box>
-      </Center>
-      <Space h={'lg'} />
-      <Center>
-        <Paper
-          h={'100%'}
-          w={'100%'}
-          bg={cardColor}
-          p={'lg'}
-        >
+
           <Flex
-            direction={'row'}
-            justify={'flex-start'}
+            direction={isMobile ? 'column' : 'row'}
+            justify={'center'}
             align={'center'}
             gap={'md'}
             p={'md'}
           >
-            <Avatar
-              variant='filled'
-              radius='xs'
-              color='grape'
-              src={icon}
-            />
-            <Flex
-              direction={'column'}
-              justify={'flex-start'}
-              align={'flex-start'}
-            >
-              <Text
-                c={'yellow'}
-                fw={headingWeight}
-                fz={headingSize}
-              >
-                WINNER
-              </Text>
-              <Text
-                c={textColor}
-                fw={headingWeight}
-                fz={headingSize}
-              >
-                {heading}
-              </Text>
-            </Flex>
+            {images.map((image, index) => (
+              <CustomImage
+                key={index} // Use index as key, better to use unique ids if available
+                imageSrc={image}
+                height={300}
+                width={300} // Set the height for each BackgroundImage
+              />
+            ))}
           </Flex>
-
-          <Divider my='lg' />
-
-          <Box
-            p={'lg'}
-            maw={'100%'}
+          <Space h={'lg'} />
+          <Text
+            c={textColor}
+            fw={headingWeight}
+            fz={'sm'}
           >
-            <Text
-              c={textColor}
-              fz={textSize}
-              fw={textWeight}
-            >
-              {description}
-            </Text>
-
-            <Flex
-              direction={'row'}
-              justify={'center'}
-              align={'center'}
-              gap={'md'}
-              p={'md'}
-            >
-              {images.map((image, index) => (
-                <CustomImage
-                  key={index} // Use index as key, better to use unique ids if available
-                  imageSrc={image}
-                  height={300}
-                  width={300} // Set the height for each BackgroundImage
-                />
-              ))}
-            </Flex>
-
-            <Divider my='lg' />
-
-            <Text
-              c={textColor}
-              fw={headingWeight}
-              fz={'md'}
-            >
-              TEAM MEMBERS
-            </Text>
-            <Group>
-              {names.map((name, index) => (
-                <>
-                  <Text key={index}>{name}</Text>
-                  {index < names.length - 1 && (
-                    <Divider orientation='vertical' />
-                  )}
-                </>
-              ))}
-            </Group>
-          </Box>
-        </Paper>
-      </Center>
-    </Paper>
+            TEAM MEMBERS
+          </Text>
+          <Group>
+            {names.map((name, index) => (
+              <>
+                <Text
+                  fz={'sm'}
+                  key={index}
+                >
+                  {name}
+                </Text>
+                {index < names.length - 1 && <Divider orientation='vertical' />}
+              </>
+            ))}
+          </Group>
+        </Box>
+      </Flex>
+    </>
   );
 }
 
