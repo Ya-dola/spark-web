@@ -6,7 +6,6 @@ export interface PiMoraModel {
 
 interface PiMoraYears {
   year: number;
-  title: string;
   description: string;
   images: string[];
 }

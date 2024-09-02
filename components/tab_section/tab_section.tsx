@@ -1,3 +1,4 @@
+import { PiMoraModel } from '@/models/pi_mora/pi_mora_model';
 import {
   Box,
   Center,
@@ -7,45 +8,28 @@ import {
   Space,
   Title,
 } from '@mantine/core';
-import { ReactNode } from 'react';
+import ScrollableSegmentedControl from '../scrollable_segmented_control/scrollable_segmented_control';
+import { useState } from 'react';
 // import theme from './skeleton_card.module.css';
 
 interface TabSectionProps {
-  text: string; // The text to display inside the card
-  bgColor?: string; // Background color of the card, defaults to 'purple'
-  textColor?: string; // Text color, defaults to 'white'
+  text: string;
+  bgColor?: string;
+  textColor?: string;
   headingColor?: string;
-  radius?: string; // Border radius, defaults to 'md'
-  width?: string | number; // Width of the card in pixels
-  height?: string | number; // Height of the card in pixels
-  textSize?: string; // Font size of the text, defaults to 'md'
-  textWeight?: number; // Font weight of the text, defaults to 500
+  radius?: string;
+  width?: string | number;
+  height?: string | number;
+  textSize?: string;
+  textWeight?: number;
   heading?: string;
   headingSize?: MantineSize;
   headingWeight?: number;
   description?: string;
   subtext?: string;
-  children?: ReactNode;
+  data?: PiMoraModel;
 }
 
-/**
- * TabSection Component
- *
- * This component renders a card with customizable background color, text color, size, and other styles.
- * It uses Mantine's Paper component for the card and Center for centering the text.
- *
- * @param {string} text - The text to display inside the card.
- * @param {string} [bgColor='purple'] - Background color of the card.
- * @param {string} [textColor='white'] - Color of the text inside the card.
- * @param {string} [radius='md'] - Border radius of the card.
- * @param {number} [width] - Width of the card in pixels.
- * @param {number} [height] - Height of the card in pixels.
- * @param {string} [textSize='md'] - Font size of the text.
- * @param {number} [textWeight=500] - Font weight of the text.
- *
- * @example
- * <TabSection text="Loading..."/>
- */
 function TabSection({
   text,
   width = '100%',
@@ -59,13 +43,16 @@ function TabSection({
   heading = '',
   headingSize = 'xl',
   headingWeight = 900,
-  description = '',
+  description,
   subtext = '',
-  children,
+  data,
 }: TabSectionProps) {
+  const [selectedTab, setSelectedTab] = useState(
+    data?.years[0].year.toString(),
+  );
+
   return (
     <Paper
-      // className={`${theme.TabSection}`}
       px={'xl'}
       py={'xl'}
       h={'auto'}
@@ -89,29 +76,66 @@ function TabSection({
       >
         {text}
       </Text>
-      <Space h={'lg'} />
-      <Center>
-        <Paper
-          h={'100%'}
-          w={'100%'}
-          bg={bgColor}
-          p={'sm'}
-          radius={'md'}
-        >
-          {children}
-
-          <Box maw={'100%'}>
-            <Title
-              order={5}
-              textWrap='wrap'
+      <Space h={description != null ? 'lg' : 0} />
+      {description != null && (
+        <Center>
+          <Paper
+            h={'100%'}
+            w={'100%'}
+            bg={bgColor}
+            p={'sm'}
+            radius={'md'}
+          >
+            <Text
+              c={textColor}
+              fz={textSize}
+              fw={textWeight}
             >
-              {subtext}
-            </Title>
-          </Box>
-        </Paper>
-      </Center>
-      <Space h={children == null ? 0 : 'lg'} />
-      {children}
+              {description}
+            </Text>
+            <Box maw={'100%'}>
+              <Title
+                order={5}
+                textWrap='wrap'
+              >
+                {subtext}
+              </Title>
+            </Box>
+          </Paper>
+        </Center>
+      )}
+      <Space h={data != null ? 'lg' : 0} />
+      {data != null && (
+        <>
+          <ScrollableSegmentedControl
+            segmentData={data.years.map((piMoraYear) =>
+              piMoraYear.year.toString(),
+            )}
+            onChange={(value) => setSelectedTab(value)}
+          />
+          <Center>
+            <Paper
+              h={'100%'}
+              w={'100%'}
+              bg={'#545454'}
+              p={'sm'}
+            >
+              <Text
+                c={textColor}
+                fz={textSize}
+                fw={textWeight}
+              >
+                {/* TODO - Optimize and Fix to use indexes instead of String values */}
+                {
+                  data.years.find(
+                    (piMoraYear) => piMoraYear.year.toString() === selectedTab,
+                  )?.description
+                }
+              </Text>
+            </Paper>
+          </Center>
+        </>
+      )}
     </Paper>
   );
 }
