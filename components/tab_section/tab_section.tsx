@@ -1,13 +1,13 @@
 import {
   Box,
   Center,
-  Container,
   Paper,
   Text,
   MantineSize,
   Space,
   Title,
 } from '@mantine/core';
+import { ReactNode } from 'react';
 // import theme from './skeleton_card.module.css';
 
 interface TabSectionProps {
@@ -24,6 +24,7 @@ interface TabSectionProps {
   headingWeight?: number;
   description?: string;
   subtext?: string;
+  children?: ReactNode;
 }
 
 /**
@@ -58,6 +59,7 @@ function TabSection({
   headingWeight = 700,
   description = '',
   subtext = '',
+  children,
 }: TabSectionProps) {
   return (
     <Paper
@@ -93,13 +95,8 @@ function TabSection({
           bg={'#545454'}
           p={'sm'}
         >
-          <Text
-            c={textColor}
-            fz={textSize}
-            fw={textWeight}
-          >
-            {description}
-          </Text>
+          {children}
+
           <Box maw={'100%'}>
             <Title
               order={5}
