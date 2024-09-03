@@ -1,10 +1,21 @@
 'use client';
 
+import ChallengeSection from '@/components/challenge_section/challenge_section';
+import ChallengeTabs from '@/components/challenge_tabs/challenge_tabs';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import { Box, Flex, List, ListItem, Paper, Space, Text } from '@mantine/core';
+import {
+  Box,
+  Divider,
+  Flex,
+  List,
+  ListItem,
+  Paper,
+  Space,
+  Text,
+} from '@mantine/core';
 
 function ChallengePage() {
   const isMobile = useIsMobile();
@@ -54,7 +65,7 @@ function ChallengePage() {
           h={'auto'}
           bg={'#343434'}
           radius={'lg'}
-          px={isMobile ? 'sm' : 'xl'}
+          px={isMobile ? '' : 'xl'}
           py={isMobile ? 'md' : 'xl'}
         >
           <Box
@@ -144,27 +155,47 @@ function ChallengePage() {
             ]}
           />
           <Space h={'lg'} />
-          <SkeletonCard
-            text={'Winner Goes Here'}
-            bgColor={'grape'}
-            height={700}
-          />
+          <ChallengeSection
+            text='The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step "outside the box" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human 
+              excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.
+'
+            textWeight={500}
+          >
+            <ChallengeTabs
+              text={'WINNER'}
+              heading={'WINNING TEAM NAME'}
+              description={
+                'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
+              }
+              icon={'/images/icon_cup.png'}
+              images={['/images/image_1.png', '/images/image_1.png']}
+              names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
+              showIcon={true}
+            />
+            <Space h={'lg'} />
+            <Divider my='xl' />
+            <ChallengeTabs
+              heading={'TEAM NAME'}
+              description={
+                'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
+              }
+              images={['/images/image_1.png']}
+              names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
+              showIcon={false}
+            >
+              <ScrollableSegmentedControl
+                segmentData={[
+                  '1st Runner Up',
+                  '2nd Runner Up',
+                  '3rd Runner Up',
+                  '4th Runner Up',
+                  '5th Runner Up',
+                ]}
+              />
+            </ChallengeTabs>
+          </ChallengeSection>
+
           <Space h={'lg'} />
-          <ScrollableSegmentedControl
-            segmentData={[
-              '1st Runner Up',
-              '2nd Runner Up',
-              '3rd Runner Up',
-              '4th Runner Up',
-              '5th Runner Up',
-            ]}
-          />
-          <Space h={'lg'} />
-          <SkeletonCard
-            text={'Runner Ups Go Here'}
-            bgColor={'grape'}
-            height={700}
-          />
         </Paper>
       </Flex>
     </CustomAppShell>
