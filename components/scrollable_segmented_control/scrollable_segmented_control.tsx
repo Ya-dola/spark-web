@@ -18,6 +18,7 @@ interface ScrollableSegmentedControlProps {
   segmentFgColor?: string;
   segmentBgColor?: string;
   onChange?: (value: string) => void;
+  value?: string;
 }
 
 function ScrollableSegmentedControl({
@@ -32,6 +33,7 @@ function ScrollableSegmentedControl({
   segmentWidth,
   segmentSize,
   onChange,
+  value,
 }: ScrollableSegmentedControlProps) {
   const isMobile = useIsMobile();
 
@@ -51,6 +53,7 @@ function ScrollableSegmentedControl({
         bg={segmentBgColor}
         data={segmentData}
         onChange={onChange}
+        value={value}
       />
     </ScrollArea>
   );
