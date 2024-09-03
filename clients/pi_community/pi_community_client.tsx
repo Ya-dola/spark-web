@@ -2,16 +2,16 @@
 
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
-import TabSection from '@/components/tab_section/tab_section';
-import { PiMoraModel } from '@/models/pi_mora/pi_mora_model';
+import CommunitySection from '@/components/community_section/community_section';
+import { CommunitySectionModel } from '@/models/community/community_section_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Flex, Text } from '@mantine/core';
 
-interface PiCommunityPageProps {
-  piMoraData: PiMoraModel;
+interface PiCommunityClientProps {
+  piMoraData: CommunitySectionModel;
 }
 
-function PiCommunityClientPage({ piMoraData }: PiCommunityPageProps) {
+function PiCommunityClient({ piMoraData }: PiCommunityClientProps) {
   const isMobile = useIsMobile();
 
   return (
@@ -57,24 +57,16 @@ function PiCommunityClientPage({ piMoraData }: PiCommunityPageProps) {
           align={'center'}
           gap={'xl'}
         >
-          <TabSection
+          <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
             bgColor={'#343434'}
             radius={'lg'}
-            heading={'PI-MORA'}
-            text={
-              "Raspberry JAM's are independently organised community " +
-              'events for people to come together to learn about ' +
-              'digital making with Raspberry Pi. ' +
-              'ENTC will undertake 3 Raspberry ' +
-              "JAMs (Pi-MORA's) every academic year. Undertaking to " +
-              'teach Pi enthusiasts about the capabilities of the ' +
-              'Raspberry Pi platform.'
-            }
-            data={piMoraData}
+            heading={piMoraData.title}
+            text={piMoraData.description}
+            tabs={piMoraData.tabs}
           />
-          <TabSection
+          <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
             bgColor={'#343434'}
@@ -88,7 +80,7 @@ function PiCommunityClientPage({ piMoraData }: PiCommunityPageProps) {
             description={'TABS AND IMAGES HERE'}
           />
 
-          <TabSection
+          <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
             bgColor={'#343434'}
@@ -102,7 +94,7 @@ function PiCommunityClientPage({ piMoraData }: PiCommunityPageProps) {
             description={'TABS AND IMAGES HERE'}
           />
 
-          <TabSection
+          <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
             bgColor={'#343434'}
@@ -125,4 +117,4 @@ function PiCommunityClientPage({ piMoraData }: PiCommunityPageProps) {
   );
 }
 
-export default PiCommunityClientPage;
+export default PiCommunityClient;
