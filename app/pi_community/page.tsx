@@ -8,6 +8,7 @@ import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import TabSection from '@/components/tab_section/tab_section';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Box, Center, Flex, Paper, Text } from '@mantine/core';
+import classes from '@/styles/carousel.module.css';
 
 function PiCommunityPage() {
   const isMobile = useIsMobile();
@@ -66,9 +67,7 @@ function PiCommunityPage() {
           gap={'xl'}
         >
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={'#343434'}
+            bgColor={'#262626'}
             radius={'lg'}
             heading={'PI-MORA'}
             text="Raspberry JAM's are independently organised community events for
@@ -95,24 +94,26 @@ function PiCommunityPage() {
             <CarouselCard
               carouselHeight={250}
               imageScr={[
-                '/images/image_1.png',
-                '/images/image_2.png',
-                '/images/image_3.png',
-                '/images/image_4.png',
-                '/images/image_5.png',
+                { primary: '/images/image_1.png' },
+                { primary: '/images/image_2.png' },
+                { primary: '/images/image_3.png' },
+                { primary: '/images/image_4.png' },
+                { primary: '/images/image_5.png' },
               ]}
-              width={300}
-              height={300}
-              text={
-                'text according to the selected project text according to the selected project text according to the selected project text according to the selected project text according to the selected project'
-              }
+              height={200}
+              slideSize={isMobile ? '100%' : '33.3333333%'}
+              text={[
+                'slide 1 Text',
+                'slide 2 Text',
+                'slide 3 Text',
+                'slide 4 Text',
+                'slide 5 Text',
+              ]}
             />
           </TabSection>
 
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={'#343434'}
+            bgColor={'#262626'}
             radius={'lg'}
             heading={'Technology Demonstrators'}
             text='To demonstrate and showcase the student and Pi capabilities; a
@@ -137,24 +138,30 @@ function PiCommunityPage() {
             <CarouselCard
               carouselHeight={250}
               imageScr={[
-                '/images/image_1.png',
-                '/images/image_2.png',
-                '/images/image_3.png',
-                '/images/image_4.png',
-                '/images/image_5.png',
+                {
+                  primary: '/images/image_1.png',
+                },
+                { primary: '/images/image_2.png' },
+                { primary: '/images/image_3.png' },
+                { primary: '/images/image_4.png' },
+                { primary: '/images/image_5.png' },
               ]}
-              width={300}
-              height={300}
-              text={
-                'text according to the selected project text according to the selected project text according to the selected project text according to the selected project text according to the selected project'
-              }
+              height={500}
+              slideSize={isMobile ? '100%' : '100%'}
+              text={[
+                'slide 1 Text',
+                'slide 2 Text',
+                'slide 3 Text',
+                'slide 4 Text',
+                'slide 5 Text',
+              ]}
             />
           </TabSection>
 
           <TabSection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={'#262626'}
             radius={'lg'}
             heading={'Final Year Projects'}
             text='As part of the curriculum, final year Pi based project will
@@ -176,19 +183,38 @@ function PiCommunityPage() {
               ]}
             />
             <CarouselCard
-              carouselHeight={250}
+              carouselHeight={350}
               imageScr={[
-                '/images/image_1.png',
-                '/images/image_2.png',
-                '/images/image_3.png',
-                '/images/image_4.png',
-                '/images/image_5.png',
+                {
+                  primary: '/images/image_1.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_2.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_3.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_4.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_5.png',
+                  secondary: '/images/image_1.png',
+                },
               ]}
-              width={300}
-              height={300}
-              text={
-                'text according to the selected project text according to the selected project text according to the selected project text according to the selected project text according to the selected project'
-              }
+              height={350}
+              slideSize={isMobile ? '100%' : '100%'}
+              text={[
+                'slide 1 Text',
+                'slide 2 Text',
+                'slide 3 Text',
+                'slide 4 Text',
+                'slide 5 Text',
+              ]}
             />
           </TabSection>
 

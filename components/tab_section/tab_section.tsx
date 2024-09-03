@@ -66,8 +66,8 @@ function TabSection({
       // className={`${theme.TabSection}`}
       px={'xl'}
       py={'xl'}
-      h={height}
-      w={width}
+      h={'auto'}
+      w={'100%'}
       radius={radius}
       bg={bgColor}
     >
