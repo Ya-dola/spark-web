@@ -1,4 +1,5 @@
 import { CommunityTabsModel } from '@/models/community/community_tabs_model';
+import CarouselCard from '@/components/carousel_card/carousel_card';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import {
   Box,
@@ -21,6 +22,7 @@ interface CommunitySectionProps {
   textSize?: string;
   textWeight?: number;
   heading?: string;
+  headingColor?: string;
   headingSize?: MantineSize;
   headingWeight?: number;
   description?: string;
@@ -38,8 +40,9 @@ function CommunitySection({
   textSize = 'md',
   textWeight = 300,
   heading,
+  headingColor = 'white',
   headingSize = 'xl',
-  headingWeight = 700,
+  headingWeight = 900,
   description,
   subtext,
   tabs,
@@ -58,7 +61,7 @@ function CommunitySection({
     >
       {heading && (
         <Text
-          c={textColor}
+          c={headingColor}
           fw={headingWeight}
           fz={headingSize}
           mt={'md'}
@@ -85,8 +88,9 @@ function CommunitySection({
             <Paper
               h={'100%'}
               w={'100%'}
-              bg={'#545454'}
+              bg={bgColor}
               p={'sm'}
+              radius={'md'}
             >
               <Text
                 c={textColor}
@@ -122,6 +126,28 @@ function CommunitySection({
             onChange={(value) => {
               setSelectedTabDetail(0);
               return setSelectedTab(Number(value));
+            }}
+          />
+          <CarouselCard
+            onSlideChange={(index) => setSelectedTabDetail(index)}
+            carouselHeight={350}
+            height={500}
+            slideSize={'100%'}
+            imageScr={[
+              {
+                primary:
+                  tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
+                secondary:
+                  tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
+              },
+            ]}
+            text={{
+              heading: tabs[selectedTab]?.details[selectedTabDetail].name,
+              description:
+                tabs[selectedTab]?.details[selectedTabDetail]?.description,
+              names: tabs[selectedTab]?.details[
+                selectedTabDetail
+              ]?.members.reduce((acc, member) => acc + member + ' | ', ''),
             }}
           />
           <Text>Image Carousel Goes Here instead!!!</Text>

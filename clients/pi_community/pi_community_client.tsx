@@ -58,7 +58,7 @@ function PiCommunityClient({ piMoraData }: PiCommunityClientProps) {
           gap={'xl'}
         >
           <CommunitySection
-            width={isMobile ? '100%' : '80%'}
+            // width={isMobile ? '100%' : '80%'}
             height={'auto'}
             bgColor={'#343434'}
             radius={'lg'}
