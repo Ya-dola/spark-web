@@ -1,4 +1,13 @@
-import { Image, Text, MantineSize, Center } from '@mantine/core';
+import {
+  Image,
+  Text,
+  MantineSize,
+  Center,
+  Paper,
+  Box,
+  Space,
+  Divider,
+} from '@mantine/core';
 import React, { ReactNode, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
@@ -7,7 +16,11 @@ import classes from '@/styles/carousel.module.css';
 // import theme from './skeleton_card.module.css';
 
 interface CarouselCardProps {
-  text?: string[];
+  text?: Array<{
+    description?: string;
+    heading?: string;
+    names?: string;
+  }>;
   overlayText?: string;
   width?: number;
   height?: number;
@@ -36,7 +49,14 @@ function CarouselCard({
     setActiveIndex(index); // Update the active index when the slide changes
   };
   return (
-    <>
+    <Paper
+      h={'100%'}
+      w={'100%'}
+      bg={'#262626'}
+      p={'sm'}
+      radius={'md'}
+      withBorder
+    >
       <Carousel
         height={carouselHeight}
         slideSize={{ base: '100%', sm: '100%', md: slideSize }}
@@ -109,13 +129,38 @@ function CarouselCard({
           </Carousel.Slide>
         ))}
       </Carousel>
-      <Center
+      <Box
         px={'xl'}
-        py={'xl'}
+        py={'md'}
       >
-        {text[activeIndex] && <Text>{text[activeIndex]}</Text>}
-      </Center>
-    </>
+        {text[activeIndex] && (
+          <div
+            style={{
+              display: 'block',
+            }}
+          >
+            <Text
+              fz={'h3'}
+              fw={900}
+              c={'#751fd6'}
+            >
+              {text[activeIndex].heading}
+            </Text>
+            <Space h={'lg'} />
+            <Text
+              fz={'md'}
+              fw={600}
+              c={'#CACACA'}
+            >
+              {text[activeIndex].description}
+            </Text>
+            <Space h={'lg'} />
+
+            <Text>{text[activeIndex].names}</Text>
+          </div>
+        )}
+      </Box>
+    </Paper>
   );
 }
 

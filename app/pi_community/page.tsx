@@ -9,6 +9,7 @@ import TabSection from '@/components/tab_section/tab_section';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Box, Center, Flex, Paper, Text } from '@mantine/core';
 import classes from '@/styles/carousel.module.css';
+import ButtonCard from '@/components/button_card/button_card';
 
 function PiCommunityPage() {
   const isMobile = useIsMobile();
@@ -67,7 +68,7 @@ function PiCommunityPage() {
           gap={'xl'}
         >
           <TabSection
-            bgColor={'#262626'}
+            bgColor={'#343434'}
             radius={'lg'}
             heading={'PI-MORA'}
             text="Raspberry JAM's are independently organised community events for
@@ -103,17 +104,17 @@ function PiCommunityPage() {
               height={200}
               slideSize={isMobile ? '100%' : '33.3333333%'}
               text={[
-                'slide 1 Text',
-                'slide 2 Text',
-                'slide 3 Text',
-                'slide 4 Text',
-                'slide 5 Text',
+                { description: 'slide 1 Text' },
+                { description: 'slide 2 Text' },
+                { description: 'slide 3 Text' },
+                { description: 'slide 4 Text' },
+                { description: 'slide 5 Text' },
               ]}
             />
           </TabSection>
 
           <TabSection
-            bgColor={'#262626'}
+            bgColor={'#343434'}
             radius={'lg'}
             heading={'Technology Demonstrators'}
             text='To demonstrate and showcase the student and Pi capabilities; a
@@ -136,7 +137,7 @@ function PiCommunityPage() {
               ]}
             />
             <CarouselCard
-              carouselHeight={250}
+              carouselHeight={350}
               imageScr={[
                 {
                   primary: '/images/image_1.png',
@@ -149,19 +150,37 @@ function PiCommunityPage() {
               height={500}
               slideSize={isMobile ? '100%' : '100%'}
               text={[
-                'slide 1 Text',
-                'slide 2 Text',
-                'slide 3 Text',
-                'slide 4 Text',
-                'slide 5 Text',
+                {
+                  heading: 'HEADING 1',
+                  description: 'slide 1 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 2',
+                  description: 'slide 2 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 3',
+                  description: 'slide 3 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 4',
+                  description: 'slide 4 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 5',
+                  description: 'slide 5 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
               ]}
             />
           </TabSection>
 
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={'#262626'}
+            bgColor={'#343434'}
             radius={'lg'}
             heading={'Final Year Projects'}
             text='As part of the curriculum, final year Pi based project will
@@ -209,11 +228,31 @@ function PiCommunityPage() {
               height={350}
               slideSize={isMobile ? '100%' : '100%'}
               text={[
-                'slide 1 Text',
-                'slide 2 Text',
-                'slide 3 Text',
-                'slide 4 Text',
-                'slide 5 Text',
+                {
+                  heading: 'HEADING 1',
+                  description: 'slide 1 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 2',
+                  description: 'slide 2 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 3',
+                  description: 'slide 3 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 4',
+                  description: 'slide 4 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 5',
+                  description: 'slide 5 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
               ]}
             />
           </TabSection>
@@ -221,7 +260,8 @@ function PiCommunityPage() {
           <TabSection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={'#751fd6'}
+            textColor={'black'}
             radius={'lg'}
             heading={'PI Community Facebook Page'}
             text='Pi Community Facebook page inform all followers about all Raspberry

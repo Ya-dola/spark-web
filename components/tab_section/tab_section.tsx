@@ -14,6 +14,7 @@ interface TabSectionProps {
   text: string; // The text to display inside the card
   bgColor?: string; // Background color of the card, defaults to 'purple'
   textColor?: string; // Text color, defaults to 'white'
+  headingColor?: string;
   radius?: string; // Border radius, defaults to 'md'
   width?: string | number; // Width of the card in pixels
   height?: string | number; // Height of the card in pixels
@@ -47,16 +48,17 @@ interface TabSectionProps {
  */
 function TabSection({
   text,
-  width,
+  width = '100%',
   height,
   bgColor = 'purple',
   textColor = 'white',
+  headingColor = 'white',
   radius = 'md',
   textSize = 'md',
   textWeight = 300,
   heading = '',
   headingSize = 'xl',
-  headingWeight = 700,
+  headingWeight = 900,
   description = '',
   subtext = '',
   children,
@@ -67,12 +69,12 @@ function TabSection({
       px={'xl'}
       py={'xl'}
       h={'auto'}
-      w={'100%'}
+      w={width}
       radius={radius}
       bg={bgColor}
     >
       <Text
-        c={textColor}
+        c={headingColor}
         fw={headingWeight}
         fz={headingSize}
         mt={'md'}
@@ -92,8 +94,9 @@ function TabSection({
         <Paper
           h={'100%'}
           w={'100%'}
-          bg={'#545454'}
+          bg={bgColor}
           p={'sm'}
+          radius={'md'}
         >
           {children}
 
