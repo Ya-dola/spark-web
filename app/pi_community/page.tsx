@@ -1,16 +1,24 @@
 'use client';
 
+import CarouselCard from '@/components/carousel_card/carousel_card';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import CustomImage from '@/components/custom_image/custom_image';
+import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import TabSection from '@/components/tab_section/tab_section';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import { Flex, Paper, Text } from '@mantine/core';
+import { Box, Center, Flex, Paper, Text } from '@mantine/core';
+import classes from '@/styles/carousel.module.css';
+import ButtonCard from '@/components/button_card/button_card';
 
 function PiCommunityPage() {
   const isMobile = useIsMobile();
 
   return (
-    <CustomAppShell>
+    <CustomAppShell
+      height={900}
+      imageSrc={['/images/bg_1.png', '/images/everest.png', '/images/bg_1.png']}
+    >
       <Flex
         direction={'column'}
         justify={'flex-start'}
@@ -26,24 +34,31 @@ function PiCommunityPage() {
         <Flex
           w={'100%'}
           direction={isMobile ? 'column' : 'row'}
-          align={isMobile ? 'center' : 'flex-start'}
+          justify={'center'}
+          align={isMobile ? 'center' : 'center'}
           gap={'xl'}
         >
-          <Text>
-            In making Raspberry Pis available within the department year on
-            year; SPARK will encourage, facilitate and nurture innovation in the
-            use of this technology. ENTC intend to build expertise over several
-            years to fully support a vibrant and active Pi community and
-            therefore become a contributor to the develop-ment of product and
-            services associated with the Raspberry Pi; in time a being
-            recognised centre of excellence of in the use of this device.
-          </Text>
-          <SkeletonCard
-            height={300}
-            width={isMobile ? 300 : 1600}
-            text={'Raspberry Pi Image Goes Here'}
-            bgColor={'grape'}
-          />
+          <Box w={'100%'}>
+            <Text>
+              In making Raspberry Pis available within the department year on
+              year; SPARK will encourage, facilitate and nurture innovation in
+              the use of this technology. ENTC intend to build expertise over
+              several years to fully support a vibrant and active Pi community
+              and therefore become a contributor to the develop-ment of product
+              and services associated with the Raspberry Pi; in time a being
+              recognised centre of excellence of in the use of this device.
+            </Text>
+          </Box>
+          <Box
+            ml={'xl'}
+            mr={'xl'}
+          >
+            <CustomImage
+              height={300}
+              width={isMobile ? 300 : 1600}
+              imageSrc={'/images/pi_logo.png'}
+            />
+          </Box>
         </Flex>
         <Flex
           w={isMobile ? '100%' : '80%'}
@@ -53,8 +68,6 @@ function PiCommunityPage() {
           gap={'xl'}
         >
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
             bgColor={'#343434'}
             radius={'lg'}
             heading={'PI-MORA'}
@@ -63,35 +76,192 @@ function PiCommunityPage() {
             Pi. ENTC will undertake 3 Raspberry JAMs (Pi-MORA's) every
             academic year. Undertaking to teach Pi enthusiasts about the
             capabilities of the Raspberry Pi platform."
-            description='TABS AND IMAGES HERE'
-          />
+          >
+            <ScrollableSegmentedControl
+              segmentData={[
+                'Celebration 2025/2026',
+                'Celebration 2024/2025',
+                'Celebration 2023/2024',
+                'Celebration 2022/2023',
+                'Celebration 2021/2022',
+                'Celebration 2020/2021',
+                'Celebration 2019/2020',
+                'Celebration 2018/2019',
+                'Celebration 2017/2018',
+                'Celebration 2016/2017',
+                'Celebration 2015/2016',
+              ]}
+            />
+            <CarouselCard
+              carouselHeight={250}
+              imageScr={[
+                { primary: '/images/image_1.png' },
+                { primary: '/images/image_2.png' },
+                { primary: '/images/image_3.png' },
+                { primary: '/images/image_4.png' },
+                { primary: '/images/image_5.png' },
+              ]}
+              height={200}
+              slideSize={isMobile ? '100%' : '33.3333333%'}
+              text={[
+                { description: 'slide 1 Text' },
+                { description: 'slide 2 Text' },
+                { description: 'slide 3 Text' },
+                { description: 'slide 4 Text' },
+                { description: 'slide 5 Text' },
+              ]}
+            />
+          </TabSection>
+
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
             bgColor={'#343434'}
             radius={'lg'}
             heading={'Technology Demonstrators'}
             text='To demonstrate and showcase the student and Pi capabilities; a
           number of complex and challenging projects will be implemented
           throughout the year.'
-            description='TABS AND IMAGES HERE'
-          />
+          >
+            <ScrollableSegmentedControl
+              segmentData={[
+                'Celebration 2025/2026',
+                'Celebration 2024/2025',
+                'Celebration 2023/2024',
+                'Celebration 2022/2023',
+                'Celebration 2021/2022',
+                'Celebration 2020/2021',
+                'Celebration 2019/2020',
+                'Celebration 2018/2019',
+                'Celebration 2017/2018',
+                'Celebration 2016/2017',
+                'Celebration 2015/2016',
+              ]}
+            />
+            <CarouselCard
+              carouselHeight={350}
+              imageScr={[
+                {
+                  primary: '/images/image_1.png',
+                },
+                { primary: '/images/image_2.png' },
+                { primary: '/images/image_3.png' },
+                { primary: '/images/image_4.png' },
+                { primary: '/images/image_5.png' },
+              ]}
+              height={500}
+              slideSize={isMobile ? '100%' : '100%'}
+              text={[
+                {
+                  heading: 'HEADING 1',
+                  description: 'slide 1 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 2',
+                  description: 'slide 2 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 3',
+                  description: 'slide 3 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 4',
+                  description: 'slide 4 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 5',
+                  description: 'slide 5 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+              ]}
+            />
+          </TabSection>
 
           <TabSection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
             bgColor={'#343434'}
             radius={'lg'}
             heading={'Final Year Projects'}
             text='As part of the curriculum, final year Pi based project will
             demonstrate the fantastic engineering capabilities of the students.'
-            description='TABS AND IMAGES HERE'
-          />
+          >
+            <ScrollableSegmentedControl
+              segmentData={[
+                'Celebration 2025/2026',
+                'Celebration 2024/2025',
+                'Celebration 2023/2024',
+                'Celebration 2022/2023',
+                'Celebration 2021/2022',
+                'Celebration 2020/2021',
+                'Celebration 2019/2020',
+                'Celebration 2018/2019',
+                'Celebration 2017/2018',
+                'Celebration 2016/2017',
+                'Celebration 2015/2016',
+              ]}
+            />
+            <CarouselCard
+              carouselHeight={350}
+              imageScr={[
+                {
+                  primary: '/images/image_1.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_2.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_3.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_4.png',
+                  secondary: '/images/image_1.png',
+                },
+                {
+                  primary: '/images/image_5.png',
+                  secondary: '/images/image_1.png',
+                },
+              ]}
+              height={350}
+              slideSize={isMobile ? '100%' : '100%'}
+              text={[
+                {
+                  heading: 'HEADING 1',
+                  description: 'slide 1 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 2',
+                  description: 'slide 2 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 3',
+                  description: 'slide 3 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 4',
+                  description: 'slide 4 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+                {
+                  heading: 'HEADING 5',
+                  description: 'slide 5 Text',
+                  names: 'name 1, name 2, name 3, name 4, name 5',
+                },
+              ]}
+            />
+          </TabSection>
 
           <TabSection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={'#751fd6'}
+            textColor={'black'}
             radius={'lg'}
             heading={'PI Community Facebook Page'}
             text='Pi Community Facebook page inform all followers about all Raspberry

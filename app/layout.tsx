@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 const inter = Inter({ subsets: ['latin'] });
