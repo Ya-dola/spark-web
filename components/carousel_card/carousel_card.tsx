@@ -16,11 +16,11 @@ import classes from '@/styles/carousel.module.css';
 // import theme from './skeleton_card.module.css';
 
 interface CarouselCardProps {
-  text?: Array<{
+  text?: {
     description?: string;
     heading?: string;
     names?: string;
-  }>;
+  };
   overlayText?: string;
   width?: number;
   height?: number;
@@ -32,10 +32,11 @@ interface CarouselCardProps {
   }>;
   primaryImage?: string;
   secondaryImage?: string;
+  onSlideChange?: (index: number) => void;
 }
 
 function CarouselCard({
-  text = [],
+  text,
   overlayText = '',
   height = 200,
   imageScr = [],
@@ -43,11 +44,12 @@ function CarouselCard({
   slideSize = '100%',
   primaryImage = '',
   secondaryImage = '',
+  onSlideChange,
 }: CarouselCardProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const handleSlideChange = (index: number) => {
-    setActiveIndex(index); // Update the active index when the slide changes
-  };
+  // const handleSlideChange = (index: number) => {
+  //   setActiveIndex(index); // Update the active index when the slide changes
+  // };
   return (
     <Paper
       h={'100%'}
@@ -66,7 +68,7 @@ function CarouselCard({
         draggable={true}
         withIndicators
         slidesToScroll={1}
-        onSlideChange={handleSlideChange}
+        onSlideChange={onSlideChange}
         classNames={classes}
       >
         {imageScr.map((image, index) => (
@@ -133,30 +135,32 @@ function CarouselCard({
         px={'xl'}
         py={'md'}
       >
-        {text[activeIndex] && (
+        {text && (
           <div
             style={{
               display: 'block',
             }}
           >
-            <Text
-              fz={'h3'}
-              fw={900}
-              c={'#751fd6'}
-            >
-              {text[activeIndex].heading}
-            </Text>
-            <Space h={'lg'} />
-            <Text
-              fz={'md'}
-              fw={600}
-              c={'#CACACA'}
-            >
-              {text[activeIndex].description}
-            </Text>
-            <Space h={'lg'} />
+            <>
+              <Text
+                fz={'h3'}
+                fw={900}
+                c={'#751fd6'}
+              >
+                {text.heading}
+              </Text>
+              <Space h={'lg'} />
+              <Text
+                fz={'md'}
+                fw={600}
+                c={'#CACACA'}
+              >
+                {text.description}
+              </Text>
+              <Space h={'lg'} />
 
-            <Text>{text[activeIndex].names}</Text>
+              <Text>{text.names}</Text>
+            </>
           </div>
         )}
       </Box>
