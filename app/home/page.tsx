@@ -20,7 +20,7 @@ function SparkHomePage() {
 
   return (
     <CustomAppShell
-      height={900}
+      height={1000}
       imageSrc={['/images/bg_1.png']}
     >
       <Flex
@@ -61,56 +61,64 @@ function SparkHomePage() {
           </Text>
         </Center>
         <Space h={isMobile ? 'sm' : 'xl'} />
-        <Flex
-          direction={isMobile ? 'column' : 'row'}
-          align={'center'}
-          justify={'center'}
-          gap={isMobile ? 'md' : 'xl'}
-        >
-          <ButtonCard
-            heading={'Spark Challenge'}
-            description={
-              'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
-            }
-            imageSrc={'/images/everest.png'}
-            width={300}
-            height={450}
-            bgColor={
-              'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
-            }
-            textColor={'white'}
-            href={'/challenge'}
-          />
 
-          <ButtonCard
-            heading={'Pi-Community'}
-            description={
-              'To build a Community; by exploiting the extensive Raspberry Pi resources available at ENTC.'
-            }
-            imageSrc={'/images/image_pi.png'}
-            width={300}
-            height={450}
-            bgColor={
-              'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
-            }
-            textColor={'white'}
-            href={'/pi_community'}
-          />
-          <ButtonCard
-            heading={'UnderGraduate Development'}
-            description={
-              'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
-            }
-            imageSrc={'/images/image_1.png'}
-            width={300}
-            height={450}
-            bgColor={
-              'linear-gradient(to bottom right, #343434 0%, #545454 100%)'
-            }
-            textColor={'white'}
-            href={'/undergraduate'}
-          />
-        </Flex>
+        <Box
+          w={'100%'}
+          h={'auto'}
+          py={'xl'}
+        >
+          <Space h={isMobile ? 'sm' : 'xl'} />
+
+          <Flex
+            direction={isMobile ? 'column' : 'row'}
+            align={'center'}
+            justify={'center'}
+            gap={isMobile ? 'md' : 'xl'}
+          >
+            <ButtonCard
+              heading={'Spark Challenge'}
+              description={
+                'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
+              }
+              imageSrc={'/images/everest.png'}
+              width={300}
+              height={450}
+              bgColor={'#262626'}
+              headingColor={'#1f68d6'}
+              href={'/challenge'}
+              buttonColor={'#1f68d6'}
+            />
+
+            <ButtonCard
+              heading={'Pi-Community'}
+              description={
+                'To build a Community; by exploiting the extensive Raspberry Pi resources available at ENTC.'
+              }
+              imageSrc={'/images/image_pi.png'}
+              width={300}
+              height={450}
+              bgColor={'#262626'}
+              headingColor={'#f4018b'}
+              textColor={'white'}
+              href={'/pi_community'}
+              buttonColor={'#f4018b'}
+            />
+            <ButtonCard
+              heading={'UnderGraduate Development'}
+              description={
+                'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
+              }
+              imageSrc={'/images/image_1.png'}
+              width={300}
+              height={450}
+              bgColor={'#262626'}
+              headingColor={'#a61fd6'}
+              textColor={'white'}
+              href={'/undergraduate'}
+              buttonColor={'#a61fd6'}
+            />
+          </Flex>
+        </Box>
       </Flex>
     </CustomAppShell>
   );
