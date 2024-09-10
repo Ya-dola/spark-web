@@ -13,6 +13,7 @@ import NextImage from 'next/image';
 import CustomDrawer from '@/components/custom_drawer/custom_drawer';
 import logoTransparent from '@/public/images/spark_logo_transparent.png';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import ImageGrid from '@/components/image_grid/image_grid';
 
 interface CustomAppShellProps {
   children: ReactNode;
@@ -27,6 +28,12 @@ function CustomAppShell({
 }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
   const isMobile = useIsMobile();
+  const imageGrid = (
+    <ImageGrid
+      imageSrc={imageSrc}
+      height={height}
+    />
+  );
 
   return (
     <AppShell
@@ -62,29 +69,28 @@ function CustomAppShell({
           <CustomDrawer />
         </Flex>
       </AppShell.Header>
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: height * imageSrc.length,
-        }}
-      >
-        {imageSrc.map((src, index) => (
-          <BackgroundImage
-            key={index} // Use index as key, better to use unique ids if available
-            src={src}
-            h={height} // Set the height for each BackgroundImage
-          />
-        ))}
+      <div style={{ position: 'relative' }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 0,
+          }}
+        >
+          {imageGrid}
+        </div>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <AppShell.Main
+            style={{ position: 'relative', zIndex: 1 }}
+            pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
+          >
+            {children}
+          </AppShell.Main>
+        </div>
       </div>
-      <AppShell.Main
-        style={{ position: 'relative', zIndex: 1 }}
-        pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
-      >
-        {children}
-      </AppShell.Main>
     </AppShell>
   );
 }
