@@ -1,17 +1,7 @@
-import {
-  Image,
-  Text,
-  MantineSize,
-  Center,
-  Paper,
-  Box,
-  Space,
-  Divider,
-} from '@mantine/core';
-import React, { ReactNode, useState } from 'react';
+import { Image, Text, Paper, Box, Space } from '@mantine/core';
+import React, { useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import CustomImage from '../custom_image/custom_image';
 import classes from '@/styles/carousel.module.css';
 // import theme from './skeleton_card.module.css';
 
@@ -26,7 +16,7 @@ interface CarouselCardProps {
   height?: number;
   carouselHeight?: number;
   slideSize?: string;
-  imageScr?: Array<{
+  imageSrc?: Array<{
     primary: string; // URL of the primary image
     secondary?: string;
   }>;
@@ -39,7 +29,7 @@ function CarouselCard({
   text,
   overlayText = '',
   height = 200,
-  imageScr = [],
+  imageSrc = [],
   carouselHeight = 200,
   slideSize = '100%',
   primaryImage = '',
@@ -50,6 +40,7 @@ function CarouselCard({
   // const handleSlideChange = (index: number) => {
   //   setActiveIndex(index); // Update the active index when the slide changes
   // };
+
   return (
     <Paper
       h={'100%'}
@@ -57,7 +48,6 @@ function CarouselCard({
       bg={'#262626'}
       p={'sm'}
       radius={'md'}
-      withBorder
     >
       <Carousel
         height={carouselHeight}
@@ -71,7 +61,7 @@ function CarouselCard({
         onSlideChange={onSlideChange}
         classNames={classes}
       >
-        {imageScr.map((image, index) => (
+        {imageSrc.map((image, index) => (
           <Carousel.Slide key={index}>
             <div
               style={{

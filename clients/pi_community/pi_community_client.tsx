@@ -35,6 +35,7 @@ function PiCommunityClient({ piMoraData }: PiCommunityClientProps) {
           w={'100%'}
           direction={isMobile ? 'column' : 'row'}
           align={isMobile ? 'center' : 'flex-start'}
+          justify={isMobile ? 'start' : 'space-between'}
           gap={'xl'}
         >
           <Box
@@ -51,13 +52,11 @@ function PiCommunityClient({ piMoraData }: PiCommunityClientProps) {
               recognised centre of excellence of in the use of this device.
             </Text>
           </Box>
-          <Box>
-            <CustomImage
-              imageSrc={'/images/pi_logo.png'}
-              width={200}
-              height={200}
-            />
-          </Box>
+          <CustomImage
+            imageSrc={'/images/pi_logo.png'}
+            width={100}
+            height={100}
+          />
         </Flex>
         <Flex
           w={isMobile ? '100%' : '100%'}

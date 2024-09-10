@@ -10,7 +10,8 @@ import {
   Space,
   Title,
 } from '@mantine/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ScrollableButtonTabs from '../scrollable_button_tabs/scrollable_button_tabs';
 
 interface CommunitySectionProps {
   height?: string | number;
@@ -49,6 +50,26 @@ function CommunitySection({
 }: CommunitySectionProps) {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedTabDetail, setSelectedTabDetail] = useState(0);
+
+  const imageSrc = () => {
+    let temp: Array<{
+      primary: string; // URL of the primary image
+      secondary?: string;
+    }> = [];
+    if (tabs) {
+      for (
+        let i = 0;
+        i < tabs[selectedTab]?.details[selectedTabDetail]?.images.length;
+        i++
+      ) {
+        temp.push({
+          primary: tabs[selectedTab]?.details[selectedTabDetail]?.images[i],
+        });
+      }
+    }
+
+    return temp;
+  };
 
   return (
     <Paper
@@ -128,31 +149,23 @@ function CommunitySection({
               return setSelectedTab(Number(value));
             }}
           />
-          <CarouselCard
-            onSlideChange={(index) => setSelectedTabDetail(index)}
-            carouselHeight={350}
-            height={500}
-            slideSize={'100%'}
-            imageScr={[
-              {
-                primary:
-                  tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
-                secondary:
-                  tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
-              },
-            ]}
-            text={{
-              heading: tabs[selectedTab]?.details[selectedTabDetail].name,
-              description:
-                tabs[selectedTab]?.details[selectedTabDetail]?.description,
-              names: tabs[selectedTab]?.details[
-                selectedTabDetail
-              ]?.members.reduce((acc, member) => acc + member + ' | ', ''),
-            }}
-          />
-          <Text>Image Carousel Goes Here instead!!!</Text>
-          {/* TODO - Change to Work with Carousel and based on index */}
-          <ScrollableSegmentedControl
+          <Paper
+            h={'100%'}
+            w={'100%'}
+            bg={'#262626'}
+            p={'sm'}
+            radius={'md'}
+          >
+            <>
+              <ScrollableButtonTabs
+                items={tabs[selectedTab]?.details.map(
+                  (tabDetails) => tabDetails.name,
+                )}
+                onTabSelect={(index) => setSelectedTabDetail(index)}
+                textColor={'white'}
+                selectedIndex={selectedTabDetail}
+              />
+              {/* <ScrollableSegmentedControl
             segmentData={tabs[selectedTab]?.details.map(
               (tabDetails, index) => ({
                 label: tabDetails.name.toString(),
@@ -161,51 +174,49 @@ function CommunitySection({
             )}
             onChange={(value) => setSelectedTabDetail(Number(value))}
             value={selectedTabDetail.toString()}
-          />
-          <Center>
-            <Paper
-              h={'100%'}
-              w={'100%'}
-              bg={'#545454'}
-              p={'sm'}
-            >
-              <Text
-                c={textColor}
-                fz={textSize}
-                fw={textWeight}
-              >
-                {tabs[selectedTab]?.details[selectedTabDetail]?.name}
-              </Text>
-              <Text
-                c={textColor}
-                fz={textSize}
-                fw={textWeight}
-              >
-                {tabs[selectedTab]?.details[selectedTabDetail]?.description}
-              </Text>
-              <Text
-                c={textColor}
-                fz={textSize}
-                fw={textWeight}
-              >
-                {tabs[selectedTab]?.details[selectedTabDetail]?.images.reduce(
-                  (acc, image) => acc + image + ', ',
-                  '',
-                )}
-              </Text>
-              {/* TODO - Display only is members available */}
-              <Text
-                c={textColor}
-                fz={textSize}
-                fw={textWeight}
-              >
-                {tabs[selectedTab]?.details[selectedTabDetail]?.members.reduce(
-                  (acc, member) => acc + member + ', ',
-                  '',
-                )}
-              </Text>
-            </Paper>
-          </Center>
+          /> */}
+              <CarouselCard
+                // onSlideChange={(index) => setSelectedTabDetail(index)}
+                carouselHeight={350}
+                height={500}
+                slideSize={'50%'}
+                // imageSrc={[
+                //   {
+                //     primary:
+                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
+                //     secondary:
+                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
+                //   },
+                // ]}
+                imageSrc={imageSrc()}
+                // imageSrc={[
+                //   {
+                //     primary:
+                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
+                //   },
+
+                //   {
+                //     primary:
+                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
+                //   },
+                // ]}
+
+                // imageSrc={tabs[selectedTab]?.details[selectedTabDetail]?.images.map(
+                //   (image) => ({
+                //     primary: image,
+                //   }),
+                // )}
+                text={{
+                  heading: tabs[selectedTab]?.details[selectedTabDetail].name,
+                  description:
+                    tabs[selectedTab]?.details[selectedTabDetail]?.description,
+                  names: tabs[selectedTab]?.details[
+                    selectedTabDetail
+                  ]?.members.reduce((acc, member) => acc + member + ' | ', ''),
+                }}
+              />
+            </>
+          </Paper>
         </>
       )}
     </Paper>
