@@ -23,10 +23,7 @@ function ChallengeClient() {
   const isMobile = useIsMobile();
 
   return (
-    <CustomAppShell
-      height={900}
-      imageSrc={['/images/bg_1.png', '/images/everest.png', '/images/bg_1.png']}
-    >
+    <CustomAppShell>
       <Flex
         direction={'column'}
         justify={'flex-start'}
@@ -36,6 +33,7 @@ function ChallengeClient() {
         <Text
           w={'100%'}
           fz={'h2'}
+          c={'#1f68d6'}
         >
           Spark Challenge
         </Text>

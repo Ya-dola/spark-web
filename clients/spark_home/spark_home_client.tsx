@@ -1,19 +1,20 @@
 'use client';
 
 import NextImage from 'next/image';
-import { Image, Center, Flex, Text, Box } from '@mantine/core';
+import { Space, Image, Center, Flex, Text, Box, Divider } from '@mantine/core';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import ImageGrid from '@/components/image_grid/image_grid';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
 
   return (
     <CustomAppShell
-      height={1000}
-      imageSrc={['/images/bg_1.png']}
+      imageSrc={['/images/bg_4.png']}
+      height={1080}
     >
       <Flex
         direction={'column'}
@@ -22,7 +23,7 @@ function SparkHomeClient() {
         gap={'xl'}
       >
         <Image
-          w={isMobile ? '100%' : '32%'}
+          w={isMobile ? '100%' : '35%'}
           fit={'contain'}
           component={NextImage}
           src={SparkLogoSrc}
@@ -33,7 +34,7 @@ function SparkHomeClient() {
         <Text
           fz={'h3'}
           fs={'italic'}
-          c={'#A61FD6'}
+          c={'#d61fb3'}
         >
           Making the Impossible Possible
         </Text>
@@ -51,7 +52,9 @@ function SparkHomeClient() {
             in the modern-day industry.
           </Text>
         </Center>
+
         <Box
+          mt={10}
           w={'100%'}
           h={'auto'}
           py={'xl'}

@@ -10,7 +10,10 @@ function UndergraduateClient() {
   const isMobile = useIsMobile();
 
   return (
-    <CustomAppShell>
+    <CustomAppShell
+      imageSrc={['/images/bg_3.png']}
+      height={1400}
+    >
       <Flex
         direction={'column'}
         justify={'flex-start'}
