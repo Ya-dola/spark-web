@@ -32,7 +32,8 @@ function ChallengeClient() {
       >
         <Text
           w={'100%'}
-          fz={'h2'}
+          fz={'h1'}
+          fw={900}
           c={'#1f68d6'}
         >
           Spark Challenge
