@@ -25,7 +25,7 @@ function ScrollableButtonTabs({
   scrollType = 'hover',
   offsetScrollbars = true,
   buttonRadius = 'md',
-  buttonColor = '#f4018b',
+  buttonColor = '#1e1e1e',
   textColor,
   scrollSize,
   tabsWidth,
@@ -103,7 +103,7 @@ function ScrollableButtonTabs({
         variant={selectedIndex === index ? 'filled' : 'light'}
         p={'sm'}
         radius={buttonRadius}
-        bg={buttonColor25}
+        bg={buttonColor}
         c={textColor}
       >
         {item}

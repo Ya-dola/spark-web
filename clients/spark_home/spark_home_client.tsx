@@ -6,7 +6,6 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import ImageGrid from '@/components/image_grid/image_grid';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();

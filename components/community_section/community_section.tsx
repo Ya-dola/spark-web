@@ -179,7 +179,7 @@ function CommunitySection({
                 // onSlideChange={(index) => setSelectedTabDetail(index)}
                 carouselHeight={350}
                 height={500}
-                slideSize={'50%'}
+                slideSize={'100%'}
                 // imageSrc={[
                 //   {
                 //     primary:

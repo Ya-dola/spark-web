@@ -60,14 +60,16 @@ function ButtonCard({
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <Card.Section>
-        <Image
-          component={NextImage}
-          height={height}
-          width={width}
-          src={imageSrc}
-          alt={'My image'}
-          fit={'contain'}
-        />
+        {imageSrc ? (
+          <Image
+            component={NextImage}
+            height={height}
+            width={width}
+            src={imageSrc}
+            alt={'My image'}
+            fit={'contain'}
+          />
+        ) : null}
       </Card.Section>
 
       <Text
