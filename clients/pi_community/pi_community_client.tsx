@@ -1,7 +1,6 @@
 'use client';
 
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
-import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import CommunitySection from '@/components/community_section/community_section';
 import { CommunitySectionModel } from '@/models/community/community_section_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
@@ -14,11 +13,10 @@ import {
   Text,
   Box,
   Card,
-  Space,
   Paper,
+  MantineSize,
 } from '@mantine/core';
 import CustomImage from '@/components/custom_image/custom_image';
-import ButtonCard from '@/components/button_card/button_card';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;
@@ -33,44 +31,42 @@ function PiCommunityClient({
 }: PiCommunityClientProps) {
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
+  const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
 
   return (
-    <CustomAppShell>
+    <CustomAppShell padding={0}>
       <Flex
         direction={'column'}
         justify={'flex-start'}
         align={'center'}
-        gap={'md'}
+        gap={'xs'}
       >
         <Text
           w={'100%'}
           fz={'h1'}
           fw={900}
           c={'#f4018b'}
+          px={pagePadding}
         >
-          SPARK Pi Community
+          Spark Pi Community
         </Text>
         <Flex
           w={'100%'}
+          p={pagePadding}
           direction={isMobile ? 'column' : 'row'}
-          align={isMobile ? 'center' : 'flex-start'}
+          align={'center'}
           justify={isMobile ? 'start' : 'space-between'}
           gap={'xl'}
         >
-          <Box
-            py={'md'}
-            w={'70%'}
-          >
-            <Text>
-              In making Raspberry Pis available within the department year on
-              year; SPARK will encourage, facilitate and nurture innovation in
-              the use of this technology. ENTC intend to build expertise over
-              several years to fully support a vibrant and active Pi community
-              and therefore become a contributor to the develop-ment of product
-              and services associated with the Raspberry Pi; in time a being
-              recognised centre of excellence of in the use of this device.
-            </Text>
-          </Box>
+          <Text w={'70%'}>
+            In making Raspberry Pis available within the department year on
+            year; SPARK will encourage, facilitate and nurture innovation in the
+            use of this technology. ENTC intend to build expertise over several
+            years to fully support a vibrant and active Pi community and
+            therefore become a contributor to the develop-ment of product and
+            services associated with the Raspberry Pi; in time a being
+            recognised centre of excellence of in the use of this device.
+          </Text>
           <CustomImage
             imageSrc={'/images/pi_logo.png'}
             width={100}
@@ -103,8 +99,11 @@ function PiCommunityClient({
               radius={'lg'}
               heading={piMoraData.title}
               headingColor={'#F4018b'}
+              sectionColor={'#F4018b'}
               text={piMoraData.description}
               tabs={piMoraData.tabs}
+              autoPlayDelay={6000}
+              slideSize={'100%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -127,8 +126,11 @@ function PiCommunityClient({
               radius={'lg'}
               heading={techDemoData.title}
               headingColor={'#1f68d6'}
+              sectionColor={'#1f68d6'}
               text={techDemoData.description}
               tabs={techDemoData.tabs}
+              autoPlayDelay={3000}
+              slideSize={'50%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -150,9 +152,12 @@ function PiCommunityClient({
               bgColor={'#343434'}
               radius={'lg'}
               heading={finalYearData.title}
-              headingColor={'#751fd6'}
+              headingColor={'#A61FD6'}
+              sectionColor={'#A61FD6'}
               text={finalYearData.description}
               tabs={finalYearData.tabs}
+              autoPlayDelay={5000}
+              slideSize={'33.333333%'}
             />
           </BackgroundImage>
 
@@ -181,17 +186,15 @@ function PiCommunityClient({
                 onMouseEnter={() => !isMobile && setIsHovered(true)}
                 onMouseLeave={() => !isMobile && setIsHovered(false)}
               >
-                <Box w={'60%'}>
-                  <Text
-                    fw={1000}
-                    fz={'h2'}
-                    mt='md'
-                    c={'#1e1e1e'}
-                  >
-                    PI Community Facebook Page
-                  </Text>
-                </Box>
-
+                <Text
+                  fw={1000}
+                  fz={'h2'}
+                  mt='md'
+                  c={'#1e1e1e'}
+                  w={'60%'}
+                >
+                  PI Community Facebook Page
+                </Text>
                 <Text
                   mt='xs'
                   py={'md'}
@@ -203,24 +206,26 @@ function PiCommunityClient({
                   Raspberry Pi related activities at ENTC as well as news about
                   the Raspberry Pi organisation.
                 </Text>
-                <Text
-                  mt='xs'
-                  c={'white'}
-                  size='sm'
-                >
-                  Pi Community Facebook Page The Facebook group can be found
-                  here
-                </Text>
                 <Flex
                   h={'100%'}
                   justify={'center'}
+                  align={'center'}
                   mt={'auto'}
+                  gap={'md'}
                 >
                   <Image
                     w={'10%'}
                     src={'/images/fb_logo.png'}
                     alt={'Fb logo'}
                   />
+                  <Text
+                    mt={'xs'}
+                    c={'#fff'}
+                    size={'md'}
+                    fw={400}
+                  >
+                    The Facebook group can be found here
+                  </Text>
                 </Flex>
                 <Paper
                   w={'auto'}

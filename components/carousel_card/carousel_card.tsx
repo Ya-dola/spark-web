@@ -1,9 +1,8 @@
 import { Image, Text, Paper, Box, Space } from '@mantine/core';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
-import '@mantine/carousel/styles.css';
-import classes from '@/styles/carousel.module.css';
-// import theme from './skeleton_card.module.css';
+import Autoplay from 'embla-carousel-autoplay';
+import theme from '@/components/carousel_card/carousel_card.module.css';
 
 interface CarouselCardProps {
   text?: {
@@ -22,6 +21,9 @@ interface CarouselCardProps {
   }>;
   primaryImage?: string;
   secondaryImage?: string;
+  headingColor?: string;
+  descriptionColor?: string;
+  autoPlayDelay?: number;
   onSlideChange?: (index: number) => void;
 }
 
@@ -31,15 +33,19 @@ function CarouselCard({
   height = 200,
   imageSrc = [],
   carouselHeight = 200,
-  slideSize = '100%',
+  slideSize = '33.333333%',
   primaryImage = '',
   secondaryImage = '',
+  headingColor = 'white',
+  descriptionColor = '#cacaca',
+  autoPlayDelay = 3000,
   onSlideChange,
 }: CarouselCardProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  // const handleSlideChange = (index: number) => {
-  //   setActiveIndex(index); // Update the active index when the slide changes
-  // };
+  const handleSlideChange = (index: number) => {
+    setActiveIndex(index);
+  };
+  const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
 
   return (
     <Paper
@@ -57,15 +63,22 @@ function CarouselCard({
         align='center'
         draggable={true}
         withIndicators
+        withControls
         slidesToScroll={1}
-        onSlideChange={onSlideChange}
-        classNames={classes}
+        onSlideChange={handleSlideChange}
+        classNames={theme}
+        style={{
+          '--active-color': headingColor,
+        }}
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
       >
         {imageSrc.map((image, index) => (
           <Carousel.Slide key={index}>
             <div
               style={{
-                transform: activeIndex === index ? 'scale(1.1)' : 'scale(1)',
+                transform: activeIndex === index ? 'scale(1.1)' : 'scale(0.8)',
                 transition: 'transform 0.3s ease',
                 zIndex: activeIndex === index ? 1 : 0,
                 width: '100%',
@@ -135,15 +148,17 @@ function CarouselCard({
               <Text
                 fz={'h3'}
                 fw={900}
-                c={'#751fd6'}
+                c={headingColor}
               >
                 {text.heading}
               </Text>
+
               <Space h={'lg'} />
+
               <Text
                 fz={'md'}
                 fw={600}
-                c={'#CACACA'}
+                c={descriptionColor}
               >
                 {text.description}
               </Text>

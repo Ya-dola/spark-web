@@ -1,16 +1,8 @@
 import { CommunityTabsModel } from '@/models/community/community_tabs_model';
 import CarouselCard from '@/components/carousel_card/carousel_card';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
-import {
-  Box,
-  Center,
-  Paper,
-  Text,
-  MantineSize,
-  Space,
-  Title,
-} from '@mantine/core';
-import { useEffect, useState } from 'react';
+import { Center, Paper, Text, MantineSize, Space } from '@mantine/core';
+import { useState } from 'react';
 import ScrollableButtonTabs from '../scrollable_button_tabs/scrollable_button_tabs';
 
 interface CommunitySectionProps {
@@ -27,7 +19,9 @@ interface CommunitySectionProps {
   headingSize?: MantineSize;
   headingWeight?: number;
   description?: string;
-  subtext?: string;
+  sectionColor?: string;
+  autoPlayDelay?: number;
+  slideSize?: string;
   tabs?: CommunityTabsModel[];
 }
 
@@ -45,30 +39,33 @@ function CommunitySection({
   headingSize = 'xl',
   headingWeight = 900,
   description,
-  subtext,
+  sectionColor = '#1e1e1e',
+  autoPlayDelay,
+  slideSize,
   tabs,
 }: CommunitySectionProps) {
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedTabDetail, setSelectedTabDetail] = useState(0);
 
   const imageSrc = () => {
-    let temp: Array<{
+    let imageList: Array<{
       primary: string; // URL of the primary image
       secondary?: string;
     }> = [];
+
     if (tabs) {
       for (
         let i = 0;
         i < tabs[selectedTab]?.details[selectedTabDetail]?.images.length;
         i++
       ) {
-        temp.push({
+        imageList.push({
           primary: tabs[selectedTab]?.details[selectedTabDetail]?.images[i],
         });
       }
     }
 
-    return temp;
+    return imageList;
   };
 
   return (
@@ -120,17 +117,6 @@ function CommunitySection({
               >
                 {description}
               </Text>
-
-              {subtext && (
-                <Box maw={'100%'}>
-                  <Title
-                    order={5}
-                    textWrap='wrap'
-                  >
-                    {subtext}
-                  </Title>
-                </Box>
-              )}
             </Paper>
           </Center>
         </>
@@ -140,6 +126,8 @@ function CommunitySection({
         <>
           <Space h={'lg'} />
           <ScrollableSegmentedControl
+            offsetScrollbars={false}
+            segmentFgColor={sectionColor}
             segmentData={tabs.map((tab, index) => ({
               label: tab.name.toString(),
               value: index.toString(),
@@ -164,6 +152,7 @@ function CommunitySection({
                 onTabSelect={(index) => setSelectedTabDetail(index)}
                 textColor={'white'}
                 selectedIndex={selectedTabDetail}
+                selectorColor={sectionColor}
               />
               {/* <ScrollableSegmentedControl
             segmentData={tabs[selectedTab]?.details.map(
@@ -179,33 +168,8 @@ function CommunitySection({
                 // onSlideChange={(index) => setSelectedTabDetail(index)}
                 carouselHeight={350}
                 height={500}
-                slideSize={'100%'}
-                // imageSrc={[
-                //   {
-                //     primary:
-                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
-                //     secondary:
-                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
-                //   },
-                // ]}
+                slideSize={slideSize}
                 imageSrc={imageSrc()}
-                // imageSrc={[
-                //   {
-                //     primary:
-                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[0],
-                //   },
-
-                //   {
-                //     primary:
-                //       tabs[selectedTab]?.details[selectedTabDetail]?.images[1],
-                //   },
-                // ]}
-
-                // imageSrc={tabs[selectedTab]?.details[selectedTabDetail]?.images.map(
-                //   (image) => ({
-                //     primary: image,
-                //   }),
-                // )}
                 text={{
                   heading: tabs[selectedTab]?.details[selectedTabDetail].name,
                   description:
@@ -214,6 +178,8 @@ function CommunitySection({
                     selectedTabDetail
                   ]?.members.reduce((acc, member) => acc + member + ' | ', ''),
                 }}
+                headingColor={sectionColor}
+                autoPlayDelay={autoPlayDelay}
               />
             </>
           </Paper>
