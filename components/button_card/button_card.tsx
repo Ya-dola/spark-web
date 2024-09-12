@@ -30,7 +30,7 @@ function ButtonCard({
   width,
   radius = 'md',
   bgColor = 'purple',
-  textColor = 'white',
+  textColor = '',
   headingColor = 'white',
   headingSize = 'h3',
   headingWeight = 900,

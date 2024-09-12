@@ -12,16 +12,18 @@ function UndergraduateClient() {
   return (
     <CustomAppShell
       imageSrc={['/images/bg_3.png']}
-      height={1400}
+      height={1500}
+      padding={0}
     >
       <Flex
         direction={'column'}
         justify={'flex-start'}
         align={'center'}
         gap={'md'}
-        px={'md'}
+        px={isMobile ? '' : 'md'}
       >
         <Text
+          px={'md'}
           w={'100%'}
           fz={'h1'}
           fw={900}
@@ -32,6 +34,7 @@ function UndergraduateClient() {
         <Text
           w={isMobile ? '100%' : '60%'}
           mr={'auto'}
+          px={'md'}
         >
           Students may excel academically; however, they will also need to
           practice effective &quot;life skills&quot; whilst in employment to
@@ -42,6 +45,7 @@ function UndergraduateClient() {
         <Text
           w={isMobile ? '100%' : '60%'}
           mr={'auto'}
+          px={'md'}
         >
           &quot;Between now and 2027, 60% of workers will need retraining due to
           global transformation and macrotrends.&quot; That&apos;s one of many
@@ -53,7 +57,7 @@ function UndergraduateClient() {
           w={isMobile ? '100%' : '70%'}
           h={'auto'}
           bg={'#343434'}
-          radius={'lg'}
+          radius={isMobile ? '' : 'lg'}
           px={isMobile ? 'md' : 'xl'}
           py={'xl'}
         >
@@ -123,7 +127,7 @@ function UndergraduateClient() {
 
           <Space h={'xl'} />
           <Image
-            w={isMobile ? '100%' : '50%'}
+            w={isMobile ? '100%' : '70%'}
             m={'auto'}
             fit={'contain'}
             component={NextImage}

@@ -67,11 +67,13 @@ function PiCommunityClient({
             services associated with the Raspberry Pi; in time a being
             recognised centre of excellence of in the use of this device.
           </Text>
-          <CustomImage
-            imageSrc={'/images/pi_logo.png'}
-            width={100}
-            height={100}
-          />
+          <Box w={isMobile ? '30%' : '10%'}>
+            <Image
+              src={'/images/pi_logo.png'}
+              alt={'pi logo'}
+              h={'auto'}
+            />
+          </Box>
         </Flex>
         <Flex
           w={isMobile ? '100%' : '100%'}
@@ -84,7 +86,7 @@ function PiCommunityClient({
             style={{
               width: '100%', // Full width
               height: 'auto', // Automatic height (can be set to fixed value)
-              padding: '40px', // Adjust padding based on your design
+              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
               display: 'flex', // Allows centering the content
               justifyContent: 'center', // Center horizontally
               alignItems: 'center', // Center vertically if needed
@@ -96,14 +98,14 @@ function PiCommunityClient({
               width={isMobile ? '100%' : '80%'}
               height={'auto'}
               bgColor={'#343434'}
-              radius={'lg'}
+              radius={isMobile ? '' : 'lg'}
               heading={piMoraData.title}
               headingColor={'#F4018b'}
               sectionColor={'#F4018b'}
               text={piMoraData.description}
               tabs={piMoraData.tabs}
               autoPlayDelay={6000}
-              slideSize={'100%'}
+              slideSize={isMobile ? '100%' : '50%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -111,7 +113,7 @@ function PiCommunityClient({
             style={{
               width: '100%', // Full width
               height: 'auto', // Automatic height (can be set to fixed value)
-              padding: '40px', // Adjust padding based on your design
+              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
               display: 'flex', // Allows centering the content
               justifyContent: 'center', // Center horizontally
               alignItems: 'center', // Center vertically if needed
@@ -123,14 +125,14 @@ function PiCommunityClient({
               width={isMobile ? '100%' : '80%'}
               height={'auto'}
               bgColor={'#343434'}
-              radius={'lg'}
+              radius={isMobile ? '' : 'lg'}
               heading={techDemoData.title}
               headingColor={'#1f68d6'}
               sectionColor={'#1f68d6'}
               text={techDemoData.description}
               tabs={techDemoData.tabs}
               autoPlayDelay={3000}
-              slideSize={'50%'}
+              slideSize={isMobile ? '100%' : '50%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -138,7 +140,7 @@ function PiCommunityClient({
             style={{
               width: '100%', // Full width
               height: 'auto', // Automatic height (can be set to fixed value)
-              padding: '40px', // Adjust padding based on your design
+              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
               display: 'flex', // Allows centering the content
               justifyContent: 'center', // Center horizontally
               alignItems: 'center', // Center vertically if needed
@@ -150,14 +152,14 @@ function PiCommunityClient({
               width={isMobile ? '100%' : '80%'}
               height={'auto'}
               bgColor={'#343434'}
-              radius={'lg'}
+              radius={isMobile ? '' : 'lg'}
               heading={finalYearData.title}
               headingColor={'#A61FD6'}
               sectionColor={'#A61FD6'}
               text={finalYearData.description}
               tabs={finalYearData.tabs}
               autoPlayDelay={5000}
-              slideSize={'33.333333%'}
+              slideSize={isMobile ? '100%' : '50%'}
             />
           </BackgroundImage>
 

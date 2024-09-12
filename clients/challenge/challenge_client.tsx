@@ -44,7 +44,7 @@ function ChallengeClient() {
           align={isMobile ? 'center' : 'flex-start'}
           gap={'xl'}
         >
-          <Text>
+          <Text c={'white'}>
             The SPARK Challenge will reward groups of students that create
             unique, innovative, sustainable and socially/environmentally aware
             solutions; the results potentially having significant positive

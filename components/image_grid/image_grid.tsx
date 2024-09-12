@@ -4,11 +4,13 @@ import React from 'react';
 interface ImageGridProps {
   imageSrc: string[]; // Array of image URLs
   height: number; // Height of each image
+  width: string | number,
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({
   height = 300,
   imageSrc = [],
+  width = '100%',
 }) => {
   return (
     <div
@@ -30,7 +32,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({
             height: height, // Set the height for each BackgroundImage
             backgroundSize: 'cover', // Crop the image
             backgroundPosition: 'top center', // Center the image
-            width: '100%', // Fill the container’s width
+            width: width, // Fill the container’s width
           }}
         />
       ))}
