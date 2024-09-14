@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import {
   AppShell,
-  BackgroundImage,
   Flex,
   Image,
+  MantineSpacing,
   rem,
   UnstyledButton,
 } from '@mantine/core';
@@ -19,11 +19,15 @@ interface CustomAppShellProps {
   children: ReactNode;
   imageSrc?: string[];
   height?: number;
+  width?: number | string;
+  padding?: MantineSpacing;
 }
 
 function CustomAppShell({
   imageSrc = [],
   height = 900,
+  width = '100%',
+  padding = 'md',
   children,
 }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
@@ -32,6 +36,7 @@ function CustomAppShell({
     <ImageGrid
       imageSrc={imageSrc}
       height={height}
+      width={width}
     />
   );
 
@@ -42,7 +47,7 @@ function CustomAppShell({
         collapsed: isMobile ? !pinned : false,
         offset: false,
       }}
-      padding={'md'}
+      padding={padding}
     >
       <AppShell.Header>
         <Flex

@@ -6,15 +6,14 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import ImageGrid from '@/components/image_grid/image_grid';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
 
   return (
     <CustomAppShell
-      imageSrc={['/images/bg_4.png']}
-      height={1080}
+      imageSrc={['/images/image_7.png']}
+      height={isMobile ? 650 : 500}
     >
       <Flex
         direction={'column'}
@@ -42,6 +41,8 @@ function SparkHomeClient() {
           <Text
             ta={'center'}
             fz={'h4'}
+            fw={600}
+            c={'white'}
           >
             SPARK will expose ENTC undergraduates to a set of challenges not
             made available in any other university in Asia, Europe, or the
@@ -54,7 +55,7 @@ function SparkHomeClient() {
         </Center>
 
         <Box
-          mt={10}
+          mt={50}
           w={'100%'}
           h={'auto'}
           py={'xl'}
@@ -75,7 +76,7 @@ function SparkHomeClient() {
               imageSrc={'/images/everest.png'}
               width={300}
               height={450}
-              bgColor={'#262626'}
+              bgColor={'#1f1f1f'}
               headingColor={'#1f68d6'}
               href={'/challenge'}
               buttonColor={'#1f68d6'}
@@ -84,14 +85,13 @@ function SparkHomeClient() {
             <ButtonCard
               heading={'Pi-Community'}
               description={
-                'To build a Community; by exploiting the extensive Raspberry Pi resources available at ENTC.'
+                'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
               }
               imageSrc={'/images/image_pi.png'}
               width={300}
               height={450}
-              bgColor={'#262626'}
+              bgColor={'#1f1f1f'}
               headingColor={'#f4018b'}
-              textColor={'white'}
               href={'/pi_community'}
               buttonColor={'#f4018b'}
             />
@@ -103,9 +103,8 @@ function SparkHomeClient() {
               imageSrc={'/images/image_1.png'}
               width={300}
               height={450}
-              bgColor={'#262626'}
+              bgColor={'#1f1f1f'}
               headingColor={'#a61fd6'}
-              textColor={'white'}
               href={'/undergraduate'}
               buttonColor={'#a61fd6'}
             />
