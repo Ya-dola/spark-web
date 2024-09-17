@@ -37,7 +37,7 @@ function CommunitySection({
   heading,
   headingColor = 'white',
   headingSize = 'xl',
-  headingWeight = 900,
+  headingWeight = 800,
   description,
   sectionColor = '#1e1e1e',
   autoPlayDelay,
@@ -47,31 +47,10 @@ function CommunitySection({
   const [selectedTab, setSelectedTab] = useState(0);
   const [selectedTabDetail, setSelectedTabDetail] = useState(0);
 
-  const imageSrc = () => {
-    let imageList: Array<{
-      primary: string; // URL of the primary image
-      secondary?: string;
-    }> = [];
-
-    if (tabs) {
-      for (
-        let i = 0;
-        i < tabs[selectedTab]?.details[selectedTabDetail]?.images.length;
-        i++
-      ) {
-        imageList.push({
-          primary: tabs[selectedTab]?.details[selectedTabDetail]?.images[i],
-        });
-      }
-    }
-
-    return imageList;
-  };
-
   return (
     <Paper
-      px={'xl'}
-      py={'xl'}
+      px={'md'}
+      py={'md'}
       h={height}
       w={width}
       radius={radius}
@@ -141,11 +120,11 @@ function CommunitySection({
             h={'100%'}
             w={'100%'}
             bg={'#262626'}
-            p={'sm'}
+            // p={'sm'}
             radius={'md'}
           >
             <>
-              <ScrollableButtonTabs
+              {/* <ScrollableButtonTabs
                 items={tabs[selectedTab]?.details.map(
                   (tabDetails) => tabDetails.name,
                 )}
@@ -153,31 +132,11 @@ function CommunitySection({
                 textColor={'white'}
                 selectedIndex={selectedTabDetail}
                 selectorColor={sectionColor}
-              />
-              {/* <ScrollableSegmentedControl
-            segmentData={tabs[selectedTab]?.details.map(
-              (tabDetails, index) => ({
-                label: tabDetails.name.toString(),
-                value: index.toString(),
-              }),
-            )}
-            onChange={(value) => setSelectedTabDetail(Number(value))}
-            value={selectedTabDetail.toString()}
-          /> */}
+              /> */}
+
               <CarouselCard
-                // onSlideChange={(index) => setSelectedTabDetail(index)}
-                carouselHeight={350}
-                height={500}
                 slideSize={slideSize}
-                imageSrc={imageSrc()}
-                text={{
-                  heading: tabs[selectedTab]?.details[selectedTabDetail].name,
-                  description:
-                    tabs[selectedTab]?.details[selectedTabDetail]?.description,
-                  names: tabs[selectedTab]?.details[
-                    selectedTabDetail
-                  ]?.members.reduce((acc, member) => acc + member + ' | ', ''),
-                }}
+                events={tabs[selectedTab]?.details}
                 headingColor={sectionColor}
                 autoPlayDelay={autoPlayDelay}
               />

@@ -1,175 +1,185 @@
-import { Image, Text, Paper, Box, Space } from '@mantine/core';
+import { Image, Text, Space, List } from '@mantine/core';
 import React, { useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import theme from '@/components/carousel_card/carousel_card.module.css';
+import { TabDetails } from '@/models/community/community_tabs_model';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 interface CarouselCardProps {
-  text?: {
-    description?: string;
-    heading?: string;
-    names?: string;
-  };
-  overlayText?: string;
   width?: number;
-  height?: number;
-  carouselHeight?: number;
+  // height?: number;
+  carouselHeight?: string | number;
   slideSize?: string;
-  imageSrc?: Array<{
-    primary: string; // URL of the primary image
-    secondary?: string;
-  }>;
-  primaryImage?: string;
-  secondaryImage?: string;
   headingColor?: string;
   descriptionColor?: string;
   autoPlayDelay?: number;
-  onSlideChange?: (index: number) => void;
+  events?: TabDetails[];
 }
 
 function CarouselCard({
-  text,
-  overlayText = '',
-  height = 200,
-  imageSrc = [],
-  carouselHeight = 200,
-  slideSize = '33.333333%',
-  primaryImage = '',
-  secondaryImage = '',
+  events = [],
+  carouselHeight = 500,
+  slideSize = '100%',
   headingColor = 'white',
   descriptionColor = '#cacaca',
-  autoPlayDelay = 3000,
-  onSlideChange,
+  autoPlayDelay = 10000,
 }: CarouselCardProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const handleSlideChange = (index: number) => {
-    setActiveIndex(index);
-  };
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
+  const isMobile = useIsMobile();
+
+  // Events
+  const [activeEventIndex, setActiveEventIndex] = useState(0);
+  const handleCarouselChange = (index: number) => {
+    setActiveImageIndex(0);
+    setActiveEventIndex(index);
+  };
+
+  // Tiny Images
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const handleImageClick = (index: number) => {
+    setActiveImageIndex(index);
+  };
 
   return (
-    <Paper
-      h={'100%'}
-      w={'100%'}
-      bg={'#262626'}
-      p={'sm'}
-      radius={'md'}
+    <Carousel
+      height={carouselHeight}
+      slideSize={{ base: '100%', sm: '100%', md: slideSize }}
+      slideGap={{ base: 0, sm: 'lg' }}
+      loop
+      align='center'
+      draggable={true}
+      withIndicators
+      withControls
+      slidesToScroll={1}
+      onSlideChange={handleCarouselChange}
+      classNames={theme}
+      style={{
+        '--active-color': headingColor,
+      }}
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
     >
-      <Carousel
-        height={carouselHeight}
-        slideSize={{ base: '100%', sm: '100%', md: slideSize }}
-        slideGap={{ base: 0, sm: 'lg' }}
-        loop
-        align='center'
-        draggable={true}
-        withIndicators
-        withControls
-        slidesToScroll={1}
-        onSlideChange={handleSlideChange}
-        classNames={theme}
-        style={{
-          '--active-color': headingColor,
-        }}
-        plugins={[autoplay.current]}
-        onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}
-      >
-        {imageSrc.map((image, index) => (
-          <Carousel.Slide key={index}>
-            <div
-              style={{
-                transform: activeIndex === index ? 'scale(1.1)' : 'scale(0.8)',
-                transition: 'transform 0.3s ease',
-                zIndex: activeIndex === index ? 1 : 0,
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <div style={{ flex: 1, position: 'relative' }}>
-                <Image
-                  src={image.primary}
-                  alt={primaryImage}
-                  h={height}
-                  fit={'cover'}
-                />
-              </div>
-
-              {image.secondary && (
-                <div style={{ flex: 1, position: 'relative' }}>
-                  <Image
-                    src={image.secondary}
-                    alt={secondaryImage}
-                    h={height}
-                    fit={'cover'}
-                  />
-                </div>
-              )}
-
-              {overlayText && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0, // Center vertically
-                    left: '50%', // Center horizontally
-                    right: 0,
-                    bottom: 0,
-
-                    color: 'white', // Change as per your needs
-                    display: 'flex',
-                    textAlign: 'center', // Center text
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: 'rgba(0, 0, 0, 0.5)', // Optional: semi-transparent background
-                    padding: '10px',
-                    borderRadius: '5px',
-                  }}
-                >
-                  {overlayText}
-                </div>
-              )}
-            </div>
-          </Carousel.Slide>
-        ))}
-      </Carousel>
-      <Box
-        px={'xl'}
-        py={'md'}
-      >
-        {text && (
+      {events.map((event, index) => (
+        <Carousel.Slide key={index}>
           <div
             style={{
-              display: 'block',
+              transform: activeEventIndex === index ? 'scale(1)' : 'scale(0.8)',
+              transition: 'transform 0.3s ease',
+              zIndex: activeEventIndex === index ? 1 : 0,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: isMobile ? 'flex-start' : 'center',
+              justifyContent: 'center',
             }}
           >
-            <>
-              <Text
-                fz={'h3'}
-                fw={900}
-                c={headingColor}
+            <div style={{ flex: 1, position: 'relative' }}>
+              <Image
+                src={event.images[activeImageIndex]}
+                alt={`${event.name}`}
+                fit={'cover'}
+              />
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: isMobile ? '30%' : '0', // Center vertically
+                left: isMobile ? '0%' : '60%', // Center horizontally
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                textAlign: 'left', // Center text
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                background: 'rgba(0, 0, 0, 0.5)', // Optional: semi-transparent background
+                padding: '20px',
+              }}
+            >
+              <div
+                style={{
+                  display: 'block',
+                  maxHeight: '100%', // Ensure text doesn't push too much
+                  overflow: 'auto', // Allow scrolling for overflow
+                  width: '100%', // Full width to fill overlay area
+                }}
               >
-                {text.heading}
-              </Text>
+                <Text
+                  fz={'h3'}
+                  fw={700}
+                  c={headingColor}
+                >
+                  {event.name}
+                </Text>
 
-              <Space h={'lg'} />
+                <Space h={'lg'} />
 
-              <Text
-                fz={'md'}
-                fw={600}
-                c={descriptionColor}
-              >
-                {text.description}
-              </Text>
-              <Space h={'lg'} />
+                <Text
+                  fz={'xs'}
+                  fw={600}
+                  c={descriptionColor}
+                >
+                  {event.description}
+                </Text>
+                <Space h={'lg'} />
+                <div
+                  style={{
+                    display: 'flex',
+                    overflowX: 'auto',
+                    justifyContent: 'space-evenly',
+                  }}
+                >
+                  {event.images.map((image, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        flex: '0 0 auto',
+                        border:
+                          index === activeImageIndex
+                            ? `0.1rem solid ${headingColor}`
+                            : '',
+                      }}
+                    >
+                      <Image
+                        onClick={() => handleImageClick(index)}
+                        src={image}
+                        alt={`${event.name} | Image: ${index}`}
+                        style={{
+                          width: '100px',
+                          height: '70px',
+                          objectFit: 'cover',
+                        }} // Maintains aspect ratio
+                      />
+                    </div>
+                  ))}
+                </div>
 
-              <Text>{text.names}</Text>
-            </>
+                <Space h={'lg'} />
+
+                {event.members?.length > 0 && (
+                  <>
+                    <Text fz={'md'}>Team Members</Text>
+
+                    <List listStyleType={'disc'}>
+                      {event.members.map((member, index) => (
+                        <List.Item
+                          key={index}
+                          fz={'xs'}
+                        >
+                          {member}
+                        </List.Item>
+                      ))}
+                    </List>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
-        )}
-      </Box>
-    </Paper>
+        </Carousel.Slide>
+      ))}
+    </Carousel>
   );
 }
 
