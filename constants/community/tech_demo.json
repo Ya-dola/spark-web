@@ -1,6 +1,6 @@
 {
   "title": "TECHNOLOGY DEMONSTRATORS",
-  "description": "Raspberry JAM's are independently organised community events for people to come together to learn about digital making with Raspberry Pi. ENTC will undertake 3 Raspberry JAMs (Pi-MORA's) every academic year. Undertaking to teach Pi enthusiasts about the capabilities of the Raspberry Pi platform.",
+  "description": "To demonstrate and showcase the student and Pi capabilities; a number of complex and challenging projects will be implemented throughout the year.",
   "tabs": [
     {
       "name": "2024/2025",
@@ -8,12 +8,7 @@
         {
           "name": "24/25 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2024/2025. It has multiple members and images. Yay!",
-          "images": [
-            "/images/image_1.png",
-            "/images/image_2.png",
-            "/images/bg_2.png",
-            "/images/bg_7.png"
-          ],
+          "images": ["/images/image_1.png", "/images/image_2.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -83,7 +78,7 @@
         {
           "name": "22/23 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -95,7 +90,7 @@
         {
           "name": "22/23 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -107,7 +102,7 @@
         {
           "name": "22/23 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -119,7 +114,7 @@
         {
           "name": "22/23 - Event Name 4",
           "description": "This is a description for Event 4 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -131,7 +126,7 @@
         {
           "name": "22/23 - Event Name 5",
           "description": "This is a description for Event 5 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -143,7 +138,7 @@
         {
           "name": "22/23 - Event Name 6",
           "description": "This is a description for Event 6 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -155,7 +150,7 @@
         {
           "name": "22/23 - Event Name 7",
           "description": "This is a description for Event 7 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -167,7 +162,7 @@
         {
           "name": "22/23 - Event Name 8",
           "description": "This is a description for Event 8 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -179,7 +174,7 @@
         {
           "name": "22/23 - Event Name 9",
           "description": "This is a description for Event 9 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -191,7 +186,7 @@
         {
           "name": "22/23 - Event Name 10",
           "description": "This is a description for Event 10 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": [],
+          "images": ["/images/bg_2.png", "/images/bg_3.png"],
           "members": [
             "Member 1",
             "Member 2",

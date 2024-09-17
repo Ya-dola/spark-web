@@ -3,7 +3,7 @@ export interface CommunityTabsModel {
   details: TabDetails[];
 }
 
-interface TabDetails {
+export interface TabDetails {
   name: string;
   description: string;
   images: string[];

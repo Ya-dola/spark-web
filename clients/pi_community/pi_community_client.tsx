@@ -104,8 +104,7 @@ function PiCommunityClient({
               sectionColor={'#F4018b'}
               text={piMoraData.description}
               tabs={piMoraData.tabs}
-              autoPlayDelay={6000}
-              slideSize={isMobile ? '100%' : '50%'}
+              slideSize={isMobile ? '100%' : '100%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -131,8 +130,7 @@ function PiCommunityClient({
               sectionColor={'#1f68d6'}
               text={techDemoData.description}
               tabs={techDemoData.tabs}
-              autoPlayDelay={3000}
-              slideSize={isMobile ? '100%' : '50%'}
+              slideSize={isMobile ? '100%' : '100%'}
             />
           </BackgroundImage>
           <BackgroundImage
@@ -158,8 +156,7 @@ function PiCommunityClient({
               sectionColor={'#A61FD6'}
               text={finalYearData.description}
               tabs={finalYearData.tabs}
-              autoPlayDelay={5000}
-              slideSize={isMobile ? '100%' : '50%'}
+              slideSize={isMobile ? '100%' : '100%'}
             />
           </BackgroundImage>
 
