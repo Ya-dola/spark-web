@@ -12,8 +12,9 @@ function SparkHomeClient() {
 
   return (
     <CustomAppShell
-      imageSrc={['/images/image_7.png']}
-      height={isMobile ? 650 : 500}
+      backgroundHeight={'105%'}
+      imageSrc={['/images/bg_2.png']}
+      padding={0}
     >
       <Flex
         direction={'column'}

@@ -12,7 +12,7 @@ function UndergraduateClient() {
   return (
     <CustomAppShell
       imageSrc={['/images/bg_3.png']}
-      height={1500}
+      backgroundHeight={'105%'}
       padding={0}
     >
       <Flex

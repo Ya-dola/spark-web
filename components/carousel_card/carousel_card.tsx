@@ -73,6 +73,8 @@ function CarouselCard({
               display: 'flex',
               alignItems: isMobile ? 'flex-start' : 'center',
               justifyContent: 'center',
+              borderRadius: '10px',
+              overflow: 'hidden',
             }}
           >
             <div style={{ flex: 1, position: 'relative' }}>

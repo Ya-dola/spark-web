@@ -18,14 +18,14 @@ import ImageGrid from '@/components/image_grid/image_grid';
 interface CustomAppShellProps {
   children: ReactNode;
   imageSrc?: string[];
-  height?: number;
+  backgroundHeight?: number | string;
   width?: number | string;
   padding?: MantineSpacing;
 }
 
 function CustomAppShell({
   imageSrc = [],
-  height = 900,
+  backgroundHeight = 900,
   width = '100%',
   padding = 'md',
   children,
@@ -35,7 +35,7 @@ function CustomAppShell({
   const imageGrid = (
     <ImageGrid
       imageSrc={imageSrc}
-      height={height}
+      height={backgroundHeight}
       width={width}
     />
   );

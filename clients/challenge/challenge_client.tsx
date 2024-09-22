@@ -16,14 +16,20 @@ import {
   Paper,
   Space,
   Text,
+  MantineSize,
 } from '@mantine/core';
 import ReactPlayer from 'react-player/lazy';
 
 function ChallengeClient() {
   const isMobile = useIsMobile();
+  const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
 
   return (
-    <CustomAppShell>
+    <CustomAppShell
+      backgroundHeight={'105%'}
+      imageSrc={['/images/bg_3.png']}
+      padding={0}
+    >
       <Flex
         direction={'column'}
         justify={'flex-start'}
@@ -31,6 +37,7 @@ function ChallengeClient() {
         gap={'md'}
       >
         <Text
+          px={pagePadding}
           w={'100%'}
           fz={'h1'}
           fw={900}
@@ -43,6 +50,7 @@ function ChallengeClient() {
           direction={isMobile ? 'column' : 'row'}
           align={isMobile ? 'center' : 'flex-start'}
           gap={'xl'}
+          px={pagePadding}
         >
           <Text c={'white'}>
             The SPARK Challenge will reward groups of students that create
