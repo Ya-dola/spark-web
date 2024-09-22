@@ -2,13 +2,18 @@ import { Burger, Button, Drawer, Flex } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 
-function CustomDrawer() {
+interface CustomDrawerProps {
+  zIndex?: number;
+}
+
+function CustomDrawer({ zIndex = 400 }: CustomDrawerProps) {
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
 
   return (
     <>
       <Drawer
+        zIndex={zIndex}
         opened={isDrawerOpen}
         onClose={closeDrawer}
         position={'right'}
