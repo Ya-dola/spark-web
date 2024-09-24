@@ -1,7 +1,15 @@
 'use client';
 
 import NextImage from 'next/image';
-import { Space, Image, Center, Flex, Text, Box, Divider } from '@mantine/core';
+import {
+  Space,
+  Image,
+  Center,
+  Flex,
+  Text,
+  Box,
+  MantineSize,
+} from '@mantine/core';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
@@ -9,11 +17,12 @@ import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
+  const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
 
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_2.png']}
+      imageSrc={['/images/bg_3.png']}
       padding={0}
     >
       <Flex
@@ -21,6 +30,7 @@ function SparkHomeClient() {
         justify={'center'}
         align={'center'}
         gap={'xl'}
+        p={pagePadding}
       >
         <Image
           w={isMobile ? '100%' : '35%'}

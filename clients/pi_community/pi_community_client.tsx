@@ -36,7 +36,8 @@ function PiCommunityClient({
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_3.png']}
+      imageSrc={['/images/bg_1.png']}
+      bgSize={'cover'}
       padding={0}
     >
       <Flex
@@ -56,7 +57,7 @@ function PiCommunityClient({
         </Text>
         <Flex
           w={'100%'}
-          p={pagePadding}
+          px={pagePadding}
           direction={isMobile ? 'column' : 'row'}
           align={'center'}
           justify={isMobile ? 'start' : 'space-between'}

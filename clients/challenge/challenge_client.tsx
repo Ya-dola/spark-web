@@ -27,7 +27,8 @@ function ChallengeClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_3.png']}
+      imageSrc={['/images/bg_9.png']}
+      bgSize={'cover'}
       padding={0}
     >
       <Flex

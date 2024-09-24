@@ -21,6 +21,8 @@ interface CustomAppShellProps {
   backgroundHeight?: number | string;
   width?: number | string;
   padding?: MantineSpacing;
+  bgSize? : string;
+  pos? : string;
 }
 
 function CustomAppShell({
@@ -29,6 +31,8 @@ function CustomAppShell({
   width = '100%',
   padding = 'md',
   children,
+  bgSize = 'cover',
+  pos = 'top center',
 }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
   const isMobile = useIsMobile();
@@ -37,6 +41,8 @@ function CustomAppShell({
       imageSrc={imageSrc}
       height={backgroundHeight}
       width={width}
+      bgSize={bgSize}
+      pos = {pos}
     />
   );
 

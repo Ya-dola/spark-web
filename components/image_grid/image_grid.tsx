@@ -5,12 +5,16 @@ interface ImageGridProps {
   imageSrc: string[]; // Array of image URLs
   height: number | string; // Height of each image
   width: string | number;
+  bgSize?: string;
+  pos? : string;
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({
   height = '100%',
   imageSrc = [],
   width = '100%',
+  bgSize = 'cover',
+  pos = 'top center',
 }) => {
   const containerHeight =
     typeof height === 'number'
@@ -35,8 +39,8 @@ const ImageGrid: React.FC<ImageGridProps> = ({
             src={src} //url
             style={{
               height: height, // Set the height for each BackgroundImage
-              backgroundSize: 'cover', // Crop the image
-              backgroundPosition: 'top center', // Center the image at the top
+              backgroundSize: bgSize, // Crop the image
+              backgroundPosition: pos, // Center the image at the top
               width: width, // Fill the container’s width
             }}
           />
