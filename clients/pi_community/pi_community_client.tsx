@@ -8,7 +8,6 @@ import React, { useState } from 'react';
 import {
   Center,
   Image,
-  BackgroundImage,
   Flex,
   Text,
   Box,
@@ -16,7 +15,6 @@ import {
   Paper,
   MantineSize,
 } from '@mantine/core';
-import CustomImage from '@/components/custom_image/custom_image';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;

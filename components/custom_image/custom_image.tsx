@@ -6,7 +6,7 @@ interface CustomImageProps {
   width?: number;
   height?: number;
   radius?: string;
-  altName?: string;
+  alt?: string;
 }
 
 function CustomImage({
@@ -14,7 +14,7 @@ function CustomImage({
   height,
   radius,
   imageSrc = '',
-  altName = '',
+  alt = '',
 }: CustomImageProps) {
   return (
     <Image
@@ -24,7 +24,7 @@ function CustomImage({
       width={width}
       radius={radius}
       src={imageSrc}
-      alt={altName}
+      alt={alt}
     />
   );
 }

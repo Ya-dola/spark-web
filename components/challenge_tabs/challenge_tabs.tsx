@@ -2,6 +2,7 @@ import {
   Box,
   Center,
   Paper,
+  Image,
   Text,
   MantineSize,
   Divider,
@@ -11,7 +12,6 @@ import {
   Space,
 } from '@mantine/core';
 import React, { useState } from 'react';
-import CustomImage from '../custom_image/custom_image';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 // import theme from './skeleton_card.module.css';
 
@@ -129,11 +129,12 @@ function ChallengeTabs({
             p={'md'}
           >
             {images.map((image, index) => (
-              <CustomImage
-                key={index} // Use index as key, better to use unique ids if available
-                imageSrc={image}
+              <Image
+                key={index}
+                src={image}
                 height={300}
                 width={300} // Set the height for each BackgroundImage
+                alt={'name'}
               />
             ))}
           </Flex>
