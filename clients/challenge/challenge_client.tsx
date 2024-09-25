@@ -1,10 +1,12 @@
 'use client';
 
+import CarouselCard from '@/components/carousel_card/carousel_card';
 import ChallengeSection from '@/components/challenge_section/challenge_section';
 import ChallengeTabs from '@/components/challenge_tabs/challenge_tabs';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
@@ -20,11 +22,18 @@ import {
   Text,
   MantineSize,
 } from '@mantine/core';
+import { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
-function ChallengeClient() {
+interface ChallengeClientProps {
+  challengeTabs: ChallengeTabsModel;
+}
+
+function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
+  const [selectedChallenge, setSelectedChallenge] = useState(0);
+  const [selectedRunnerUp, setSelectedRunnerUp] = useState(0);
 
   return (
     <CustomAppShell
@@ -161,26 +170,27 @@ function ChallengeClient() {
           </Box>
           <Space h={'lg'} />
           <ScrollableSegmentedControl
-            segmentData={[
-              'Celebration 2025/2026',
-              'Celebration 2024/2025',
-              'Celebration 2023/2024',
-              'Celebration 2022/2023',
-              'Celebration 2021/2022',
-              'Celebration 2020/2021',
-              'Celebration 2019/2020',
-              'Celebration 2018/2019',
-              'Celebration 2017/2018',
-              'Celebration 2016/2017',
-              'Celebration 2015/2016',
-            ]}
+            segmentData={challengeTabs.tabs.map((tab, index) => ({
+              label: tab.name.toString(),
+              value: index.toString(),
+            }))}
+            onChange={(value) => {
+              setSelectedRunnerUp(0);
+              return setSelectedChallenge(Number(value));
+            }}
           />
-          <Space h={'lg'} />
+          <Text
+            fz={'h1'}
+            my={'lg'}
+          >
+            Celebration Theme ??????????
+          </Text>
+
           <ChallengeSection
-            text='The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step "outside the box" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human 
-              excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.
-'
             textWeight={500}
+            text='The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step "outside the box" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human 
+            excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.
+            '
           >
             <ChallengeTabs
               text={'WINNER'}
@@ -215,8 +225,40 @@ function ChallengeClient() {
               />
             </ChallengeTabs>
           </ChallengeSection>
-
-          <Space h={'lg'} />
+          {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
+            <>
+              <Space h={'lg'} />
+              <ScrollableSegmentedControl
+                offsetScrollbars={false}
+                segmentFgColor={'#A61FD6'}
+                segmentData={challengeTabs.tabs[
+                  selectedChallenge
+                ].runnerUpTeams.map((tab, index) => ({
+                  label: tab.name.toString(),
+                  value: index.toString(),
+                }))}
+                onChange={(value) => {
+                  return setSelectedRunnerUp(Number(value));
+                }}
+              />
+              <Paper
+                h={'100%'}
+                w={'100%'}
+                bg={'#262626'}
+                radius={'md'}
+              >
+                <CarouselCard
+                  events={
+                    challengeTabs.tabs[selectedChallenge]?.runnerUpTeams
+                    // challengeTabs.tabs[selectedChallenge]?.runnerUpTeams[
+                    //   selectedRunnerUp
+                    // ].events
+                  }
+                  // headingColor={sectionColor}
+                />
+              </Paper>
+            </>
+          )}
         </Paper>
       </Flex>
     </CustomAppShell>
