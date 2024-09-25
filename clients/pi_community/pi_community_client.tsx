@@ -34,7 +34,12 @@ function PiCommunityClient({
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
 
   return (
-    <CustomAppShell padding={0}>
+    <CustomAppShell
+      backgroundHeight={'105%'}
+      imageSrc={['/images/bg_1.png']}
+      bgSize={'cover'}
+      padding={0}
+    >
       <Flex
         direction={'column'}
         justify={'flex-start'}
@@ -52,7 +57,7 @@ function PiCommunityClient({
         </Text>
         <Flex
           w={'100%'}
-          p={pagePadding}
+          px={pagePadding}
           direction={isMobile ? 'column' : 'row'}
           align={'center'}
           justify={isMobile ? 'start' : 'space-between'}
@@ -80,8 +85,9 @@ function PiCommunityClient({
           direction={'column'}
           justify={'center'}
           align={'center'}
+          gap={'xl'}
         >
-          <BackgroundImage
+          {/* <BackgroundImage
             src={'/images/image_3_1.png'}
             style={{
               width: '100%', // Full width
@@ -93,77 +99,51 @@ function PiCommunityClient({
               backgroundSize: 'cover', // Ensures the image covers the entire area
               backgroundPosition: 'center', // Centers the image
             }}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={'#343434'}
-              radius={isMobile ? '' : 'lg'}
-              heading={piMoraData.title}
-              headingColor={'#F4018b'}
-              sectionColor={'#F4018b'}
-              text={piMoraData.description}
-              tabs={piMoraData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </BackgroundImage>
-          <BackgroundImage
-            src={'/images/image_3_2.png'}
-            style={{
-              width: '100%', // Full width
-              height: 'auto', // Automatic height (can be set to fixed value)
-              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
-              display: 'flex', // Allows centering the content
-              justifyContent: 'center', // Center horizontally
-              alignItems: 'center', // Center vertically if needed
-              backgroundSize: 'cover', // Ensures the image covers the entire area
-              backgroundPosition: 'center', // Centers the image
-            }}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={'#343434'}
-              radius={isMobile ? '' : 'lg'}
-              heading={techDemoData.title}
-              headingColor={'#1f68d6'}
-              sectionColor={'#1f68d6'}
-              text={techDemoData.description}
-              tabs={techDemoData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </BackgroundImage>
-          <BackgroundImage
-            src={'/images/image_3_3.png'}
-            style={{
-              width: '100%', // Full width
-              height: 'auto', // Automatic height (can be set to fixed value)
-              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
-              display: 'flex', // Allows centering the content
-              justifyContent: 'center', // Center horizontally
-              alignItems: 'center', // Center vertically if needed
-              backgroundSize: 'cover', // Ensures the image covers the entire area
-              backgroundPosition: 'center', // Centers the image
-            }}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={'#343434'}
-              radius={isMobile ? '' : 'lg'}
-              heading={finalYearData.title}
-              headingColor={'#A61FD6'}
-              sectionColor={'#A61FD6'}
-              text={finalYearData.description}
-              tabs={finalYearData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </BackgroundImage>
+          > */}
+          <CommunitySection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={isMobile ? '' : 'lg'}
+            heading={piMoraData.title}
+            headingColor={'#F4018b'}
+            sectionColor={'#F4018b'}
+            text={piMoraData.description}
+            tabs={piMoraData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
+          {/* </BackgroundImage> */}
+
+          <CommunitySection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={isMobile ? '' : 'lg'}
+            heading={techDemoData.title}
+            headingColor={'#1f68d6'}
+            sectionColor={'#1f68d6'}
+            text={techDemoData.description}
+            tabs={techDemoData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
+
+          <CommunitySection
+            width={isMobile ? '100%' : '80%'}
+            height={'auto'}
+            bgColor={'#343434'}
+            radius={isMobile ? '' : 'lg'}
+            heading={finalYearData.title}
+            headingColor={'#A61FD6'}
+            sectionColor={'#A61FD6'}
+            text={finalYearData.description}
+            tabs={finalYearData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
 
           <Box
             w={'100%'}
             h={'auto'}
-            bg={'#343434'}
+            bg={'#1e1e1e'}
             p={'xl'}
           >
             <Center>

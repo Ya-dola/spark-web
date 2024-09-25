@@ -18,25 +18,31 @@ import ImageGrid from '@/components/image_grid/image_grid';
 interface CustomAppShellProps {
   children: ReactNode;
   imageSrc?: string[];
-  height?: number;
+  backgroundHeight?: number | string;
   width?: number | string;
   padding?: MantineSpacing;
+  bgSize? : string;
+  pos? : string;
 }
 
 function CustomAppShell({
   imageSrc = [],
-  height = 900,
+  backgroundHeight = 900,
   width = '100%',
   padding = 'md',
   children,
+  bgSize = 'cover',
+  pos = 'top center',
 }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
   const isMobile = useIsMobile();
   const imageGrid = (
     <ImageGrid
       imageSrc={imageSrc}
-      height={height}
+      height={backgroundHeight}
       width={width}
+      bgSize={bgSize}
+      pos = {pos}
     />
   );
 

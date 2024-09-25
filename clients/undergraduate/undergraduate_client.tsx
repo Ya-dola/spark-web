@@ -1,18 +1,29 @@
 'use client';
 
 import NextImage from 'next/image';
-import { Image, List, Paper, Flex, Text, Space, Box } from '@mantine/core';
+import {
+  MantineSize,
+  Image,
+  List,
+  Paper,
+  Flex,
+  Text,
+  Space,
+  Box,
+} from '@mantine/core';
 import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function UndergraduateClient() {
   const isMobile = useIsMobile();
+  const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
 
   return (
     <CustomAppShell
-      imageSrc={['/images/bg_3.png']}
-      height={1500}
+      backgroundHeight={'105%'}
+      imageSrc={['/images/bg_4.png']}
+      pos={isMobile ? 'top left' : 'top center'}
       padding={0}
     >
       <Flex
@@ -20,10 +31,9 @@ function UndergraduateClient() {
         justify={'flex-start'}
         align={'center'}
         gap={'md'}
-        px={isMobile ? '' : 'md'}
       >
         <Text
-          px={'md'}
+          px={pagePadding}
           w={'100%'}
           fz={'h1'}
           fw={900}
@@ -34,7 +44,7 @@ function UndergraduateClient() {
         <Text
           w={isMobile ? '100%' : '60%'}
           mr={'auto'}
-          px={'md'}
+          px={pagePadding}
         >
           Students may excel academically; however, they will also need to
           practice effective &quot;life skills&quot; whilst in employment to
