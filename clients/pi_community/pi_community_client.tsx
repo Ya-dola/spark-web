@@ -16,7 +16,6 @@ import {
   Paper,
   MantineSize,
 } from '@mantine/core';
-import CustomImage from '@/components/custom_image/custom_image';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;

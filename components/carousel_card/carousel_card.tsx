@@ -27,6 +27,14 @@ function CarouselCard({
 }: CarouselCardProps) {
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
+  const characterLimit = 500; // Set your desired character limit
+  // Function to truncate string
+  const truncateDescription = (description: string): string => {
+    if (description.length > characterLimit) {
+      return description.slice(0, characterLimit) + '...';
+    }
+    return description;
+  };
 
   // Events
   const [activeEventIndex, setActiveEventIndex] = useState(0);
@@ -70,6 +78,7 @@ function CarouselCard({
               zIndex: activeEventIndex === index ? 1 : 0,
               width: '100%',
               height: '100%',
+              objectPosition: 'top center',
               display: 'flex',
               alignItems: isMobile ? 'flex-start' : 'center',
               justifyContent: 'center',
@@ -77,11 +86,13 @@ function CarouselCard({
               overflow: 'hidden',
             }}
           >
-            <div style={{ flex: 1, position: 'relative' }}>
+            <div style={{ flex: 1, position: 'relative', height: '100%' }}>
               <Image
                 src={event.images[activeImageIndex]}
                 alt={`${event.name}`}
                 fit={'cover'}
+                h={'100%'}
+                w={'100%'}
               />
             </div>
 
@@ -123,7 +134,7 @@ function CarouselCard({
                   fw={600}
                   c={descriptionColor}
                 >
-                  {event.description}
+                  {truncateDescription(event.description)}
                 </Text>
                 <Space h={'lg'} />
                 <div
@@ -133,7 +144,7 @@ function CarouselCard({
                     justifyContent: 'space-evenly',
                   }}
                 >
-                  {event.images.map((image, index) => (
+                  {event.images.slice(0, 2).map((image, index) => (
                     <div
                       key={index}
                       style={{
@@ -142,6 +153,10 @@ function CarouselCard({
                           index === activeImageIndex
                             ? `0.1rem solid ${headingColor}`
                             : '',
+                        width: '40%', // Fixed width for each image container
+                        height: '100px', // Fixed height for each image container (can be in px or %)
+                        position: 'relative', // Allows proper positioning for absolute children if needed
+                        overflow: 'hidden', // Ensures cropping of images
                       }}
                     >
                       <Image
@@ -149,9 +164,10 @@ function CarouselCard({
                         src={image}
                         alt={`${event.name} | Image: ${index}`}
                         style={{
-                          width: '100px',
-                          height: '70px',
+                          width: '100%',
+                          height: '100%',
                           objectFit: 'cover',
+                          objectPosition: 'top',
                         }} // Maintains aspect ratio
                       />
                     </div>
