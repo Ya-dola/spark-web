@@ -6,8 +6,8 @@
       "winnerTeam": {
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
-        "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/bg_2.png"]
+        "members": ["Member 1", "Member 2", "Member 3", "Member 4", "Member 5"],
+        "images": ["/images/bg_6.png", "/images/bg_7.png"]
       },
       "runnerUpTeams": [
         {
@@ -44,7 +44,7 @@
     },
     {
       "name": "Celebration 24/25",
-      "description": "This is a description for the Celebration 24/25.",
+      "description": "The year-long challenge is one of the fundamental parts of the SPARK programme,  to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step \"outside the box\" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.",
       "winnerTeam": {
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",

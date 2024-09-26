@@ -1,5 +1,5 @@
 import { Image, Text, Space, List } from '@mantine/core';
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import theme from '@/components/carousel_card/carousel_card.module.css';
@@ -16,6 +16,8 @@ interface CarouselCardProps {
   descriptionColor?: string;
   autoPlayDelay?: number;
   events?: TabDetails[];
+  onCarouselChange?: (index: number) => void;
+  eventIndex?: number;
 }
 
 function CarouselCard({
@@ -25,10 +27,13 @@ function CarouselCard({
   headingColor = 'white',
   descriptionColor = '#cacaca',
   autoPlayDelay = 10000,
+  onCarouselChange,
+  eventIndex,
 }: CarouselCardProps) {
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
   const characterLimit = 500; // Set your desired character limit
+
   // Function to truncate string
   const truncateDescription = (description: string): string => {
     if (description.length > characterLimit) {
@@ -38,17 +43,27 @@ function CarouselCard({
   };
 
   // Events
-  const [activeEventIndex, setActiveEventIndex] = useState(0);
-  const handleCarouselChange = (index: number) => {
-    setActiveImageIndex(0);
-    setActiveEventIndex(index);
-  };
+  const [activeEventIndex, setActiveEventIndex] = useState(eventIndex ?? 0);
+  const handleCarouselChange = useCallback(
+    (index: number) => {
+      setActiveImageIndex(0);
+      setActiveEventIndex(index);
+      onCarouselChange?.(index);
+    },
+    [onCarouselChange],
+  );
 
   // Tiny Images
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const handleImageClick = (index: number) => {
     setActiveImageIndex(index);
   };
+
+  useEffect(() => {
+    if (eventIndex !== undefined) {
+      handleCarouselChange(eventIndex);
+    }
+  }, [eventIndex, handleCarouselChange]);
 
   return (
     <Carousel
@@ -57,11 +72,12 @@ function CarouselCard({
       slideGap={{ base: 0, sm: 'lg' }}
       loop
       align='center'
-      draggable={true}
-      withIndicators
-      withControls
+      draggable={events.length > 1}
+      withControls={events.length > 1}
+      withIndicators={events.length > 1}
       slidesToScroll={1}
       onSlideChange={handleCarouselChange}
+      initialSlide={eventIndex}
       classNames={theme}
       style={{
         '--active-color': headingColor,
