@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Oswald } from 'next/font/google';
 import '@/styles/globals.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 const inter = Inter({ subsets: ['latin'] });
+const oswald = Oswald({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Spark Web',
@@ -33,7 +34,7 @@ function RootLayout({
         />
         <link
           rel='icon'
-          href='/favicons/favicon-32x32.png'
+          href='/favicons/favicon-32http://localhost:3000/x32.png'
           sizes='32x32'
           type='image/png'
         />

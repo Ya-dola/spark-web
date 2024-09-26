@@ -4,6 +4,7 @@ import ScrollableSegmentedControl from '@/components/scrollable_segmented_contro
 import { Center, Paper, Text, MantineSize, Space } from '@mantine/core';
 import { useState } from 'react';
 import ScrollableButtonTabs from '../scrollable_button_tabs/scrollable_button_tabs';
+import { oswald } from '@/utils/font_utils';
 
 interface CommunitySectionProps {
   height?: string | number;
@@ -16,7 +17,7 @@ interface CommunitySectionProps {
   textWeight?: number;
   heading?: string;
   headingColor?: string;
-  headingSize?: MantineSize;
+  headingSize?: string;
   headingWeight?: number;
   description?: string;
   sectionColor?: string;
@@ -36,8 +37,8 @@ function CommunitySection({
   textWeight = 300,
   heading,
   headingColor = 'white',
-  headingSize = 'xl',
-  headingWeight = 800,
+  headingSize = 'h2',
+  headingWeight = 900,
   description,
   sectionColor = '#1e1e1e',
   autoPlayDelay,
@@ -62,6 +63,7 @@ function CommunitySection({
           fw={headingWeight}
           fz={headingSize}
           mt={'md'}
+          className={oswald.className}
         >
           {heading}
         </Text>
