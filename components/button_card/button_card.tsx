@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import NextImage from 'next/image';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { oswald } from '@/utils/font_utils';
 
 interface ButtonCardProps {
   heading: string;
@@ -32,7 +33,7 @@ function ButtonCard({
   bgColor = 'purple',
   textColor = '',
   headingColor = 'white',
-  headingSize = 'h3',
+  headingSize = 'h2',
   headingWeight = 900,
   textSize = 'sm',
   buttonColor = '#262626',
@@ -78,6 +79,7 @@ function ButtonCard({
         fz={headingSize}
         px={'md'}
         mt={'md'}
+        className={oswald.className}
       >
         {heading}
       </Text>

@@ -16,6 +16,7 @@ import {
   Paper,
   MantineSize,
 } from '@mantine/core';
+import { oswald } from '@/utils/font_utils';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;
@@ -51,8 +52,9 @@ function PiCommunityClient({
           fw={900}
           c={'#f4018b'}
           px={pagePadding}
+          className={oswald.className}
         >
-          Spark Pi Community
+          SPARK PI COMMUNITY
         </Text>
         <Flex
           w={'100%'}
@@ -119,8 +121,8 @@ function PiCommunityClient({
             bgColor={'#343434'}
             radius={isMobile ? '' : 'lg'}
             heading={techDemoData.title}
-            headingColor={'#1f68d6'}
-            sectionColor={'#1f68d6'}
+            headingColor={'#F4018b'}
+            sectionColor={'#F4018b'}
             text={techDemoData.description}
             tabs={techDemoData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
@@ -132,8 +134,8 @@ function PiCommunityClient({
             bgColor={'#343434'}
             radius={isMobile ? '' : 'lg'}
             heading={finalYearData.title}
-            headingColor={'#A61FD6'}
-            sectionColor={'#A61FD6'}
+            headingColor={'#F4018b'}
+            sectionColor={'#F4018b'}
             text={finalYearData.description}
             tabs={finalYearData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
@@ -142,7 +144,6 @@ function PiCommunityClient({
           <Box
             w={'100%'}
             h={'auto'}
-            bg={'#1e1e1e'}
             p={'xl'}
           >
             <Center>
@@ -170,6 +171,7 @@ function PiCommunityClient({
                   mt='md'
                   c={'#1e1e1e'}
                   w={'60%'}
+                  className={oswald.className}
                 >
                   PI Community Facebook Page
                 </Text>

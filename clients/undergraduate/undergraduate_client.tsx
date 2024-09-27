@@ -14,6 +14,7 @@ import {
 import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { oswald } from '@/utils/font_utils';
 
 function UndergraduateClient() {
   const isMobile = useIsMobile();
@@ -38,8 +39,9 @@ function UndergraduateClient() {
           fz={'h1'}
           fw={900}
           c={'#a61fd6'}
+          className={oswald.className}
         >
-          Undergraduate Development
+          UNDERGRADUATE DEVELOPMENT
         </Text>
         <Text
           w={isMobile ? '100%' : '60%'}
@@ -98,7 +100,13 @@ function UndergraduateClient() {
           </Flex>
           <Space h={60} />
 
-          <Text>@ ENTC </Text>
+          <Text
+            c={'#A61FD6'}
+            fw={800}
+            fz={'xl'}
+          >
+            @ ENTC
+          </Text>
           <Space h={'lg'} />
           <Box w={isMobile ? '85%' : '90%'}>
             <List listStyleType={'square'}>

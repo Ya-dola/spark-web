@@ -80,7 +80,7 @@ function SparkHomeClient() {
           >
             {/* TODO - Make Height and Width % Based */}
             <ButtonCard
-              heading={'Spark Challenge'}
+              heading={'SPARK Challenge'}
               description={
                 'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
               }
