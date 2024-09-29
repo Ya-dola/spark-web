@@ -14,6 +14,7 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { colors } from '@/utils/color_utils';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
@@ -44,7 +45,7 @@ function SparkHomeClient() {
         <Text
           fz={'h3'}
           fs={'italic'}
-          c={'#d61fb3'}
+          c={colors.pink1}
         >
           Making the Impossible Possible
         </Text>
@@ -87,10 +88,10 @@ function SparkHomeClient() {
               imageSrc={'/images/everest.png'}
               width={300}
               height={450}
-              bgColor={'#1f1f1f'}
-              headingColor={'#1f68d6'}
+              bgColor={colors.black1}
+              headingColor={colors.blue1}
               href={'/challenge'}
-              buttonColor={'#1f68d6'}
+              buttonColor={colors.blue1}
             />
 
             <ButtonCard
@@ -101,10 +102,10 @@ function SparkHomeClient() {
               imageSrc={'/images/image_pi.png'}
               width={300}
               height={450}
-              bgColor={'#1f1f1f'}
-              headingColor={'#f4018b'}
+              bgColor={colors.black1}
+              headingColor={colors.pink2}
               href={'/pi_community'}
-              buttonColor={'#f4018b'}
+              buttonColor={colors.pink2}
             />
             <ButtonCard
               heading={'Undergraduate Development'}
@@ -114,10 +115,10 @@ function SparkHomeClient() {
               imageSrc={'/images/image_1.png'}
               width={300}
               height={450}
-              bgColor={'#1f1f1f'}
-              headingColor={'#a61fd6'}
+              bgColor={colors.black1}
+              headingColor={colors.purple2}
               href={'/undergraduate'}
-              buttonColor={'#a61fd6'}
+              buttonColor={colors.purple2}
             />
           </Flex>
         </Box>

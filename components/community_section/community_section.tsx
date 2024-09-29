@@ -5,6 +5,7 @@ import { Center, Paper, Text, MantineSize, Space } from '@mantine/core';
 import { useState } from 'react';
 import ScrollableButtonTabs from '../scrollable_button_tabs/scrollable_button_tabs';
 import { oswald } from '@/utils/font_utils';
+import { colors } from '@/utils/color_utils';
 
 interface CommunitySectionProps {
   height?: string | number;
@@ -29,7 +30,7 @@ interface CommunitySectionProps {
 function CommunitySection({
   height,
   width,
-  bgColor = 'purple',
+  bgColor = colors.purple1,
   radius = 'md',
   text,
   textColor = 'white',
@@ -40,7 +41,7 @@ function CommunitySection({
   headingSize = 'h2',
   headingWeight = 900,
   description,
-  sectionColor = '#1e1e1e',
+  sectionColor = colors.black1,
   autoPlayDelay,
   slideSize,
   tabs,
