@@ -65,7 +65,7 @@ function PiCommunityClient({
           justify={isMobile ? 'start' : 'space-between'}
           gap={'xl'}
         >
-          <Text w={'70%'}>
+          <Text w={isMobile ? '100%' : '70%'}>
             In making Raspberry Pis available within the department year on
             year; SPARK will encourage, facilitate and nurture innovation in the
             use of this technology. ENTC intend to build expertise over several
@@ -89,19 +89,6 @@ function PiCommunityClient({
           align={'center'}
           gap={'xl'}
         >
-          {/* <BackgroundImage
-            src={'/images/image_3_1.png'}
-            style={{
-              width: '100%', // Full width
-              height: 'auto', // Automatic height (can be set to fixed value)
-              padding: isMobile ? '0px' : '40px', // Adjust padding based on your design
-              display: 'flex', // Allows centering the content
-              justifyContent: 'center', // Center horizontally
-              alignItems: 'center', // Center vertically if needed
-              backgroundSize: 'cover', // Ensures the image covers the entire area
-              backgroundPosition: 'center', // Centers the image
-            }}
-          > */}
           <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
@@ -114,7 +101,6 @@ function PiCommunityClient({
             tabs={piMoraData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
           />
-          {/* </BackgroundImage> */}
 
           <CommunitySection
             width={isMobile ? '100%' : '80%'}

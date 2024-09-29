@@ -137,42 +137,44 @@ function CarouselCard({
                   {truncateDescription(event.description)}
                 </Text>
                 <Space h={'lg'} />
-                <div
-                  style={{
-                    display: 'flex',
-                    overflowX: 'auto',
-                    justifyContent: 'space-evenly',
-                  }}
-                >
-                  {event.images.slice(0, 2).map((image, index) => (
-                    <div
-                      key={index}
-                      style={{
-                        flex: '0 0 auto',
-                        border:
-                          index === activeImageIndex
-                            ? `0.1rem solid ${headingColor}`
-                            : '',
-                        width: '40%', // Fixed width for each image container
-                        height: '100px', // Fixed height for each image container (can be in px or %)
-                        position: 'relative', // Allows proper positioning for absolute children if needed
-                        overflow: 'hidden', // Ensures cropping of images
-                      }}
-                    >
-                      <Image
-                        onClick={() => handleImageClick(index)}
-                        src={image}
-                        alt={`${event.name} | Image: ${index}`}
+                {event.images.length > 1 && (
+                  <div
+                    style={{
+                      display: 'flex',
+                      overflowX: 'auto',
+                      justifyContent: 'space-evenly',
+                    }}
+                  >
+                    {event.images.slice(0, 2).map((image, index) => (
+                      <div
+                        key={index}
                         style={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'top',
-                        }} // Maintains aspect ratio
-                      />
-                    </div>
-                  ))}
-                </div>
+                          flex: '0 0 auto',
+                          border:
+                            index === activeImageIndex
+                              ? `0.1rem solid ${headingColor}`
+                              : '',
+                          width: '40%', // Fixed width for each image container
+                          height: '100px', // Fixed height for each image container (can be in px or %)
+                          position: 'relative', // Allows proper positioning for absolute children if needed
+                          overflow: 'hidden', // Ensures cropping of images
+                        }}
+                      >
+                        <Image
+                          onClick={() => handleImageClick(index)}
+                          src={image}
+                          alt={`${event.name} | Image: ${index}`}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: 'top',
+                          }} // Maintains aspect ratio
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 <Space h={'lg'} />
 
