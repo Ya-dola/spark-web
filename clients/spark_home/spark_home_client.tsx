@@ -1,17 +1,9 @@
 'use client';
 
 import NextImage from 'next/image';
-import {
-  Space,
-  Image,
-  Center,
-  Flex,
-  Text,
-  Box,
-  MantineSize,
-} from '@mantine/core';
+import { Image, Center, Flex, Text, Box, MantineSize } from '@mantine/core';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
-import SparkLogoSrc from '@/public/images/spark_logo_transparent.png';
+import SparkLogoSrc from '@/public/images/logo/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
@@ -23,7 +15,7 @@ function SparkHomeClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_3.png']}
+      imageSrc={['/images/backgrounds/bg_3.png']}
       padding={0}
     >
       <Flex
@@ -36,12 +28,12 @@ function SparkHomeClient() {
         <Image
           w={isMobile ? '100%' : '35%'}
           fit={'contain'}
-          component={NextImage}
+          // component={NextImage}
           src={SparkLogoSrc}
           alt={'Spark Logo'}
-          priority
+          // priority
         />
-        {/* TODO - Match with exact Theme */}
+
         <Text
           fz={'h3'}
           fs={'italic'}
@@ -85,7 +77,7 @@ function SparkHomeClient() {
               description={
                 'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
               }
-              imageSrc={'/images/everest.png'}
+              imageSrc={'/images/visuals/everest.png'}
               width={300}
               height={450}
               bgColor={colors.black1}
@@ -99,7 +91,7 @@ function SparkHomeClient() {
               description={
                 'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
               }
-              imageSrc={'/images/image_pi.png'}
+              imageSrc={'/images/visuals/image_pi.png'}
               width={300}
               height={450}
               bgColor={colors.black1}
@@ -112,7 +104,7 @@ function SparkHomeClient() {
               description={
                 'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
               }
-              imageSrc={'/images/image_1.png'}
+              imageSrc={'/images/visuals/image_1.png'}
               width={300}
               height={450}
               bgColor={colors.black1}

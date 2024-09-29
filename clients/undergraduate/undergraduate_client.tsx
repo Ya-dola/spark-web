@@ -11,7 +11,6 @@ import {
   Space,
   Box,
 } from '@mantine/core';
-import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
@@ -24,7 +23,7 @@ function UndergraduateClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_4.png']}
+      imageSrc={['/images/backgrounds/bg_2.png']}
       pos={isMobile ? 'top left' : 'top center'}
       padding={0}
     >
@@ -149,9 +148,9 @@ function UndergraduateClient() {
             w={isMobile ? '100%' : '70%'}
             m={'auto'}
             fit={'contain'}
-            component={NextImage}
-            src={myImage}
-            alt={'My image'}
+            // component={NextImage}
+            src={'/images/visuals/image_1.png'}
+            alt={'Students'}
             radius={'xl'}
           />
         </Paper>

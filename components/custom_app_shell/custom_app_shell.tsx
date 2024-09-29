@@ -11,7 +11,7 @@ import { useHeadroom } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import CustomDrawer from '@/components/custom_drawer/custom_drawer';
-import logoTransparent from '@/public/images/spark_logo_transparent.png';
+import logoTransparent from '@/public/images/logo/spark_logo_transparent.png';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import ImageGrid from '@/components/image_grid/image_grid';
 
@@ -21,8 +21,8 @@ interface CustomAppShellProps {
   backgroundHeight?: number | string;
   width?: number | string;
   padding?: MantineSpacing;
-  bgSize? : string;
-  pos? : string;
+  bgSize?: string;
+  pos?: string;
 }
 
 function CustomAppShell({
@@ -42,7 +42,7 @@ function CustomAppShell({
       height={backgroundHeight}
       width={width}
       bgSize={bgSize}
-      pos = {pos}
+      pos={pos}
     />
   );
 

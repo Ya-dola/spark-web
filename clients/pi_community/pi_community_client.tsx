@@ -8,7 +8,6 @@ import React, { useState } from 'react';
 import {
   Center,
   Image,
-  BackgroundImage,
   Flex,
   Text,
   Box,
@@ -37,7 +36,7 @@ function PiCommunityClient({
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/bg_1.png']}
+      imageSrc={['/images/backgrounds/bg_1.png']}
       bgSize={'cover'}
       padding={0}
     >
@@ -76,7 +75,7 @@ function PiCommunityClient({
           </Text>
           <Box w={isMobile ? '30%' : '10%'}>
             <Image
-              src={'/images/pi_logo.png'}
+              src={'/images/logo/pi_logo.png'}
               alt={'pi logo'}
               h={'auto'}
             />
@@ -182,7 +181,7 @@ function PiCommunityClient({
                 >
                   <Image
                     w={'10%'}
-                    src={'/images/fb_logo.png'}
+                    src={'/images/logo/fb_logo.png'}
                     alt={'Fb logo'}
                   />
                   <Text

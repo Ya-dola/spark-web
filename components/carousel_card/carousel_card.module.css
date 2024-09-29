@@ -6,7 +6,7 @@
 
   &[data-active] {
     width: 2rem;
-    background-color: var(--active-color, #a61fd6);
+    background-color: var(--active-color, --default-color);
   }
 }
 
@@ -16,5 +16,5 @@
 
 .control {
   background-color: white;
-  color: var(--active-color, #a61fd6);
+  color: var(--active-color, --default-color);
 }
