@@ -2,7 +2,7 @@ import { Image, Burger, Button, Drawer, Flex, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import logoTransparent from '@/public/images/spark_logo_transparent.png';
+import logoTransparent from '@/public/images/logo/spark_logo_transparent.png';
 import { colors } from '@/utils/color_utils';
 
 function CustomDrawer() {

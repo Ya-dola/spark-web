@@ -5,6 +5,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import theme from '@/components/carousel_card/carousel_card.module.css';
 import { TabDetails } from '@/models/community/community_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { colors } from '@/utils/color_utils';
 
 interface CarouselCardProps {
   width?: number;
@@ -64,6 +65,7 @@ function CarouselCard({
       classNames={theme}
       style={{
         '--active-color': headingColor,
+        '--default-color': colors.pink1,
       }}
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
