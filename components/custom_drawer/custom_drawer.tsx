@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import logoTransparent from '@/public/images/spark_logo_transparent.png';
+import { colors } from '@/utils/color_utils';
 
 function CustomDrawer() {
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
@@ -14,7 +15,7 @@ function CustomDrawer() {
         opened={isDrawerOpen}
         onClose={closeDrawer}
         position={'right'}
-        closeButtonProps={{ size: 'xl', c: 'grape' }}
+        closeButtonProps={{ size: 'xl', c: colors.pink1 }}
         overlayProps={{ backgroundOpacity: 0.3, blur: 2.4 }}
         title={
           <Image
@@ -103,7 +104,7 @@ function CustomDrawer() {
       </Drawer>
       <Burger
         lineSize={3}
-        color={'grape'}
+        color={colors.pink1}
         onClick={openDrawer}
       />
     </>

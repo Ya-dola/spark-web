@@ -1,4 +1,5 @@
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { colors } from '@/utils/color_utils';
 import {
   MantineSize,
   ScrollArea,
@@ -27,8 +28,8 @@ function ScrollableSegmentedControl({
   scrollType = 'hover',
   offsetScrollbars = true,
   segmentRadius = 'md',
-  segmentFgColor = 'grape',
-  segmentBgColor = '#262626',
+  segmentFgColor = colors.purple1,
+  segmentBgColor = colors.black1,
   scrollSize,
   segmentWidth,
   segmentSize,

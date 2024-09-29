@@ -6,6 +6,7 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
+import { colors } from '@/utils/color_utils';
 import {
   Box,
   Center,
@@ -42,7 +43,7 @@ function ChallengeClient() {
           w={'100%'}
           fz={'h1'}
           fw={900}
-          c={'#1f68d6'}
+          c={colors.blue1}
         >
           Spark Challenge
         </Text>

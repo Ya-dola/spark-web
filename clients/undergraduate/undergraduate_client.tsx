@@ -15,6 +15,7 @@ import myImage from '@/public/images/image_1.png';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
+import { colors } from '@/utils/color_utils';
 
 function UndergraduateClient() {
   const isMobile = useIsMobile();
@@ -38,7 +39,7 @@ function UndergraduateClient() {
           w={'100%'}
           fz={'h1'}
           fw={900}
-          c={'#a61fd6'}
+          c={colors.purple2}
           className={oswald.className}
         >
           UNDERGRADUATE DEVELOPMENT
@@ -68,7 +69,7 @@ function UndergraduateClient() {
         <Paper
           w={isMobile ? '100%' : '70%'}
           h={'auto'}
-          bg={'#343434'}
+          bg={colors.lightGrey}
           radius={isMobile ? '' : 'lg'}
           px={isMobile ? 'md' : 'xl'}
           py={'xl'}
@@ -101,7 +102,7 @@ function UndergraduateClient() {
           <Space h={60} />
 
           <Text
-            c={'#A61FD6'}
+            c={colors.purple2}
             fw={800}
             fz={'xl'}
           >

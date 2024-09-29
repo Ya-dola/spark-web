@@ -17,6 +17,7 @@ import {
   MantineSize,
 } from '@mantine/core';
 import { oswald } from '@/utils/font_utils';
+import { colors } from '@/utils/color_utils';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;
@@ -50,7 +51,7 @@ function PiCommunityClient({
           w={'100%'}
           fz={'h1'}
           fw={900}
-          c={'#f4018b'}
+          c={colors.pink2}
           px={pagePadding}
           className={oswald.className}
         >
@@ -104,11 +105,11 @@ function PiCommunityClient({
           <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={colors.darkGrey}
             radius={isMobile ? '' : 'lg'}
             heading={piMoraData.title}
-            headingColor={'#F4018b'}
-            sectionColor={'#F4018b'}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
             text={piMoraData.description}
             tabs={piMoraData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
@@ -118,11 +119,11 @@ function PiCommunityClient({
           <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={colors.darkGrey}
             radius={isMobile ? '' : 'lg'}
             heading={techDemoData.title}
-            headingColor={'#F4018b'}
-            sectionColor={'#F4018b'}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
             text={techDemoData.description}
             tabs={techDemoData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
@@ -131,11 +132,11 @@ function PiCommunityClient({
           <CommunitySection
             width={isMobile ? '100%' : '80%'}
             height={'auto'}
-            bgColor={'#343434'}
+            bgColor={colors.darkGrey}
             radius={isMobile ? '' : 'lg'}
             heading={finalYearData.title}
-            headingColor={'#F4018b'}
-            sectionColor={'#F4018b'}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
             text={finalYearData.description}
             tabs={finalYearData.tabs}
             slideSize={isMobile ? '100%' : '100%'}
@@ -151,7 +152,7 @@ function PiCommunityClient({
                 w={isMobile ? '100%' : '40%'}
                 radius={'md'}
                 shadow='sm'
-                bg={'#1f68d6'}
+                bg={colors.blue1}
                 padding='xl'
                 component='a'
                 href='https://www.facebook.com/groups/raspberrypicommunitylk'
@@ -169,7 +170,7 @@ function PiCommunityClient({
                   fw={1000}
                   fz={'h2'}
                   mt='md'
-                  c={'#1e1e1e'}
+                  c={colors.black1}
                   w={'60%'}
                   className={oswald.className}
                 >
@@ -178,7 +179,7 @@ function PiCommunityClient({
                 <Text
                   mt='xs'
                   py={'md'}
-                  c={'#1e1e1e'}
+                  c={colors.black1}
                   fw={800}
                   fz={'sm'}
                 >
@@ -200,7 +201,7 @@ function PiCommunityClient({
                   />
                   <Text
                     mt={'xs'}
-                    c={'#fff'}
+                    c={colors.black1}
                     size={'md'}
                     fw={400}
                   >
@@ -212,7 +213,7 @@ function PiCommunityClient({
                   h={'auto'}
                   py={'xs'}
                   px={'md'}
-                  bg={'#1e1e1e'}
+                  bg={colors.black1}
                   radius={'xl'}
                   mt={'auto'}
                   ml={'auto'}
@@ -220,7 +221,7 @@ function PiCommunityClient({
                   <Text
                     /*td={'underline'}*/ fw={900}
                     fz={'sm'}
-                    c={'#1f68d6'}
+                    c={colors.blue1}
                   >
                     Learn More
                   </Text>

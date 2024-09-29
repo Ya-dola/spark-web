@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import NextImage from 'next/image';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
+import { colors } from '@/utils/color_utils';
 
 interface ButtonCardProps {
   heading: string;
@@ -30,13 +31,13 @@ function ButtonCard({
   height,
   width,
   radius = 'md',
-  bgColor = 'purple',
+  bgColor = colors.black1,
   textColor = '',
   headingColor = 'white',
   headingSize = 'h2',
   headingWeight = 900,
   textSize = 'sm',
-  buttonColor = '#262626',
+  buttonColor = colors.black1,
 }: ButtonCardProps) {
   const cardHeight = height ?? 200 * 2;
   const [isHovered, setIsHovered] = useState(false);
@@ -102,7 +103,7 @@ function ButtonCard({
         <Text
           /*td={'underline'}*/ fw={900}
           fz={'sm'}
-          c={'#262626'}
+          c={colors.black1}
         >
           Learn More
         </Text>
