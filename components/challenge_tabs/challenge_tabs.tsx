@@ -52,7 +52,6 @@ interface ChallengeTabsProps {
  */
 function ChallengeTabs({
   text = '',
-
   textColor = 'white',
   textSize = 'md',
   textWeight = 300,
@@ -145,19 +144,18 @@ function ChallengeTabs({
           >
             TEAM MEMBERS
           </Text>
-          <Group>
+          {/* <Group>
             {names.map((name, index) => (
               <>
                 <Text
                   fz={'sm'}
-                  key={index}
                 >
                   {name}
                 </Text>
                 {index < names.length - 1 && <Divider orientation='vertical' />}
               </>
             ))}
-          </Group>
+          </Group> */}
         </Box>
       </Flex>
     </>

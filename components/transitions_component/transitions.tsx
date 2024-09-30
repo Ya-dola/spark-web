@@ -1,37 +1,44 @@
+'use client';
+
 import { ReactNode, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Flex } from '@mantine/core';
 
 interface TransitionsProps {
   children: ReactNode;
   transition?: string;
   delay?: number;
+  duration?: number;
+  width?: string | number;
 }
 
 function Transitions({
   children,
   transition = 'fade-up',
   delay = 5000,
+  duration = 1000,
+  width,
 }: TransitionsProps) {
   useEffect(() => {
     AOS.init({
-      disable: 'phone',
-      duration: 1000,
+      // disable: 'phone',
+      duration: duration,
       easing: 'ease-out-cubic',
     });
-  }, []);
+  }, [duration]);
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
+    <Flex
+      key={null}
+      w={width}
+      justify={'center'}
+      align={'center'}
       data-aos={transition}
       data-aos-delay={delay}
     >
       {children}
-    </div>
+    </Flex>
   );
 }
 

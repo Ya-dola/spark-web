@@ -1,10 +1,11 @@
 'use client';
 
-import ChallengeSection from '@/components/challenge_section/challenge_section';
-import ChallengeTabs from '@/components/challenge_tabs/challenge_tabs';
+import CarouselCard from '@/components/carousel_card/carousel_card';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import Transitions from '@/components/transitions_component/transitions';
+import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
@@ -20,18 +21,25 @@ import {
   Text,
   MantineSize,
 } from '@mantine/core';
+import { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
 
-function ChallengeClient() {
+interface ChallengeClientProps {
+  challengeTabs: ChallengeTabsModel;
+}
+
+function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
+  const pageWidth = isMobile ? '100%' : '80%';
+  const [selectedChallenge, setSelectedChallenge] = useState(0);
+  const [selectedRunnerUp, setSelectedRunnerUp] = useState(0);
 
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
       imageSrc={[images.bg4]}
       bgSize={'cover'}
-      padding={0}
     >
       <Flex
         direction={'column'}
@@ -46,7 +54,7 @@ function ChallengeClient() {
           fw={900}
           c={colors.blue1}
         >
-          Spark Challenge
+          SPARK CHALLENGE
         </Text>
         <Flex
           w={'100%'}
@@ -72,26 +80,23 @@ function ChallengeClient() {
             bgColor={'grape'}
           />
         </Flex>
-        <Paper
-          w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          px={isMobile ? '' : 'xl'}
-          py={isMobile ? 'md' : 'xl'}
-        >
-          <Box
-            py={'lg'}
-            ml={'md'}
-            w={isMobile ? '85%' : '90%'}
+
+        <Transitions width={'100%'}>
+          <Paper
+            w={pageWidth}
+            h={'auto'}
+            bg={colors.darkGrey + '75'}
+            radius={'lg'}
+            px={isMobile ? '' : 'xl'}
+            py={isMobile ? 'md' : 'xl'}
           >
             <Text
-              size={'lg'}
+              fz={'h3'}
               fw={700}
             >
               Main features of the SPARK challenge:
             </Text>
-            <Space h={'lg'} />
+            <Space h={'xl'} />
             <List
               listStyleType={'disc'}
               withPadding
@@ -111,78 +116,118 @@ function ChallengeClient() {
                 SPARK Challenge.
               </ListItem>
             </List>
-          </Box>
+          </Paper>
+        </Transitions>
 
-          <Space h={'xl'} />
-          <Box
-            py={'lg'}
-            ml={'md'}
-            w={isMobile ? '85%' : '90%'}
+        {/* TODO - Fix and Make it Transition after first one on delay */}
+        <Transitions
+          width={'100%'}
+          // delay={8000}
+          // duration={2000}
+        >
+          <Paper
+            w={pageWidth}
+            h={'auto'}
+            bg={colors.darkGrey + '75'}
+            radius={'lg'}
+            px={isMobile ? '' : 'xl'}
+            py={isMobile ? 'md' : 'xl'}
           >
             <Text
-              size={'lg'}
+              fz={'h3'}
               fw={700}
             >
               Several supporting activities will be undertaken for a successful
               outcome for the Challenge:
             </Text>
-            <Space h={'lg'} />
-            <List
-              listStyleType={'disc'}
-              withPadding
+
+            <Space h={'xl'} />
+
+            <Flex
+              direction={'row'}
+              justify={'center'}
+              align={'flex-start'}
+              gap={'xl'}
             >
-              <ListItem>
-                A team of undergraduates from ENTC will manage the delivery of
-                the SPARK programme.
-              </ListItem>
-              <ListItem>
-                A marketing campaign will be undertaken to raise awareness and
-                seeking long-term form within ENTC.
-              </ListItem>
-              <ListItem>
-                Workshops on the subject of “Design Led Innovation” will be
-                delivered in support of students developing Challenge solution.
-              </ListItem>
-              <ListItem>
-                A series of lectures on United Nations – Sustainable Development
-                Goals (SDG&apos;s) will be available to all students
-              </ListItem>
-              <Space h={'lg'} />
-              <Center>
-                <ReactPlayer
-                  url={'https://youtu.be/vc8-7VncIbA'}
-                  loop={true}
-                  controls={true}
-                  light={true}
-                  width={isMobile ? 320 : 640}
-                />
-              </Center>
-            </List>
-          </Box>
-          <Space h={'lg'} />
-          <ScrollableSegmentedControl
-            segmentData={[
-              'Celebration 2025/2026',
-              'Celebration 2024/2025',
-              'Celebration 2023/2024',
-              'Celebration 2022/2023',
-              'Celebration 2021/2022',
-              'Celebration 2020/2021',
-              'Celebration 2019/2020',
-              'Celebration 2018/2019',
-              'Celebration 2017/2018',
-              'Celebration 2016/2017',
-              'Celebration 2015/2016',
-            ]}
-          />
-          <Space h={'lg'} />
-          <ChallengeSection
-            text='The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step "outside the box" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human 
-              excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.
-'
-            textWeight={500}
+              <List
+                listStyleType={'disc'}
+                withPadding
+              >
+                <ListItem>
+                  A team of undergraduates from ENTC will manage the delivery of
+                  the SPARK programme.
+                </ListItem>
+                <ListItem>
+                  A marketing campaign will be undertaken to raise awareness and
+                  seeking long-term form within ENTC.
+                </ListItem>
+                <ListItem>
+                  Workshops on the subject of “Design Led Innovation” will be
+                  delivered in support of students developing Challenge
+                  solution.
+                </ListItem>
+                <ListItem>
+                  A series of lectures on United Nations – Sustainable
+                  Development Goals (SDG&apos;s) will be available to all
+                  students
+                </ListItem>
+              </List>
+
+              <ReactPlayer
+                url={'https://youtu.be/vc8-7VncIbA'}
+                loop={true}
+                controls={true}
+                light={true}
+                width={isMobile ? 320 : 640}
+              />
+            </Flex>
+          </Paper>
+        </Transitions>
+
+        <Space h={'sm'} />
+
+        <Transitions width={'100%'}>
+          <Flex
+            direction={'column'}
+            align={'center'}
           >
-            <ChallengeTabs
+            <Box w={pageWidth}>
+              <ScrollableSegmentedControl
+                segmentBgColor={colors.darkGrey + '75'}
+                offsetScrollbars={false}
+                segmentData={challengeTabs.tabs.map((tab, index) => ({
+                  label: tab.name.toString(),
+                  value: index.toString(),
+                }))}
+                onChange={(value) => {
+                  setSelectedRunnerUp(0);
+                  return setSelectedChallenge(Number(value));
+                }}
+                segmentFgColor={colors.blue1}
+              />
+            </Box>
+            <Paper
+              w={pageWidth}
+              h={'auto'}
+              bg={colors.darkGrey + '75'}
+              radius={'lg'}
+              px={isMobile ? '' : 'xl'}
+              // py={isMobile ? 'md' : 'xl'}
+            >
+              <Text
+                fz={'h1'}
+                my={'md'}
+              >
+                {challengeTabs.tabs[selectedChallenge].name}
+              </Text>
+              <Text
+                fz={'h4'}
+                mb={'lg'}
+              >
+                {challengeTabs.tabs[selectedChallenge].description}
+              </Text>
+
+              {/* <ChallengeTabs
               text={'WINNER'}
               heading={'WINNING TEAM NAME'}
               description={
@@ -192,32 +237,44 @@ function ChallengeClient() {
               images={['/images/image_1.png', '/images/image_1.png']}
               names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
               showIcon={true}
-            />
-            <Space h={'lg'} />
-            <Divider my='xl' />
-            <ChallengeTabs
-              heading={'TEAM NAME'}
-              description={
-                'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
-              }
-              images={['/images/image_1.png']}
-              names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
-              showIcon={false}
-            >
-              <ScrollableSegmentedControl
-                segmentData={[
-                  '1st Runner Up',
-                  '2nd Runner Up',
-                  '3rd Runner Up',
-                  '4th Runner Up',
-                  '5th Runner Up',
-                ]}
-              />
-            </ChallengeTabs>
-          </ChallengeSection>
+            /> */}
 
-          <Space h={'lg'} />
-        </Paper>
+              <CarouselCard
+                events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
+                headingColor={'#A61FD6'}
+              />
+              <Divider my={'lg'} />
+              {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
+                <>
+                  <ScrollableSegmentedControl
+                    offsetScrollbars={false}
+                    segmentFgColor={colors.blue1}
+                    segmentData={challengeTabs.tabs[
+                      selectedChallenge
+                    ].runnerUpTeams.map((tab, index) => ({
+                      label: tab.name.toString(),
+                      value: index.toString(),
+                    }))}
+                    onChange={(value) => {
+                      setSelectedRunnerUp(Number(value));
+                    }}
+                    value={selectedRunnerUp.toString()}
+                  />
+                  <CarouselCard
+                    events={
+                      challengeTabs.tabs[selectedChallenge]?.runnerUpTeams
+                    }
+                    headingColor={colors.blue1}
+                    onCarouselChange={(index) => {
+                      setSelectedRunnerUp(index);
+                    }}
+                    eventIndex={selectedRunnerUp}
+                  />
+                </>
+              )}
+            </Paper>
+          </Flex>
+        </Transitions>
       </Flex>
     </CustomAppShell>
   );

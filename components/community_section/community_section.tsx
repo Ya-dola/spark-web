@@ -47,7 +47,6 @@ function CommunitySection({
   tabs,
 }: CommunitySectionProps) {
   const [selectedTab, setSelectedTab] = useState(0);
-  const [selectedTabDetail, setSelectedTabDetail] = useState(0);
 
   return (
     <Paper
@@ -115,7 +114,6 @@ function CommunitySection({
               value: index.toString(),
             }))}
             onChange={(value) => {
-              setSelectedTabDetail(0);
               return setSelectedTab(Number(value));
             }}
           />
@@ -123,27 +121,14 @@ function CommunitySection({
             h={'100%'}
             w={'100%'}
             bg={'#262626'}
-            // p={'sm'}
             radius={'md'}
           >
-            <>
-              {/* <ScrollableButtonTabs
-                items={tabs[selectedTab]?.details.map(
-                  (tabDetails) => tabDetails.name,
-                )}
-                onTabSelect={(index) => setSelectedTabDetail(index)}
-                textColor={'white'}
-                selectedIndex={selectedTabDetail}
-                selectorColor={sectionColor}
-              /> */}
-
-              <CarouselCard
-                slideSize={slideSize}
-                events={tabs[selectedTab]?.details}
-                headingColor={sectionColor}
-                autoPlayDelay={autoPlayDelay}
-              />
-            </>
+            <CarouselCard
+              slideSize={slideSize}
+              events={tabs[selectedTab]?.details}
+              headingColor={sectionColor}
+              autoPlayDelay={autoPlayDelay}
+            />
           </Paper>
         </>
       )}

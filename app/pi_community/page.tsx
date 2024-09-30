@@ -8,16 +8,19 @@ async function PiCommunityPage() {
       page: 'community',
       fileName: 'pi_mora',
     });
+
   const techDemoSection: CommunitySectionModel =
     await getJsonData<CommunitySectionModel>({
       page: 'community',
       fileName: 'tech_demo',
     });
+
   const finalYearSection: CommunitySectionModel =
     await getJsonData<CommunitySectionModel>({
       page: 'community',
       fileName: 'final_year',
     });
+
   return (
     <PiCommunityClient
       piMoraData={piMoraSection}

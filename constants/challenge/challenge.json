@@ -1,0 +1,196 @@
+{
+  "tabs": [
+    {
+      "name": "Celebration 2025/26",
+      "description": "This is a description for the Celebration 25/26.",
+      "winnerTeam": {
+        "name": "Team Winner",
+        "description": "This is a description for Team Winner.",
+        "members": ["Member 1", "Member 2", "Member 3", "Member 4", "Member 5"],
+        "images": ["/images/image_1.png", "/images/image_2.png"]
+      },
+      "runnerUpTeams": [
+        {
+          "name": "Team 1",
+          "description": "This is a description for Team 1.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_1.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 2",
+          "description": "This is a description for Team 2.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_2.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 3",
+          "description": "This is a description for Team 3.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_5.png"]
+        },
+        {
+          "name": "Team 4",
+          "description": "This is a description for Team 4.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_2.png"]
+        },
+        {
+          "name": "Team 5",
+          "description": "This is a description for Team 5.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_4.png", "/images/image_1.png"]
+        }
+      ]
+    },
+    {
+      "name": "Celebration 24/25",
+      "description": "The year-long challenge is one of the fundamental parts of the SPARK programme,  to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step \"outside the box\" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.",
+      "winnerTeam": {
+        "name": "Team Winner",
+        "description": "This is a description for Team Winner.",
+        "members": ["Member 1", "Member 2", "Member 3"],
+        "images": ["/images/image_1.png", "/images/image_4.png"]
+      },
+      "runnerUpTeams": [
+        {
+          "name": "Team 1",
+          "description": "This is a description for Team 1.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_1.png", "/images/image_2.png"]
+        },
+        {
+          "name": "Team 2",
+          "description": "This is a description for Team 2.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_4.png"]
+        }
+      ]
+    },
+    {
+      "name": "Celebration 23/24",
+      "description": "This is a description for the Celebration 23/24.",
+      "winnerTeam": {
+        "name": "Team Winner",
+        "description": "This is a description for Team Winner.",
+        "members": ["Member 1", "Member 2", "Member 3"],
+        "images": ["/images/image_1.png", "/images/image_4.png"]
+      },
+      "runnerUpTeams": [
+        {
+          "name": "Team 1",
+          "description": "This is a description for Team 1.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_1.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 2",
+          "description": "This is a description for Team 2.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 3",
+          "description": "This is a description for Team 3.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_5.png"]
+        },
+        {
+          "name": "Team 4",
+          "description": "This is a description for Team 4.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_2.png"]
+        },
+        {
+          "name": "Team 5",
+          "description": "This is a description for Team 5.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_4.png", "/images/image_1.png"]
+        }
+      ]
+    },
+    {
+      "name": "Celebration 22/23",
+      "description": "This is a description for the Celebration 22/23.",
+      "winnerTeam": {
+        "name": "Team Winner",
+        "description": "This is a description for Team Winner.",
+        "members": ["Member 1", "Member 2", "Member 3"],
+        "images": ["/images/image_1.png", "/images/image_4.png"]
+      },
+      "runnerUpTeams": [
+        {
+          "name": "Team 1",
+          "description": "This is a description for Team 1.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_1.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 2",
+          "description": "This is a description for Team 2.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 3",
+          "description": "This is a description for Team 3.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_5.png"]
+        },
+        {
+          "name": "Team 4",
+          "description": "This is a description for Team 4.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_2.png"]
+        },
+        {
+          "name": "Team 5",
+          "description": "This is a description for Team 5.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_4.png", "/images/image_1.png"]
+        }
+      ]
+    },
+    {
+      "name": "Celebration 21/22",
+      "description": "This is a description for the Celebration 21/22.",
+      "winnerTeam": {
+        "name": "Team Winner",
+        "description": "This is a description for Team Winner.",
+        "members": ["Member 1", "Member 2", "Member 3"],
+        "images": ["/images/image_1.png", "/images/image_4.png"]
+      },
+      "runnerUpTeams": [
+        {
+          "name": "Team 1",
+          "description": "This is a description for Team 1.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_1.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 2",
+          "description": "This is a description for Team 2.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_4.png"]
+        },
+        {
+          "name": "Team 3",
+          "description": "This is a description for Team 3.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_5.png"]
+        },
+        {
+          "name": "Team 4",
+          "description": "This is a description for Team 4.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_3.png", "/images/image_2.png"]
+        },
+        {
+          "name": "Team 5",
+          "description": "This is a description for Team 5.",
+          "members": ["Member 1", "Member 2", "Member 3"],
+          "images": ["/images/image_4.png", "/images/image_1.png"]
+        }
+      ]
+    }
+  ]
+}
