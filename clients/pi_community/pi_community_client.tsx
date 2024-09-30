@@ -17,6 +17,7 @@ import {
 } from '@mantine/core';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
+import Transitions from '@/components/transitions_component/transitions';
 import { images } from '@/utils/image_utils';
 
 interface PiCommunityClientProps {
@@ -89,131 +90,149 @@ function PiCommunityClient({
           align={'center'}
           gap={'xl'}
         >
-          <CommunitySection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={piMoraData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={piMoraData.description}
-            tabs={piMoraData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
-
-          <CommunitySection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={techDemoData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={techDemoData.description}
-            tabs={techDemoData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
-
-          <CommunitySection
-            width={isMobile ? '100%' : '80%'}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={finalYearData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={finalYearData.description}
-            tabs={finalYearData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '80%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={piMoraData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={piMoraData.description}
+              tabs={piMoraData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '80%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={techDemoData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={techDemoData.description}
+              tabs={techDemoData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '80%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={finalYearData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={finalYearData.description}
+              tabs={finalYearData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
 
           <Box
             w={'100%'}
             h={'auto'}
             p={'xl'}
           >
-            <Center>
-              <Card
-                w={isMobile ? '100%' : '40%'}
-                radius={'md'}
-                shadow='sm'
-                bg={colors.blue1}
-                padding='xl'
-                component='a'
-                href='https://www.facebook.com/groups/raspberrypicommunitylk'
-                target='fb_page'
-                style={{
-                  transform:
-                    isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
-                  transition: 'transform 0.3s ease',
-                  zIndex: isHovered && !isMobile ? 1 : 'auto', // Ensure hovered card is on top
-                }}
-                onMouseEnter={() => !isMobile && setIsHovered(true)}
-                onMouseLeave={() => !isMobile && setIsHovered(false)}
-              >
-                <Text
-                  fw={1000}
-                  fz={'h2'}
-                  mt='md'
-                  c={colors.black1}
-                  w={'60%'}
-                  className={oswald.className}
+            <Transitions
+              transition='fade-up'
+              delay={6000}
+            >
+              <Center>
+                <Card
+                  w={isMobile ? '100%' : '40%'}
+                  radius={'md'}
+                  shadow='sm'
+                  bg={colors.blue1}
+                  padding='xl'
+                  component='a'
+                  href='https://www.facebook.com/groups/raspberrypicommunitylk'
+                  target='fb_page'
+                  style={{
+                    transform:
+                      isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
+                    transition: 'transform 0.3s ease',
+                    zIndex: isHovered && !isMobile ? 1 : 'auto', // Ensure hovered card is on top
+                  }}
+                  onMouseEnter={() => !isMobile && setIsHovered(true)}
+                  onMouseLeave={() => !isMobile && setIsHovered(false)}
                 >
-                  PI Community Facebook Page
-                </Text>
-                <Text
-                  mt='xs'
-                  py={'md'}
-                  c={colors.black1}
-                  fw={800}
-                  fz={'sm'}
-                >
-                  Pi Community Facebook page inform all followers about all
-                  Raspberry Pi related activities at ENTC as well as news about
-                  the Raspberry Pi organisation.
-                </Text>
-                <Flex
-                  h={'100%'}
-                  justify={'center'}
-                  align={'center'}
-                  mt={'auto'}
-                  gap={'md'}
-                >
-                  <Image
-                    w={'10%'}
-                    src={images.fbLogo}
-                    alt={'Fb logo'}
-                  />
                   <Text
-                    mt={'xs'}
+                    fw={1000}
+                    fz={'h2'}
+                    mt='md'
                     c={colors.black1}
-                    size={'md'}
-                    fw={400}
+                    w={'60%'}
+                    className={oswald.className}
                   >
-                    The Facebook group can be found here
+                    PI Community Facebook Page
                   </Text>
-                </Flex>
-                <Paper
-                  w={'auto'}
-                  h={'auto'}
-                  py={'xs'}
-                  px={'md'}
-                  bg={colors.black1}
-                  radius={'xl'}
-                  mt={'auto'}
-                  ml={'auto'}
-                >
                   <Text
-                    /*td={'underline'}*/ fw={900}
+                    mt='xs'
+                    py={'md'}
+                    c={colors.black1}
+                    fw={800}
                     fz={'sm'}
-                    c={colors.blue1}
                   >
-                    Learn More
+                    Pi Community Facebook page inform all followers about all
+                    Raspberry Pi related activities at ENTC as well as news
+                    about the Raspberry Pi organisation.
                   </Text>
-                </Paper>
-              </Card>
-            </Center>
+                  <Flex
+                    h={'100%'}
+                    justify={'center'}
+                    align={'center'}
+                    mt={'auto'}
+                    gap={'md'}
+                  >
+                    <Image
+                      w={'10%'}
+                      src={images.fbLogo}
+                      alt={'Fb logo'}
+                    />
+                    <Text
+                      mt={'xs'}
+                      c={colors.black1}
+                      size={'md'}
+                      fw={400}
+                    >
+                      The Facebook group can be found here
+                    </Text>
+                  </Flex>
+                  <Paper
+                    w={'auto'}
+                    h={'auto'}
+                    py={'xs'}
+                    px={'md'}
+                    bg={colors.black1}
+                    radius={'xl'}
+                    mt={'auto'}
+                    ml={'auto'}
+                  >
+                    <Text
+                      /*td={'underline'}*/ fw={900}
+                      fz={'sm'}
+                      c={colors.blue1}
+                    >
+                      Learn More
+                    </Text>
+                  </Paper>
+                </Card>
+              </Center>
+            </Transitions>
           </Box>
         </Flex>
       </Flex>
