@@ -7,6 +7,7 @@ import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
+import Transitions from '@/components/transitions_component/transitions';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
@@ -72,46 +73,55 @@ function SparkHomeClient() {
             gap={isMobile ? 'md' : 'xl'}
           >
             {/* TODO - Make Height and Width % Based */}
-            <ButtonCard
-              heading={'SPARK Challenge'}
-              description={
-                'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
-              }
-              imageSrc={images.everestImage}
-              width={300}
-              height={450}
-              bgColor={colors.black1}
-              headingColor={colors.blue1}
-              href={'/challenge'}
-              buttonColor={colors.blue1}
-            />
+            <Transitions
+              transition='fade-down'
+              delay={5000}
+            >
+              <ButtonCard
+                heading={'SPARK Challenge'}
+                description={
+                  'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
+                }
+                imageSrc={images.everestImage}
+                width={300}
+                height={450}
+                bgColor={colors.black1}
+                headingColor={colors.blue1}
+                href={'/challenge'}
+                buttonColor={colors.blue1}
+              />
+            </Transitions>
 
-            <ButtonCard
-              heading={'Pi-Community'}
-              description={
-                'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
-              }
-              imageSrc={images.piImage}
-              width={300}
-              height={450}
-              bgColor={colors.black1}
-              headingColor={colors.pink2}
-              href={'/pi_community'}
-              buttonColor={colors.pink2}
-            />
-            <ButtonCard
-              heading={'Undergraduate Development'}
-              description={
-                'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
-              }
-              imageSrc={images.studentsImage}
-              width={300}
-              height={450}
-              bgColor={colors.black1}
-              headingColor={colors.purple2}
-              href={'/undergraduate'}
-              buttonColor={colors.purple2}
-            />
+            <Transitions transition='fade-up'>
+              <ButtonCard
+                heading={'Pi-Community'}
+                description={
+                  'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
+                }
+                imageSrc={images.piImage}
+                width={300}
+                height={450}
+                bgColor={colors.black1}
+                headingColor={colors.pink2}
+                href={'/pi_community'}
+                buttonColor={colors.pink2}
+              />
+            </Transitions>
+            <Transitions transition='fade-down'>
+              <ButtonCard
+                heading={'Undergraduate Development'}
+                description={
+                  'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
+                }
+                imageSrc={images.studentsImage}
+                width={300}
+                height={450}
+                bgColor={colors.black1}
+                headingColor={colors.purple2}
+                href={'/undergraduate'}
+                buttonColor={colors.purple2}
+              />
+            </Transitions>
           </Flex>
         </Box>
       </Flex>
