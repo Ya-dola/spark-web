@@ -9,7 +9,6 @@ import { colors } from '@/utils/color_utils';
 
 interface CarouselCardProps {
   width?: number;
-  // height?: number;
   carouselHeight?: string | number;
   slideSize?: string;
   headingColor?: string;
@@ -22,7 +21,7 @@ interface CarouselCardProps {
 
 function CarouselCard({
   events = [],
-  carouselHeight = 500,
+  carouselHeight = 650,
   slideSize = '100%',
   headingColor = 'white',
   descriptionColor = '#cacaca',
