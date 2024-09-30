@@ -17,6 +17,7 @@ import {
 } from '@mantine/core';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
+import { images } from '@/utils/image_utils';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;
@@ -36,7 +37,7 @@ function PiCommunityClient({
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/backgrounds/bg_1.png']}
+      imageSrc={[images.bg1]}
       bgSize={'cover'}
       padding={0}
     >
@@ -75,7 +76,7 @@ function PiCommunityClient({
           </Text>
           <Box w={isMobile ? '30%' : '10%'}>
             <Image
-              src={'/images/logo/pi_logo.png'}
+              src={images.piLogo}
               alt={'pi logo'}
               h={'auto'}
             />
@@ -181,7 +182,7 @@ function PiCommunityClient({
                 >
                   <Image
                     w={'10%'}
-                    src={'/images/logo/fb_logo.png'}
+                    src={images.fbLogo}
                     alt={'Fb logo'}
                   />
                   <Text

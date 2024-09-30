@@ -14,6 +14,7 @@ import CustomDrawer from '@/components/custom_drawer/custom_drawer';
 import logoTransparent from '@/public/images/logo/spark_logo_transparent.png';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import ImageGrid from '@/components/image_grid/image_grid';
+import { images } from '@/utils/image_utils';
 
 interface CustomAppShellProps {
   children: ReactNode;
@@ -72,8 +73,8 @@ function CustomAppShell({
               h={40}
               w={'auto'}
               fit={'contain'}
-              component={NextImage}
-              src={logoTransparent}
+              // component={NextImage}
+              src={images.sparkLogoTransparent}
               alt={'My image'}
             />
           </UnstyledButton>

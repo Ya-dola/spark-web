@@ -3,10 +3,10 @@
 import NextImage from 'next/image';
 import { Image, Center, Flex, Text, Box, MantineSize } from '@mantine/core';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
-import SparkLogoSrc from '@/public/images/logo/spark_logo_transparent.png';
 import ButtonCard from '@/components/button_card/button_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
+import { images } from '@/utils/image_utils';
 
 function SparkHomeClient() {
   const isMobile = useIsMobile();
@@ -15,7 +15,7 @@ function SparkHomeClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/backgrounds/bg_3.png']}
+      imageSrc={[images.bg3]}
       padding={0}
     >
       <Flex
@@ -29,7 +29,7 @@ function SparkHomeClient() {
           w={isMobile ? '100%' : '35%'}
           fit={'contain'}
           // component={NextImage}
-          src={SparkLogoSrc}
+          src={images.sparkLogoTransparent}
           alt={'Spark Logo'}
           // priority
         />
@@ -77,7 +77,7 @@ function SparkHomeClient() {
               description={
                 'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
               }
-              imageSrc={'/images/visuals/everest.png'}
+              imageSrc={images.everestImage}
               width={300}
               height={450}
               bgColor={colors.black1}
@@ -91,7 +91,7 @@ function SparkHomeClient() {
               description={
                 'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
               }
-              imageSrc={'/images/visuals/image_pi.png'}
+              imageSrc={images.piImage}
               width={300}
               height={450}
               bgColor={colors.black1}
@@ -104,7 +104,7 @@ function SparkHomeClient() {
               description={
                 'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
               }
-              imageSrc={'/images/visuals/image_1.png'}
+              imageSrc={images.studentsImage}
               width={300}
               height={450}
               bgColor={colors.black1}
