@@ -15,6 +15,7 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
+import { images } from '@/utils/image_utils';
 
 function UndergraduateClient() {
   const isMobile = useIsMobile();
@@ -23,7 +24,7 @@ function UndergraduateClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/backgrounds/bg_2.png']}
+      imageSrc={[images.bg2]}
       pos={isMobile ? 'top left' : 'top center'}
       padding={0}
     >
@@ -149,7 +150,7 @@ function UndergraduateClient() {
             m={'auto'}
             fit={'contain'}
             // component={NextImage}
-            src={'/images/visuals/image_1.png'}
+            src={images.studentsImage}
             alt={'Students'}
             radius={'xl'}
           />

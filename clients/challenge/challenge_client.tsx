@@ -7,6 +7,7 @@ import ScrollableSegmentedControl from '@/components/scrollable_segmented_contro
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
+import { images } from '@/utils/image_utils';
 import {
   Box,
   Center,
@@ -28,7 +29,7 @@ function ChallengeClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={['/images/backgrounds/bg_4.png']}
+      imageSrc={[images.bg4]}
       bgSize={'cover'}
       padding={0}
     >

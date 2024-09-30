@@ -2,8 +2,8 @@ import { Image, Burger, Button, Drawer, Flex, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import logoTransparent from '@/public/images/logo/spark_logo_transparent.png';
 import { colors } from '@/utils/color_utils';
+import { images } from '@/utils/image_utils';
 
 function CustomDrawer() {
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
@@ -22,8 +22,7 @@ function CustomDrawer() {
             h={40}
             w={'auto'}
             fit={'contain'}
-            component={NextImage}
-            src={logoTransparent}
+            src={images.sparkLogoTransparent}
             alt={'My image'}
           />
         }
