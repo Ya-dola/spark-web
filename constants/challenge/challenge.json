@@ -7,20 +7,20 @@
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
         "members": ["Member 1", "Member 2", "Member 3", "Member 4", "Member 5"],
-        "images": ["/images/bg_6.png", "/images/bg_7.png"]
+        "images": ["/images/image_1.png", "/images/image_2.png"]
       },
       "runnerUpTeams": [
         {
           "name": "Team 1",
           "description": "This is a description for Team 1.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/bg_2.png"]
+          "images": ["/images/image_1.png", "/images/image_4.png"]
         },
         {
           "name": "Team 2",
           "description": "This is a description for Team 2.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_4.png"]
+          "images": ["/images/image_2.png", "/images/image_4.png"]
         },
         {
           "name": "Team 3",
@@ -32,13 +32,13 @@
           "name": "Team 4",
           "description": "This is a description for Team 4.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_5.png", "/images/bg_7.png"]
+          "images": ["/images/image_3.png", "/images/image_2.png"]
         },
         {
           "name": "Team 5",
           "description": "This is a description for Team 5.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_2.png", "/images/bg_3.png"]
+          "images": ["/images/image_4.png", "/images/image_1.png"]
         }
       ]
     },
@@ -49,14 +49,14 @@
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
         "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/bg_2.png"]
+        "images": ["/images/image_1.png", "/images/image_4.png"]
       },
       "runnerUpTeams": [
         {
           "name": "Team 1",
           "description": "This is a description for Team 1.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/bg_2.png"]
+          "images": ["/images/image_1.png", "/images/image_2.png"]
         },
         {
           "name": "Team 2",
@@ -73,14 +73,14 @@
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
         "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/bg_2.png"]
+        "images": ["/images/image_1.png", "/images/image_4.png"]
       },
       "runnerUpTeams": [
         {
           "name": "Team 1",
           "description": "This is a description for Team 1.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/bg_2.png"]
+          "images": ["/images/image_1.png", "/images/image_4.png"]
         },
         {
           "name": "Team 2",
@@ -98,13 +98,13 @@
           "name": "Team 4",
           "description": "This is a description for Team 4.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_5.png", "/images/bg_7.png"]
+          "images": ["/images/image_3.png", "/images/image_2.png"]
         },
         {
           "name": "Team 5",
           "description": "This is a description for Team 5.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_2.png", "/images/bg_3.png"]
+          "images": ["/images/image_4.png", "/images/image_1.png"]
         }
       ]
     },
@@ -115,14 +115,14 @@
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
         "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/bg_2.png"]
+        "images": ["/images/image_1.png", "/images/image_4.png"]
       },
       "runnerUpTeams": [
         {
           "name": "Team 1",
           "description": "This is a description for Team 1.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/bg_2.png"]
+          "images": ["/images/image_1.png", "/images/image_4.png"]
         },
         {
           "name": "Team 2",
@@ -140,13 +140,13 @@
           "name": "Team 4",
           "description": "This is a description for Team 4.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_5.png", "/images/bg_7.png"]
+          "images": ["/images/image_3.png", "/images/image_2.png"]
         },
         {
           "name": "Team 5",
           "description": "This is a description for Team 5.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_2.png", "/images/bg_3.png"]
+          "images": ["/images/image_4.png", "/images/image_1.png"]
         }
       ]
     },
@@ -157,14 +157,14 @@
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
         "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/bg_2.png"]
+        "images": ["/images/image_1.png", "/images/image_4.png"]
       },
       "runnerUpTeams": [
         {
           "name": "Team 1",
           "description": "This is a description for Team 1.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/bg_2.png"]
+          "images": ["/images/image_1.png", "/images/image_4.png"]
         },
         {
           "name": "Team 2",
@@ -182,13 +182,13 @@
           "name": "Team 4",
           "description": "This is a description for Team 4.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_5.png", "/images/bg_7.png"]
+          "images": ["/images/image_3.png", "/images/image_2.png"]
         },
         {
           "name": "Team 5",
           "description": "This is a description for Team 5.",
           "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/bg_2.png", "/images/bg_3.png"]
+          "images": ["/images/image_4.png", "/images/image_1.png"]
         }
       ]
     }
