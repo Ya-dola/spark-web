@@ -1,10 +1,10 @@
 'use client';
 
 import CarouselCard from '@/components/carousel_card/carousel_card';
-import ChallengeSection from '@/components/challenge_section/challenge_section';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
+import Transitions from '@/components/transitions_component/transitions';
 import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
@@ -31,6 +31,7 @@ interface ChallengeClientProps {
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
+  const pageWidth = isMobile ? '100%' : '80%';
   const [selectedChallenge, setSelectedChallenge] = useState(0);
   const [selectedRunnerUp, setSelectedRunnerUp] = useState(0);
 
@@ -39,7 +40,6 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
       backgroundHeight={'105%'}
       imageSrc={[images.bg4]}
       bgSize={'cover'}
-      padding={0}
     >
       <Flex
         direction={'column'}
@@ -80,26 +80,23 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             bgColor={'grape'}
           />
         </Flex>
-        <Paper
-          w={isMobile ? '100%' : '80%'}
-          h={'auto'}
-          bg={'#343434'}
-          radius={'lg'}
-          px={isMobile ? '' : 'xl'}
-          py={isMobile ? 'md' : 'xl'}
-        >
-          <Box
-            py={'lg'}
-            ml={'md'}
-            w={isMobile ? '85%' : '90%'}
+
+        <Transitions width={'100%'}>
+          <Paper
+            w={pageWidth}
+            h={'auto'}
+            bg={colors.darkGrey + '75'}
+            radius={'lg'}
+            px={isMobile ? '' : 'xl'}
+            py={isMobile ? 'md' : 'xl'}
           >
             <Text
-              size={'lg'}
+              fz={'h3'}
               fw={700}
             >
               Main features of the SPARK challenge:
             </Text>
-            <Space h={'lg'} />
+            <Space h={'xl'} />
             <List
               listStyleType={'disc'}
               withPadding
@@ -119,78 +116,118 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 SPARK Challenge.
               </ListItem>
             </List>
-          </Box>
+          </Paper>
+        </Transitions>
 
-          <Space h={'xl'} />
-          <Box
-            py={'lg'}
-            ml={'md'}
-            w={isMobile ? '85%' : '90%'}
+        {/* TODO - Fix and Make it Transition after first one on delay */}
+        <Transitions
+          width={'100%'}
+          // delay={8000}
+          // duration={2000}
+        >
+          <Paper
+            w={pageWidth}
+            h={'auto'}
+            bg={colors.darkGrey + '75'}
+            radius={'lg'}
+            px={isMobile ? '' : 'xl'}
+            py={isMobile ? 'md' : 'xl'}
           >
             <Text
-              size={'lg'}
+              fz={'h3'}
               fw={700}
             >
               Several supporting activities will be undertaken for a successful
               outcome for the Challenge:
             </Text>
-            <Space h={'lg'} />
-            <List
-              listStyleType={'disc'}
-              withPadding
+
+            <Space h={'xl'} />
+
+            <Flex
+              direction={'row'}
+              justify={'center'}
+              align={'flex-start'}
+              gap={'xl'}
             >
-              <ListItem>
-                A team of undergraduates from ENTC will manage the delivery of
-                the SPARK programme.
-              </ListItem>
-              <ListItem>
-                A marketing campaign will be undertaken to raise awareness and
-                seeking long-term form within ENTC.
-              </ListItem>
-              <ListItem>
-                Workshops on the subject of “Design Led Innovation” will be
-                delivered in support of students developing Challenge solution.
-              </ListItem>
-              <ListItem>
-                A series of lectures on United Nations – Sustainable Development
-                Goals (SDG&apos;s) will be available to all students
-              </ListItem>
-              <Space h={'lg'} />
-              <Center>
-                <ReactPlayer
-                  url={'https://youtu.be/vc8-7VncIbA'}
-                  loop={true}
-                  controls={true}
-                  light={true}
-                  width={isMobile ? 320 : 640}
-                />
-              </Center>
-            </List>
-          </Box>
-          <Space h={'lg'} />
-          <ScrollableSegmentedControl
-            segmentData={challengeTabs.tabs.map((tab, index) => ({
-              label: tab.name.toString(),
-              value: index.toString(),
-            }))}
-            onChange={(value) => {
-              setSelectedRunnerUp(0);
-              return setSelectedChallenge(Number(value));
-            }}
-          />
+              <List
+                listStyleType={'disc'}
+                withPadding
+              >
+                <ListItem>
+                  A team of undergraduates from ENTC will manage the delivery of
+                  the SPARK programme.
+                </ListItem>
+                <ListItem>
+                  A marketing campaign will be undertaken to raise awareness and
+                  seeking long-term form within ENTC.
+                </ListItem>
+                <ListItem>
+                  Workshops on the subject of “Design Led Innovation” will be
+                  delivered in support of students developing Challenge
+                  solution.
+                </ListItem>
+                <ListItem>
+                  A series of lectures on United Nations – Sustainable
+                  Development Goals (SDG&apos;s) will be available to all
+                  students
+                </ListItem>
+              </List>
 
-          <Text
-            fz={'h1'}
-            my={'lg'}
-          >
-            {challengeTabs.tabs[selectedChallenge].name}
-          </Text>
+              <ReactPlayer
+                url={'https://youtu.be/vc8-7VncIbA'}
+                loop={true}
+                controls={true}
+                light={true}
+                width={isMobile ? 320 : 640}
+              />
+            </Flex>
+          </Paper>
+        </Transitions>
 
-          <ChallengeSection
-            textWeight={500}
-            text={challengeTabs.tabs[selectedChallenge].description}
+        <Space h={'sm'} />
+
+        <Transitions width={'100%'}>
+          <Flex
+            direction={'column'}
+            align={'center'}
           >
-            {/* <ChallengeTabs
+            <Box w={pageWidth}>
+              <ScrollableSegmentedControl
+                segmentBgColor={colors.darkGrey + '75'}
+                offsetScrollbars={false}
+                segmentData={challengeTabs.tabs.map((tab, index) => ({
+                  label: tab.name.toString(),
+                  value: index.toString(),
+                }))}
+                onChange={(value) => {
+                  setSelectedRunnerUp(0);
+                  return setSelectedChallenge(Number(value));
+                }}
+                segmentFgColor={colors.blue1}
+              />
+            </Box>
+            <Paper
+              w={pageWidth}
+              h={'auto'}
+              bg={colors.darkGrey + '75'}
+              radius={'lg'}
+              px={isMobile ? '' : 'xl'}
+              // py={isMobile ? 'md' : 'xl'}
+            >
+              <Text
+                fz={'h1'}
+                my={'md'}
+              >
+                {challengeTabs.tabs[selectedChallenge].name}
+              </Text>
+              <Text
+                fz={'h4'}
+                mb={'lg'}
+              >
+                {challengeTabs.tabs[selectedChallenge].description}
+              </Text>
+
+              {/* <ChallengeTabs
               text={'WINNER'}
               heading={'WINNING TEAM NAME'}
               description={
@@ -202,48 +239,42 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               showIcon={true}
             /> */}
 
-            <CarouselCard
-              events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
-              headingColor={'#A61FD6'}
-            />
-            <Divider my={'lg'} />
-            {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
-              <>
-                <ScrollableSegmentedControl
-                  offsetScrollbars={false}
-                  segmentFgColor={'#A61FD6'}
-                  segmentData={challengeTabs.tabs[
-                    selectedChallenge
-                  ].runnerUpTeams.map((tab, index) => ({
-                    label: tab.name.toString(),
-                    value: index.toString(),
-                  }))}
-                  onChange={(value) => {
-                    setSelectedRunnerUp(Number(value));
-                  }}
-                  value={selectedRunnerUp.toString()}
-                />
-                <Paper
-                  h={'100%'}
-                  w={'100%'}
-                  bg={'#262626'}
-                  radius={'md'}
-                >
+              <CarouselCard
+                events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
+                headingColor={'#A61FD6'}
+              />
+              <Divider my={'lg'} />
+              {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
+                <>
+                  <ScrollableSegmentedControl
+                    offsetScrollbars={false}
+                    segmentFgColor={colors.blue1}
+                    segmentData={challengeTabs.tabs[
+                      selectedChallenge
+                    ].runnerUpTeams.map((tab, index) => ({
+                      label: tab.name.toString(),
+                      value: index.toString(),
+                    }))}
+                    onChange={(value) => {
+                      setSelectedRunnerUp(Number(value));
+                    }}
+                    value={selectedRunnerUp.toString()}
+                  />
                   <CarouselCard
                     events={
                       challengeTabs.tabs[selectedChallenge]?.runnerUpTeams
                     }
-                    headingColor={'#A61FD6'}
+                    headingColor={colors.blue1}
                     onCarouselChange={(index) => {
                       setSelectedRunnerUp(index);
                     }}
                     eventIndex={selectedRunnerUp}
                   />
-                </Paper>
-              </>
-            )}
-          </ChallengeSection>
-        </Paper>
+                </>
+              )}
+            </Paper>
+          </Flex>
+        </Transitions>
       </Flex>
     </CustomAppShell>
   );
