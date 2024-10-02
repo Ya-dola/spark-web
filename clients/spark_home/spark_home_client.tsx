@@ -16,7 +16,7 @@ function SparkHomeClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={[images.bg3]}
+      imageSrc={images.bg3}
       padding={0}
     >
       <Flex

@@ -38,7 +38,7 @@ function PiCommunityClient({
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={[images.bg1]}
+      imageSrc={images.bg1}
       bgSize={'cover'}
       padding={0}
     >

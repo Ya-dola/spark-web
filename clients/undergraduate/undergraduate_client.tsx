@@ -24,7 +24,7 @@ function UndergraduateClient() {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={[images.bg2]}
+      imageSrc={images.bg2}
       pos={isMobile ? 'top left' : 'top center'}
       padding={0}
     >
@@ -69,7 +69,7 @@ function UndergraduateClient() {
         <Paper
           w={isMobile ? '100%' : '70%'}
           h={'auto'}
-          bg={colors.lightGrey}
+          bg={colors.darkGrey + '80'}
           radius={isMobile ? '' : 'lg'}
           px={isMobile ? 'md' : 'xl'}
           py={'xl'}
