@@ -32,24 +32,6 @@ interface ChallengeTabsProps {
   children?: React.ReactNode;
 }
 
-/**
- * ChallengeTabs Component
- *
- * This component renders a card with customizable background color, text color, size, and other styles.
- * It uses Mantine's Paper component for the card and Center for centering the text.
- *
- * @param {string} text - The text to display inside the card.
- * @param {string} [bgColor='purple'] - Background color of the card.
- * @param {string} [textColor='white'] - Color of the text inside the card.
- * @param {string} [radius='md'] - Border radius of the card.
- * @param {number} [width] - Width of the card in pixels.
- * @param {number} [height] - Height of the card in pixels.
- * @param {string} [textSize='md'] - Font size of the text.
- * @param {number} [textWeight=500] - Font weight of the text.
- *
- * @example
- * <ChallengeTabs text="Loading..."/>
- */
 function ChallengeTabs({
   text = '',
   textColor = 'white',

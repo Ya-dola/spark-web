@@ -18,7 +18,7 @@ import { images } from '@/utils/image_utils';
 
 interface CustomAppShellProps {
   children: ReactNode;
-  imageSrc?: string[];
+  imageSrc?: string;
   backgroundHeight?: number | string;
   width?: number | string;
   padding?: MantineSpacing;
@@ -27,9 +27,8 @@ interface CustomAppShellProps {
 }
 
 function CustomAppShell({
-  imageSrc = [],
+  imageSrc = '',
   backgroundHeight = 900,
-  width = '100%',
   padding = 'md',
   children,
   bgSize = 'cover',
@@ -41,7 +40,6 @@ function CustomAppShell({
     <ImageGrid
       imageSrc={imageSrc}
       height={backgroundHeight}
-      width={width}
       bgSize={bgSize}
       pos={pos}
     />

@@ -38,7 +38,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   return (
     <CustomAppShell
       backgroundHeight={'105%'}
-      imageSrc={[images.bg4]}
+      imageSrc={images.bg4}
       bgSize={'cover'}
     >
       <Flex

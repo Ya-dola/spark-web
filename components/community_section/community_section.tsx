@@ -55,7 +55,7 @@ function CommunitySection({
       h={height}
       w={width}
       radius={radius}
-      bg={bgColor}
+      bg={bgColor + '75'}
     >
       {heading && (
         <Text
