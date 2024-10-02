@@ -34,19 +34,20 @@ function PiCommunityClient({
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
+  const pageWidth = isMobile ? '100%' : '80%';
 
   return (
     <CustomAppShell
-      backgroundHeight={'105%'}
+      backgroundHeight={'auto'}
       imageSrc={images.bg1}
       bgSize={'cover'}
-      padding={0}
+      pos={'top center'}
     >
       <Flex
         direction={'column'}
         justify={'flex-start'}
         align={'center'}
-        gap={'xs'}
+        gap={'md'}
       >
         <Text
           w={'100%'}
@@ -60,11 +61,11 @@ function PiCommunityClient({
         </Text>
         <Flex
           w={'100%'}
-          px={pagePadding}
           direction={isMobile ? 'column' : 'row'}
-          align={'center'}
           justify={isMobile ? 'start' : 'space-between'}
+          align={'center'}
           gap={'xl'}
+          px={pagePadding}
         >
           <Text w={isMobile ? '100%' : '70%'}>
             In making Raspberry Pis available within the department year on
@@ -84,78 +85,59 @@ function PiCommunityClient({
           </Box>
         </Flex>
         <Flex
-          w={isMobile ? '100%' : '100%'}
+          w={'100%'}
           direction={'column'}
           justify={'center'}
           align={'center'}
           gap={'xl'}
         >
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={piMoraData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={piMoraData.description}
-              tabs={piMoraData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={techDemoData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={techDemoData.description}
-              tabs={techDemoData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '80%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={finalYearData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={finalYearData.description}
-              tabs={finalYearData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={piMoraData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={piMoraData.description}
+            tabs={piMoraData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={techDemoData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={techDemoData.description}
+            tabs={techDemoData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={finalYearData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={finalYearData.description}
+            tabs={finalYearData.tabs}
+            slideSize={isMobile ? '100%' : '100%'}
+          />
 
           <Box
             w={'100%'}
             h={'auto'}
             p={'xl'}
           >
-            <Transitions
-              transition='fade-up'
-              delay={6000}
-            >
+            <Transitions>
               <Center>
                 <Card
-                  w={isMobile ? '100%' : '40%'}
+                  w={pageWidth}
                   radius={'md'}
-                  shadow='sm'
                   bg={colors.blue1}
                   padding='xl'
                   component='a'

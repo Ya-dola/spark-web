@@ -124,6 +124,75 @@
           ]
         }
       ]
+    },
+    {
+      "name": "2021/2022",
+      "details": [
+        {
+          "name": "22/23 - Event Name 1",
+          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_1.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 2",
+          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_3.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 3",
+          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_4.png"],
+          "members": []
+        }
+      ]
+    },
+    {
+      "name": "2020/2021",
+      "details": [
+        {
+          "name": "22/23 - Event Name 1",
+          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_1.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 2",
+          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_3.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 3",
+          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_4.png"],
+          "members": []
+        }
+      ]
+    },
+    {
+      "name": "2019/2020",
+      "details": [
+        {
+          "name": "22/23 - Event Name 1",
+          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_1.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 2",
+          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_3.png"],
+          "members": []
+        },
+        {
+          "name": "22/23 - Event Name 3",
+          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
+          "images": ["/images/image_4.png"],
+          "members": []
+        }
+      ]
     }
   ]
 }
