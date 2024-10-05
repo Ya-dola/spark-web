@@ -90,14 +90,14 @@ function CustomAppShell({
         >
           {imageGrid}
         </div>
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <AppShell.Main
-            style={{ position: 'relative', zIndex: 1 }}
-            pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
-          >
-            {children}
-          </AppShell.Main>
-        </div>
+        {/* <div style={{ position: 'relative', zIndex: 1 }}> */}
+        <AppShell.Main
+          style={{ position: 'relative', zIndex: 1 }}
+          pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
+        >
+          {children}
+        </AppShell.Main>
+        {/* </div> */}
       </div>
     </AppShell>
   );

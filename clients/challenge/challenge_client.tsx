@@ -3,7 +3,6 @@
 import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
-import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import Transitions from '@/components/transitions_component/transitions';
 import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
@@ -36,7 +35,8 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={isMobile ? '320rem' : '220rem'}
+      // backgroundHeight={isMobile ? '320rem' : '220rem'}
+      backgroundHeight={'auto'}
       imageSrc={images.bg4}
       bgSize={'cover'}
       pos={'top center'}
@@ -76,7 +76,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           </Text>
 
           <ReactPlayer
-            url={'https://youtu.be/vc8-7VncIbA'}
+            url={'https://youtu.be/DJZw7-Z1EQs'}
             loop={true}
             playing={true}
             muted={true}

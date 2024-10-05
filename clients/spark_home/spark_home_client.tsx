@@ -59,73 +59,74 @@ function SparkHomeClient() {
           </Text>
         </Center>
 
-        <Box
+        {/* <Box
           mt={50}
           w={'100%'}
           h={'auto'}
-          py={'xl'}
+          py={'sm'}
+        > */}
+        <Flex
+          mt={'lg'}
+          direction={isMobile ? 'column' : 'row'}
+          align={'center'}
+          justify={'center'}
+          wrap={'wrap'}
+          gap={isMobile ? 'md' : 'xl'}
         >
-          <Flex
-            direction={isMobile ? 'column' : 'row'}
-            align={'center'}
-            justify={'center'}
-            wrap={'wrap'}
-            gap={isMobile ? 'md' : 'xl'}
+          <Transitions
+            transition={isMobile ? 'fade-up' : 'fade-down'}
+            runOnce={true}
           >
-            <Transitions
-              transition='fade-down'
-              runOnce={true}
-            >
-              <ButtonCard
-                heading={'SPARK Challenge'}
-                description={
-                  'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
-                }
-                imageSrc={images.everestImage}
-                width={300}
-                height={450}
-                bgColor={colors.black1}
-                headingColor={colors.blue1}
-                href={'/challenge'}
-                buttonColor={colors.blue1}
-              />
-            </Transitions>
+            <ButtonCard
+              heading={'SPARK Challenge'}
+              description={
+                'A Challenge for students to produce unique, novel products and services that mitigate the detrimental impact of Climate Change. '
+              }
+              imageSrc={images.everestImage}
+              width={300}
+              height={450}
+              bgColor={colors.black1}
+              headingColor={colors.blue1}
+              href={'/challenge'}
+              buttonColor={colors.blue1}
+            />
+          </Transitions>
 
-            <Transitions runOnce={true}>
-              <ButtonCard
-                heading={'Pi-Community'}
-                description={
-                  'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
-                }
-                imageSrc={images.piImage}
-                width={300}
-                height={450}
-                bgColor={colors.black1}
-                headingColor={colors.pink2}
-                href={'/pi_community'}
-                buttonColor={colors.pink2}
-              />
-            </Transitions>
-            <Transitions
-              transition='fade-down'
-              runOnce={true}
-            >
-              <ButtonCard
-                heading={'Undergraduate Development'}
-                description={
-                  'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
-                }
-                imageSrc={images.studentsImage}
-                width={300}
-                height={450}
-                bgColor={colors.black1}
-                headingColor={colors.purple2}
-                href={'/undergraduate'}
-                buttonColor={colors.purple2}
-              />
-            </Transitions>
-          </Flex>
-        </Box>
+          <Transitions runOnce={true}>
+            <ButtonCard
+              heading={'Pi-Community'}
+              description={
+                'To build a Community; by exploring the extensive Raspberry Pi resources available at ENTC.'
+              }
+              imageSrc={images.piImage}
+              width={300}
+              height={450}
+              bgColor={colors.black1}
+              headingColor={colors.pink2}
+              href={'/pi_community'}
+              buttonColor={colors.pink2}
+            />
+          </Transitions>
+          <Transitions
+            transition={isMobile ? 'fade-up' : 'fade-down'}
+            runOnce={true}
+          >
+            <ButtonCard
+              heading={'Undergraduate Development'}
+              description={
+                'Being a participant of this program undergraduates will develop important “life skills” required in the modern-day workplace.'
+              }
+              imageSrc={images.studentsImage}
+              width={300}
+              height={450}
+              bgColor={colors.black1}
+              headingColor={colors.purple2}
+              href={'/undergraduate'}
+              buttonColor={colors.purple2}
+            />
+          </Transitions>
+        </Flex>
+        {/* </Box> */}
       </Flex>
     </CustomAppShell>
   );

@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+  basePath: '/spark-web',
+  assetPrefix: '/spark-web',
+  // output: 'export',
+
   webpack: (config) => {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')

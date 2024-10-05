@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Oswald } from 'next/font/google';
 import '@/styles/globals.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-
-const inter = Inter({ subsets: ['latin'] });
-const oswald = Oswald({ subsets: ['latin'] });
+import { inter } from '@/utils/font_utils';
 
 export const metadata: Metadata = {
   title: 'Spark Web',
@@ -23,29 +20,29 @@ function RootLayout({
       <head>
         <link
           rel='icon'
-          href='/favicon.ico'
+          href='/spark-web/favicon.ico'
           sizes='any'
         />
         <link
           rel='icon'
-          href='/favicons/favicon-16x16.png'
+          href='/spark-web/favicons/favicon-16x16.png'
           sizes='16x16'
           type='image/png'
         />
         <link
           rel='icon'
-          href='/favicons/favicon-32x32.png'
+          href='/spark-web/favicons/favicon-32x32.png'
           sizes='32x32'
           type='image/png'
         />
         <link
           rel='apple-touch-icon'
-          href='/favicons/apple-touch-icon.png'
+          href='/spark-web/favicons/apple-touch-icon.png'
           sizes='180x180'
         />
         <link
           rel='manifest'
-          href='/site.webmanifest'
+          href='/spark-web/site.webmanifest'
         />
         <ColorSchemeScript defaultColorScheme='dark' />
       </head>
