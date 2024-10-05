@@ -4,6 +4,10 @@ const nextConfig = {
   // To generate static pages on build
   output: 'export',
 
+  // Paths for when Hosting on Github Pages
+  basePath: '/spark-web',
+  assetPrefix: '/spark-web',
+
   webpack: (config) => {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')

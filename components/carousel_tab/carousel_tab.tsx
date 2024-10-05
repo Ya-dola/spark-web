@@ -250,7 +250,7 @@ function CarouselTab({
               {event.images.slice(0, 2).map((image, index) => (
                 <ImageModal
                   key={index}
-                  src={image}
+                  src={'/spark-web' + image}
                   alt={`${event.name} | Image: ${index}`}
                   modalRadius={`${carouselBorderRadius}rem`}
                   imageRadius={`${carouselBorderRadius / 2}rem`}
