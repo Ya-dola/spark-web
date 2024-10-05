@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ScrollableButtonTabs from '../scrollable_button_tabs/scrollable_button_tabs';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
+import CarouselTab from '../carousel_tab/carousel_tabs';
 import Transitions from '../transitions_component/transitions';
 
 interface CommunitySectionProps {
@@ -50,92 +51,100 @@ function CommunitySection({
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <Transitions width={'100%'}>
-      <Paper
-        px={'md'}
-        py={'md'}
-        h={height}
-        w={width}
-        radius={radius}
-        bg={bgColor + '75'}
-      >
-        {heading && (
-          <Text
-            c={headingColor}
-            fw={headingWeight}
-            fz={headingSize}
-            mt={'md'}
-            className={oswald.className}
-          >
-            {heading}
-          </Text>
-        )}
+    // <Transitions width={'100%'}>
+    <Paper
+      px={'md'}
+      py={'md'}
+      h={height}
+      w={width}
+      radius={radius}
+      bg={bgColor + '75'}
+    >
+      {heading && (
+        <Text
+          c={headingColor}
+          fw={headingWeight}
+          fz={headingSize}
+          mt={'md'}
+          className={oswald.className}
+        >
+          {heading}
+        </Text>
+      )}
 
-        {text && (
-          <Text
-            c={textColor}
-            fz={textSize}
-            fw={textWeight}
-            mt={'md'}
-          >
-            {text}
-          </Text>
-        )}
+      {text && (
+        <Text
+          c={textColor}
+          fz={textSize}
+          fw={textWeight}
+          mt={'md'}
+        >
+          {text}
+        </Text>
+      )}
 
-        {description && (
-          <>
-            <Space h={'lg'} />
-            <Center>
-              <Paper
-                h={'100%'}
-                w={'100%'}
-                bg={bgColor}
-                p={'sm'}
-                radius={'md'}
-              >
-                <Text
-                  c={textColor}
-                  fz={textSize}
-                  fw={textWeight}
-                >
-                  {description}
-                </Text>
-              </Paper>
-            </Center>
-          </>
-        )}
-
-        {tabs && (
-          <>
-            <Space h={'lg'} />
-            <ScrollableSegmentedControl
-              offsetScrollbars={false}
-              segmentFgColor={sectionColor}
-              segmentData={tabs.map((tab, index) => ({
-                label: tab.name.toString(),
-                value: index.toString(),
-              }))}
-              onChange={(value) => {
-                return setSelectedTab(Number(value));
-              }}
-            />
+      {description && (
+        <>
+          <Space h={'lg'} />
+          <Center>
             <Paper
               h={'100%'}
               w={'100%'}
-              bg={'#262626'}
+              bg={bgColor}
+              p={'sm'}
               radius={'md'}
             >
-              <CarouselCard
-                slideSize={slideSize}
-                events={tabs[selectedTab]?.details}
-                headingColor={sectionColor}
-                autoPlayDelay={autoPlayDelay}
-              />
+              <Text
+                c={textColor}
+                fz={textSize}
+                fw={textWeight}
+              >
+                {description}
+              </Text>
             </Paper>
-          </>
-        )}
-      </Paper>
-    </Transitions>
+          </Center>
+        </>
+      )}
+
+      {tabs && (
+        <>
+          <Space h={'lg'} />
+          <ScrollableSegmentedControl
+            offsetScrollbars={false}
+            segmentFgColor={sectionColor}
+            segmentData={tabs.map((tab, index) => ({
+              label: tab.name.toString(),
+              value: index.toString(),
+            }))}
+            onChange={(value) => {
+              return setSelectedTab(Number(value));
+            }}
+          />
+          <Paper
+            h={'100%'}
+            w={'100%'}
+            bg={'#262626'}
+            radius={'md'}
+            p={'md'}
+          >
+            {/* <CarouselCard
+              slideSize={slideSize}
+              events={tabs[selectedTab]?.details}
+              headingColor={sectionColor}
+              autoPlayDelay={autoPlayDelay}
+            /> */}
+            <CarouselTab
+              slideSize={slideSize}
+              events={tabs[selectedTab]?.details}
+              headingColor={sectionColor}
+              autoPlayDelay={autoPlayDelay}
+              carouselHeight={'auto'}
+            />
+          </Paper>
+        </>
+      )}
+    </Paper>
+    // <Transitions/>
   );
 }
 

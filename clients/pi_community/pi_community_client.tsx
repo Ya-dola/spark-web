@@ -91,42 +91,57 @@ function PiCommunityClient({
           align={'center'}
           gap={'xl'}
         >
-          <CommunitySection
-            width={pageWidth}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={piMoraData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={piMoraData.description}
-            tabs={piMoraData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
-          <CommunitySection
-            width={pageWidth}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={techDemoData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={techDemoData.description}
-            tabs={techDemoData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
-          <CommunitySection
-            width={pageWidth}
-            height={'auto'}
-            bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
-            heading={finalYearData.title}
-            headingColor={colors.pink2}
-            sectionColor={colors.pink2}
-            text={finalYearData.description}
-            tabs={finalYearData.tabs}
-            slideSize={isMobile ? '100%' : '100%'}
-          />
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '70%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={piMoraData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={piMoraData.description}
+              tabs={piMoraData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '70%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={techDemoData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={techDemoData.description}
+              tabs={techDemoData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
+          <Transitions
+            transition='fade-up'
+            delay={6000}
+          >
+            <CommunitySection
+              width={isMobile ? '100%' : '70%'}
+              height={'auto'}
+              bgColor={colors.darkGrey}
+              radius={isMobile ? '' : 'lg'}
+              heading={finalYearData.title}
+              headingColor={colors.pink2}
+              sectionColor={colors.pink2}
+              text={finalYearData.description}
+              tabs={finalYearData.tabs}
+              slideSize={isMobile ? '100%' : '100%'}
+            />
+          </Transitions>
 
           <Box
             w={'100%'}
