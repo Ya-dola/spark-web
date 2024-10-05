@@ -20,29 +20,29 @@ function RootLayout({
       <head>
         <link
           rel='icon'
-          href='/favicon.ico'
+          href='/spark-web/favicon.ico'
           sizes='any'
         />
         <link
           rel='icon'
-          href='/favicons/favicon-16x16.png'
+          href='/spark-web/favicons/favicon-16x16.png'
           sizes='16x16'
           type='image/png'
         />
         <link
           rel='icon'
-          href='/favicons/favicon-32x32.png'
+          href='/spark-web/favicons/favicon-32x32.png'
           sizes='32x32'
           type='image/png'
         />
         <link
           rel='apple-touch-icon'
-          href='/favicons/apple-touch-icon.png'
+          href='/spark-web/favicons/apple-touch-icon.png'
           sizes='180x180'
         />
         <link
           rel='manifest'
-          href='/site.webmanifest'
+          href='/spark-web/site.webmanifest'
         />
         {/* Set default color scheme */}
         <ColorSchemeScript defaultColorScheme='dark' />

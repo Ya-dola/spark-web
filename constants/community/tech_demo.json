@@ -8,7 +8,7 @@
         {
           "name": "23/24 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_5.png"],
+          "images": ["/spark-web/images/image_5.png"],
           "members": [
             "Member 1",
             "Member 2",
@@ -20,7 +20,10 @@
         {
           "name": "23/24 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -32,7 +35,10 @@
         {
           "name": "23/24 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -49,7 +55,10 @@
         {
           "name": "22/23 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -61,7 +70,10 @@
         {
           "name": "22/23 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -73,7 +85,10 @@
         {
           "name": "22/23 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -85,7 +100,10 @@
         {
           "name": "22/23 - Event Name 4",
           "description": "This is a description for Event 4 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "images": [
+            "/spark-web/images/image_1.png",
+            "/spark-web/images/image_3.png"
+          ],
           "members": [
             "Member 1",
             "Member 2",
@@ -102,19 +120,19 @@
         {
           "name": "22/23 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
+          "images": ["/spark-web/images/image_1.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
+          "images": ["/spark-web/images/image_3.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
+          "images": ["/spark-web/images/image_4.png"],
           "members": []
         }
       ]
@@ -125,19 +143,19 @@
         {
           "name": "22/23 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
+          "images": ["/spark-web/images/image_1.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
+          "images": ["/spark-web/images/image_3.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
+          "images": ["/spark-web/images/image_4.png"],
           "members": []
         }
       ]
@@ -148,19 +166,19 @@
         {
           "name": "22/23 - Event Name 1",
           "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
+          "images": ["/spark-web/images/image_1.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 2",
           "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
+          "images": ["/spark-web/images/image_3.png"],
           "members": []
         },
         {
           "name": "22/23 - Event Name 3",
           "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
+          "images": ["/spark-web/images/image_4.png"],
           "members": []
         }
       ]
