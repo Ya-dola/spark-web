@@ -227,17 +227,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 {challengeTabs.tabs[selectedChallenge].description}
               </Text>
 
-              {/* <ChallengeTabs
-              text={'WINNER'}
-              heading={'WINNING TEAM NAME'}
-              description={
-                'Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.'
-              }
-              icon={'/images/icon_cup.png'}
-              images={['/images/image_1.png', '/images/image_1.png']}
-              names={['name 1', 'name 2', 'name 3', 'name 4', 'name 5']}
-              showIcon={true}
-            /> */}
+        
 
               <CarouselCard
                 events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
