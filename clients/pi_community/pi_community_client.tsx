@@ -105,7 +105,6 @@ function PiCommunityClient({
             sectionColor={colors.pink2}
             text={piMoraData.description}
             tabs={piMoraData.tabs}
-            slideSize={'100%'}
           />
           <CommunitySection
             width={pageWidth}
@@ -117,7 +116,6 @@ function PiCommunityClient({
             sectionColor={colors.pink2}
             text={techDemoData.description}
             tabs={techDemoData.tabs}
-            slideSize={'100%'}
           />
           <CommunitySection
             width={pageWidth}
@@ -129,7 +127,6 @@ function PiCommunityClient({
             sectionColor={colors.pink2}
             text={finalYearData.description}
             tabs={finalYearData.tabs}
-            slideSize={'100%'}
           />
 
           <Box
