@@ -11,6 +11,7 @@ interface TransitionsProps {
   delay?: number;
   duration?: number;
   width?: string | number;
+  runOnce?: boolean;
 }
 
 function Transitions({
@@ -19,15 +20,15 @@ function Transitions({
   delay = 5000,
   duration = 1000,
   width,
+  runOnce,
 }: TransitionsProps) {
   useEffect(() => {
     AOS.init({
-      // disable: 'phone',
-      once: true,
+      once: runOnce,
       duration: duration,
       easing: 'ease-out-cubic',
     });
-  }, [duration]);
+  }, [duration, runOnce]);
 
   return (
     <Flex
