@@ -1,6 +1,5 @@
 'use client';
 
-import CarouselCard from '@/components/carousel_card/carousel_card';
 import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
@@ -20,7 +19,6 @@ import {
   Space,
   Text,
   MantineSize,
-  Box,
 } from '@mantine/core';
 import { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
