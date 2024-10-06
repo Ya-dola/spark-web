@@ -8,10 +8,9 @@ import Transitions from '@/components/transitions_component/transitions';
 import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
+import { oswald } from '@/utils/font_utils';
 import { images } from '@/utils/image_utils';
 import {
-  Box,
-  Center,
   Divider,
   Flex,
   List,
@@ -20,6 +19,7 @@ import {
   Space,
   Text,
   MantineSize,
+  Box,
 } from '@mantine/core';
 import { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
@@ -37,9 +37,10 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={'105%'}
+      backgroundHeight={'190rem'}
       imageSrc={images.bg4}
       bgSize={'cover'}
+      pos={'top center'}
     >
       <Flex
         direction={'column'}
@@ -53,6 +54,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           fz={'h1'}
           fw={900}
           c={colors.blue1}
+          className={oswald.className}
         >
           SPARK CHALLENGE
         </Text>
@@ -75,7 +77,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           </Text>
           <SkeletonCard
             height={300}
-            width={isMobile ? 300 : 1600}
+            width={isMobile ? 30 : 1600}
             text={'Video Goes Here'}
             bgColor={'grape'}
           />
@@ -87,7 +89,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             h={'auto'}
             bg={colors.darkGrey + '75'}
             radius={'lg'}
-            px={isMobile ? '' : 'xl'}
+            px={'xl'}
             py={isMobile ? 'md' : 'xl'}
           >
             <Text
@@ -98,6 +100,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             </Text>
             <Space h={'xl'} />
             <List
+              w={'100%'}
               listStyleType={'disc'}
               withPadding
             >
@@ -130,7 +133,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             h={'auto'}
             bg={colors.darkGrey + '75'}
             radius={'lg'}
-            px={isMobile ? '' : 'xl'}
+            px={isMobile ? 'md' : 'xl'}
             py={isMobile ? 'md' : 'xl'}
           >
             <Text
@@ -144,12 +147,14 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             <Space h={'xl'} />
 
             <Flex
-              direction={'row'}
+              direction={isMobile ? 'column' : 'row'}
               justify={'center'}
-              align={'flex-start'}
+              align={isMobile ? 'center' : 'flex-start'}
               gap={'xl'}
+              ml={'auto'}
             >
               <List
+                w={isMobile ? '100%' : '100%'}
                 listStyleType={'disc'}
                 withPadding
               >
@@ -188,82 +193,77 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
         <Transitions width={'100%'}>
           <Flex
-            direction={'column'}
-            align={'center'}
+            justify={'flex-start'}
+            align={'cebter'}
+            w={pageWidth}
           >
-            <Box w={pageWidth}>
-              <ScrollableSegmentedControl
-                segmentBgColor={colors.darkGrey + '75'}
-                offsetScrollbars={false}
-                segmentData={challengeTabs.tabs.map((tab, index) => ({
-                  label: tab.name.toString(),
-                  value: index.toString(),
-                }))}
-                onChange={(value) => {
-                  setSelectedRunnerUp(0);
-                  return setSelectedChallenge(Number(value));
-                }}
-                segmentFgColor={colors.blue1}
-              />
-            </Box>
-            <Paper
-              w={pageWidth}
-              h={'auto'}
-              bg={colors.darkGrey + '75'}
-              radius={'lg'}
-              px={isMobile ? '' : 'xl'}
-              // py={isMobile ? 'md' : 'xl'}
-            >
-              <Text
-                fz={'h1'}
-                my={'md'}
-              >
-                {challengeTabs.tabs[selectedChallenge].name}
-              </Text>
-              <Text
-                fz={'h4'}
-                mb={'lg'}
-              >
-                {challengeTabs.tabs[selectedChallenge].description}
-              </Text>
-
-        
-
-              <CarouselCard
-                events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
-                headingColor={'#A61FD6'}
-              />
-              <Divider my={'lg'} />
-              {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
-                <>
-                  <ScrollableSegmentedControl
-                    offsetScrollbars={false}
-                    segmentFgColor={colors.blue1}
-                    segmentData={challengeTabs.tabs[
-                      selectedChallenge
-                    ].runnerUpTeams.map((tab, index) => ({
-                      label: tab.name.toString(),
-                      value: index.toString(),
-                    }))}
-                    onChange={(value) => {
-                      setSelectedRunnerUp(Number(value));
-                    }}
-                    value={selectedRunnerUp.toString()}
-                  />
-                  <CarouselCard
-                    events={
-                      challengeTabs.tabs[selectedChallenge]?.runnerUpTeams
-                    }
-                    headingColor={colors.blue1}
-                    onCarouselChange={(index) => {
-                      setSelectedRunnerUp(index);
-                    }}
-                    eventIndex={selectedRunnerUp}
-                  />
-                </>
-              )}
-            </Paper>
+            <ScrollableSegmentedControl
+              segmentBgColor={colors.darkGrey + '75'}
+              offsetScrollbars={false}
+              segmentData={challengeTabs.tabs.map((tab, index) => ({
+                label: tab.name.toString(),
+                value: index.toString(),
+              }))}
+              onChange={(value) => {
+                setSelectedRunnerUp(0);
+                return setSelectedChallenge(Number(value));
+              }}
+              segmentFgColor={colors.blue1}
+            />
           </Flex>
+          <Paper
+            w={pageWidth}
+            h={'auto'}
+            bg={colors.darkGrey + '75'}
+            radius={'lg'}
+            px={isMobile ? '' : 'xl'}
+            // py={isMobile ? 'md' : 'xl'}
+          >
+            <Text
+              fz={'h1'}
+              my={'md'}
+            >
+              {challengeTabs.tabs[selectedChallenge].name}
+            </Text>
+            <Text
+              fz={'h4'}
+              mb={'lg'}
+            >
+              {challengeTabs.tabs[selectedChallenge].description}
+            </Text>
+
+            <CarouselCard
+              events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
+              headingColor={'#A61FD6'}
+            />
+            <Divider my={'lg'} />
+            {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
+              <>
+                <ScrollableSegmentedControl
+                  offsetScrollbars={false}
+                  segmentFgColor={colors.blue1}
+                  segmentData={challengeTabs.tabs[
+                    selectedChallenge
+                  ].runnerUpTeams.map((tab, index) => ({
+                    label: tab.name.toString(),
+                    value: index.toString(),
+                  }))}
+                  onChange={(value) => {
+                    setSelectedRunnerUp(Number(value));
+                  }}
+                  value={selectedRunnerUp.toString()}
+                />
+                <CarouselCard
+                  events={challengeTabs.tabs[selectedChallenge]?.runnerUpTeams}
+                  headingColor={colors.blue1}
+                  onCarouselChange={(index) => {
+                    setSelectedRunnerUp(index);
+                  }}
+                  eventIndex={selectedRunnerUp}
+                />
+              </>
+            )}
+          </Paper>
         </Transitions>
       </Flex>
     </CustomAppShell>

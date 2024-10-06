@@ -23,6 +23,7 @@ function Transitions({
   useEffect(() => {
     AOS.init({
       // disable: 'phone',
+      once: true,
       duration: duration,
       easing: 'ease-out-cubic',
     });
@@ -32,6 +33,7 @@ function Transitions({
     <Flex
       key={null}
       w={width}
+      direction={'column'}
       justify={'center'}
       align={'center'}
       data-aos={transition}

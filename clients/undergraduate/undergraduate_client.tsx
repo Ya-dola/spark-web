@@ -23,7 +23,7 @@ function UndergraduateClient() {
 
   return (
     <CustomAppShell
-      backgroundHeight={'105%'}
+      backgroundHeight={'auto'}
       imageSrc={images.bg2}
       pos={isMobile ? 'top left' : 'top center'}
       padding={0}

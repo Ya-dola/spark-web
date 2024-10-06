@@ -13,6 +13,7 @@ interface ScrollableSegmentedControlProps {
   scrollType?: 'auto' | 'always' | 'scroll' | 'hover' | 'never';
   scrollSize?: number;
   offsetScrollbars?: boolean | 'x' | 'y';
+  scrollWidth?: string | number;
   segmentWidth?: string | number;
   segmentSize?: MantineSize;
   segmentRadius?: string;
@@ -31,6 +32,7 @@ function ScrollableSegmentedControl({
   segmentFgColor = colors.purple1,
   segmentBgColor = colors.black1,
   scrollSize,
+  scrollWidth = '100%',
   segmentWidth,
   segmentSize,
   onChange,
@@ -41,6 +43,7 @@ function ScrollableSegmentedControl({
   return (
     // TODO - Make Scrolling to Selection Smooth and Animated
     <ScrollArea
+      w={scrollWidth}
       scrollbars={scrollbars}
       type={scrollType}
       scrollbarSize={scrollSize ?? isMobile ? 6 : 10}

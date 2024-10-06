@@ -4,7 +4,7 @@ import React from 'react';
 interface ImageGridProps {
   imageSrc: string; // image URLs
   height: number | string; // Height of each image
-  bgSize?: string; 
+  bgSize?: string;
   pos?: string;
 }
 
@@ -21,17 +21,18 @@ const ImageGrid: React.FC<ImageGridProps> = ({
         top: 0,
         left: 0,
         right: 0,
+        bottom: 0,
         height: height, // Set the height for each BackgroundImage
       }}
     >
       <BackgroundImage
         src={imageSrc} //url
         style={{
+          //height: height,coz
           height: '100%', //Fill the cocntainer's height
-          width: '100%', // Fill the container’s width
+          // width: '100%', // Fill the container’s width
           backgroundSize: bgSize, // Crop the image (cover, contain, etc)
-          backgroundPosition: pos, // Anchor position of the image 
-         
+          backgroundPosition: pos, // Anchor position of the image
         }}
       />
       <div //overlay graident to blend in the bg
