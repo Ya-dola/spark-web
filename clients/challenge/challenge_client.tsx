@@ -1,6 +1,7 @@
 'use client';
 
 import CarouselCard from '@/components/carousel_card/carousel_card';
+import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import SkeletonCard from '@/components/skeleton_card/skeleton_card';
@@ -31,7 +32,7 @@ interface ChallengeClientProps {
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
-  const pageWidth = isMobile ? '100%' : '80%';
+  const pageWidth = isMobile ? '100%' : '70%';
   const [selectedChallenge, setSelectedChallenge] = useState(0);
   const [selectedRunnerUp, setSelectedRunnerUp] = useState(0);
 
@@ -50,7 +51,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
       >
         <Text
           px={pagePadding}
-          w={'100%'}
+          w={pageWidth}
           fz={'h1'}
           fw={900}
           c={colors.blue1}
@@ -59,7 +60,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           SPARK CHALLENGE
         </Text>
         <Flex
-          w={'100%'}
+          w={pageWidth}
           direction={isMobile ? 'column' : 'row'}
           align={isMobile ? 'center' : 'flex-start'}
           gap={'xl'}
@@ -217,7 +218,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             bg={colors.darkGrey + '75'}
             radius={'lg'}
             px={isMobile ? '' : 'xl'}
-            // py={isMobile ? 'md' : 'xl'}
+            py={isMobile ? 'md' : 'xl'}
           >
             <Text
               fz={'h1'}
@@ -232,7 +233,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               {challengeTabs.tabs[selectedChallenge].description}
             </Text>
 
-            <CarouselCard
+            <CarouselTab
               events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
               headingColor={'#A61FD6'}
             />
@@ -253,7 +254,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   }}
                   value={selectedRunnerUp.toString()}
                 />
-                <CarouselCard
+                <CarouselTab
                   events={challengeTabs.tabs[selectedChallenge]?.runnerUpTeams}
                   headingColor={colors.blue1}
                   onCarouselChange={(index) => {
