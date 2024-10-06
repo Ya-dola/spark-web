@@ -1,6 +1,5 @@
 'use client';
 
-import NextImage from 'next/image';
 import {
   MantineSize,
   Image,
@@ -20,6 +19,7 @@ import { images } from '@/utils/image_utils';
 function UndergraduateClient() {
   const isMobile = useIsMobile();
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
+  const pageWidth = isMobile ? '100%' : '70%';
 
   return (
     <CustomAppShell
@@ -36,7 +36,7 @@ function UndergraduateClient() {
       >
         <Text
           px={pagePadding}
-          w={'100%'}
+          w={pageWidth}
           fz={'h1'}
           fw={900}
           c={colors.purple2}
@@ -45,8 +45,7 @@ function UndergraduateClient() {
           UNDERGRADUATE DEVELOPMENT
         </Text>
         <Text
-          w={isMobile ? '100%' : '60%'}
-          mr={'auto'}
+          w={pageWidth}
           px={pagePadding}
         >
           Students may excel academically; however, they will also need to
@@ -56,9 +55,8 @@ function UndergraduateClient() {
           value to an organisation.
         </Text>
         <Text
-          w={isMobile ? '100%' : '60%'}
-          mr={'auto'}
-          px={'md'}
+          w={pageWidth}
+          px={pagePadding}
         >
           &quot;Between now and 2027, 60% of workers will need retraining due to
           global transformation and macrotrends.&quot; That&apos;s one of many
@@ -67,7 +65,7 @@ function UndergraduateClient() {
         </Text>
         <Space h={'sm'} />
         <Paper
-          w={isMobile ? '100%' : '70%'}
+          w={pageWidth}
           h={'auto'}
           bg={colors.darkGrey + '80'}
           radius={isMobile ? '' : 'lg'}
