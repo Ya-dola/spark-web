@@ -16,6 +16,7 @@ interface CarouselTabProps {
   events?: TabDetails[];
   onCarouselChange?: (index: number) => void;
   eventIndex?: number;
+  isWinner?: boolean;
 }
 
 function CarouselTab({
@@ -26,6 +27,7 @@ function CarouselTab({
   autoPlayDelay = 10000,
   onCarouselChange,
   eventIndex,
+  isWinner = false,
 }: CarouselTabProps) {
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
@@ -111,13 +113,39 @@ function CarouselTab({
               px={isMobile ? '' : 'xl'}
               w={isMobile ? '100%' : '50%'}
             >
-              <Text
-                fz={isMobile ? 'h2' : 'h1'}
-                fw={700}
-                c={headingColor}
+              <Flex
+                w={'100%'}
+                direction={isMobile ? 'column' : 'row'}
+                align={'center'}
               >
-                {event.name}
-              </Text>
+                {isWinner && (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='80'
+                    height='80'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='#1f68d6'
+                    stroke-width='1.6'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                  >
+                    <path
+                      stroke='none'
+                      d='M0 0h24v24H0z'
+                      fill='none'
+                    />
+                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
+                  </svg>
+                )}
+                <Text
+                  fz={isMobile ? 'h2' : 'h1'}
+                  fw={700}
+                  c={headingColor}
+                >
+                  {event.name}
+                </Text>
+              </Flex>
               <Space h={'lg'} />
               <Text
                 fz={isMobile ? 'md' : 'lg'}
@@ -126,7 +154,6 @@ function CarouselTab({
               >
                 {truncateDescription(event.description)}
               </Text>
-
               {event.members?.length > 0 && (
                 <>
                   <Space h={'2rem'} />
