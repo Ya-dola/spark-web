@@ -84,7 +84,7 @@ function CarouselTab({
           <Flex
             p={'lg'}
             direction={isMobile ? 'column' : 'row'}
-            gap={isMobile ? 'lg' : ''}
+            gap={isMobile ? 'xs' : ''}
             justify={'center'}
             align={'flex-start'}
             bg={colors.black1}
@@ -102,9 +102,9 @@ function CarouselTab({
               direction={'column'}
               justify={'center'}
               align={'flex-start'}
-              px={'xl'}
+              px={isMobile ? '' : 'xl'}
               mr={'lg'}
-              w={'60%'}
+              w={isMobile ? '100%' : '60%'}
             >
               <Text
                 fz={'h1'}
@@ -124,11 +124,10 @@ function CarouselTab({
                 {truncateDescription(event.description)}
               </Text>
 
-              <Space h={'lg'} />
-              <Space h={'lg'} />
-
               {event.members?.length > 0 && (
                 <>
+                  <Space h={'2rem'} />
+
                   <Text fz={'lg'}>Team Members</Text>
 
                   <List listStyleType={'disc'}>
@@ -153,7 +152,7 @@ function CarouselTab({
               gap={'xs'}
               w={'100%'}
               style={{
-                height: '36rem',
+                height: isMobile ? '26rem' : '36rem',
                 overflow: 'hidden',
               }}
             >
@@ -166,7 +165,7 @@ function CarouselTab({
                   style={{
                     height: event.images.length <= 1 ? '100%' : '50%',
                     // Maintains aspect ratio and crops image
-                    objectFit: 'cover',
+                    objectFit: isMobile ? 'contain' : 'cover',
                     objectPosition: 'center',
                   }}
                 />
