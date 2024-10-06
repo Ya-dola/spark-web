@@ -40,7 +40,7 @@ function CustomDrawer() {
           <Button
             fullWidth
             component={Link}
-            href={'/home'}
+            href={'/'}
             radius={'md'}
             size={'md'}
             variant={'subtle'}
@@ -86,18 +86,6 @@ function CustomDrawer() {
             justify={'flex-start'}
           >
             Undergraduate Development
-          </Button>{' '}
-          <Button
-            fullWidth
-            component={Link}
-            href={'/'}
-            radius={'md'}
-            size={'md'}
-            variant={'subtle'}
-            color={'red'}
-            justify={'flex-start'}
-          >
-            Leave Spark Web App
           </Button>
         </Flex>
       </Drawer>

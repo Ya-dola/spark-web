@@ -64,7 +64,7 @@ function CustomAppShell({
         >
           <UnstyledButton
             component={Link}
-            href={'/home'}
+            href={'/'}
             mr={'auto'}
           >
             <Image
