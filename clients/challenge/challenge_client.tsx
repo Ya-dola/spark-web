@@ -36,7 +36,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={isMobile ? '240rem' : '190rem'}
+      backgroundHeight={isMobile ? '260rem' : '190rem'}
       imageSrc={images.bg4}
       bgSize={'cover'}
       pos={'top center'}
@@ -171,7 +171,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   solution.
                 </ListItem>
                 <ListItem>
-                  A series of lectures on United Nations – Sustainable
+                  A series of lectures on United Nations - Sustainable
                   Development Goals (SDG&apos;s) will be available to all
                   students
                 </ListItem>
@@ -215,7 +215,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             h={'auto'}
             bg={colors.darkGrey + '75'}
             radius={'lg'}
-            px={isMobile ? '' : 'xl'}
+            px={isMobile ? 'sm' : 'xl'}
             py={isMobile ? 'md' : 'xl'}
           >
             <Text
@@ -233,7 +233,8 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
             <CarouselTab
               events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
-              headingColor={'#A61FD6'}
+              headingColor={colors.blue1}
+              isWinner={true}
             />
             <Divider my={'lg'} />
             {challengeTabs.tabs[selectedChallenge].runnerUpTeams && (
