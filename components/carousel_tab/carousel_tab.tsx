@@ -1,4 +1,4 @@
-import { Image, Text, Space, List, Box, Flex } from '@mantine/core';
+import { Image, Text, Space, List, Flex } from '@mantine/core';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
@@ -31,9 +31,9 @@ function CarouselTab({
 }: CarouselTabProps) {
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
-  const characterLimit = 500; // Set your desired character limit
+  const characterLimit = 500;
 
-  // Function to truncate string
+  // Truncate Description to Max Character Length
   const truncateDescription = (description: string): string => {
     if (description.length > characterLimit) {
       return description.slice(0, characterLimit) + '...';
@@ -98,7 +98,6 @@ function CarouselTab({
               overflow: 'hidden',
             }}
           >
-            {/* DESCRIPTIONS */}
             <Flex
               direction={'column'}
               justify={'center'}
@@ -108,7 +107,7 @@ function CarouselTab({
               w={'60%'}
             >
               <Text
-                fz={'h2'}
+                fz={'h1'}
                 fw={700}
                 c={headingColor}
               >
@@ -124,8 +123,8 @@ function CarouselTab({
               >
                 {truncateDescription(event.description)}
               </Text>
-              <Space h={'lg'} />
 
+              <Space h={'lg'} />
               <Space h={'lg'} />
 
               {event.members?.length > 0 && (
@@ -153,50 +152,25 @@ function CarouselTab({
               align={'center'}
               gap={'xs'}
               w={'100%'}
+              style={{
+                height: '36rem',
+                overflow: 'hidden',
+              }}
             >
-              {event.images.length === 1 ? (
-                <div
+              {/* // Max of 2 Images for Carousel */}
+              {event.images.slice(0, 2).map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt={`${event.name} | Image: ${index}`}
                   style={{
-                    width: '100%',
-                    height: '450px', // Full height for one image
-                    overflow: 'hidden',
+                    height: event.images.length <= 1 ? '100%' : '50%',
+                    // Maintains aspect ratio and crops image
+                    objectFit: 'cover',
+                    objectPosition: 'center',
                   }}
-                >
-                  <Image
-                    src={event.images[0]}
-                    alt={`${event.name} | Image`}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover', // Maintains aspect ratio and crops image
-                      objectPosition: 'top',
-                    }}
-                  />
-                </div>
-              ) : (
-                event.images.slice(0, 2).map((image, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      width: '80%', // Full width for image container
-                      height: 'calc(50% - 5px)', // Half height minus margin for two images
-                      overflow: 'hidden',
-                      marginBottom: index < 1 ? '5px' : '0', // Space between images
-                    }}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${event.name} | Image: ${index}`}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover', // Maintains aspect ratio and crops image
-                        objectPosition: 'top',
-                      }}
-                    />
-                  </div>
-                ))
-              )}
+                />
+              ))}
             </Flex>
           </Flex>
         </Carousel.Slide>

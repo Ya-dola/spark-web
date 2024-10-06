@@ -34,7 +34,7 @@ function PiCommunityClient({
   const isMobile = useIsMobile();
   const [isHovered, setIsHovered] = useState(false);
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
-  const pageWidth = isMobile ? '100%' : '80%';
+  const pageWidth = isMobile ? '100%' : '70%';
 
   return (
     <CustomAppShell
@@ -50,7 +50,7 @@ function PiCommunityClient({
         gap={'md'}
       >
         <Text
-          w={'100%'}
+          w={pageWidth}
           fz={'h1'}
           fw={900}
           c={colors.pink2}
@@ -60,14 +60,14 @@ function PiCommunityClient({
           SPARK PI COMMUNITY
         </Text>
         <Flex
-          w={'100%'}
+          w={pageWidth}
           direction={isMobile ? 'column' : 'row'}
           justify={isMobile ? 'start' : 'space-between'}
           align={'center'}
           gap={'xl'}
           px={pagePadding}
         >
-          <Text w={isMobile ? '100%' : '70%'}>
+          <Text w={pageWidth}>
             In making Raspberry Pis available within the department year on
             year; SPARK will encourage, facilitate and nurture innovation in the
             use of this technology. ENTC intend to build expertise over several
@@ -80,7 +80,11 @@ function PiCommunityClient({
             <Image
               src={images.piLogo}
               alt={'pi logo'}
-              h={'auto'}
+              style={{
+                height: '10rem',
+                objectFit: 'contain',
+                objectPosition: 'center',
+              }}
             />
           </Box>
         </Flex>
@@ -91,62 +95,47 @@ function PiCommunityClient({
           align={'center'}
           gap={'xl'}
         >
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '70%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={piMoraData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={piMoraData.description}
-              tabs={piMoraData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '70%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={techDemoData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={techDemoData.description}
-              tabs={techDemoData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
-          <Transitions
-            transition='fade-up'
-            delay={6000}
-          >
-            <CommunitySection
-              width={isMobile ? '100%' : '70%'}
-              height={'auto'}
-              bgColor={colors.darkGrey}
-              radius={isMobile ? '' : 'lg'}
-              heading={finalYearData.title}
-              headingColor={colors.pink2}
-              sectionColor={colors.pink2}
-              text={finalYearData.description}
-              tabs={finalYearData.tabs}
-              slideSize={isMobile ? '100%' : '100%'}
-            />
-          </Transitions>
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={piMoraData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={piMoraData.description}
+            tabs={piMoraData.tabs}
+            slideSize={'100%'}
+          />
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={techDemoData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={techDemoData.description}
+            tabs={techDemoData.tabs}
+            slideSize={'100%'}
+          />
+          <CommunitySection
+            width={pageWidth}
+            height={'auto'}
+            bgColor={colors.darkGrey}
+            radius={isMobile ? '' : 'lg'}
+            heading={finalYearData.title}
+            headingColor={colors.pink2}
+            sectionColor={colors.pink2}
+            text={finalYearData.description}
+            tabs={finalYearData.tabs}
+            slideSize={'100%'}
+          />
 
           <Box
-            w={'100%'}
+            w={pageWidth}
             h={'auto'}
-            p={'xl'}
+            pb={'xl'}
           >
             <Transitions>
               <Center>
@@ -154,10 +143,12 @@ function PiCommunityClient({
                   w={pageWidth}
                   radius={'md'}
                   bg={colors.blue1}
-                  padding='xl'
-                  component='a'
-                  href='https://www.facebook.com/groups/raspberrypicommunitylk'
-                  target='fb_page'
+                  padding={'xl'}
+                  component={'a'}
+                  href={
+                    'https://www.facebook.com/groups/raspberrypicommunitylk'
+                  }
+                  target={'fb_page'}
                   style={{
                     transform:
                       isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
@@ -168,21 +159,18 @@ function PiCommunityClient({
                   onMouseLeave={() => !isMobile && setIsHovered(false)}
                 >
                   <Text
-                    fw={1000}
-                    fz={'h2'}
-                    mt='md'
+                    fw={700}
+                    fz={'h1'}
                     c={colors.black1}
-                    w={'60%'}
                     className={oswald.className}
                   >
                     PI Community Facebook Page
                   </Text>
                   <Text
-                    mt='xs'
                     py={'md'}
                     c={colors.black1}
-                    fw={800}
-                    fz={'sm'}
+                    fw={600}
+                    fz={'h4'}
                   >
                     Pi Community Facebook page inform all followers about all
                     Raspberry Pi related activities at ENTC as well as news
@@ -196,15 +184,15 @@ function PiCommunityClient({
                     gap={'md'}
                   >
                     <Image
-                      w={'10%'}
+                      h={'5rem'}
                       src={images.fbLogo}
                       alt={'Fb logo'}
                     />
                     <Text
-                      mt={'xs'}
                       c={colors.black1}
                       size={'md'}
-                      fw={400}
+                      fw={500}
+                      fz={'h5'}
                     >
                       The Facebook group can be found here
                     </Text>
@@ -220,7 +208,7 @@ function PiCommunityClient({
                     ml={'auto'}
                   >
                     <Text
-                      /*td={'underline'}*/ fw={900}
+                      fw={900}
                       fz={'sm'}
                       c={colors.blue1}
                     >

@@ -72,10 +72,9 @@ function SparkHomeClient() {
             wrap={'wrap'}
             gap={isMobile ? 'md' : 'xl'}
           >
-            {/* TODO - Make Height and Width % Based */}
             <Transitions
               transition='fade-down'
-              delay={5000}
+              runOnce={true}
             >
               <ButtonCard
                 heading={'SPARK Challenge'}
@@ -92,7 +91,7 @@ function SparkHomeClient() {
               />
             </Transitions>
 
-            <Transitions transition='fade-up'>
+            <Transitions runOnce={true}>
               <ButtonCard
                 heading={'Pi-Community'}
                 description={
@@ -107,7 +106,10 @@ function SparkHomeClient() {
                 buttonColor={colors.pink2}
               />
             </Transitions>
-            <Transitions transition='fade-down'>
+            <Transitions
+              transition='fade-down'
+              runOnce={true}
+            >
               <ButtonCard
                 heading={'Undergraduate Development'}
                 description={
