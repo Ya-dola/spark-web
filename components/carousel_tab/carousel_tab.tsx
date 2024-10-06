@@ -2,14 +2,13 @@ import { Image, Text, Space, List, Flex } from '@mantine/core';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import theme from '@/components/carousel_card/carousel_card.module.css';
+import theme from '@/components/carousel_tab/carousel_tab.module.css';
 import { TabDetails } from '@/models/community/community_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
 
 interface CarouselTabProps {
   width?: number;
-  carouselHeight?: string | number;
   slideSize?: string;
   headingColor?: string;
   descriptionColor?: string;
@@ -21,7 +20,6 @@ interface CarouselTabProps {
 
 function CarouselTab({
   events = [],
-  carouselHeight = 650,
   slideSize = '100%',
   headingColor = 'white',
   descriptionColor = '#cacaca',
@@ -59,13 +57,15 @@ function CarouselTab({
 
   return (
     <Carousel
-      height={carouselHeight}
       slideSize={{ base: '100%', sm: '100%', md: slideSize }}
       slideGap={{ base: 0, sm: 'xs' }}
       loop
-      align='center'
+      align={'center'}
       draggable={events.length > 1}
-      withControls={events.length > 1}
+      withControls={!isMobile && events.length > 1}
+      nextControlIcon={'Next'}
+      previousControlIcon={'Previous'}
+      controlsOffset={'12rem'}
       withIndicators={events.length > 1}
       slidesToScroll={1}
       onSlideChange={handleCarouselChange}
@@ -84,18 +84,24 @@ function CarouselTab({
           <Flex
             p={'lg'}
             direction={isMobile ? 'column' : 'row'}
-            gap={isMobile ? 'xs' : ''}
-            justify={'center'}
+            gap={isMobile ? 'md' : ''}
+            justify={isMobile ? 'start' : 'center'}
             align={'flex-start'}
-            bg={colors.black1}
+            bg={colors.black1 + '60'}
             style={{
-              transform: activeEventIndex === index ? 'scale(1)' : 'scale(0.8)',
+              transform:
+                activeEventIndex === index
+                  ? 'scale(1)'
+                  : `scale(${isMobile ? 0.96 : 0.8})`,
               transition: 'transform 0.3s ease',
               zIndex: activeEventIndex === index ? 1 : 0,
               width: '100%',
               height: '100%',
-              borderRadius: '10px',
+              borderRadius: '1.5rem',
+              borderTopLeftRadius: '0',
+              borderTopRightRadius: isMobile ? '0' : '1.5rem',
               overflow: 'hidden',
+              marginBottom: '2rem',
             }}
           >
             <Flex
@@ -103,21 +109,18 @@ function CarouselTab({
               justify={'center'}
               align={'flex-start'}
               px={isMobile ? '' : 'xl'}
-              mr={'lg'}
-              w={isMobile ? '100%' : '60%'}
+              w={isMobile ? '100%' : '50%'}
             >
               <Text
-                fz={'h1'}
+                fz={isMobile ? 'h2' : 'h1'}
                 fw={700}
                 c={headingColor}
               >
                 {event.name}
               </Text>
-
               <Space h={'lg'} />
-
               <Text
-                fz={'lg'}
+                fz={isMobile ? 'md' : 'lg'}
                 fw={600}
                 c={descriptionColor}
               >
@@ -127,14 +130,12 @@ function CarouselTab({
               {event.members?.length > 0 && (
                 <>
                   <Space h={'2rem'} />
-
-                  <Text fz={'lg'}>Team Members</Text>
-
+                  <Text fz={isMobile ? 'md' : 'lg'}>Team Members</Text>
                   <List listStyleType={'disc'}>
                     {event.members.map((member, index) => (
                       <List.Item
                         key={index}
-                        fz={'md'}
+                        fz={isMobile ? 'sm' : 'md'}
                       >
                         {member}
                       </List.Item>
@@ -149,11 +150,12 @@ function CarouselTab({
               direction={'column'}
               justify={'center'}
               align={'center'}
-              gap={'xs'}
+              gap={'sm'}
               w={'100%'}
               style={{
-                height: isMobile ? '26rem' : '36rem',
+                height: isMobile ? '20rem' : '38rem',
                 overflow: 'hidden',
+                borderRadius: '0.75rem',
               }}
             >
               {/* // Max of 2 Images for Carousel */}

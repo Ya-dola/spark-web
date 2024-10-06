@@ -7,6 +7,7 @@ import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
 import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import Transitions from '@/components/transitions_component/transitions';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 interface CommunitySectionProps {
   height?: string | number;
@@ -23,7 +24,6 @@ interface CommunitySectionProps {
   headingWeight?: number;
   sectionColor?: string;
   autoPlayDelay?: number;
-  slideSize?: string;
   tabs?: CommunityTabsModel[];
 }
 
@@ -42,9 +42,9 @@ function CommunitySection({
   headingWeight = 900,
   sectionColor = colors.black1,
   autoPlayDelay,
-  slideSize,
   tabs,
 }: CommunitySectionProps) {
+  const isMobile = useIsMobile();
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
@@ -53,7 +53,7 @@ function CommunitySection({
       delay={6000}
     >
       <Paper
-        p={'md'}
+        p={isMobile ? 'sm' : 'md'}
         h={height}
         w={width}
         radius={radius}
@@ -97,11 +97,9 @@ function CommunitySection({
               }}
             />
             <CarouselTab
-              slideSize={slideSize}
               events={tabs[selectedTab]?.details}
               headingColor={sectionColor}
               autoPlayDelay={autoPlayDelay}
-              carouselHeight={'auto'}
             />
           </>
         )}
