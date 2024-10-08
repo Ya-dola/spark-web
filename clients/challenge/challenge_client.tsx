@@ -36,7 +36,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={isMobile ? '260rem' : '190rem'}
+      backgroundHeight={isMobile ? '320rem' : '220rem'}
       imageSrc={images.bg4}
       bgSize={'cover'}
       pos={'top center'}
@@ -74,11 +74,14 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             Pi into ENTC; creating an environment that allows for play, teamwork
             and experimentation.
           </Text>
-          <SkeletonCard
-            height={300}
-            width={isMobile ? 30 : 1600}
-            text={'Video Goes Here'}
-            bgColor={'grape'}
+
+          <ReactPlayer
+            url={'https://youtu.be/vc8-7VncIbA'}
+            loop={true}
+            playing={true}
+            muted={true}
+            controls={true}
+            width={isMobile ? 340 : 1600}
           />
         </Flex>
 
@@ -180,8 +183,9 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               <ReactPlayer
                 url={'https://youtu.be/vc8-7VncIbA'}
                 loop={true}
+                playing={true}
+                muted={true}
                 controls={true}
-                light={true}
                 width={isMobile ? 320 : 640}
               />
             </Flex>
@@ -219,13 +223,13 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             py={isMobile ? 'md' : 'xl'}
           >
             <Text
-              fz={'h1'}
-              my={'md'}
+              fz={isMobile ? 'h2' : 'h1'}
+              mb={'md'}
             >
               {challengeTabs.tabs[selectedChallenge].name}
             </Text>
             <Text
-              fz={'h4'}
+              fz={isMobile ? 'h5' : 'h4'}
               mb={'lg'}
             >
               {challengeTabs.tabs[selectedChallenge].description}
@@ -244,10 +248,15 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   segmentFgColor={colors.blue1}
                   segmentData={challengeTabs.tabs[
                     selectedChallenge
-                  ].runnerUpTeams.map((tab, index) => ({
-                    label: tab.name.toString(),
-                    value: index.toString(),
-                  }))}
+                  ].runnerUpTeams
+                    .slice(0, 4)
+                    .map((tab, index) => ({
+                      label:
+                        index <= 1
+                          ? `Runner Up ${index + 1}`
+                          : `Team ${index + 1}`,
+                      value: index.toString(),
+                    }))}
                   onChange={(value) => {
                     setSelectedRunnerUp(Number(value));
                   }}
