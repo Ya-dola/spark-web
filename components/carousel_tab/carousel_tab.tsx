@@ -31,7 +31,7 @@ function CarouselTab({
 }: CarouselTabProps) {
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
-  const characterLimit = 500;
+  const characterLimit = 800;
 
   // Truncate Description to Max Character Length
   const truncateDescription = (description: string): string => {
@@ -84,7 +84,7 @@ function CarouselTab({
       {events.map((event, index) => (
         <Carousel.Slide key={index}>
           <Flex
-            p={'lg'}
+            p={isMobile ? 'sm' : 'lg'}
             direction={isMobile ? 'column' : 'row'}
             gap={isMobile ? 'md' : ''}
             justify={isMobile ? 'start' : 'center'}
@@ -111,11 +111,11 @@ function CarouselTab({
               justify={'center'}
               align={'flex-start'}
               px={isMobile ? '' : 'xl'}
-              w={isMobile ? '100%' : '50%'}
+              w={isMobile ? '100%' : '90%'}
             >
               <Flex
                 w={'100%'}
-                direction={isMobile ? 'column' : 'row'}
+                direction={isMobile ? 'column' : 'column'}
                 align={'center'}
               >
                 {isWinner && (
@@ -148,8 +148,8 @@ function CarouselTab({
               </Flex>
               <Space h={'lg'} />
               <Text
-                fz={isMobile ? 'md' : 'lg'}
-                fw={600}
+                fz={isMobile ? 'sm' : 'md'}
+                fw={400}
                 c={descriptionColor}
               >
                 {truncateDescription(event.description)}
@@ -157,7 +157,12 @@ function CarouselTab({
               {event.members?.length > 0 && (
                 <>
                   <Space h={'2rem'} />
-                  <Text fz={isMobile ? 'md' : 'lg'}>Team Members</Text>
+                  <Text
+                    fz={isMobile ? 'md' : 'lg'}
+                    fw={700}
+                  >
+                    Team Members
+                  </Text>
                   <List listStyleType={'disc'}>
                     {event.members.map((member, index) => (
                       <List.Item
