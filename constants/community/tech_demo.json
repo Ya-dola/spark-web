@@ -3,35 +3,6 @@
   "description": "To demonstrate and showcase the student and Pi capabilities; a number of complex and challenging projects will be implemented throughout the year.",
   "tabs": [
     {
-      "name": "2024/2025",
-      "details": [
-        {
-          "name": "24/25 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2024/2025. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_2.png"],
-          "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
-          ]
-        },
-        {
-          "name": "24/25 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2024/2025. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png", "/images/image_4.png"],
-          "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
-          ]
-        }
-      ]
-    },
-    {
       "name": "2023/2024",
       "details": [
         {
