@@ -86,6 +86,7 @@ function CustomAppShell({
             right: 0,
             bottom: 0,
             zIndex: 0,
+            backgroundColor: 'black',
           }}
         >
           {imageGrid}
