@@ -1,74 +1,8 @@
 {
   "tabs": [
     {
-      "name": "Celebration 2025/26",
-      "description": "This is a description for the Celebration 25/26.",
-      "winnerTeam": {
-        "name": "Team Winner",
-        "description": "This is a description for Team Winner.",
-        "members": ["Member 1", "Member 2", "Member 3", "Member 4", "Member 5"],
-        "images": ["/images/image_1.png", "/images/image_2.png"]
-      },
-      "runnerUpTeams": [
-        {
-          "name": "Team 1",
-          "description": "This is a description for Team 1.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/image_4.png"]
-        },
-        {
-          "name": "Team 2",
-          "description": "This is a description for Team 2.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_2.png", "/images/image_4.png"]
-        },
-        {
-          "name": "Team 3",
-          "description": "This is a description for Team 3.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_5.png"]
-        },
-        {
-          "name": "Team 4",
-          "description": "This is a description for Team 4.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_2.png"]
-        },
-        {
-          "name": "Team 5",
-          "description": "This is a description for Team 5.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_4.png", "/images/image_1.png"]
-        }
-      ]
-    },
-    {
-      "name": "Celebration 24/25",
-      "description": "The year-long challenge is one of the fundamental parts of the SPARK programme,  to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step \"outside the box\" in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country.",
-      "winnerTeam": {
-        "name": "Team Winner",
-        "description": "This is a description for Team Winner.",
-        "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/image_4.png"]
-      },
-      "runnerUpTeams": [
-        {
-          "name": "Team 1",
-          "description": "This is a description for Team 1.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/image_2.png"]
-        },
-        {
-          "name": "Team 2",
-          "description": "This is a description for Team 2.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_4.png"]
-        }
-      ]
-    },
-    {
       "name": "Celebration 23/24",
-      "description": "This is a description for the Celebration 23/24.",
+      "description": "The SPARK Challenge for 2023/24 concluded on September 28, 2024, with five shortlisted teams from over 21 proposals, pitching their solutions to a panel of commercial and industrial heavyweights. This year’s evaluation process was particularly challenging, involving extended discussions among the panel about the relative merits of the solutions presented. Ultimately, three proposals were highlighted as outstanding, showcasing exceptional imagination, skill, and teamwork.",
       "winnerTeam": {
         "name": "Team Winner",
         "description": "This is a description for Team Winner.",
@@ -110,7 +44,7 @@
     },
     {
       "name": "Celebration 22/23",
-      "description": "The Spark Challenge 2022/23 was an extension of the competition campaign which was organized by Spark Branch with the intention of uplifting and appraising the innovative mindsets which were enriched with sustainable goals which will eventually address global issues more effectively. After an almost exhaustive year, the competition reached its pinnacle at the Finale of the Spark Challenge 2022/23 which was successfully held on the 11th of June 2023. Out of the fifteen teams who participated in the challenge, three teams emerged victorious.",
+      "description": "The Challenge is a key component of the SPARK programme organised by the Spark Branch of E-Club at ENTC. The Challenge aims to foster and recognize innovative mindsets focused on sustainable goals to effectively tackle global climate-related issues. After nearly a year of rigorous teamwork and product development, the event culminated in the Finale on June 11, 2023. Out of the fifteen participating teams, three stood out, demonstrating outstanding skill, imagination, and capability.",
       "winnerTeam": {
         "name": "Winner - Team Pathfinders",
         "description": "They have brought an impressive solution to identify insects damaging crops and recommending insecticide usage accordingly. Insecticide use that is excessive or incorrect has a negative impact on agricultural communities, consumers, and ecosystems by raising production costs, jeopardising the health and safety of farmers and customers, and causing environmental degradation and ecological imbalances. The improper application of insecticides in agriculture is a result of farmers’ ignorance and failure to recognise pests before they cause damage to crops. Pest Sense offers a solution to this issue by constantly checking the field for pests and advising the farmers on what pesticides to use and in what quantities so that the farmers may safeguard the crops while sticking to safe chemical use. Farmers can save costs and boost field yield by following the advice made specifically for them. Hope this product will help farmers all around the world to have better harvests which will definitely compensate for their invaluable efforts.",
@@ -134,7 +68,7 @@
     },
     {
       "name": "Celebration 21/22",
-      "description": "The year-long challenge is one of the fundamental parts of the SPARK programme, to be undertaken by the first/second-year undergraduates. In taking part, students were encouraged to step “outside the box” in developing unique solutions that would mitigate or rectify some of the environmental damage caused by human excess. The 2021/22 academic year was unprecedented for undergraduate study in Sri Lanka; not only had students to contend with Covid but also the impact of the significant economic downturn of the country. It is in this context that the SPARK program was launched on the 19th of July 2021. Early indication in the program identified that 55 groups of students would participate in the challenge; by year-end however, only 11 teams finalized their entry submission. After a rigorous assessment the following teams have shown outstanding competence in their proposed solutions",
+      "description": "The year-long challenge is a core component of the SPARK programme, involving first and second-year undergraduates. Students were encouraged to think creatively to develop unique solutions aimed at mitigating or rectifying environmental damage caused by human activities. Despite the challenges posed by COVID and the economic downturn, 55 groups of students participated in the challenge. By the end of the year, 11 teams had finalized their submissions. After a rigorous assessment, the following three teams demonstrated outstanding competence in their proposed solutions.",
       "winnerTeam": {
         "name": "Winner - Team Phantom ",
         "description": "Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.",

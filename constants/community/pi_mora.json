@@ -3,23 +3,6 @@
   "description": "Raspberry JAM's are independently organised community events for people to come together to learn about digital making with Raspberry Pi. ENTC will undertake 3 Raspberry JAMs (Pi-MORA's) every academic year. Undertaking to teach Pi enthusiasts about the capabilities of the Raspberry Pi platform.",
   "tabs": [
     {
-      "name": "2024/2025",
-      "details": [
-        {
-          "name": "24/25 - Event Name 1",
-          "description": "Explore the wonders of nature in our stunning outdoor adventure! Discover breathtaking landscapes, diverse wildlife, and create unforgettable memories in the great outdoors. Join us today!",
-          "images": ["/images/image_3.png"],
-          "members": []
-        },
-        {
-          "name": "24/25 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2024/2025. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
-          "members": []
-        }
-      ]
-    },
-    {
       "name": "2023/2024",
       "details": [
         {

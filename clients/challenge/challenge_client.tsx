@@ -249,12 +249,9 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   segmentData={challengeTabs.tabs[
                     selectedChallenge
                   ].runnerUpTeams
-                    .slice(0, 4)
+                    .slice(0, 2)
                     .map((tab, index) => ({
-                      label:
-                        index <= 1
-                          ? `Runner Up ${index + 1}`
-                          : `Team ${index + 1}`,
+                      label: `Runner Up ${index + 1}`, // Directly use the index to generate the label
                       value: index.toString(),
                     }))}
                   onChange={(value) => {
