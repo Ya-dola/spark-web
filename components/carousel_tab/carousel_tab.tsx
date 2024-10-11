@@ -187,7 +187,6 @@ function CarouselTab({
               style={{
                 height: isMobile ? '20rem' : '38rem',
                 overflow: 'hidden',
-                borderRadius: '0.75rem',
               }}
             >
               {/* // Max of 2 Images for Carousel */}
@@ -201,6 +200,7 @@ function CarouselTab({
                     // Maintains aspect ratio and crops image
                     objectFit: isMobile ? 'contain' : 'cover',
                     objectPosition: 'center',
+                    borderRadius: '0.75rem',
                   }}
                 />
               ))}

@@ -1,14 +1,14 @@
 import { BackgroundImage } from '@mantine/core';
 import React from 'react';
 
-interface ImageGridProps {
+interface CustomBackgroundImageProps {
   imageSrc: string; // image URLs
   height: number | string; // Height of each image
   bgSize?: string;
   pos?: string;
 }
 
-const ImageGrid: React.FC<ImageGridProps> = ({
+const CustomBackgroundImage: React.FC<CustomBackgroundImageProps> = ({
   height,
   imageSrc,
   bgSize = 'cover',
@@ -51,4 +51,4 @@ const ImageGrid: React.FC<ImageGridProps> = ({
   );
 };
 
-export default ImageGrid;
+export default CustomBackgroundImage;

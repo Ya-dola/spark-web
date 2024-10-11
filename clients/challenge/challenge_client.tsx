@@ -36,7 +36,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={isMobile ? '320rem' : '220rem'}
+      backgroundHeight={isMobile ? '2200rem' : '190rem'}
       imageSrc={images.bg4}
       bgSize={'cover'}
       pos={'top center'}
@@ -76,7 +76,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           </Text>
 
           <ReactPlayer
-            url={'https://youtu.be/vc8-7VncIbA'}
+            url={'https://youtu.be/DJZw7-Z1EQs'}
             loop={true}
             playing={true}
             muted={true}
