@@ -11,8 +11,9 @@ import { useHeadroom } from '@mantine/hooks';
 import Link from 'next/link';
 import CustomDrawer from '@/components/custom_drawer/custom_drawer';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import ImageGrid from '@/components/image_grid/image_grid';
+import ImageGrid from '@/components/custom_background_image/custom_background_image';
 import { images } from '@/utils/image_utils';
+import CustomBackgroundImage from '@/components/custom_background_image/custom_background_image';
 
 interface CustomAppShellProps {
   children: ReactNode;
@@ -34,8 +35,8 @@ function CustomAppShell({
 }: CustomAppShellProps) {
   const pinned = useHeadroom({ fixedAt: 30 });
   const isMobile = useIsMobile();
-  const imageGrid = (
-    <ImageGrid
+  const backgroundImage = (
+    <CustomBackgroundImage
       imageSrc={imageSrc}
       height={backgroundHeight}
       bgSize={bgSize}
@@ -86,9 +87,10 @@ function CustomAppShell({
             right: 0,
             bottom: 0,
             zIndex: 0,
+            backgroundColor: 'black',
           }}
         >
-          {imageGrid}
+          {backgroundImage}
         </div>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <AppShell.Main
