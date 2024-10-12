@@ -4,15 +4,17 @@ import Link from 'next/link';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
 
+
 function CustomDrawer() {
+  //Bool to check the state of the drawer
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
 
   return (
     <>
       <Drawer
-        opened={isDrawerOpen}
-        onClose={closeDrawer}
+        opened={isDrawerOpen} //check if drawer is open 
+        onClose={closeDrawer} //close drawer
         position={'right'}
         closeButtonProps={{ size: 'xl', c: colors.pink1 }}
         overlayProps={{ backgroundOpacity: 0.3, blur: 2.4 }}
@@ -43,8 +45,6 @@ function CustomDrawer() {
             radius={'md'}
             size={'md'}
             variant={'subtle'}
-            // TODO - Show Active Page
-            // c={'grape'}
             color={'gray'}
             justify={'flex-start'}
           >
@@ -91,7 +91,7 @@ function CustomDrawer() {
       <Burger
         lineSize={3}
         color={colors.pink1}
-        onClick={openDrawer}
+        onClick={openDrawer} //open the drawer when clicked
       />
     </>
   );
