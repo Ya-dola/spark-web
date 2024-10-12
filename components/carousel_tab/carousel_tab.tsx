@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Carousel } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import theme from '@/components/carousel_tab/carousel_tab.module.css';
-import { TabDetails } from '@/models/community/community_tabs_model';
+import { TabDetails } from '@/models/tab_details/tab_details';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
 
