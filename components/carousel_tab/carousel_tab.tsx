@@ -9,7 +9,6 @@ import { colors } from '@/utils/color_utils';
 
 interface CarouselTabProps {
   width?: number;
-  slideSize?: string;
   headingColor?: string;
   descriptionColor?: string;
   autoPlayDelay?: number;
@@ -21,7 +20,6 @@ interface CarouselTabProps {
 
 function CarouselTab({
   events = [],
-  slideSize = '100%',
   headingColor = 'white',
   descriptionColor = '#cacaca',
   autoPlayDelay = 8000,
@@ -41,44 +39,45 @@ function CarouselTab({
     return description;
   };
 
-  // Events
+  // State to track which event is currently active in the carousel
   const [activeEventIndex, setActiveEventIndex] = useState(eventIndex ?? 0);
+  // Callback to handle carousel index change
   const handleCarouselChange = useCallback(
     (index: number) => {
-      setActiveEventIndex(index);
-      onCarouselChange?.(index);
+      setActiveEventIndex(index); // Update active event index
+      onCarouselChange?.(index); // Call onCarouselChange handler if provided
     },
     [onCarouselChange],
   );
 
+  // Effect to sync external eventIndex prop with internal state
   useEffect(() => {
     if (eventIndex !== undefined) {
-      handleCarouselChange(eventIndex);
+      handleCarouselChange(eventIndex); // Update active index based on prop change
     }
   }, [eventIndex, handleCarouselChange]);
 
   return (
     <Carousel
-      slideSize={{ base: '100%', sm: '100%', md: slideSize }}
-      slideGap={{ base: 0, sm: 'xs' }}
+      slideSize={'100%'}
       loop
-      align={'center'}
-      draggable={events.length > 1}
-      withControls={!isMobile && events.length > 1}
+      align={'center'} //Center slides in carousel
+      draggable={events.length > 1} // Allow dragging if more than one event
+      withControls={!isMobile && events.length > 1} // Show controls only on non-mobile devices with multiple events
       nextControlIcon={'Next'}
       previousControlIcon={'Previous'}
       controlsOffset={'12rem'}
-      withIndicators={events.length > 1}
-      slidesToScroll={1}
-      onSlideChange={handleCarouselChange}
-      initialSlide={eventIndex}
+      withIndicators={events.length > 1} // Show indicators if there's more than one event
+      slidesToScroll={1} // Number of slides to scroll at a time
+      onSlideChange={handleCarouselChange} // Handle slide change event
+      initialSlide={eventIndex} // Set the initial slide based on the external index
       classNames={theme}
       style={{
         '--active-color': headingColor,
         '--default-color': colors.pink1,
       }}
       plugins={[autoplay.current]}
-      onMouseEnter={autoplay.current.stop}
+      onMouseEnter={autoplay.current.stop} // Stop autoplay on mouse enter
       onMouseLeave={autoplay.current.reset}
     >
       {events.map((event, index) => (
@@ -92,11 +91,11 @@ function CarouselTab({
             bg={colors.black1 + '60'}
             style={{
               transform:
-                activeEventIndex === index
+                activeEventIndex === index // Scale effect based on active index
                   ? 'scale(1)'
                   : `scale(${isMobile ? 0.96 : 0.8})`,
-              transition: 'transform 0.3s ease',
-              zIndex: activeEventIndex === index ? 1 : 0,
+              transition: 'transform 0.3s ease', // Smooth transition for scaling
+              zIndex: activeEventIndex === index ? 1 : 0, // Bring active event to the front
               width: '100%',
               height: '100%',
               borderRadius: '1.5rem',
@@ -113,13 +112,15 @@ function CarouselTab({
               px={isMobile ? '' : 'xl'}
               w={isMobile ? '100%' : '90%'}
             >
+              {/*DESCRIPTIONS*/}
               <Flex
                 w={'100%'}
                 direction={isMobile ? 'column' : 'column'}
                 align={'center'}
               >
+                {/* Display winner badge if applicable */}
                 {isWinner && (
-                  <svg
+                  <svg //vector icon
                     xmlns='http://www.w3.org/2000/svg'
                     width='80'
                     height='80'
@@ -132,12 +133,14 @@ function CarouselTab({
                   >
                     <path
                       stroke='none'
-                      d='M0 0h24v24H0z'
+                      d='M0 0h24v24H0z' // Clear path to prevent fill
                       fill='none'
                     />
-                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
+                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />{' '}
+                    {/* Winner icon path */}
                   </svg>
                 )}
+                {/* Heading */}
                 <Text
                   fz={isMobile ? 'h2' : 'h1'}
                   fw={700}
@@ -154,6 +157,7 @@ function CarouselTab({
               >
                 {truncateDescription(event.description)}
               </Text>
+              {/* Show members if there any */}
               {event.members?.length > 0 && (
                 <>
                   <Space h={'2rem'} />
@@ -164,7 +168,8 @@ function CarouselTab({
                     Team Members
                   </Text>
                   <List listStyleType={'disc'}>
-                    {event.members.map((member, index) => (
+                    {/* Max 5 members */}
+                    {event.members.slice(0, 5).map((member, index) => (
                       <List.Item
                         key={index}
                         fz={isMobile ? 'sm' : 'md'}
