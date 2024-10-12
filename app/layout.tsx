@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter, Oswald } from 'next/font/google';
 import '@/styles/globals.css';
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-
-const inter = Inter({ subsets: ['latin'] });
-const oswald = Oswald({ subsets: ['latin'] });
+import { inter } from '@/utils/font_utils';
 
 export const metadata: Metadata = {
-  title: 'Spark Web',
-  description: 'A Web App to view the Spark Challenge Website',
+  title: 'Spark',
+  description: 'The Spark Website from ENTC',
 };
 
 function RootLayout({
@@ -47,6 +44,7 @@ function RootLayout({
           rel='manifest'
           href='/site.webmanifest'
         />
+        {/* Set default color scheme */}
         <ColorSchemeScript defaultColorScheme='dark' />
       </head>
       <body className={inter.className}>
