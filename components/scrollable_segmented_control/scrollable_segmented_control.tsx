@@ -46,17 +46,23 @@ function ScrollableSegmentedControl({
       w={scrollWidth}
       scrollbars={scrollbars}
       type={scrollType}
-      scrollbarSize={scrollSize ?? isMobile ? 6 : 10}
+      // Set scrollbar size based on device
+      scrollbarSize={scrollSize ?? (isMobile ? 6 : 10)}
       offsetScrollbars={offsetScrollbars}
     >
       <SegmentedControl
-        w={segmentWidth ?? isMobile ? '100%' : 'auto'}
-        size={segmentSize ?? isMobile ? 'xs' : 'md'}
+        // Set segment width based on device
+        w={segmentWidth ?? (isMobile ? '100%' : 'auto')}
+        // Set segment size based on device
+        size={segmentSize ?? (isMobile ? 'xs' : 'md')}
         radius={segmentRadius}
         color={segmentFgColor}
         bg={segmentBgColor}
+        // Data for the segmented control
         data={segmentData}
+        // Handle change events
         onChange={onChange}
+        // Set current value
         value={value}
       />
     </ScrollArea>
