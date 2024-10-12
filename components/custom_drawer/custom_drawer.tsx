@@ -1,7 +1,6 @@
 import { Image, Burger, Button, Drawer, Flex, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
-import NextImage from 'next/image';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
 
@@ -19,11 +18,11 @@ function CustomDrawer() {
         overlayProps={{ backgroundOpacity: 0.3, blur: 2.4 }}
         title={
           <Image
-            h={40}
+            h={'2.5rem'}
             w={'auto'}
             fit={'contain'}
             src={images.sparkLogoTransparent}
-            alt={'My image'}
+            alt={'Spark Logo'}
           />
         }
       >
@@ -35,7 +34,7 @@ function CustomDrawer() {
         >
           <Divider
             w={'100%'}
-            my='md'
+            mb={'md'}
           />
           <Button
             fullWidth
