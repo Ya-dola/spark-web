@@ -260,7 +260,9 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   value={selectedRunnerUp.toString()}
                 />
                 <CarouselTab
-                  events={challengeTabs.tabs[selectedChallenge]?.runnerUpTeams}
+                  events={challengeTabs.tabs[
+                    selectedChallenge
+                  ]?.runnerUpTeams.slice(0, 2)}
                   headingColor={colors.blue1}
                   onCarouselChange={(index) => {
                     setSelectedRunnerUp(index);

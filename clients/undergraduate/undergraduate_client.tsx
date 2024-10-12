@@ -100,7 +100,6 @@ function UndergraduateClient() {
           <Space h={60} />
 
           <Text
-            c={colors.purple2}
             fw={800}
             fz={'xl'}
           >
