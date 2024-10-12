@@ -18,6 +18,7 @@ import { images } from '@/utils/image_utils';
 
 function UndergraduateClient() {
   const isMobile = useIsMobile();
+  // Set padding and width based on the device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
   const pageWidth = isMobile ? '100%' : '70%';
 
@@ -43,6 +44,7 @@ function UndergraduateClient() {
         >
           UNDERGRADUATE DEVELOPMENT
         </Text>
+
         <Text
           w={pageWidth}
           px={pagePadding}
@@ -53,6 +55,7 @@ function UndergraduateClient() {
           during recruitment is crucial in demonstrating how they can add real
           value to an organisation.
         </Text>
+
         <Text
           w={pageWidth}
           px={pagePadding}
@@ -62,7 +65,9 @@ function UndergraduateClient() {
           findings in the World Economic Forum&apos;s (WEF) 2023 Future of Jobs
           Report.
         </Text>
+
         <Space h={'sm'} />
+
         <Paper
           w={pageWidth}
           h={'auto'}
@@ -76,6 +81,7 @@ function UndergraduateClient() {
             required by employees in 2023.
           </Text>
           <Space h={'xl'} />
+
           <Flex
             direction={isMobile ? 'column' : 'row'}
             justify={'center'}
@@ -88,6 +94,7 @@ function UndergraduateClient() {
               <List.Item>4. Motivation and self-awareness</List.Item>
               <List.Item>5. Curiosity and lifelong learning</List.Item>
             </List>
+
             <List type={'ordered'}>
               <List.Item>6. Technological literacy</List.Item>
               <List.Item>7. Dependability and attention to detail</List.Item>
@@ -96,15 +103,17 @@ function UndergraduateClient() {
               <List.Item>10. Quality control</List.Item>
             </List>
           </Flex>
+
           <Space h={60} />
 
           <Text
             fw={800}
-            fz={'xl'}
+            fz={'h3'}
           >
             @ ENTC
           </Text>
           <Space h={'lg'} />
+
           <Box w={isMobile ? '85%' : '90%'}>
             <List listStyleType={'square'}>
               <List.Item>
@@ -114,12 +123,10 @@ function UndergraduateClient() {
               </List.Item>
               <Space h={'lg'} />
               <List.Item>
-                development of these skills will allowing a better
+                Development of these skills will allow a better
                 &quot;class&quot; of undergraduates to enter the employment
                 market.
-                <Space h={'lg'} />
-                <Text>The students will manage: </Text>
-                <Space h={'lg'} />
+                <Text py={'lg'}>The students will manage: </Text>
                 <List listStyleType={'disc'}>
                   <List.Item>
                     In developing solutions for the SPARK Challenge: Teams,
@@ -141,11 +148,11 @@ function UndergraduateClient() {
           </Box>
 
           <Space h={'xl'} />
+
           <Image
             w={isMobile ? '100%' : '70%'}
             m={'auto'}
             fit={'contain'}
-            // component={NextImage}
             src={images.studentsImage}
             alt={'Students'}
             radius={'xl'}
