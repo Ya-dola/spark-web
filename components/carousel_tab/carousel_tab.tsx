@@ -24,7 +24,7 @@ function CarouselTab({
   slideSize = '100%',
   headingColor = 'white',
   descriptionColor = '#cacaca',
-  autoPlayDelay = 10000,
+  autoPlayDelay = 8000,
   onCarouselChange,
   eventIndex,
   isWinner = false,
