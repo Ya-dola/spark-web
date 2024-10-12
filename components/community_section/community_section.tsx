@@ -45,13 +45,16 @@ function CommunitySection({
   tabs,
 }: CommunitySectionProps) {
   const isMobile = useIsMobile();
+  //variable to keep track of the currently selected tab, starting from 0
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
+    //Add a transition to the whole section
     <Transitions
       width={'100%'}
       delay={6000}
     >
+      {/* Background component */}
       <Paper
         p={isMobile ? 'sm' : 'md'}
         h={height}
@@ -71,6 +74,7 @@ function CommunitySection({
           </Text>
         )}
 
+        {/* description */}
         {text && (
           <Text
             c={textColor}
@@ -82,20 +86,23 @@ function CommunitySection({
             {text}
           </Text>
         )}
-
+        {/* tabs for each year celebrations */}
         {tabs && (
           <>
+            {/* A segmented control to switch between tabs */}
             <ScrollableSegmentedControl
               offsetScrollbars={false}
               segmentFgColor={sectionColor}
               segmentData={tabs.map((tab, index) => ({
-                label: tab.name.toString(),
-                value: index.toString(),
+                label: tab.name.toString(), //Display each year as a string 
+                value: index.toString(), //Value to keep track of which tab was clicked  
               }))}
               onChange={(value) => {
+                // Update the selected tab when a new tab is selected
                 return setSelectedTab(Number(value));
               }}
             />
+            {/* Render the events based on the selected year */}
             <CarouselTab
               events={tabs[selectedTab]?.details}
               headingColor={sectionColor}
