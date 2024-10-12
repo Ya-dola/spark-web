@@ -39,7 +39,9 @@ function ButtonCard({
   textSize = 'sm',
   buttonColor = colors.black1,
 }: ButtonCardProps) {
+  // Set the card height, falling back to 400 if not provided
   const cardHeight = height ?? 200 * 2;
+  // State to track whether the card is hovered
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
 
@@ -49,27 +51,27 @@ function ButtonCard({
       w={width}
       bg={bgColor}
       padding={'sm'}
-      component={Link}
-      href={href}
+      component={Link} // Use Next.js Link component for navigation
+      href={href} //url for the link
       radius={radius}
-      withBorder
+      withBorder // Include a border around the card
       style={{
         transform: isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
-        transition: 'transform 0.3s ease',
+        transition: 'transform 0.3s ease', // Smooth transition for scaling
         zIndex: isHovered && !isMobile ? 1 : 'auto', // Ensure hovered card is on top
       }}
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      onMouseEnter={() => !isMobile && setIsHovered(true)} // Set hover state on mouse enter
+      onMouseLeave={() => !isMobile && setIsHovered(false)} // Reset hover state on mouse leave
     >
       <Card.Section>
         {imageSrc ? (
           <Image
-            component={NextImage}
+            component={NextImage} // Use Next.js Image component
             height={height}
             width={width}
-            src={imageSrc}
+            src={imageSrc} //Image url
             alt={'My image'}
-            fit={'contain'}
+            fit={'contain'} // Ensure the image fits within bounds
           />
         ) : null}
       </Card.Section>
@@ -97,11 +99,12 @@ function ButtonCard({
       <Button
         color={buttonColor}
         radius={'xl'}
+        //position bottom-right
         mt={'auto'}
         ml={'auto'}
       >
         <Text
-          /*td={'underline'}*/ fw={900}
+          fw={900}
           fz={'sm'}
           c={colors.black1}
         >
