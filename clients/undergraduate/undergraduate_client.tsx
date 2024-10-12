@@ -26,7 +26,6 @@ function UndergraduateClient() {
       backgroundHeight={'auto'}
       imageSrc={images.bg2}
       pos={isMobile ? 'top left' : 'top center'}
-      padding={0}
     >
       <Flex
         direction={'column'}

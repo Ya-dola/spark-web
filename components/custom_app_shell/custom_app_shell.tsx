@@ -11,7 +11,6 @@ import { useHeadroom } from '@mantine/hooks';
 import Link from 'next/link';
 import CustomDrawer from '@/components/custom_drawer/custom_drawer';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import ImageGrid from '@/components/custom_background_image/custom_background_image';
 import { images } from '@/utils/image_utils';
 import CustomBackgroundImage from '@/components/custom_background_image/custom_background_image';
 
@@ -67,12 +66,11 @@ function CustomAppShell({
             mr={'auto'}
           >
             <Image
-              h={40}
+              h={'2.5rem'}
               w={'auto'}
               fit={'contain'}
-              // component={NextImage}
               src={images.sparkLogoTransparent}
-              alt={'My image'}
+              alt={'Spark Logo'}
             />
           </UnstyledButton>
           <CustomDrawer />
@@ -87,19 +85,17 @@ function CustomAppShell({
             right: 0,
             bottom: 0,
             zIndex: 0,
-            backgroundColor: 'black',
+            backgroundColor: '#000000',
           }}
         >
           {backgroundImage}
         </div>
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <AppShell.Main
-            style={{ position: 'relative', zIndex: 1 }}
-            pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
-          >
-            {children}
-          </AppShell.Main>
-        </div>
+        <AppShell.Main
+          style={{ position: 'relative', zIndex: 1 }}
+          pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
+        >
+          {children}
+        </AppShell.Main>
       </div>
     </AppShell>
   );

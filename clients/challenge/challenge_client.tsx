@@ -36,7 +36,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
 
   return (
     <CustomAppShell
-      backgroundHeight={isMobile ? '2200rem' : '190rem'}
+      backgroundHeight={'180rem'}
       imageSrc={images.bg4}
       bgSize={'cover'}
       pos={'top center'}
