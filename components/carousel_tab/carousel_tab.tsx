@@ -27,8 +27,12 @@ function CarouselTab({
   eventIndex,
   isWinner = false,
 }: CarouselTabProps) {
-  const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
   const isMobile = useIsMobile();
+
+  // Autoplay plugin for the carousel
+  const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
+
+  // Maximum character limit for event
   const characterLimit = 800;
 
   // Truncate Description to Max Character Length
@@ -41,19 +45,23 @@ function CarouselTab({
 
   // State to track which event is currently active in the carousel
   const [activeEventIndex, setActiveEventIndex] = useState(eventIndex ?? 0);
+
   // Callback to handle carousel index change
   const handleCarouselChange = useCallback(
     (index: number) => {
-      setActiveEventIndex(index); // Update active event index
-      onCarouselChange?.(index); // Call onCarouselChange handler if provided
+      // Update active event index
+      setActiveEventIndex(index);
+      // Call onCarouselChange handler if provided
+      onCarouselChange?.(index);
     },
     [onCarouselChange],
   );
 
   // Effect to sync external eventIndex prop with internal state
   useEffect(() => {
+    // Update active index based on prop change
     if (eventIndex !== undefined) {
-      handleCarouselChange(eventIndex); // Update active index based on prop change
+      handleCarouselChange(eventIndex);
     }
   }, [eventIndex, handleCarouselChange]);
 
@@ -61,23 +69,32 @@ function CarouselTab({
     <Carousel
       slideSize={'100%'}
       loop
-      align={'center'} //Center slides in carousel
-      draggable={events.length > 1} // Allow dragging if more than one event
-      withControls={!isMobile && events.length > 1} // Show controls only on non-mobile devices with multiple events
+      // Center slides in carousel
+      align={'center'}
+      // Allow dragging if more than one event
+      draggable={events.length > 1}
+      // Show controls only on non-mobile devices with multiple events
+      withControls={!isMobile && events.length > 1}
       nextControlIcon={'Next'}
       previousControlIcon={'Previous'}
       controlsOffset={'12rem'}
-      withIndicators={events.length > 1} // Show indicators if there's more than one event
-      slidesToScroll={1} // Number of slides to scroll at a time
-      onSlideChange={handleCarouselChange} // Handle slide change event
-      initialSlide={eventIndex} // Set the initial slide based on the external index
+      // Show indicators if there's more than one event
+      withIndicators={events.length > 1}
+      // Number of slides to scroll at a time
+      slidesToScroll={1}
+      // Handle slide change event
+      onSlideChange={handleCarouselChange}
+      // Set the initial slide based on the external index
+      initialSlide={eventIndex}
       classNames={theme}
       style={{
         '--active-color': headingColor,
         '--default-color': colors.pink1,
       }}
       plugins={[autoplay.current]}
-      onMouseEnter={autoplay.current.stop} // Stop autoplay on mouse enter
+      // Stop autoplay on mouse enter
+      onMouseEnter={autoplay.current.stop}
+      // Reset autoplay on mouse leave
       onMouseLeave={autoplay.current.reset}
     >
       {events.map((event, index) => (
@@ -90,12 +107,14 @@ function CarouselTab({
             align={'flex-start'}
             bg={colors.black1 + '60'}
             style={{
+              // Scale effect based on active index
               transform:
-                activeEventIndex === index // Scale effect based on active index
+                activeEventIndex === index
                   ? 'scale(1)'
                   : `scale(${isMobile ? 0.96 : 0.8})`,
               transition: 'transform 0.3s ease', // Smooth transition for scaling
-              zIndex: activeEventIndex === index ? 1 : 0, // Bring active event to the front
+              // Bring active event to the front
+              zIndex: activeEventIndex === index ? 1 : 0,
               width: '100%',
               height: '100%',
               borderRadius: '1.5rem',
@@ -112,7 +131,7 @@ function CarouselTab({
               px={isMobile ? '' : 'xl'}
               w={isMobile ? '100%' : '90%'}
             >
-              {/*DESCRIPTIONS*/}
+              {/*Descriptions*/}
               <Flex
                 w={'100%'}
                 direction={isMobile ? 'column' : 'column'}
@@ -120,7 +139,8 @@ function CarouselTab({
               >
                 {/* Display winner badge if applicable */}
                 {isWinner && (
-                  <svg //vector icon
+                  //  Vector icon for winner badge
+                  <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='80'
                     height='80'
@@ -136,8 +156,8 @@ function CarouselTab({
                       d='M0 0h24v24H0z' // Clear path to prevent fill
                       fill='none'
                     />
-                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />{' '}
-                    {/* Winner icon path */}
+                    {/* Winner icon Svg Path */}
+                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
                   </svg>
                 )}
                 {/* Heading */}
@@ -149,6 +169,7 @@ function CarouselTab({
                   {event.name}
                 </Text>
               </Flex>
+
               <Space h={'lg'} />
               <Text
                 fz={isMobile ? 'sm' : 'md'}
@@ -157,6 +178,7 @@ function CarouselTab({
               >
                 {truncateDescription(event.description)}
               </Text>
+
               {/* Show members if there any */}
               {event.members?.length > 0 && (
                 <>
@@ -194,7 +216,7 @@ function CarouselTab({
                 overflow: 'hidden',
               }}
             >
-              {/* // Max of 2 Images for Carousel */}
+              {/* Max of 2 Images for Carousel */}
               {event.images.slice(0, 2).map((image, index) => (
                 <Image
                   key={index}
