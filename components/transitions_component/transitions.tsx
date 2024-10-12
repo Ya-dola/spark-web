@@ -22,13 +22,14 @@ function Transitions({
   width,
   runOnce,
 }: TransitionsProps) {
+  // Initialize AOS (Animate On Scroll) effect on component mount or when dependencies change
   useEffect(() => {
     AOS.init({
-      once: runOnce,
-      duration: duration,
-      easing: 'ease-out-cubic',
+      once: runOnce, //Animations should only happen once
+      duration: duration, // Duration of the animation in milliseconds
+      easing: 'ease-out-cubic', // Easing function for the animation
     });
-  }, [duration, runOnce]);
+  }, [duration, runOnce]); // Re-run the effect if duration or runOnce props change
 
   return (
     <Flex
@@ -37,8 +38,8 @@ function Transitions({
       direction={'column'}
       justify={'center'}
       align={'center'}
-      data-aos={transition}
-      data-aos-delay={delay}
+      data-aos={transition} // Set the AOS transition type from props
+      data-aos-delay={delay} // Set the delay for the AOS animation
     >
       {children}
     </Flex>
