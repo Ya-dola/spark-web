@@ -15,9 +15,9 @@ const CustomBackgroundImage: React.FC<CustomBackgroundImageProps> = ({
   pos = 'top center',
 }) => {
   return (
-    <div
+    <div //container for background
       style={{
-        position: 'absolute',
+        position: 'absolute', // Position is absolute to cover the entire area of the component
         top: 0,
         left: 0,
         right: 0,
@@ -28,23 +28,22 @@ const CustomBackgroundImage: React.FC<CustomBackgroundImageProps> = ({
       <BackgroundImage
         src={imageSrc} //url
         style={{
-          //height: height,coz
-          height: '100%', //Fill the cocntainer's height
-          // width: '100%', // Fill the container’s width
+          height: '100%', //Fill the container's height
           backgroundSize: bgSize, // Crop the image (cover, contain, etc)
           backgroundPosition: pos, // Anchor position of the image
         }}
       />
       <div //overlay graident to blend in the bg
         style={{
-          position: 'absolute', // Position is absolute to cover the entire area of the component
+          position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
           background:
             'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%)',
-          pointerEvents: 'none', // Ensures the gradient overlay doesn't prevent interactions with the image
+          pointerEvents: 'none',
+          // Ensures the gradient overlay doesn't prevent interactions with the image
         }}
       />
     </div>
