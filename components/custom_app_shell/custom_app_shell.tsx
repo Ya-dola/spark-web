@@ -32,26 +32,25 @@ function CustomAppShell({
   bgSize = 'cover',
   pos = 'top center',
 }: CustomAppShellProps) {
+  // Becomes true after moving 30 pixels down the page
   const pinned = useHeadroom({ fixedAt: 30 });
+
+  // Boolean value to determine if the device is mobile
   const isMobile = useIsMobile();
-  const backgroundImage = (
-    <CustomBackgroundImage
-      imageSrc={imageSrc}
-      height={backgroundHeight}
-      bgSize={bgSize}
-      pos={pos}
-    />
-  );
 
   return (
     <AppShell
+      // Set the header configuration
       header={{
         height: 60,
+        // Collapse the header on mobile devices when the user scrolls past 30px
         collapsed: isMobile ? !pinned : false,
+        // Prevent offsetting the main content when the header is collapsed
         offset: false,
       }}
       padding={padding}
     >
+      {/* Header content */}
       <AppShell.Header>
         <Flex
           direction={'row'}
@@ -60,6 +59,7 @@ function CustomAppShell({
           py={'xs'}
           align={'center'}
         >
+          {/* Logo that links back to the home page */}
           <UnstyledButton
             component={Link}
             href={'/'}
@@ -76,22 +76,47 @@ function CustomAppShell({
           <CustomDrawer />
         </Flex>
       </AppShell.Header>
-      <div style={{ position: 'relative' }}>
+
+      {/* Wrapper for positioning content in a stack */}
+      <div
+        style={{
+          // Relative positioning to ensure the
+          // z-index for child elements works properly
+          position: 'relative',
+        }}
+      >
+        {/* Background Image */}
         <div
           style={{
+            // Absolute positioning to make the background image cover the full component
             position: 'absolute',
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
+            // Ensure the background image stays behind the main content
             zIndex: 0,
+            // Fallback background color in case the image fails to load
             backgroundColor: '#000000',
           }}
         >
-          {backgroundImage}
+          <CustomBackgroundImage
+            imageSrc={imageSrc}
+            height={backgroundHeight}
+            bgSize={bgSize}
+            pos={pos}
+          />
         </div>
+
         <AppShell.Main
-          style={{ position: 'relative', zIndex: 1 }}
+          style={{
+            // Relative positioning to ensure the
+            // z-index for child elements works properly
+            position: 'relative',
+            // Ensure the main content is displayed above the background image
+            zIndex: 1,
+          }}
+          // Add padding to the top so that content is not covered by the header
           pt={`calc(${rem(60)} + var(--mantine-spacing-md))`}
         >
           {children}

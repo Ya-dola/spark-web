@@ -32,7 +32,10 @@ function PiCommunityClient({
   finalYearData,
 }: PiCommunityClientProps) {
   const isMobile = useIsMobile();
+  // State to manage hover effect on the card
   const [isHovered, setIsHovered] = useState(false);
+
+  // Set padding and width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
   const pageWidth = isMobile ? '100%' : '70%';
 
@@ -59,6 +62,7 @@ function PiCommunityClient({
         >
           SPARK PI COMMUNITY
         </Text>
+
         <Flex
           w={pageWidth}
           direction={isMobile ? 'column' : 'row'}
@@ -70,12 +74,13 @@ function PiCommunityClient({
           <Text w={pageWidth}>
             In making Raspberry Pis available within the department year on
             year; SPARK will encourage, facilitate and nurture innovation in the
-            use of this technology. ENTC intend to build expertise over several
+            use of this technology. ENTC intends to build expertise over several
             years to fully support a vibrant and active Pi community and
-            therefore become a contributor to the develop-ment of product and
-            services associated with the Raspberry Pi; in time a being
-            recognised centre of excellence of in the use of this device.
+            therefore become a contributor to the development of products and
+            services associated with the Raspberry Pi; in time being recognised
+            as a centre of excellence in the use of this device.
           </Text>
+
           <Box w={isMobile ? '30%' : '10%'}>
             <Image
               src={images.piLogo}
@@ -88,6 +93,7 @@ function PiCommunityClient({
             />
           </Box>
         </Flex>
+
         <Flex
           w={'100%'}
           direction={'column'}
@@ -148,11 +154,15 @@ function PiCommunityClient({
                   target={'fb_page'}
                   style={{
                     transform:
-                      isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
+                      // Scale card on hover
+                      isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
                     transition: 'transform 0.3s ease',
-                    zIndex: isHovered && !isMobile ? 1 : 'auto', // Ensure hovered card is on top
+                    // Ensure hovered card is on top
+                    zIndex: isHovered && !isMobile ? 1 : 'auto',
                   }}
+                  // Set hover state when the mouse enters the card
                   onMouseEnter={() => !isMobile && setIsHovered(true)}
+                  // Reset hover state when the mouse leaves the card
                   onMouseLeave={() => !isMobile && setIsHovered(false)}
                 >
                   <Text
@@ -169,7 +179,7 @@ function PiCommunityClient({
                     fw={600}
                     fz={'h4'}
                   >
-                    Pi Community Facebook page inform all followers about all
+                    Pi Community Facebook page informs all followers about all
                     Raspberry Pi related activities at ENTC as well as news
                     about the Raspberry Pi organisation.
                   </Text>

@@ -1,4 +1,4 @@
-import { TabDetails } from '../community/community_tabs_model';
+import { TabDetails } from '@/models/tab_details/tab_details';
 
 export interface ChallengeTabsModel {
   tabs: ChallengeTab[];
@@ -10,10 +10,3 @@ export interface ChallengeTab {
   winnerTeam: TabDetails;
   runnerUpTeams: TabDetails[];
 }
-
-// export interface ChallengeTeam {
-//   name: string;
-//   description: string;
-//   images: string[];
-//   members: string[];
-// }

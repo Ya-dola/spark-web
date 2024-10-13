@@ -3,7 +3,6 @@
 import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
-import SkeletonCard from '@/components/skeleton_card/skeleton_card';
 import Transitions from '@/components/transitions_component/transitions';
 import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
@@ -29,8 +28,12 @@ interface ChallengeClientProps {
 
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
+
+  // Set page padding & width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
   const pageWidth = isMobile ? '100%' : '70%';
+
+  // Track selected challenge and runner-up
   const [selectedChallenge, setSelectedChallenge] = useState(0);
   const [selectedRunnerUp, setSelectedRunnerUp] = useState(0);
 
@@ -57,6 +60,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
         >
           SPARK CHALLENGE
         </Text>
+
         <Flex
           w={pageWidth}
           direction={isMobile ? 'column' : 'row'}
@@ -176,7 +180,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 <ListItem>
                   A series of lectures on United Nations - Sustainable
                   Development Goals (SDG&apos;s) will be available to all
-                  students
+                  students.
                 </ListItem>
               </List>
 
@@ -197,7 +201,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
         <Transitions width={'100%'}>
           <Flex
             justify={'flex-start'}
-            align={'cebter'}
+            align={'center'}
             w={pageWidth}
           >
             <ScrollableSegmentedControl
@@ -208,6 +212,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 value: index.toString(),
               }))}
               onChange={(value) => {
+                // Reset runner-up selection when changing challenges
                 setSelectedRunnerUp(0);
                 return setSelectedChallenge(Number(value));
               }}
@@ -235,6 +240,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               {challengeTabs.tabs[selectedChallenge].description}
             </Text>
 
+            {/* Carousel displaying the winner's team */}
             <CarouselTab
               events={[challengeTabs.tabs[selectedChallenge]?.winnerTeam]}
               headingColor={colors.blue1}
@@ -249,12 +255,14 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                   segmentData={challengeTabs.tabs[
                     selectedChallenge
                   ].runnerUpTeams
-                    .slice(0, 2)
+                    .slice(0, 2) // Set limit to 2
                     .map((tab, index) => ({
-                      label: `Runner Up ${index + 1}`, // Directly use the index to generate the label
+                      // Directly use the index to generate the label
+                      label: `Runner Up ${index + 1}`,
                       value: index.toString(),
                     }))}
                   onChange={(value) => {
+                    // Update the selected runner-up
                     setSelectedRunnerUp(Number(value));
                   }}
                   value={selectedRunnerUp.toString()}
@@ -262,9 +270,10 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 <CarouselTab
                   events={challengeTabs.tabs[
                     selectedChallenge
-                  ]?.runnerUpTeams.slice(0, 2)}
+                  ]?.runnerUpTeams.slice(0, 2)} // Set limit to 2
                   headingColor={colors.blue1}
                   onCarouselChange={(index) => {
+                    // Handle carousel change for runner-up selection
                     setSelectedRunnerUp(index);
                   }}
                   eventIndex={selectedRunnerUp}

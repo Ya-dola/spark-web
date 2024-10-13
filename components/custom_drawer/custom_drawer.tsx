@@ -5,22 +5,29 @@ import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
 
 function CustomDrawer() {
+  // Bool to check the state of the drawer
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
 
   return (
     <>
       <Drawer
+        // Check if the drawer is open
         opened={isDrawerOpen}
+        // Function to close the drawer
         onClose={closeDrawer}
+        // Set drawer to appear on the right side of the screen
         position={'right'}
+        // Customize the close button
         closeButtonProps={{ size: 'xl', c: colors.pink1 }}
+        // Set background opacity and blur for the overlay
         overlayProps={{ backgroundOpacity: 0.3, blur: 2.4 }}
         title={
           <Image
             h={'2.5rem'}
             w={'auto'}
             fit={'contain'}
+            // Spark Logo for the drawer header
             src={images.sparkLogoTransparent}
             alt={'Spark Logo'}
           />
@@ -36,6 +43,7 @@ function CustomDrawer() {
             w={'100%'}
             mb={'md'}
           />
+          {/* Navigation buttons linking to different routes */}
           <Button
             fullWidth
             component={Link}
@@ -43,8 +51,6 @@ function CustomDrawer() {
             radius={'md'}
             size={'md'}
             variant={'subtle'}
-            // TODO - Show Active Page
-            // c={'grape'}
             color={'gray'}
             justify={'flex-start'}
           >
@@ -91,6 +97,7 @@ function CustomDrawer() {
       <Burger
         lineSize={3}
         color={colors.pink1}
+        // Open the drawer when clicked
         onClick={openDrawer}
       />
     </>

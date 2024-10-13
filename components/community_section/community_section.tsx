@@ -1,7 +1,6 @@
 import { CommunityTabsModel } from '@/models/community/community_tabs_model';
-import CarouselCard from '@/components/carousel_card/carousel_card';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
-import { Center, Paper, Text, MantineSize, Space } from '@mantine/core';
+import { Paper, Text } from '@mantine/core';
 import { useState } from 'react';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
@@ -45,13 +44,16 @@ function CommunitySection({
   tabs,
 }: CommunitySectionProps) {
   const isMobile = useIsMobile();
+  // Variable to keep track of the currently selected tab, starting from 0
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
+    // Add a transition to the whole section
     <Transitions
       width={'100%'}
       delay={6000}
     >
+      {/* Background component */}
       <Paper
         p={isMobile ? 'sm' : 'md'}
         h={height}
@@ -71,6 +73,7 @@ function CommunitySection({
           </Text>
         )}
 
+        {/* Description */}
         {text && (
           <Text
             c={textColor}
@@ -83,19 +86,25 @@ function CommunitySection({
           </Text>
         )}
 
+        {/* Tabs for each year's event */}
         {tabs && (
           <>
+            {/* A segmented control to switch between tabs */}
             <ScrollableSegmentedControl
               offsetScrollbars={false}
               segmentFgColor={sectionColor}
               segmentData={tabs.map((tab, index) => ({
+                // Display each year as a string
                 label: tab.name.toString(),
+                // Value to keep track of which tab was clicked
                 value: index.toString(),
               }))}
               onChange={(value) => {
+                // Update the selected tab when a new tab is selected
                 return setSelectedTab(Number(value));
               }}
             />
+            {/* Render the events based on the selected year */}
             <CarouselTab
               events={tabs[selectedTab]?.details}
               headingColor={sectionColor}

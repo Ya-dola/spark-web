@@ -39,8 +39,12 @@ function ButtonCard({
   textSize = 'sm',
   buttonColor = colors.black1,
 }: ButtonCardProps) {
+  // Set the card height, falling back to 400 if not provided
   const cardHeight = height ?? 200 * 2;
+
+  // State to track whether the card is hovered
   const [isHovered, setIsHovered] = useState(false);
+
   const isMobile = useIsMobile();
 
   return (
@@ -49,31 +53,45 @@ function ButtonCard({
       w={width}
       bg={bgColor}
       padding={'sm'}
+      // Use Next.js Link component for navigation
       component={Link}
+      // URL for the card link
       href={href}
       radius={radius}
+      // Add a border around the card
       withBorder
       style={{
-        transform: isHovered && !isMobile ? 'scale(1.1) ' : 'scale(1)', // Scale card on hover
+        // Scale up the card when hovered (on non-mobile devices)
+        transform: isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
+        // Smooth transition when the card is scaled
         transition: 'transform 0.3s ease',
-        zIndex: isHovered && !isMobile ? 1 : 'auto', // Ensure hovered card is on top
+        // Bring the hovered card to the front (on non-mobile devices)
+        zIndex: isHovered && !isMobile ? 1 : 'auto',
       }}
+      // Set hover state when the mouse enters the card
       onMouseEnter={() => !isMobile && setIsHovered(true)}
+      // Reset hover state when the mouse leaves the card
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <Card.Section>
+        {/* Display image if imageSrc is provided */}
         {imageSrc ? (
           <Image
+            // Use Next.js Image component
             component={NextImage}
             height={height}
             width={width}
+            // URL of the image
             src={imageSrc}
+            // Alt text for the image
             alt={'My image'}
+            // Ensure the image fits within the bounds of the card
             fit={'contain'}
           />
         ) : null}
       </Card.Section>
 
+      {/* Card heading */}
       <Text
         c={headingColor}
         fw={headingWeight}
@@ -84,9 +102,11 @@ function ButtonCard({
       >
         {heading}
       </Text>
+
+      {/* Card description */}
       <Text
         c={textColor}
-        fw={700}
+        fw={600}
         size={textSize}
         mt={'md'}
         px={'md'}
@@ -97,11 +117,13 @@ function ButtonCard({
       <Button
         color={buttonColor}
         radius={'xl'}
+        // Push the button to the bottom of the card
         mt={'auto'}
+        // Align the button to the right of the card
         ml={'auto'}
       >
         <Text
-          /*td={'underline'}*/ fw={900}
+          fw={900}
           fz={'sm'}
           c={colors.black1}
         >
