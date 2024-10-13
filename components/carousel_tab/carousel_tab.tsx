@@ -22,7 +22,7 @@ function CarouselTab({
   events = [],
   headingColor = 'white',
   descriptionColor = '#cacaca',
-  autoPlayDelay = 8000,
+  autoPlayDelay = 9000,
   onCarouselChange,
   eventIndex,
   isWinner = false,
@@ -34,6 +34,7 @@ function CarouselTab({
 
   // Maximum character limit for event
   const characterLimit = 800;
+  const carouselBorderRadius = 1.5;
 
   // Truncate Description to Max Character Length
   const truncateDescription = (description: string): string => {
@@ -117,9 +118,11 @@ function CarouselTab({
               zIndex: activeEventIndex === index ? 1 : 0,
               width: '100%',
               height: '100%',
-              borderRadius: '1.5rem',
+              borderRadius: `${carouselBorderRadius}rem`,
               borderTopLeftRadius: '0',
-              borderTopRightRadius: isMobile ? '0' : '1.5rem',
+              borderTopRightRadius: isMobile
+                ? '0'
+                : `${carouselBorderRadius}rem`,
               overflow: 'hidden',
               marginBottom: '2rem',
             }}
@@ -204,7 +207,7 @@ function CarouselTab({
               )}
             </Flex>
 
-            {/* IMAGES */}
+            {/* Images */}
             <Flex
               direction={'column'}
               justify={'center'}
@@ -214,6 +217,7 @@ function CarouselTab({
               style={{
                 height: isMobile ? '20rem' : '38rem',
                 overflow: 'hidden',
+                borderRadius: `${carouselBorderRadius / 2}rem`,
               }}
             >
               {/* Max of 2 Images for Carousel */}
@@ -225,9 +229,9 @@ function CarouselTab({
                   style={{
                     height: event.images.length <= 1 ? '100%' : '50%',
                     // Maintains aspect ratio and crops image
-                    objectFit: isMobile ? 'contain' : 'cover',
+                    objectFit: 'cover',
                     objectPosition: 'center',
-                    borderRadius: '0.75rem',
+                    borderRadius: `${carouselBorderRadius / 2}rem`,
                   }}
                 />
               ))}
