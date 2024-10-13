@@ -223,7 +223,11 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             w={pageWidth}
             h={'auto'}
             bg={colors.darkGrey + '75'}
-            radius={'lg'}
+            style={{
+              borderRadius: '1.5rem',
+              borderTopLeftRadius: '0',
+              borderTopRightRadius: isMobile ? '0' : '1.5rem',
+            }}
             px={isMobile ? 'sm' : 'xl'}
             py={isMobile ? 'md' : 'xl'}
           >
