@@ -1,8 +1,9 @@
-import { Image, Text, Space, List, Flex } from '@mantine/core';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Carousel } from '@mantine/carousel';
+import { Text, Space, List, Flex } from '@mantine/core';
 import Autoplay from 'embla-carousel-autoplay';
+import { Carousel } from '@mantine/carousel';
 import theme from '@/components/carousel_tab/carousel_tab.module.css';
+import ImageModal from '@/components/image_modal/image_modal';
 import { TabDetails } from '@/models/tab_details/tab_details';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
@@ -222,11 +223,13 @@ function CarouselTab({
             >
               {/* Max of 2 Images for Carousel */}
               {event.images.slice(0, 2).map((image, index) => (
-                <Image
+                <ImageModal
                   key={index}
                   src={image}
                   alt={`${event.name} | Image: ${index}`}
-                  style={{
+                  modalRadius={`${carouselBorderRadius}rem`}
+                  imageRadius={`${carouselBorderRadius / 2}rem`}
+                  imageStyle={{
                     height: event.images.length <= 1 ? '100%' : '50%',
                     // Maintains aspect ratio and crops image
                     objectFit: 'cover',
