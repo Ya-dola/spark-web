@@ -1,6 +1,6 @@
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { Image, MantineRadius, MantineStyleProp, Modal } from '@mantine/core';
-import { useDisclosure, useHover } from '@mantine/hooks';
+import { useDisclosure } from '@mantine/hooks';
 
 interface ImageModalProps {
   src: string;
@@ -22,9 +22,6 @@ function ImageModal({
   // Bool to check the state of the image modal
   const [isImageModalOpen, { open: openImageModal, close: closeImageModal }] =
     useDisclosure(false);
-
-  // Hook to check if the image is hovered
-  //const { hovered: isBaseHovered, baseRef } = useHover();
 
   return (
     <>
