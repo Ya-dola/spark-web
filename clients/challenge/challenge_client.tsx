@@ -29,6 +29,25 @@ interface ChallengeClientProps {
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
 
+  // Track mute state
+  const [playing, setPlaying] = useState(true); // Initialize playing state to true
+  const [mutedpPlayer1, setMuted1] = useState(true); // Initialize muted state to true for player 1
+  const [mutedPlayer2, setMuted2] = useState(true); // Initialize muted state to true for player 2
+  const [isFirstClick, setIsFirstClick] = useState(true); // Flag for first click
+
+  const videoPlayer1 = () => {
+    setMuted1(false); // Unmute the video when it starts playing
+    setPlaying(true); // Set playing to true to start playing again
+  };
+
+  const videoPlayer2 = () => {
+    if (isFirstClick) {
+      setMuted2(false); // Unmute the video on first click
+      setIsFirstClick(false); // Set the flag to false after first click
+      setPlaying(true); // Set playing to true to start playing again
+    }
+  };
+
   // Set page padding & width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
   const pageWidth = isMobile ? '100%' : '70%';
@@ -82,8 +101,10 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
           <ReactPlayer
             url={'https://youtu.be/DJZw7-Z1EQs'}
             loop={true}
-            playing={true}
-            muted={true}
+            playing={playing}
+            muted={mutedpPlayer1}
+            onPause={videoPlayer1}
+            volume={1}
             controls={true}
             width={isMobile ? 340 : 1600}
           />
@@ -185,10 +206,13 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               </List>
 
               <ReactPlayer
+                //onClick={() => handleMute}
                 url={'https://youtu.be/vc8-7VncIbA'}
                 loop={true}
-                playing={true}
-                muted={true}
+                playing={playing}
+                muted={mutedPlayer2}
+                onPause={videoPlayer2}
+                volume={1}
                 controls={true}
                 width={isMobile ? 320 : 640}
               />
