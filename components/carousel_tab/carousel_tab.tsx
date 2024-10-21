@@ -235,7 +235,9 @@ function CarouselTab({
                     objectFit: 'cover',
                     objectPosition: 'center',
                     borderRadius: `${carouselBorderRadius / 2}rem`,
+                   
                   }}
+                  
                 />
               ))}
             </Flex>
@@ -245,5 +247,7 @@ function CarouselTab({
     </Carousel>
   );
 }
+
+
 
 export default CarouselTab;

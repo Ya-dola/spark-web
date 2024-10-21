@@ -24,7 +24,7 @@ function ImageModal({
     useDisclosure(false);
 
   // Hook to check if the image is hovered
-  const { hovered: isBaseHovered, baseRef } = useHover();
+  //const { hovered: isBaseHovered, baseRef } = useHover();
 
   return (
     <>
