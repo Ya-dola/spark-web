@@ -1,10 +1,21 @@
-import { Image, Burger, Button, Drawer, Flex, Divider } from '@mantine/core';
+import {
+  Image,
+  Burger,
+  Button,
+  Drawer,
+  Flex,
+  Divider,
+  Text,
+  Anchor,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function CustomDrawer() {
+  const isMobile = useIsMobile();
   // Bool to check the state of the drawer
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
@@ -92,6 +103,48 @@ function CustomDrawer() {
           >
             Undergraduate Development
           </Button>
+
+          <Divider
+            style={{
+              position: 'absolute',
+              bottom: isMobile ? '3rem' : '1.5rem',
+            }}
+            w={'90%'}
+            mb={'md'}
+          />
+          <Text
+            px={'xl'}
+            fz={'xs'}
+            style={{
+              position: 'absolute',
+              bottom: isMobile ? '2rem' : '0.5rem',
+              right: 0,
+              color: 'gray',
+            }}
+          >
+            Developed by{' '}
+            <Anchor
+              href={'https://www.linkedin.com/in/yadola/'}
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+              fz={'sm'}
+              c={colors.pink1 + 'DE'}
+              underline={'hover'}
+            >
+              Aadil
+            </Anchor>{' '}
+            and{' '}
+            <Anchor
+              href={'https://www.linkedin.com/in/senuri-de-silva-822187248/'}
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+              fz={'sm'}
+              c={colors.pink1 + 'DE'}
+              underline={'hover'}
+            >
+              Senuri
+            </Anchor>
+          </Text>
         </Flex>
       </Drawer>
       <Burger
