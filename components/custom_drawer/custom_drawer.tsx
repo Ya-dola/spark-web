@@ -12,8 +12,10 @@ import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import { colors } from '@/utils/color_utils';
 import { images } from '@/utils/image_utils';
+import { useIsMobile } from '@/utils/breakpoint_utils';
 
 function CustomDrawer() {
+  const isMobile = useIsMobile();
   // Bool to check the state of the drawer
   const [isDrawerOpen, { open: openDrawer, close: closeDrawer }] =
     useDisclosure(false);
@@ -105,36 +107,40 @@ function CustomDrawer() {
           <Divider
             style={{
               position: 'absolute',
-              bottom: '30px', // Adjust as needed
+              bottom: isMobile ? '3rem' : '1.5rem',
             }}
             w={'90%'}
             mb={'md'}
           />
           <Text
             px={'xl'}
-            fz={'sm'}
+            fz={'xs'}
             style={{
               position: 'absolute',
-              bottom: '10px', // Adjust as needed
+              bottom: isMobile ? '2rem' : '0.5rem',
               right: 0,
               color: 'gray',
             }}
           >
             Developed by{' '}
             <Anchor
-              href='https://www.linkedin.com/in/yadola/'
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{ color: 'gray', textDecoration: 'underline' }}
+              href={'https://www.linkedin.com/in/yadola/'}
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+              fz={'sm'}
+              c={colors.pink1 + 'DE'}
+              underline={'hover'}
             >
               Aadil
             </Anchor>{' '}
             and{' '}
             <Anchor
-              href='https://www.linkedin.com/in/senuri-de-silva-822187248/'
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{ color: 'gray', textDecoration: 'underline' }}
+              href={'https://www.linkedin.com/in/senuri-de-silva-822187248/'}
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+              fz={'sm'}
+              c={colors.pink1 + 'DE'}
+              underline={'hover'}
             >
               Senuri
             </Anchor>
