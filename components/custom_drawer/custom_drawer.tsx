@@ -1,4 +1,13 @@
-import { Image, Burger, Button, Drawer, Flex, Divider } from '@mantine/core';
+import {
+  Image,
+  Burger,
+  Button,
+  Drawer,
+  Flex,
+  Divider,
+  Text,
+  Anchor,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Link from 'next/link';
 import { colors } from '@/utils/color_utils';
@@ -92,6 +101,44 @@ function CustomDrawer() {
           >
             Undergraduate Development
           </Button>
+
+          <Divider
+            style={{
+              position: 'absolute',
+              bottom: '30px', // Adjust as needed
+            }}
+            w={'90%'}
+            mb={'md'}
+          />
+          <Text
+            px={'xl'}
+            fz={'sm'}
+            style={{
+              position: 'absolute',
+              bottom: '10px', // Adjust as needed
+              right: 0,
+              color: 'gray',
+            }}
+          >
+            Developed by{' '}
+            <Anchor
+              href='https://www.linkedin.com/in/yadola/'
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{ color: 'gray', textDecoration: 'underline' }}
+            >
+              Aadil
+            </Anchor>{' '}
+            and{' '}
+            <Anchor
+              href='https://www.linkedin.com/in/senuri-de-silva-822187248/'
+              target='_blank'
+              rel='noopener noreferrer'
+              style={{ color: 'gray', textDecoration: 'underline' }}
+            >
+              Senuri
+            </Anchor>
+          </Text>
         </Flex>
       </Drawer>
       <Burger
