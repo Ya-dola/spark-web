@@ -34,7 +34,7 @@ function CarouselTab({
   const autoplay = useRef(Autoplay({ delay: autoPlayDelay }));
 
   // Maximum character limit for event
-  const characterLimit = 800;
+  const characterLimit = 850;
   const carouselBorderRadius = 1.5;
 
   // Truncate Description to Max Character Length
@@ -66,6 +66,20 @@ function CarouselTab({
       handleCarouselChange(eventIndex);
     }
   }, [eventIndex, handleCarouselChange]);
+
+  //Change line height and fontsize according to TITLE character length
+  const titleLength = 35;
+  let lineheight: string | number = 'xs';
+  let fontSize: string = isMobile ? 'h2' : 'h1';
+
+  // Ensure eventIndex is valid and get the current event
+  const currentEvent = events[activeEventIndex] || {}; // Default to an empty object if index is out of bounds
+
+  // Set the line height based on the length of the current event's name
+  if (currentEvent.name && currentEvent.name.length > titleLength) {
+    lineheight = 1.35; // Set line height to 1 if length exceeds titleLength
+    fontSize = isMobile ? 'h3' : 'h2';
+  }
 
   return (
     <Carousel
@@ -166,7 +180,8 @@ function CarouselTab({
                 )}
                 {/* Heading */}
                 <Text
-                  fz={isMobile ? 'h2' : 'h1'}
+                  fz={fontSize}
+                  lh={lineheight}
                   fw={700}
                   c={headingColor}
                 >
@@ -235,9 +250,7 @@ function CarouselTab({
                     objectFit: 'cover',
                     objectPosition: 'center',
                     borderRadius: `${carouselBorderRadius / 2}rem`,
-                   
                   }}
-                  
                 />
               ))}
             </Flex>
@@ -247,7 +260,5 @@ function CarouselTab({
     </Carousel>
   );
 }
-
-
 
 export default CarouselTab;
