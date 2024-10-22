@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Text, Space, List, Flex } from '@mantine/core';
+import { Text, Space, List, Flex, StyleProp, MantineSize } from '@mantine/core';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel } from '@mantine/carousel';
 import theme from '@/components/carousel_tab/carousel_tab.module.css';
@@ -35,6 +35,7 @@ function CarouselTab({
 
   // Maximum character limit for event
   const characterLimit = 850;
+  const titleSizeLimit = 40;
   const carouselBorderRadius = 1.5;
 
   // Truncate Description to Max Character Length
@@ -45,8 +46,42 @@ function CarouselTab({
     return description;
   };
 
+  const getTitleFontSize = (
+    titleLength: number,
+  ):
+    | StyleProp<
+        | number
+        | 'h1'
+        | 'h2'
+        | 'h3'
+        | 'h4'
+        | 'h5'
+        | 'h6'
+        | MantineSize
+        | (string & {})
+      >
+    | undefined => {
+    let baseTitleFontSize: string;
+
+    if (titleLength > titleSizeLimit * 2) {
+      // Use h4/h3 for names longer than twice the size limit
+      baseTitleFontSize = isMobile ? 'h4' : 'h3';
+    } else if (titleLength > titleSizeLimit) {
+      // Use h3/h2 for names longer than titleSizeLimit
+      baseTitleFontSize = isMobile ? 'h3' : 'h2';
+    } else {
+      // Use h1/h2 for names shorter or equal to titleSizeLimit
+      baseTitleFontSize = isMobile ? 'h2' : 'h1';
+    }
+
+    return baseTitleFontSize;
+  };
+
   // State to track which event is currently active in the carousel
   const [activeEventIndex, setActiveEventIndex] = useState(eventIndex ?? 0);
+
+  // State to map positions of the carousel correctly when the events change
+  const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
   // Callback to handle carousel index change
   const handleCarouselChange = useCallback(
@@ -64,22 +99,13 @@ function CarouselTab({
     // Update active index based on prop change
     if (eventIndex !== undefined) {
       handleCarouselChange(eventIndex);
+    } else {
+      // Update Carousel based on last correct position before event changes
+      handleCarouselChange(currentTabIndex);
     }
-  }, [eventIndex, handleCarouselChange]);
 
-  //Change line height and fontsize according to TITLE character length
-  const titleLength = 35;
-  let lineheight: string | number = 'xs';
-  let fontSize: string = isMobile ? 'h2' : 'h1';
-
-  // Ensure eventIndex is valid and get the current event
-  const currentEvent = events[activeEventIndex] || {}; // Default to an empty object if index is out of bounds
-
-  // Set the line height based on the length of the current event's name
-  if (currentEvent.name && currentEvent.name.length > titleLength) {
-    lineheight = 1.35; // Set line height to 1 if length exceeds titleLength
-    fontSize = isMobile ? 'h3' : 'h2';
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [eventIndex, handleCarouselChange, events]);
 
   return (
     <Carousel
@@ -99,7 +125,10 @@ function CarouselTab({
       // Number of slides to scroll at a time
       slidesToScroll={1}
       // Handle slide change event
-      onSlideChange={handleCarouselChange}
+      onSlideChange={(index) => {
+        setCurrentTabIndex(index);
+        handleCarouselChange(index);
+      }}
       // Set the initial slide based on the external index
       initialSlide={eventIndex}
       classNames={theme}
@@ -125,7 +154,7 @@ function CarouselTab({
             style={{
               // Scale effect based on active index
               transform:
-                activeEventIndex === index
+                activeEventIndex === index || events.length === 1
                   ? 'scale(1)'
                   : `scale(${isMobile ? 0.96 : 0.8})`,
               transition: 'transform 0.3s ease', // Smooth transition for scaling
@@ -149,7 +178,6 @@ function CarouselTab({
               px={isMobile ? '' : 'xl'}
               w={isMobile ? '100%' : '90%'}
             >
-              {/*Descriptions*/}
               <Flex
                 w={'100%'}
                 direction={isMobile ? 'column' : 'column'}
@@ -180,16 +208,20 @@ function CarouselTab({
                 )}
                 {/* Heading */}
                 <Text
-                  fz={fontSize}
-                  lh={lineheight}
+                  fz={getTitleFontSize(event.name.length)}
                   fw={700}
                   c={headingColor}
+                  // Limit Title lines
+                  lineClamp={isMobile ? 4 : 2}
+                  ta={isWinner ? 'center' : 'left'}
                 >
                   {event.name}
                 </Text>
               </Flex>
 
               <Space h={'lg'} />
+
+              {/*Descriptions*/}
               <Text
                 fz={isMobile ? 'sm' : 'md'}
                 fw={400}
