@@ -4,41 +4,44 @@
       "name": "Celebration 23/24",
       "description": "The SPARK Challenge for 2023/24 concluded on September 28, 2024, with five shortlisted teams from over 21 proposals, pitching their solutions to a panel of commercial and industrial heavyweights. This year’s evaluation process was particularly challenging, involving extended discussions among the panel about the relative merits of the solutions presented. Ultimately, three proposals were highlighted as outstanding, showcasing exceptional imagination, skill, and teamwork.",
       "winnerTeam": {
-        "name": "Team Winner",
-        "description": "This is a description for Team Winner.",
-        "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/image_4.png"]
+        "name": "Team Eco Nova",
+        "description": "Eco Nova’s Smart Agri-Voltaic System, developed for the SPARK Challenge, combines cutting-edge solar energy production with sustainable agriculture to address Sri Lanka’s energy and agricultural challenges. This innovative system maximizes land use by integrating solar panels with high-quality crop production, increasing yields while reducing water waste. With advanced IoT-based monitoring, predictive maintenance, and smart drip irrigation, it ensures optimal solar panel efficiency and crop health. The Agro-Plan Model, powered by GIS data, recommends ideal crop selections and solar panel layouts tailored to specific locations. Our solution supports energy independence, job creation, and food security while reducing carbon emissions and crude oil dependency, contributing to sustainable development goals.",
+        "members": [
+          "Odil Janadith",
+          "Kaveendra Alwis",
+          "Danidu Dabare",
+          "Sasika Amarasinghe"
+        ],
+        "images": ["/images/maintainedData/challenge/winner_23_24.jpeg"]
       },
       "runnerUpTeams": [
         {
-          "name": "Team 1",
-          "description": "This is a description for Team 1.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/image_4.png"]
+          "name": "Team Drarosg",
+          "description": "The poultry industry faces significant challenges, including disease outbreaks and inefficient management. Farm Knight addresses these issues with an innovative solution that uses advanced technologies like machine learning, cloud integration, and thermal imaging for real-time monitoring of poultry health and behavior. It detects early disease signs and tracks individual animal performance, allowing farmers to act promptly, reducing losses, and enhancing productivity. Sensors around the farm collect crucial data on environmental conditions, which is analyzed in the cloud. Machine learning algorithms generate actionable insights available via a user-friendly mobile app. By detecting diseases early and optimizing resources, Farm Knight promotes sustainability and supports global climate change initiatives.",
+          "members": [
+            "Sasindu Abewickrema",
+            "Sandaru Lokudadalla",
+            "Damsith Adikari",
+            "Gavin Botheju",
+            "Lohan Atapattu"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/1st_runner_up_23_24.jpeg"
+          ]
         },
         {
-          "name": "Team 2",
-          "description": "This is a description for Team 2.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_4.png"]
-        },
-        {
-          "name": "Team 3",
-          "description": "This is a description for Team 3.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_5.png"]
-        },
-        {
-          "name": "Team 4",
-          "description": "This is a description for Team 4.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_2.png"]
-        },
-        {
-          "name": "Team 5",
-          "description": "This is a description for Team 5.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_4.png", "/images/image_1.png"]
+          "name": "Team Sustainix",
+          "description": "Hedwig is an IoT-based energy monitoring solution designed to enhance energy efficiency in industrial settings for small and medium-sized businesses (SMBs) and large enterprises. It addresses high operational costs, unexpected downtime, and maintenance issues. The system features real-time data acquisition, wireless connectivity, and advanced measurements for voltage, current, and power factor. Its modular design ensures cost-effectiveness across various industries. The integrated platform offers predictive maintenance, automated alerts, and user-friendly analytics for proactive energy management. AI-driven insights provide actionable recommendations for optimization, helping industries reduce energy costs while supporting sustainable development goals, including clean energy and climate action.",
+          "members": [
+            "Kumal Hewagamage",
+            "Dulmin Edirisinghe",
+            "Nimshi Wanniarachchi",
+            "Yasiru Basnayaka",
+            "Udula Abeysinghe"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/2nd_runner_up_23_24.jpeg"
+          ]
         }
       ]
     },
@@ -47,22 +50,44 @@
       "description": "The Challenge is a key component of the SPARK programme organised by the Spark Branch of E-Club at ENTC. The Challenge aims to foster and recognize innovative mindsets focused on sustainable goals to effectively tackle global climate-related issues. After nearly a year of rigorous teamwork and product development, the event culminated in the Finale on June 11, 2023. Out of the fifteen participating teams, three stood out, demonstrating outstanding skill, imagination, and capability.",
       "winnerTeam": {
         "name": "Winner - Team Pathfinders",
-        "description": "They have brought an impressive solution to identify insects damaging crops and recommending insecticide usage accordingly. Insecticide use that is excessive or incorrect has a negative impact on agricultural communities, consumers, and ecosystems by raising production costs, jeopardising the health and safety of farmers and customers, and causing environmental degradation and ecological imbalances. The improper application of insecticides in agriculture is a result of farmers’ ignorance and failure to recognise pests before they cause damage to crops. Pest Sense offers a solution to this issue by constantly checking the field for pests and advising the farmers on what pesticides to use and in what quantities so that the farmers may safeguard the crops while sticking to safe chemical use. Farmers can save costs and boost field yield by following the advice made specifically for them. Hope this product will help farmers all around the world to have better harvests which will definitely compensate for their invaluable efforts.",
-        "members": ["Member 1", "Member 2", "Member 3"],
-        "images": ["/images/image_1.png", "/images/image_4.png"]
+        "description": "Pest Sense provides an innovative solution for identifying insect damage to crops and recommending appropriate insecticide usage. Excessive or incorrect insecticide application negatively affects agricultural communities, ecosystems, and consumer safety, leading to higher production costs and environmental degradation. This wrong application often stems from farmers’ inability to recognize pests early on. Pest Sense addresses this by continuously monitoring fields for pests and advising farmers on specific pesticides and quantities to use, ensuring effective crop protection while promoting safe chemical practices. By following Pest Sense's tailored recommendations, farmers can reduce costs and increase yields. This product aims to support farmers globally, enhancing their harvests and compensating for their invaluable efforts.",
+        "members": [
+          "Mewan Rathnayake",
+          "Gishan Damindu",
+          "Moshintha Hewavitharana",
+          "Senul Samarasekara"
+        ],
+        "images": ["/images/maintainedData/challenge/winner_22_23.jpeg"]
       },
       "runnerUpTeams": [
         {
           "name": "Team Techstatic",
-          "description": "This project is similarly centred on agricultural areas, and it uses a sophisticated monitoring and recommendation system to handle some of the problems that pertain to that sector. In underdeveloped nations, the agriculture sector lacks effective environmental monitoring, which results in food waste, fertiliser waste, and environmental harm. By offering advice to farmers via our solution, Cultiwave, a mobile app and monitoring system, seeks to lessen these problems. It can provide fertiliser recommendations, identify potential nutrient deficiencies, identify land degradation, and inform about any risk of surplus production for that particular crop by combining data from the monitoring device, user inputs, and other data gathered from the area. It also contains a news and alert system that notifies the farmer of any local illnesses or weather conditions that can harm their crops. This product will also be a game changer in the agriculture sector which will definitely uplift the quality of the crops.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/image_4.png"]
+          "description": "Cultiwave is an innovative mobile app and monitoring system aimed at addressing agricultural challenges in underdeveloped nations, where ineffective environmental monitoring leads to food and fertilizer waste, as well as environmental harm. The solution provides farmers with tailored advice by offering fertilizer recommendations, identifying nutrient deficiencies, detecting land degradation, and alerting them to risks of surplus production for their crops. By integrating data from monitoring devices, user inputs, and regional information, Cultiwave enhances decision-making. Additionally, the app features a news and alert system that informs farmers of local diseases and weather conditions that could threaten their crops. This product is poised to transform the agriculture sector, significantly improving crop quality and sustainability.",
+          "members": [
+            "Tharusha Fonseka",
+            "Anuki Pasquel",
+            "Thishakya Bandara",
+            "Janindu Leelananda"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/1st_runner_up_22_23.jpeg",
+            "/images/maintainedData/challenge/1st_runner_up_22_23_device.jpg"
+          ]
         },
         {
           "name": "Team Spectro",
-          "description": "This group has focused on Energy Generation, a topic that is quite important right now. Their ground-breaking initiative reimagines energy generation using cutting-edge methods. Their emphasis on utilising hydrogen’s power, especially the biological processes of green algae, propels us towards a time when energy production transcends current limitations and results in a more sustainable world. Their initiative centres on a paradigm shift in energy production. They were investigating fresh ways to generate renewable energy while utilising hydrogen’s potential as a crucial component. As a clean and adaptable energy source, hydrogen has several benefits, and scientists are precisely utilising the metabolic processes of green algae to harvest this power. This made it possible for them to access an organic and sustainable technique of making hydrogen, opening the door to a time when energy production will exceed current constraints and contribute to a more sustainable world.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_4.png"]
+          "description": "This group is addressing the critical topic of energy generation with an innovative initiative focused on harnessing hydrogen's potential, particularly through the biological processes of green algae. Their project seeks to revolutionize energy production by exploring new methods for generating renewable energy while leveraging hydrogen as a clean, flexible energy source. Through the precise utilization of green algae's metabolic processes, they have developed an organic and sustainable approach to hydrogen production. This advancement paves the way for an era of energy generation that transcends current limitations, ultimately contributing to a more sustainable world. Their focus on these groundbreaking techniques positions them at the forefront of the transition to cleaner energy solutions.",
+          "members": [
+            "Thisari Amarasekara",
+            "Nisala Yapa",
+            "Sithija Vihanga",
+            "Ishara Dilshan",
+            "Ranuka Lakshika"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/2nd_runner_up_22_23.jpeg",
+            "/images/maintainedData/challenge/2nd_runner_up_22_23_device.jpeg"
+          ]
         }
       ]
     },
@@ -70,35 +95,47 @@
       "name": "Celebration 21/22",
       "description": "The year-long challenge is a core component of the SPARK programme, involving first and second-year undergraduates. Students were encouraged to think creatively to develop unique solutions aimed at mitigating or rectifying environmental damage caused by human activities. Despite the challenges posed by COVID and the economic downturn, 55 groups of students participated in the challenge. By the end of the year, 11 teams had finalized their submissions. After a rigorous assessment, the following three teams demonstrated outstanding competence in their proposed solutions.",
       "winnerTeam": {
-        "name": "Winner - Team Phantom ",
+        "name": "Team Phantom ",
         "description": "Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.",
-        "members": ["Member 1", "Member 2", "Member 3", "Member 4", "Member 5"],
-        "images": ["/images/image_1.png", "/images/image_4.png"]
+        "members": [
+          "Dumindu Bandara",
+          "Biyon Fernando",
+          "Chirantha Kurukulasuriya",
+          "Supun Kuruppu"
+        ],
+        "images": [
+          "/images/maintainedData/challenge/winner_21_22.jpg",
+          "/images/maintainedData/challenge/winner_21_22_device.png"
+        ]
       },
       "runnerUpTeams": [
         {
-          "name": "Team Axon ",
+          "name": "Team Axon",
           "description": "Monitoring the depth of anesthesia contributes in tailoring drug administration to the individual patient, thus preventing awareness or excessive anesthetic depth and improving patients’ outcomes. Team Axon proposes a system which can monitor the pediatric patients’ depth of anesthesia in a non-invasive manner to assist the anesthesiologists to take clinical decisions. The presented solution is developed by utilizing the state-of-the-art hardware designs and deep learning models in which the acquisition hardware system is capable of recording, pre-processing and real-time sending the electroencephalography and electrocardiography signals of patients to the nearest computer to predict the depth of anesthesia through the deployed deep learning models.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_1.png", "/images/image_4.png"]
+          "members": [
+            "Nuwan Bandara",
+            "N.G.K.M. Dayasekara",
+            "Sahan Hettiarachchi",
+            "Dasun Premathilaka"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/1st_runner_up_21_22.jpg",
+            "/images/maintainedData/challenge/1st_runner_up_21_22_device.png"
+          ]
         },
         {
           "name": "Team Fixit",
           "description": "Water pollution is a critical issue in the modern world. Any toxic chemicals that mix with the water will severely affect the ecological processes occurring in the environment. Current monitoring methods are not facilitated enough to inform an immediate change in the condition of the water. Team Fix-it introduces a solution to this issue, a system that continuously monitors, pollutant levels and transmits that data over the air to a functional database. That data is rigorously monitored in real time so that alerts are triggered at particular thresholds so that appropriate actions can be undertaken by the relevant authorities.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_4.png"]
-        },
-        {
-          "name": "Team Solo",
-          "description": "During the recent past, high prevalence of chronic kidney disease (CKD) was observed in some geographical areas of Sri Lanka. Most of the patients are detected in later stages where renal replacement therapies are needed. CKD is asymptomatic until an end stage, is one of the most common public health problems. TWe will use urine conductivity and urine image sample to identify chronic kidney disease. We will use collected data of urine conductivity and image samples of certain no of people and train a machine learning model to predict CKD and then predict result for new patient",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_5.png"]
-        },
-        {
-          "name": "Team Fusion",
-          "description": "The team focused their challenge entry in improved on Food production and Preservation. Agriculture requires optimal conditions for the for the production of good quality produce to feed the ever-growing population of the world. The team sought a solution in managing critical factors in growing various produce in a greenhouse environment ensuring that data in relation are collected in real time and transferred to a server using IoT based end points. The data will be analysed real time with a potential ML/AI based intelligence that will manage toe environmental/nutritional conditions of the “plant” growth and the greenhouse environment.",
-          "members": ["Member 1", "Member 2", "Member 3"],
-          "images": ["/images/image_3.png", "/images/image_2.png"]
+          "members": [
+            "Yomali Lokugama",
+            "Isuru Munasinghe",
+            "T.D.S.Viduranga",
+            " Vishva Vijenayake"
+          ],
+          "images": [
+            "/images/maintainedData/challenge/2nd_runner_up_21_22.jpg",
+            "/images/maintainedData/challenge/2nd_runner_up_21_22_device.png"
+          ]
         }
       ]
     }

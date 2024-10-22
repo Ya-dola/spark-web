@@ -6,39 +6,42 @@
       "name": "2023/2024",
       "details": [
         {
-          "name": "23/24 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_5.png"],
+          "name": "MeasureUp",
+          "description": "MeasureUP is a dual-unit device designed to accurately measure both body height and body weight, providing instant readings along with calculated BMI.It is a project undertaken by a group of Sri Lankan undergraduate students studying biomedical engineering at the Department of Electronic and Telecommunication Engineering, University of Moratuwa. The project is funded by the World Bank and guided by the University Business Linkage Cell at the University of Moratuwa.",
+          "images": [
+            "/images/maintainedData/techDemo/Group1.jpg",
+            "/images/maintainedData/techDemo/Group1_1.png"
+          ],
           "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
+            "Isiri Withanawasam",
+            "Nadun Rajapakshe",
+            "Chathura Weerasinghe",
+            "Risini Kumarasinghe"
           ]
         },
         {
-          "name": "23/24 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "name": "Hedwig- IoT Power Monitoring System",
+          "description": "Energy efficiency is vital for industrial facilities to manage costs and minimize environmental impact. Many machines have individual power monitoring systems, but the data's scattered nature hinders effective analysis. Our project proposes an industrial energy monitoring system that centralizes and analyzes energy data for deeper insights. By enabling real-time data transmission to a centralized system, our solution provides valuable insights into energy consumption patterns and equipment performance. This empowers facilities to optimize energy usage, reduce waste, and enhance operational efficiency. The Industrial Power Monitoring System features key components, including voltage and current sensors, power measuring ICs, a microcontroller, and a cloud-based data management and visualization interface.",
+          "images": [
+            "/images/maintainedData/techDemo/group2_1.jpg",
+            "/images/maintainedData/techDemo/group2_2.jpg"
+          ],
           "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
+            "Kumal Hewagamage",
+            "Dulmin Edirisinghe",
+            "Mihiran Wickramarathne",
+            "Nimshi Wanniarachi"
           ]
         },
         {
-          "name": "23/24 - Event Name 3",
-          "description": "This is a description for Event 3 in Year 2023/2024. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "name": "Smart Agri Voltaic System",
+          "description": "Eco Nova’s Smart Agri-Voltaic System, developed for the SPARK Challenge, combines cutting-edge solar energy production with sustainable agriculture to address Sri Lanka’s energy and agricultural challenges. This innovative system maximizes land use by integrating solar panels with high-quality crop production, increasing yields while reducing water waste by 50%. With advanced IoT-based monitoring, predictive maintenance, and smart drip irrigation, it ensures optimal solar panel efficiency and crop health. The Agro-Plan Model, powered by GIS data, recommends ideal crop selections and solar panel layouts tailored to specific locations. Our solution supports energy independence, job creation, and food security while reducing carbon emissions and crude oil dependency, contributing to sustainable development goals.",
+          "images": ["/images/maintainedData/techDemo/group3.jpg"],
           "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
+            "Odil Janandith",
+            "Kavindra Alwis",
+            "Sasika Amarasinghe",
+            "Danindu Dabare"
           ]
         }
       ]
@@ -47,121 +50,32 @@
       "name": "2022/2023",
       "details": [
         {
-          "name": "22/23 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "name": "1st Runner Up - Team Techstatic",
+          "description": "Cultiwave is a project aimed at addressing the environmental and economic issues in the agriculture sector, particularly in underdeveloped nations. It introduces a mobile app and a monitoring system that provides real-time recommendations to farmers, helping them improve crop yields while reducing fertilizer waste and minimizing environmental harm.",
+          "images": [
+            "/images/maintainedData/techDemo/cultiwave_1.jpg",
+            "/images/maintainedData/techDemo/cultiwave_2.jpg"
+          ],
           "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
+            "Janindu Leelananda",
+            "Anuki Pasquel",
+            "Thishakya Bandara",
+            "Tharusha Fonseka"
           ]
         },
         {
-          "name": "22/23 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
+          "name": " Team Fusion ",
+          "description": "The team focused their challenge entry in improved on Food production and Presentation. Agriculture requires optimal conditions for the production of good quality produce to feed the ever growing population of the world. The team sought a solution in managing critical factors in growing various produce in a greenhouse environment ensuring that data in relation are collected in real time and transferred to a server using IoT based end points. The data will be analysed real time with a potential ML/AI based intelligence that will manage toe environmental/nutritional conditions of the “plant” growth and the greenhouse environment.",
+          "images": [
+            "/images/maintainedData/techDemo/Team_Fusion_01.png",
+            "/images/maintainedData/techDemo/Team_Fusion_02.png"
+          ],
           "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
+            "Bandara D.R.K.W.M.S.D.",
+            "Ranathunga R.A.C.D.",
+            "Karunanayaka Y.S.",
+            "Ranatunga R.G.S.M."
           ]
-        },
-        {
-          "name": "22/23 - Event Name 3",
-          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
-          "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
-          ]
-        },
-        {
-          "name": "22/23 - Event Name 4",
-          "description": "This is a description for Event 4 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png", "/images/image_3.png"],
-          "members": [
-            "Member 1",
-            "Member 2",
-            "Member 3",
-            "Member 4",
-            "Member 5"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "2021/2022",
-      "details": [
-        {
-          "name": "22/23 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 3",
-          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
-          "members": []
-        }
-      ]
-    },
-    {
-      "name": "2020/2021",
-      "details": [
-        {
-          "name": "22/23 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 3",
-          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
-          "members": []
-        }
-      ]
-    },
-    {
-      "name": "2019/2020",
-      "details": [
-        {
-          "name": "22/23 - Event Name 1",
-          "description": "This is a description for Event 1 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_1.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 2",
-          "description": "This is a description for Event 2 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_3.png"],
-          "members": []
-        },
-        {
-          "name": "22/23 - Event Name 3",
-          "description": "This is a description for Event 3 in Year 2022/2023. It has multiple members and images. Yay!",
-          "images": ["/images/image_4.png"],
-          "members": []
         }
       ]
     }
