@@ -7,4 +7,5 @@ export enum colors {
   pink1 = '#d61fb3',
   pink2 = '#f4018b',
   blue1 = '#1f68d6',
+  gold = '#bf9b30',
 }
