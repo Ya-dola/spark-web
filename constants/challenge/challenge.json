@@ -12,7 +12,10 @@
           "Danidu Dabare",
           "Sasika Amarasinghe"
         ],
-        "images": ["/images/maintainedData/challenge/winner_23_24.jpeg"]
+        "images": [
+          "/images/maintainedData/challenge/23_24_team_echonova_img_1.jpeg",
+          "/images/maintainedData/challenge/23_24_team_echonova_img_2.jpeg"
+        ]
       },
       "runnerUpTeams": [
         {
@@ -26,7 +29,8 @@
             "Lohan Atapattu"
           ],
           "images": [
-            "/images/maintainedData/challenge/1st_runner_up_23_24.jpeg"
+            "/images/maintainedData/challenge/23_24_team_drarosg_img_1.jpeg",
+            "/images/maintainedData/challenge/23_24_team_drarosg_img_2.jpeg"
           ]
         },
         {
