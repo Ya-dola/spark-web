@@ -4,7 +4,7 @@
       "name": "Celebration 23/24",
       "description": "The SPARK Challenge for 2023/24 concluded on September 28, 2024, with five shortlisted teams from over 21 proposals, pitching their solutions to a panel of commercial and industrial heavyweights. This year’s evaluation process was particularly challenging, involving extended discussions among the panel about the relative merits of the solutions presented. Ultimately, three proposals were highlighted as outstanding, showcasing exceptional imagination, skill, and teamwork.",
       "winnerTeam": {
-        "name": "Team Eco Nova",
+        "name": "Winner - Team Eco Nova",
         "description": "Eco Nova’s Smart Agri-Voltaic System, developed for the SPARK Challenge, combines cutting-edge solar energy production with sustainable agriculture to address Sri Lanka’s energy and agricultural challenges. This innovative system maximizes land use by integrating solar panels with high-quality crop production, increasing yields while reducing water waste. With advanced IoT-based monitoring, predictive maintenance, and smart drip irrigation, it ensures optimal solar panel efficiency and crop health. The Agro-Plan Model, powered by GIS data, recommends ideal crop selections and solar panel layouts tailored to specific locations. Our solution supports energy independence, job creation, and food security while reducing carbon emissions and crude oil dependency, contributing to sustainable development goals.",
         "members": [
           "Odil Janadith",
@@ -40,7 +40,8 @@
             "Udula Abeysinghe"
           ],
           "images": [
-            "/images/maintainedData/challenge/2nd_runner_up_23_24.jpeg"
+            "/images/maintainedData/challenge/23_24_team_sustanix_img_1.jpeg",
+            "/images/maintainedData/challenge/23_24_team_sustanix_img_2.jpeg"
           ]
         }
       ]
@@ -70,8 +71,8 @@
             "Janindu Leelananda"
           ],
           "images": [
-            "/images/maintainedData/challenge/1st_runner_up_22_23.jpeg",
-            "/images/maintainedData/challenge/1st_runner_up_22_23_device.jpg"
+            "/images/maintainedData/challenge/22_23_team_techstatic_img_1.jpeg",
+            "/images/maintainedData/challenge/22_23_team_techstatic_img_2.jpg"
           ]
         },
         {
@@ -85,8 +86,8 @@
             "Ranuka Lakshika"
           ],
           "images": [
-            "/images/maintainedData/challenge/2nd_runner_up_22_23.jpeg",
-            "/images/maintainedData/challenge/2nd_runner_up_22_23_device.jpeg"
+            "/images/maintainedData/challenge/22_23_team_spectro_img_1.jpeg",
+            "/images/maintainedData/challenge/22_23_team_spectro_img_2.jpeg"
           ]
         }
       ]
@@ -95,7 +96,7 @@
       "name": "Celebration 21/22",
       "description": "The year-long challenge is a core component of the SPARK programme, involving first and second-year undergraduates. Students were encouraged to think creatively to develop unique solutions aimed at mitigating or rectifying environmental damage caused by human activities. Despite the challenges posed by COVID and the economic downturn, 55 groups of students participated in the challenge. By the end of the year, 11 teams had finalized their submissions. After a rigorous assessment, the following three teams demonstrated outstanding competence in their proposed solutions.",
       "winnerTeam": {
-        "name": "Team Phantom ",
+        "name": "Winner - Team Phantom ",
         "description": "Coral population throughout the world is rapidly declining due to the prevailing climate crisis and toxic human activities. Team phantom presents a robot that collects coral gametes released by coral polyps during their spawning events, and safely stores them internally. The proposed robot will automate the current process which the scientists have to undergo diving and collecting the gametes by themselves. Once collected, the gametes will be provided with the proper conditions for growth, thus increasing the effective fertility rate from 0.2% to 90% before release in to the wild ensuring a higher coral population in the coming decades.",
         "members": [
           "Dumindu Bandara",
@@ -104,8 +105,8 @@
           "Supun Kuruppu"
         ],
         "images": [
-          "/images/maintainedData/challenge/winner_21_22.jpg",
-          "/images/maintainedData/challenge/winner_21_22_device.png"
+          "/images/maintainedData/challenge/21_22_team_phantom_img_1.jpg",
+          "/images/maintainedData/challenge/21_22_team_phantom_img_2.png"
         ]
       },
       "runnerUpTeams": [
@@ -119,8 +120,8 @@
             "Dasun Premathilaka"
           ],
           "images": [
-            "/images/maintainedData/challenge/1st_runner_up_21_22.jpg",
-            "/images/maintainedData/challenge/1st_runner_up_21_22_device.png"
+            "/images/maintainedData/challenge/21_22_team_axon_img_1.jpg",
+            "/images/maintainedData/challenge/21_22_team_axon_img_2.png"
           ]
         },
         {
@@ -133,8 +134,8 @@
             " Vishva Vijenayake"
           ],
           "images": [
-            "/images/maintainedData/challenge/2nd_runner_up_21_22.jpg",
-            "/images/maintainedData/challenge/2nd_runner_up_21_22_device.png"
+            "/images/maintainedData/challenge/21_22_team_fixit_img_1.jpg",
+            "/images/maintainedData/challenge/21_22_team_fixit_img_2.png"
           ]
         }
       ]
