@@ -192,7 +192,7 @@ function CarouselTab({
                     height='80'
                     viewBox='0 0 24 24'
                     fill='none'
-                    stroke='#1f68d6'
+                    stroke={colors.gold}
                     strokeWidth='1.6'
                     strokeLinecap='round'
                     strokeLinejoin='round'
@@ -223,6 +223,7 @@ function CarouselTab({
 
               {/*Descriptions*/}
               <Text
+                style={{ whiteSpace: 'pre-line' }} // or use a defined CSS class
                 fz={isMobile ? 'sm' : 'md'}
                 fw={400}
                 c={descriptionColor}

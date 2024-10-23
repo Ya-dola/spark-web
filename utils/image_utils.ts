@@ -1,7 +1,7 @@
 export enum images {
   sparkLogoTransparent = '/images/logo/spark_logo_transparent.png',
   everestImage = '/images/visuals/everest.png',
-  piImage = '/images/visuals/image_RaspberryPi.png',
+  piImage = '/images/visuals/raspberryPi.jpeg',
   studentsImage = '/images/visuals/image_1.png',
   piLogo = '/images/logo/pi_logo.png',
   fbLogo = '/images/logo/fb_logo.png',
