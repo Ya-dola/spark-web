@@ -15,9 +15,13 @@ import {
   List,
   ListItem,
   Paper,
+  Image,
   Space,
   Text,
   MantineSize,
+  Card,
+  Center,
+  Box,
 } from '@mantine/core';
 import { useState } from 'react';
 import ReactPlayer from 'react-player/lazy';
@@ -28,6 +32,9 @@ interface ChallengeClientProps {
 
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
+
+  // State to manage hover effect on the card
+  const [isHovered, setIsHovered] = useState(false);
 
   // Set page padding & width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
@@ -286,6 +293,98 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             )}
           </Paper>
         </Transitions>
+
+        <Box
+          w={pageWidth}
+          h={'auto'}
+          pb={'xl'}
+        >
+          <Transitions>
+            <Center>
+              <Card
+                w={pageWidth}
+                radius={'md'}
+                bg={colors.black1}
+                padding={'xl'}
+                component={'a'}
+                href={'https://www.facebook.com/SparkUoM'}
+                target={'fb_page'}
+                style={{
+                  transform:
+                    // Scale card on hover
+                    isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
+                  transition: 'transform 0.3s ease',
+                  // Ensure hovered card is on top
+                  zIndex: isHovered && !isMobile ? 1 : 'auto',
+                }}
+                // Set hover state when the mouse enters the card
+                onMouseEnter={() => !isMobile && setIsHovered(true)}
+                // Reset hover state when the mouse leaves the card
+                onMouseLeave={() => !isMobile && setIsHovered(false)}
+              >
+                <Text
+                  fw={700}
+                  fz={'h1'}
+                  c={colors.blue1}
+                  className={oswald.className}
+                >
+                  Spark at UoM Facebook Page
+                </Text>
+                <Text
+                  py={'md'}
+                  // c={'white'}
+                  fw={600}
+                  fz={'h4'}
+                  lh={1.3}
+                >
+                  Spark at UoM Facebook Page informs all followers about the
+                  Latest news and events done by the Spark branch of the
+                  Electronic club.
+                </Text>
+
+                <Flex
+                  h={'100%'}
+                  justify={'center'}
+                  align={'center'}
+                  mt={'auto'}
+                  gap={'md'}
+                >
+                  <Image
+                    h={'5rem'}
+                    src={images.fbLogo}
+                    alt={'Fb logo'}
+                  />
+                  <Text
+                    c={colors.blue1}
+                    size={'md'}
+                    fw={500}
+                    fz={'h5'}
+                  >
+                    The Facebook group can be found here
+                  </Text>
+                </Flex>
+                <Paper
+                  w={'auto'}
+                  h={'auto'}
+                  py={'xs'}
+                  px={'md'}
+                  bg={colors.blue1}
+                  radius={'xl'}
+                  mt={'auto'}
+                  ml={'auto'}
+                >
+                  <Text
+                    fw={900}
+                    fz={'sm'}
+                    c={colors.black1}
+                  >
+                    Learn More
+                  </Text>
+                </Paper>
+              </Card>
+            </Center>
+          </Transitions>
+        </Box>
       </Flex>
     </CustomAppShell>
   );
