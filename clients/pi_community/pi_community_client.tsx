@@ -14,11 +14,14 @@ import {
   Card,
   Paper,
   MantineSize,
+  Space,
+  Divider,
 } from '@mantine/core';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
 import Transitions from '@/components/transitions_component/transitions';
 import { images } from '@/utils/image_utils';
+import InfoCard from '@/components/info_card/info_card';
 
 interface PiCommunityClientProps {
   piMoraData: CommunitySectionModel;
@@ -134,7 +137,12 @@ function PiCommunityClient({
             text={finalYearData.description}
             tabs={finalYearData.tabs}
           />
-
+          <Space h={'lg'} />
+          <Divider
+            w={'80%'}
+            mb={'md'}
+          />
+          <Space h={'sm'} />
           <Box
             w={pageWidth}
             h={'auto'}
@@ -142,87 +150,25 @@ function PiCommunityClient({
           >
             <Transitions>
               <Center>
-                <Card
-                  w={pageWidth}
-                  radius={'md'}
-                  bg={colors.blue1}
-                  padding={'xl'}
-                  component={'a'}
+                <InfoCard
+                  width={pageWidth}
+                  bgColor={colors.darkGrey}
+                  heading={'PI Community Facebook Page'}
+                  headingColor={colors.pink2}
+                  description={
+                    'Pi Community Facebook page informs all followers about all Raspberry Pi related activities at ENTC as well as news about the Raspberry Pi organisation.'
+                  }
                   href={
                     'https://www.facebook.com/groups/raspberrypicommunitylk'
                   }
-                  target={'fb_page'}
-                  style={{
-                    transform:
-                      // Scale card on hover
-                      isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
-                    transition: 'transform 0.3s ease',
-                    // Ensure hovered card is on top
-                    zIndex: isHovered && !isMobile ? 1 : 'auto',
-                  }}
-                  // Set hover state when the mouse enters the card
-                  onMouseEnter={() => !isMobile && setIsHovered(true)}
-                  // Reset hover state when the mouse leaves the card
-                  onMouseLeave={() => !isMobile && setIsHovered(false)}
-                >
-                  <Text
-                    fw={700}
-                    fz={'h1'}
-                    c={colors.black1}
-                    className={oswald.className}
-                  >
-                    PI Community Facebook Page
-                  </Text>
-                  <Text
-                    py={'md'}
-                    c={colors.black1}
-                    fw={600}
-                    fz={'h4'}
-                  >
-                    Pi Community Facebook page informs all followers about all
-                    Raspberry Pi related activities at ENTC as well as news
-                    about the Raspberry Pi organisation.
-                  </Text>
-                  <Flex
-                    h={'100%'}
-                    justify={'center'}
-                    align={'center'}
-                    mt={'auto'}
-                    gap={'md'}
-                  >
-                    <Image
-                      h={'5rem'}
-                      src={images.fbLogo}
-                      alt={'Fb logo'}
-                    />
-                    <Text
-                      c={colors.black1}
-                      size={'md'}
-                      fw={500}
-                      fz={'h5'}
-                    >
-                      The Facebook group can be found here
-                    </Text>
-                  </Flex>
-                  <Paper
-                    w={'auto'}
-                    h={'auto'}
-                    py={'xs'}
-                    px={'md'}
-                    bg={colors.black1}
-                    radius={'xl'}
-                    mt={'auto'}
-                    ml={'auto'}
-                  >
-                    <Text
-                      fw={900}
-                      fz={'sm'}
-                      c={colors.blue1}
-                    >
-                      Learn More
-                    </Text>
-                  </Paper>
-                </Card>
+                  target={'rapberry_pi_fb_page'}
+                  imageSrc={images.fbLogoPink}
+                  altText={'Fb logo'}
+                  text={'The Facebook group can be found here'}
+                  textColor={colors.pink2}
+                  buttonColor={colors.pink2}
+                  buttonTextColor={colors.black1}
+                />
               </Center>
             </Transitions>
           </Box>

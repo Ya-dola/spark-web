@@ -2,6 +2,7 @@
 
 import CarouselTab from '@/components/carousel_tab/carousel_tab';
 import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
+import InfoCard from '@/components/info_card/info_card';
 import ScrollableSegmentedControl from '@/components/scrollable_segmented_control/scrollable_segmented_control';
 import Transitions from '@/components/transitions_component/transitions';
 import { ChallengeTabsModel } from '@/models/challenge/challenge_tabs_model';
@@ -67,7 +68,6 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
         >
           SPARK CHALLENGE
         </Text>
-
         <Flex
           w={pageWidth}
           direction={isMobile ? 'column' : 'row'}
@@ -95,7 +95,6 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             width={isMobile ? 340 : 1600}
           />
         </Flex>
-
         <Transitions width={'100%'}>
           <Paper
             w={pageWidth}
@@ -134,7 +133,6 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             </List>
           </Paper>
         </Transitions>
-
         {/* TODO - Fix and Make it Transition after first one on delay */}
         <Transitions
           width={'100%'}
@@ -202,9 +200,7 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             </Flex>
           </Paper>
         </Transitions>
-
         <Space h={'sm'} />
-
         <Transitions width={'100%'}>
           <Flex
             justify={'flex-start'}
@@ -293,96 +289,59 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             )}
           </Paper>
         </Transitions>
-
+        <Space h={'lg'} />
+        <Divider
+          w={'80%'}
+          mb={'md'}
+        />
+        <Space h={'sm'} />
         <Box
           w={pageWidth}
           h={'auto'}
           pb={'xl'}
         >
           <Transitions>
-            <Center>
-              <Card
-                w={pageWidth}
-                radius={'md'}
-                bg={colors.black1}
-                padding={'xl'}
-                component={'a'}
+            <Flex
+              direction={isMobile ? 'column' : 'row'}
+              justify={'flex-start'}
+              align={'center'}
+              gap={'xl'}
+            >
+              <InfoCard
+                width={pageWidth}
+                bgColor={colors.darkGrey}
+                heading={'Spark Challenge Facebook Page'}
+                headingColor={colors.blue1}
+                description={
+                  'Spark at UoM Facebook Page informs all followers about the latest news and events done by the Spark branch of the Electronic club.'
+                }
                 href={'https://www.facebook.com/SparkUoM'}
                 target={'fb_page'}
-                style={{
-                  transform:
-                    // Scale card on hover
-                    isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
-                  transition: 'transform 0.3s ease',
-                  // Ensure hovered card is on top
-                  zIndex: isHovered && !isMobile ? 1 : 'auto',
-                }}
-                // Set hover state when the mouse enters the card
-                onMouseEnter={() => !isMobile && setIsHovered(true)}
-                // Reset hover state when the mouse leaves the card
-                onMouseLeave={() => !isMobile && setIsHovered(false)}
-              >
-                <Text
-                  fw={700}
-                  fz={'h1'}
-                  c={colors.blue1}
-                  className={oswald.className}
-                >
-                  Spark at UoM Facebook Page
-                </Text>
-                <Text
-                  py={'md'}
-                  // c={'white'}
-                  fw={600}
-                  fz={'h4'}
-                  lh={1.3}
-                >
-                  Spark at UoM Facebook Page informs all followers about the
-                  Latest news and events done by the Spark branch of the
-                  Electronic club.
-                </Text>
-
-                <Flex
-                  h={'100%'}
-                  justify={'center'}
-                  align={'center'}
-                  mt={'auto'}
-                  gap={'md'}
-                >
-                  <Image
-                    h={'5rem'}
-                    src={images.fbLogo}
-                    alt={'Fb logo'}
-                  />
-                  <Text
-                    c={colors.blue1}
-                    size={'md'}
-                    fw={500}
-                    fz={'h5'}
-                  >
-                    The Facebook group can be found here
-                  </Text>
-                </Flex>
-                <Paper
-                  w={'auto'}
-                  h={'auto'}
-                  py={'xs'}
-                  px={'md'}
-                  bg={colors.blue1}
-                  radius={'xl'}
-                  mt={'auto'}
-                  ml={'auto'}
-                >
-                  <Text
-                    fw={900}
-                    fz={'sm'}
-                    c={colors.black1}
-                  >
-                    Learn More
-                  </Text>
-                </Paper>
-              </Card>
-            </Center>
+                imageSrc={images.fbLogoBlue}
+                altText={'Fb logo'}
+                text={'The Facebook group can be found here'}
+                textColor={colors.blue1}
+                buttonColor={colors.blue1}
+                buttonTextColor={colors.black1}
+              />
+              <InfoCard
+                width={pageWidth}
+                bgColor={colors.darkGrey}
+                heading={'Spark Challenge Youtube Channel '}
+                headingColor={colors.pink1}
+                description={
+                  'The Spark Challenge YouTube channel serves as a repository for all significant recording of events undertaken by Spark Branch of the Electronics club. '
+                }
+                href={'https://www.youtube.com/@sparkuom6590/featured'}
+                target={'youtube_page'}
+                imageSrc={images.youtubeLogo}
+                altText={'youtube logo'}
+                text={'The YouTube chanel can be found here.'}
+                textColor={colors.pink1}
+                buttonColor={colors.pink1}
+                buttonTextColor={colors.black1}
+              />
+            </Flex>
           </Transitions>
         </Box>
       </Flex>

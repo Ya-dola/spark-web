@@ -122,7 +122,7 @@ function CustomDrawer() {
               color: 'gray',
             }}
           >
-            Developed by{' '}
+            Designed and Developed by{' '}
             <Anchor
               href={'https://www.linkedin.com/in/yadola/'}
               target={'_blank'}
