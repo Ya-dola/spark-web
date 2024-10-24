@@ -57,6 +57,8 @@ function InfoCard({
       component={'a'}
       href={href}
       target={target}
+      // Security measure to prevent tabnabbing
+      rel={'noopener noreferrer'}
       style={{
         transform:
           // Scale card on hover
