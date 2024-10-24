@@ -35,7 +35,7 @@ function CarouselTab({
 
   // Maximum character limit for event
   const characterLimit = 850;
-  const titleSizeLimit = 40;
+  const titleSizeLimit = 50;
   const carouselBorderRadius = 1.5;
 
   // Truncate Description to Max Character Length
@@ -181,31 +181,39 @@ function CarouselTab({
               <Flex
                 w={'100%'}
                 direction={isMobile ? 'column' : 'column'}
-                align={'center'}
+                // align={'center'}
               >
-                {/* Display winner badge if applicable */}
-                {isWinner && (
-                  //  Vector icon for winner badge
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='80'
-                    height='80'
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    stroke={colors.gold}
-                    strokeWidth='1.6'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  >
-                    <path
-                      stroke='none'
-                      d='M0 0h24v24H0z' // Clear path to prevent fill
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  {/* Display winner badge if applicable */}
+                  {isWinner && (
+                    //  Vector icon for winner badge
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='80'
+                      height='80'
+                      viewBox='0 0 24 24'
                       fill='none'
-                    />
-                    {/* Winner icon Svg Path */}
-                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
-                  </svg>
-                )}
+                      stroke={colors.gold}
+                      strokeWidth='1.6'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    >
+                      <path
+                        stroke='none'
+                        d='M0 0h24v24H0z' // Clear path to prevent fill
+                        fill='none'
+                      />
+                      {/* Winner icon Svg Path */}
+                      <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
+                    </svg>
+                  )}
+                </div>
                 {/* Heading */}
                 <Text
                   fz={getTitleFontSize(event.name.length)}
