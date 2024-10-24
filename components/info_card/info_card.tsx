@@ -1,16 +1,5 @@
-import {
-  Image,
-  Text,
-  Card,
-  MantineSize,
-  Button,
-  Space,
-  Flex,
-  Paper,
-} from '@mantine/core';
-import Link from 'next/link';
+import { Image, Text, Card, Flex, Paper } from '@mantine/core';
 import React, { useState } from 'react';
-import NextImage from 'next/image';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
@@ -28,9 +17,9 @@ interface InfoCardProps {
   bgColor?: string;
   textColor?: string;
   headingColor?: string;
-  headingSize?: string;
   headingWeight?: number;
-  textSize?: MantineSize;
+  descriptionWeight?: number;
+  textWeight?: number;
   buttonColor?: string;
   buttonTextColor?: string;
 }
@@ -41,28 +30,28 @@ function InfoCard({
   description,
   text,
   href = '',
-  target = '',
+  target = '_blank',
   imageSrc = '',
   altText = '',
   radius = 'md',
   bgColor = colors.black1,
   textColor = '',
   headingColor = 'white',
-  headingSize = 'h2',
-  headingWeight = 900,
-  textSize = 'sm',
+  headingWeight = 700,
+  descriptionWeight = 600,
+  textWeight = 500,
   buttonColor = colors.black1,
   buttonTextColor = colors.blue1,
 }: InfoCardProps) {
+  const isMobile = useIsMobile();
+
   // State to track whether the card is hovered
   const [isHovered, setIsHovered] = useState(false);
-
-  const isMobile = useIsMobile();
 
   return (
     <Card
       w={width}
-      radius={'md'}
+      radius={radius}
       bg={bgColor}
       padding={'xl'}
       component={'a'}
@@ -71,7 +60,7 @@ function InfoCard({
       style={{
         transform:
           // Scale card on hover
-          isHovered && !isMobile ? 'scale(1.1)' : 'scale(1)',
+          isHovered && !isMobile ? 'scale(1.05)' : 'scale(1)',
         transition: 'transform 0.3s ease',
         // Ensure hovered card is on top
         zIndex: isHovered && !isMobile ? 1 : 'auto',
@@ -82,19 +71,17 @@ function InfoCard({
       onMouseLeave={() => !isMobile && setIsHovered(false)}
     >
       <Text
-        fw={700}
-        fz={'h1'}
+        fz={isMobile ? 'h2' : 'h1'}
+        fw={headingWeight}
         c={headingColor}
         className={oswald.className}
       >
         {heading}
       </Text>
       <Text
+        fz={isMobile ? 'h5' : 'h4'}
+        fw={descriptionWeight}
         py={'md'}
-        // c={'white'}
-        fw={600}
-        fz={'h4'}
-        lh={1.3}
       >
         {description}
       </Text>
@@ -112,14 +99,14 @@ function InfoCard({
           alt={altText}
         />
         <Text
+          fz={isMobile ? 'h6' : 'h5'}
           c={textColor}
-          size={'md'}
-          fw={500}
-          fz={'h5'}
+          fw={textWeight}
         >
           {text}
         </Text>
       </Flex>
+
       {/* Learn More Button */}
       <Paper
         w={'auto'}
@@ -142,4 +129,5 @@ function InfoCard({
     </Card>
   );
 }
+
 export default InfoCard;

@@ -16,12 +16,9 @@ import {
   List,
   ListItem,
   Paper,
-  Image,
   Space,
   Text,
   MantineSize,
-  Card,
-  Center,
   Box,
 } from '@mantine/core';
 import { useState } from 'react';
@@ -33,9 +30,6 @@ interface ChallengeClientProps {
 
 function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
   const isMobile = useIsMobile();
-
-  // State to manage hover effect on the card
-  const [isHovered, setIsHovered] = useState(false);
 
   // Set page padding & width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
@@ -289,12 +283,10 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
             )}
           </Paper>
         </Transitions>
-        <Space h={'lg'} />
         <Divider
-          w={'80%'}
-          mb={'md'}
+          w={pageWidth}
+          my={'sm'}
         />
-        <Space h={'sm'} />
         <Box
           w={pageWidth}
           h={'auto'}
@@ -313,10 +305,11 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
                 heading={'Spark Challenge Facebook Page'}
                 headingColor={colors.blue1}
                 description={
-                  'Spark at UoM Facebook Page informs all followers about the latest news and events done by the Spark branch of the Electronic club.'
+                  'Spark at UoM Facebook Page informs all followers ' +
+                  'about the latest news and events done by the Spark ' +
+                  'branch of the Electronic club.'
                 }
                 href={'https://www.facebook.com/SparkUoM'}
-                target={'fb_page'}
                 imageSrc={images.fbLogoBlue}
                 altText={'Fb logo'}
                 text={'The Facebook group can be found here'}
@@ -327,15 +320,16 @@ function ChallengeClient({ challengeTabs }: ChallengeClientProps) {
               <InfoCard
                 width={pageWidth}
                 bgColor={colors.darkGrey}
-                heading={'Spark Challenge Youtube Channel '}
+                heading={'Spark Challenge Youtube Channel'}
                 headingColor={colors.pink1}
                 description={
-                  'The Spark Challenge YouTube channel serves as a repository for all significant recording of events undertaken by Spark Branch of the Electronics club. '
+                  'The Spark Challenge YouTube channel serves as a ' +
+                  'repository for all significant recording of events ' +
+                  'undertaken by Spark Branch of the Electronics club.'
                 }
-                href={'https://www.youtube.com/@sparkuom6590/featured'}
-                target={'youtube_page'}
+                href={'https://www.youtube.com/@sparkuom6590'}
                 imageSrc={images.youtubeLogo}
-                altText={'youtube logo'}
+                altText={'Youtube logo'}
                 text={'The YouTube chanel can be found here.'}
                 textColor={colors.pink1}
                 buttonColor={colors.pink1}
