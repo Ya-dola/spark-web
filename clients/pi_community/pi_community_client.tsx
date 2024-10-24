@@ -4,17 +4,14 @@ import CustomAppShell from '@/components/custom_app_shell/custom_app_shell';
 import CommunitySection from '@/components/community_section/community_section';
 import { CommunitySectionModel } from '@/models/community/community_section_model';
 import { useIsMobile } from '@/utils/breakpoint_utils';
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Center,
   Image,
   Flex,
   Text,
   Box,
-  Card,
-  Paper,
   MantineSize,
-  Space,
   Divider,
 } from '@mantine/core';
 import { oswald } from '@/utils/font_utils';
@@ -35,8 +32,6 @@ function PiCommunityClient({
   finalYearData,
 }: PiCommunityClientProps) {
   const isMobile = useIsMobile();
-  // State to manage hover effect on the card
-  const [isHovered, setIsHovered] = useState(false);
 
   // Set padding and width based on device size
   const pagePadding: MantineSize = isMobile ? 'sm' : 'md';
@@ -108,7 +103,7 @@ function PiCommunityClient({
             width={pageWidth}
             height={'auto'}
             bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
+            radius={'lg'}
             heading={piMoraData.title}
             headingColor={colors.pink2}
             sectionColor={colors.pink2}
@@ -119,7 +114,7 @@ function PiCommunityClient({
             width={pageWidth}
             height={'auto'}
             bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
+            radius={'lg'}
             heading={techDemoData.title}
             headingColor={colors.pink2}
             sectionColor={colors.pink2}
@@ -130,19 +125,17 @@ function PiCommunityClient({
             width={pageWidth}
             height={'auto'}
             bgColor={colors.darkGrey}
-            radius={isMobile ? '' : 'lg'}
+            radius={'lg'}
             heading={finalYearData.title}
             headingColor={colors.pink2}
             sectionColor={colors.pink2}
             text={finalYearData.description}
             tabs={finalYearData.tabs}
           />
-          <Space h={'lg'} />
           <Divider
-            w={'80%'}
-            mb={'md'}
+            w={pageWidth}
+            my={'sm'}
           />
-          <Space h={'sm'} />
           <Box
             w={pageWidth}
             h={'auto'}
@@ -161,7 +154,6 @@ function PiCommunityClient({
                   href={
                     'https://www.facebook.com/groups/raspberrypicommunitylk'
                   }
-                  target={'rapberry_pi_fb_page'}
                   imageSrc={images.fbLogoPink}
                   altText={'Fb logo'}
                   text={'The Facebook group can be found here'}

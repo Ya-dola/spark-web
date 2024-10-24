@@ -7,6 +7,7 @@ import ImageModal from '@/components/image_modal/image_modal';
 import { TabDetails } from '@/models/tab_details/tab_details';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { colors } from '@/utils/color_utils';
+import { getTitleFontSize } from '@/utils/font_utils';
 
 interface CarouselTabProps {
   width?: number;
@@ -44,37 +45,6 @@ function CarouselTab({
       return description.slice(0, characterLimit) + '...';
     }
     return description;
-  };
-
-  const getTitleFontSize = (
-    titleLength: number,
-  ):
-    | StyleProp<
-        | number
-        | 'h1'
-        | 'h2'
-        | 'h3'
-        | 'h4'
-        | 'h5'
-        | 'h6'
-        | MantineSize
-        | (string & {})
-      >
-    | undefined => {
-    let baseTitleFontSize: string;
-
-    if (titleLength > titleSizeLimit * 2) {
-      // Use h4/h3 for names longer than twice the size limit
-      baseTitleFontSize = isMobile ? 'h4' : 'h3';
-    } else if (titleLength > titleSizeLimit) {
-      // Use h3/h2 for names longer than titleSizeLimit
-      baseTitleFontSize = isMobile ? 'h3' : 'h2';
-    } else {
-      // Use h1/h2 for names shorter or equal to titleSizeLimit
-      baseTitleFontSize = isMobile ? 'h2' : 'h1';
-    }
-
-    return baseTitleFontSize;
   };
 
   // State to track which event is currently active in the carousel
@@ -175,48 +145,46 @@ function CarouselTab({
               direction={'column'}
               justify={'center'}
               align={'flex-start'}
-              px={isMobile ? '' : 'xl'}
+              px={isMobile ? '' : 'md'}
               w={isMobile ? '100%' : '90%'}
             >
               <Flex
                 w={'100%'}
-                direction={isMobile ? 'column' : 'column'}
-                // align={'center'}
+                direction={'column'}
+                align={'center'}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  {/* Display winner badge if applicable */}
-                  {isWinner && (
-                    //  Vector icon for winner badge
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='80'
-                      height='80'
-                      viewBox='0 0 24 24'
+                {/* Display winner badge if applicable */}
+                {isWinner && (
+                  //  Vector icon for winner badge
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='80'
+                    height='80'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke={colors.gold}
+                    strokeWidth='1.6'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path
+                      stroke='none'
+                      d='M0 0h24v24H0z' // Clear path to prevent fill
                       fill='none'
-                      stroke={colors.gold}
-                      strokeWidth='1.6'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    >
-                      <path
-                        stroke='none'
-                        d='M0 0h24v24H0z' // Clear path to prevent fill
-                        fill='none'
-                      />
-                      {/* Winner icon Svg Path */}
-                      <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
-                    </svg>
-                  )}
-                </div>
+                    />
+                    {/* Winner icon Svg Path */}
+                    <path d='M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z' />
+                  </svg>
+                )}
+
                 {/* Heading */}
                 <Text
-                  fz={getTitleFontSize(event.name.length)}
+                  w={'100%'}
+                  fz={getTitleFontSize({
+                    titleLength: event.name.length,
+                    isMobile: isMobile ?? false,
+                    titleSizeLimit: titleSizeLimit,
+                  })}
                   fw={700}
                   c={headingColor}
                   // Limit Title lines
@@ -231,7 +199,8 @@ function CarouselTab({
 
               {/*Descriptions*/}
               <Text
-                style={{ whiteSpace: 'pre-line' }} // or use a defined CSS class
+                // For '\n' to register as a line break in the description
+                style={{ whiteSpace: 'pre-line' }}
                 fz={isMobile ? 'sm' : 'md'}
                 fw={400}
                 c={descriptionColor}
