@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+  // To generate static pages on build
+  output: 'export',
+
   webpack: (config) => {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')
