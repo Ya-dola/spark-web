@@ -126,6 +126,7 @@ function CustomDrawer() {
             <Anchor
               href={'https://www.linkedin.com/in/yadola/'}
               target={'_blank'}
+              // Security measure to prevent tabnabbing
               rel={'noopener noreferrer'}
               fz={'sm'}
               c={colors.pink1 + 'DE'}
@@ -137,6 +138,7 @@ function CustomDrawer() {
             <Anchor
               href={'https://www.linkedin.com/in/senuri-de-silva-822187248/'}
               target={'_blank'}
+              // Security measure to prevent tabnabbing
               rel={'noopener noreferrer'}
               fz={'sm'}
               c={colors.pink1 + 'DE'}
