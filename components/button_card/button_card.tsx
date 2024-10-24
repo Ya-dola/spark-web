@@ -1,7 +1,6 @@
-import { Image, Text, Card, MantineSize, Button, Space } from '@mantine/core';
+import { Image, Text, Card, MantineSize, Button } from '@mantine/core';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import NextImage from 'next/image';
 import { useIsMobile } from '@/utils/breakpoint_utils';
 import { oswald } from '@/utils/font_utils';
 import { colors } from '@/utils/color_utils';
@@ -39,13 +38,13 @@ function ButtonCard({
   textSize = 'sm',
   buttonColor = colors.black1,
 }: ButtonCardProps) {
+  const isMobile = useIsMobile();
+
   // Set the card height, falling back to 400 if not provided
   const cardHeight = height ?? 200 * 2;
 
   // State to track whether the card is hovered
   const [isHovered, setIsHovered] = useState(false);
-
-  const isMobile = useIsMobile();
 
   return (
     <Card
@@ -77,8 +76,6 @@ function ButtonCard({
         {/* Display image if imageSrc is provided */}
         {imageSrc ? (
           <Image
-            // Use Next.js Image component
-            component={NextImage}
             height={height}
             width={width}
             // URL of the image
